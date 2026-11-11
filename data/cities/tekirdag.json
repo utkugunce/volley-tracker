@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:54.090080",
+  "updated_at": "2026-11-11T09:59:00.138523",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -1946,6 +1946,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "414789",
@@ -1967,8 +1968,7 @@
           "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "tekirdag-20261107-038",
@@ -2931,10 +2931,10 @@
       }
     },
     {
-      "id": "tekirdag-20261114-059",
+      "id": "tekirdag-20261113-059",
       "city": "Tekirdağ",
-      "date": "2026-11-14",
-      "time": "17:00",
+      "date": "2026-11-13",
+      "time": "18:00",
       "hall": "Çorlu Ss",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -2949,25 +2949,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "414799",
-        "url": "https://women.volleybox.net/tr/corlu-yldrm-spor-kulubu-b-u16-cerkezkoy-voleybol-akademi-spor-kulubu-u16-c414799",
-        "host_name": "Çorlu Yıldırım Spor Kulübü - B U16",
-        "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "16:45",
-        "vb_hall": "Çorlu Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "16:45",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3400,6 +3393,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411512",
@@ -3421,8 +3415,7 @@
           "vb_hall": "Çorlu Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "tekirdag-20261017-070",
@@ -3917,9 +3910,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:54.140302+00:00",
-  "last_success_at": "2026-11-10T11:19:54.140302+00:00",
-  "content_changed_at": "2026-11-10T11:19:54.140302+00:00",
-  "volleybox_synced_matches": 73,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.680747"
+  "last_attempt_at": "2026-11-11T06:59:00.179823+00:00",
+  "last_success_at": "2026-11-11T06:59:00.179823+00:00",
+  "content_changed_at": "2026-11-11T06:59:00.179823+00:00",
+  "volleybox_synced_matches": 72,
+  "volleybox_sync_updated_at": "2026-11-11T10:00:10.002080"
 }

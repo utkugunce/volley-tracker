@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:23.991082",
+  "updated_at": "2026-11-11T09:58:36.032126",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -2732,6 +2732,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "414734",
@@ -2753,8 +2754,7 @@
           "vb_hall": "18 Mart Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "canakkale-20261102-054",
@@ -2868,6 +2868,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "415716",
@@ -2889,13 +2890,12 @@
           "vb_hall": "Gökçeada Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:24.008870+00:00",
-  "last_success_at": "2026-11-10T11:19:24.008870+00:00",
-  "content_changed_at": "2026-11-10T11:19:24.008870+00:00",
+  "last_attempt_at": "2026-11-11T06:58:36.070692+00:00",
+  "last_success_at": "2026-11-11T06:58:36.070692+00:00",
+  "content_changed_at": "2026-11-11T06:58:36.070692+00:00",
   "volleybox_synced_matches": 50,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.089577"
+  "volleybox_sync_updated_at": "2026-11-11T10:00:09.049449"
 }

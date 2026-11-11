@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-08T12:26:05.616627",
+  "updated_at": "2026-11-11T10:02:51.040054",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 2,
+  "total_matches": 4,
   "source": "https://zonguldak.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -23,7 +23,8 @@
     "halls": [
       "Tümü",
       "Kdz.Ereğli",
-      "Kozlu Ss"
+      "Kozlu Ss",
+      "Çaycuma"
     ]
   },
   "standings": {
@@ -237,7 +238,75 @@
       }
     },
     {
-      "id": "zonguldak-20261107-002",
+      "id": "zonguldak-20261115-002",
+      "city": "Zonguldak",
+      "date": "2026-11-15",
+      "time": "13:30",
+      "hall": "Kdz.Ereğli",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
+      "away_team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "zonguldak-20261115-003",
+      "city": "Zonguldak",
+      "date": "2026-11-15",
+      "time": "13:00",
+      "hall": "Çaycuma",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Devrek MSA Voleybol Spor Kulübü U18",
+      "away_team": "Çaycuma Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "zonguldak-20261107-004",
       "city": "Zonguldak",
       "date": "2026-11-07",
       "time": "14:00",
@@ -283,9 +352,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T14:20:01.340313+03:00",
-  "last_success_at": "2026-11-08T09:26:05.638103+00:00",
-  "content_changed_at": "2026-11-08T09:26:05.638103+00:00",
+  "last_attempt_at": "2026-11-11T07:02:51.041842+00:00",
+  "last_success_at": "2026-11-11T07:02:51.041842+00:00",
+  "content_changed_at": "2026-11-11T07:02:51.041842+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.716490"
+  "volleybox_sync_updated_at": "2026-11-11T10:02:53.236801"
 }

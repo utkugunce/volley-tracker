@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:33.903439+03:00",
+  "updated_at": "2026-11-11T09:58:47.266540+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -70,18 +70,19 @@
       },
       {
         "rank": 2,
-        "team": "Milan Atletik",
-        "played": 3,
-        "won": 3,
+        "team": "Beşiktaş",
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 228,
-        "points_lost": 162,
-        "point_ratio": "1.407",
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 1,
+        "set_ratio": "12.000",
+        "points_won": 327,
+        "points_lost": 200,
+        "point_ratio": "1.635",
         "form": [
+          "W",
           "W",
           "W",
           "W"
@@ -89,21 +90,22 @@
       },
       {
         "rank": 3,
-        "team": "Beşiktaş",
-        "played": 3,
+        "team": "Milan Atletik",
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 9,
         "sets_won": 9,
-        "sets_lost": 1,
-        "set_ratio": "9.000",
-        "points_won": 249,
-        "points_lost": 147,
-        "point_ratio": "1.694",
+        "sets_lost": 3,
+        "set_ratio": "3.000",
+        "points_won": 281,
+        "points_lost": 240,
+        "point_ratio": "1.171",
         "form": [
           "W",
           "W",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -2192,6 +2194,46 @@
       },
       {
         "rank": 2,
+        "team": "Türk Hava Yolları SK - B U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 10,
+        "sets_lost": 3,
+        "set_ratio": "3.333",
+        "points_won": 306,
+        "points_lost": 269,
+        "point_ratio": "1.138",
+        "form": [
+          "W",
+          "L",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "İBB Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 3,
+        "set_ratio": "3.000",
+        "points_won": 285,
+        "points_lost": 210,
+        "point_ratio": "1.357",
+        "form": [
+          "W",
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Eczacıbaşı - B U16",
         "played": 3,
         "won": 3,
@@ -2210,7 +2252,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "VakıfBank - A U16",
         "played": 2,
         "won": 2,
@@ -2225,44 +2267,6 @@
         "form": [
           "W",
           "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "Türk Hava Yolları SK - B U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 7,
-        "sets_lost": 3,
-        "set_ratio": "2.333",
-        "points_won": 231,
-        "points_lost": 202,
-        "point_ratio": "1.144",
-        "form": [
-          "W",
-          "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 5,
-        "team": "İBB Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
-        "set_ratio": "2.000",
-        "points_won": 210,
-        "points_lost": 154,
-        "point_ratio": "1.364",
-        "form": [
-          "W",
-          "W",
-          "L"
         ]
       },
       {
@@ -2287,41 +2291,24 @@
       {
         "rank": 7,
         "team": "Fenerbahçe - B U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 4,
-        "set_ratio": "0.750",
-        "points_won": 139,
-        "points_lost": 160,
-        "point_ratio": "0.869",
+        "sets_lost": 7,
+        "set_ratio": "0.429",
+        "points_won": 206,
+        "points_lost": 235,
+        "point_ratio": "0.877",
         "form": [
           "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 8,
-        "team": "Ünsped Spor Kulübü",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
-        "set_ratio": "0.167",
-        "points_won": 149,
-        "points_lost": 167,
-        "point_ratio": "0.892",
-        "form": [
-          "L",
+          "W",
           "L"
         ]
       },
       {
-        "rank": 9,
+        "rank": 8,
         "team": "Smaç SK U16",
         "played": 2,
         "won": 0,
@@ -2334,6 +2321,25 @@
         "points_lost": 173,
         "point_ratio": "0.740",
         "form": [
+          "L",
+          "L"
+        ]
+      },
+      {
+        "rank": 9,
+        "team": "Ünsped Spor Kulübü",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
+        "set_ratio": "0.111",
+        "points_won": 205,
+        "points_lost": 242,
+        "point_ratio": "0.847",
+        "form": [
+          "L",
           "L",
           "L"
         ]
@@ -8027,6 +8033,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411787",
@@ -8901,11 +8908,15 @@
       "match_no": "15",
       "home_team": "Ünsped Spor Kulübü",
       "away_team": "İBB Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "15-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -8935,11 +8946,15 @@
       "match_no": "20",
       "home_team": "Milan Atletik",
       "away_team": "Beşiktaş",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "13-25",
+        "26-28"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414708",
@@ -8976,11 +8991,15 @@
       "match_no": "16",
       "home_team": "Fenerbahçe - B U16",
       "away_team": "Türk Hava Yolları SK - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "23-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -9372,9 +9391,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:34.184849+00:00",
-  "last_success_at": "2026-11-10T11:19:34.184849+00:00",
-  "content_changed_at": "2026-11-10T11:19:34.184849+00:00",
+  "last_attempt_at": "2026-11-11T06:58:47.471953+00:00",
+  "last_success_at": "2026-11-11T06:58:47.471953+00:00",
+  "content_changed_at": "2026-11-11T06:58:47.471953+00:00",
   "volleybox_synced_matches": 135,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:11.842029"
+  "volleybox_sync_updated_at": "2026-11-11T10:00:08.589077"
 }

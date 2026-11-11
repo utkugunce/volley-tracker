@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:24:40.096902",
+  "updated_at": "2026-11-11T09:58:58.868619",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -35,6 +35,17 @@
     "Genç Kızlar 1. Ligi - A Grubu": [
       {
         "rank": 1,
+        "team": "Anadolu Voleybol Akademi SK - B U18",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 15,
+        "sets_won": 15,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "55 Matasyon Spor Kulübü U18",
         "played": 5,
         "won": 4,
@@ -45,7 +56,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Atakum Atılım Spor Kulübü U18",
         "played": 4,
         "won": 4,
@@ -53,17 +64,6 @@
         "points": 12,
         "sets_won": 12,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Anadolu Voleybol Akademi SK - B U18",
-        "played": 4,
-        "won": 4,
-        "lost": 0,
-        "points": 12,
-        "sets_won": 12,
-        "sets_lost": 1,
         "form": []
       },
       {
@@ -102,12 +102,12 @@
       {
         "rank": 7,
         "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -789,7 +789,22 @@
         "25-0"
       ],
       "status": "finished",
-      "forfeit": true
+      "forfeit": true,
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "samsun-20261101-014",
@@ -1033,11 +1048,15 @@
       "match_no": "19",
       "home_team": "Anadolu Voleybol Akademi SK - B U18",
       "away_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-11",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402793",
@@ -2321,6 +2340,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "403003",
@@ -2342,8 +2362,7 @@
           "vb_hall": "Terme Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "samsun-20261025-050",
@@ -2987,7 +3006,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:24:40.106197+00:00",
-  "last_success_at": "2026-11-10T12:24:40.106197+00:00",
-  "content_changed_at": "2026-11-10T12:24:40.106197+00:00"
+  "last_attempt_at": "2026-11-11T06:58:58.909675+00:00",
+  "last_success_at": "2026-11-11T06:58:58.909675+00:00",
+  "content_changed_at": "2026-11-11T06:58:58.909675+00:00",
+  "volleybox_synced_matches": 63,
+  "volleybox_sync_updated_at": "2026-11-11T10:00:09.949936"
 }

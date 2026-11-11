@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:29.418131",
+  "updated_at": "2026-11-11T09:58:42.632792",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -71,11 +71,11 @@
       {
         "rank": 5,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-        "played": 6,
-        "won": 2,
+        "played": 7,
+        "won": 3,
         "lost": 4,
-        "points": 6,
-        "sets_won": 7,
+        "points": 9,
+        "sets_won": 10,
         "sets_lost": 13,
         "form": []
       },
@@ -93,12 +93,12 @@
       {
         "rank": 7,
         "team": "Toroslar Belediye Spor Kulübü U18",
-        "played": 6,
+        "played": 7,
         "won": 1,
-        "lost": 5,
+        "lost": 6,
         "points": 3,
         "sets_won": 5,
-        "sets_lost": 16,
+        "sets_lost": 19,
         "form": []
       },
       {
@@ -1215,11 +1215,15 @@
       "match_no": "25",
       "home_team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
       "away_team": "Toroslar Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-19",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415792",
@@ -1326,9 +1330,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:29.470930+00:00",
-  "last_success_at": "2026-11-10T11:19:29.470930+00:00",
-  "content_changed_at": "2026-11-10T11:19:29.470930+00:00",
+  "last_attempt_at": "2026-11-11T06:58:42.656565+00:00",
+  "last_success_at": "2026-11-11T06:58:42.656565+00:00",
+  "content_changed_at": "2026-11-11T06:58:42.656565+00:00",
   "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.582032"
+  "volleybox_sync_updated_at": "2026-11-11T10:00:09.850999"
 }

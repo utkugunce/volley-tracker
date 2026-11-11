@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:26:26.329238",
+  "updated_at": "2026-11-11T09:59:00.693461",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -41,6 +41,17 @@
       },
       {
         "rank": 2,
+        "team": "Aksaray Yıldız Spor Kulübü U18",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "MBA Aksaray Anka Spor Kulübü U18",
         "played": 4,
         "won": 3,
@@ -51,35 +62,24 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Aksaray Yıldız Spor Kulübü U18",
-        "played": 4,
-        "won": 3,
-        "lost": 1,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
-        "played": 4,
+        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
+        "played": 5,
         "won": 3,
-        "lost": 1,
+        "lost": 2,
         "points": 9,
         "sets_won": 9,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
-        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
-        "played": 4,
-        "won": 2,
+        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 6,
         "form": []
       },
@@ -108,12 +108,12 @@
       {
         "rank": 8,
         "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -852,11 +852,30 @@
       "match_no": "17",
       "home_team": "Aksaray Yıldız Spor Kulübü U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü - C U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-9",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261109-018",
@@ -871,11 +890,30 @@
       "match_no": "18",
       "home_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "10-25",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261110-019",
@@ -894,7 +932,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261110-020",
@@ -913,7 +966,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261111-021",
@@ -932,7 +1000,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261112-022",
@@ -951,7 +1034,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261112-023",
@@ -970,7 +1068,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "aksaray-20261113-024",
@@ -989,10 +1102,27 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:26:26.331301+00:00",
-  "last_success_at": "2026-11-10T12:26:26.331301+00:00",
-  "content_changed_at": "2026-11-10T12:26:26.331301+00:00"
+  "last_attempt_at": "2026-11-11T06:59:00.821385+00:00",
+  "last_success_at": "2026-11-11T06:59:00.821385+00:00",
+  "content_changed_at": "2026-11-11T06:59:00.821385+00:00",
+  "volleybox_synced_matches": 16,
+  "volleybox_sync_updated_at": "2026-11-11T10:00:08.631876"
 }

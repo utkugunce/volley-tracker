@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-10T14:19:38.940012",
+  "updated_at": "2026-11-11T09:58:51.750390",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 37,
+  "total_matches": 41,
   "source": "https://konya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -69,6 +69,17 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Konya Anka Spor Kulübü U18",
+        "played": 6,
+        "won": 5,
+        "lost": 1,
+        "points": 14,
+        "sets_won": 16,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Selçuklu Belediyespor Kulübü U18",
         "played": 5,
         "won": 4,
@@ -76,17 +87,6 @@
         "points": 13,
         "sets_won": 14,
         "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Konya Anka Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
-        "lost": 1,
-        "points": 11,
-        "sets_won": 13,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -103,12 +103,12 @@
       {
         "rank": 4,
         "team": "Türmak Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 1,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 3,
-        "sets_lost": 13,
+        "sets_lost": 16,
         "form": []
       }
     ],
@@ -748,7 +748,41 @@
       }
     },
     {
-      "id": "konya-20261004-006",
+      "id": "konya-20261117-006",
+      "city": "Konya",
+      "date": "2026-11-17",
+      "time": "15:00",
+      "hall": "Ereğli Atatürk",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "6",
+      "home_team": "Ereğli Sümer SK U18",
+      "away_team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "konya-20261004-007",
       "city": "Konya",
       "date": "2026-10-04",
       "time": "16:00",
@@ -793,7 +827,7 @@
       }
     },
     {
-      "id": "konya-20261007-007",
+      "id": "konya-20261007-008",
       "city": "Konya",
       "date": "2026-10-07",
       "time": "20:30",
@@ -838,7 +872,7 @@
       }
     },
     {
-      "id": "konya-20261010-008",
+      "id": "konya-20261010-009",
       "city": "Konya",
       "date": "2026-10-10",
       "time": "10:00",
@@ -884,7 +918,7 @@
       }
     },
     {
-      "id": "konya-20261011-009",
+      "id": "konya-20261011-010",
       "city": "Konya",
       "date": "2026-10-11",
       "time": "12:00",
@@ -931,7 +965,7 @@
       }
     },
     {
-      "id": "konya-20261013-010",
+      "id": "konya-20261013-011",
       "city": "Konya",
       "date": "2026-10-13",
       "time": "20:30",
@@ -976,7 +1010,7 @@
       }
     },
     {
-      "id": "konya-20261022-011",
+      "id": "konya-20261022-012",
       "city": "Konya",
       "date": "2026-10-22",
       "time": "18:30",
@@ -1021,7 +1055,7 @@
       }
     },
     {
-      "id": "konya-20261024-012",
+      "id": "konya-20261024-013",
       "city": "Konya",
       "date": "2026-10-24",
       "time": "12:00",
@@ -1066,7 +1100,7 @@
       }
     },
     {
-      "id": "konya-20261026-013",
+      "id": "konya-20261026-014",
       "city": "Konya",
       "date": "2026-10-26",
       "time": "20:30",
@@ -1111,7 +1145,7 @@
       }
     },
     {
-      "id": "konya-20261031-014",
+      "id": "konya-20261031-015",
       "city": "Konya",
       "date": "2026-10-31",
       "time": "11:00",
@@ -1132,6 +1166,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "413218",
@@ -1153,11 +1188,10 @@
           "vb_hall": "75. Yıl Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
-      "id": "konya-20261108-015",
+      "id": "konya-20261108-016",
       "city": "Konya",
       "date": "2026-11-08",
       "time": "18:00",
@@ -1203,7 +1237,7 @@
       }
     },
     {
-      "id": "konya-20261110-016",
+      "id": "konya-20261110-017",
       "city": "Konya",
       "date": "2026-11-10",
       "time": "20:30",
@@ -1215,6 +1249,45 @@
       "match_no": "11",
       "home_team": "Türmak Spor Kulübü U18",
       "away_team": "Konya Anka Spor Kulübü U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "forfeit": true,
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "konya-20261114-018",
+      "city": "Konya",
+      "date": "2026-11-14",
+      "time": "17:00",
+      "hall": "75. Yıl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "12",
+      "home_team": "Anadolu Zirve Spor Kulübü U18",
+      "away_team": "Selçuklu Belediyespor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1237,7 +1310,7 @@
       }
     },
     {
-      "id": "konya-20261004-017",
+      "id": "konya-20261004-019",
       "city": "Konya",
       "date": "2026-10-04",
       "time": "10:00",
@@ -1282,7 +1355,7 @@
       }
     },
     {
-      "id": "konya-20261011-018",
+      "id": "konya-20261011-020",
       "city": "Konya",
       "date": "2026-10-11",
       "time": "13:00",
@@ -1328,7 +1401,7 @@
       }
     },
     {
-      "id": "konya-20261015-019",
+      "id": "konya-20261015-021",
       "city": "Konya",
       "date": "2026-10-15",
       "time": "20:30",
@@ -1374,7 +1447,7 @@
       }
     },
     {
-      "id": "konya-20261017-020",
+      "id": "konya-20261017-022",
       "city": "Konya",
       "date": "2026-10-17",
       "time": "11:00",
@@ -1420,7 +1493,7 @@
       }
     },
     {
-      "id": "konya-20261018-021",
+      "id": "konya-20261018-023",
       "city": "Konya",
       "date": "2026-10-18",
       "time": "12:00",
@@ -1465,7 +1538,7 @@
       }
     },
     {
-      "id": "konya-20261022-022",
+      "id": "konya-20261022-024",
       "city": "Konya",
       "date": "2026-10-22",
       "time": "20:30",
@@ -1510,7 +1583,7 @@
       }
     },
     {
-      "id": "konya-20261024-023",
+      "id": "konya-20261024-025",
       "city": "Konya",
       "date": "2026-10-24",
       "time": "18:00",
@@ -1555,7 +1628,7 @@
       }
     },
     {
-      "id": "konya-20261031-024",
+      "id": "konya-20261031-026",
       "city": "Konya",
       "date": "2026-10-31",
       "time": "15:00",
@@ -1600,7 +1673,7 @@
       }
     },
     {
-      "id": "konya-20261107-025",
+      "id": "konya-20261107-027",
       "city": "Konya",
       "date": "2026-11-07",
       "time": "12:00",
@@ -1645,7 +1718,7 @@
       }
     },
     {
-      "id": "konya-20261108-026",
+      "id": "konya-20261108-028",
       "city": "Konya",
       "date": "2026-11-08",
       "time": "13:00",
@@ -1666,6 +1739,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "415752",
@@ -1687,11 +1761,10 @@
           "vb_hall": "Kadınhanı Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
-      "id": "konya-20261112-027",
+      "id": "konya-20261112-029",
       "city": "Konya",
       "date": "2026-11-12",
       "time": "20:30",
@@ -1725,7 +1798,41 @@
       }
     },
     {
-      "id": "konya-20261003-028",
+      "id": "konya-20261115-030",
+      "city": "Konya",
+      "date": "2026-11-15",
+      "time": "12:30",
+      "hall": "75. Yıl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "12",
+      "home_team": "Vakıf Akademi Spor Kulübü U18",
+      "away_team": "Konya Anadolu Yıldızları Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "konya-20261003-031",
       "city": "Konya",
       "date": "2026-10-03",
       "time": "20:00",
@@ -1772,7 +1879,7 @@
       }
     },
     {
-      "id": "konya-20261004-029",
+      "id": "konya-20261004-032",
       "city": "Konya",
       "date": "2026-10-04",
       "time": "13:00",
@@ -1817,7 +1924,7 @@
       }
     },
     {
-      "id": "konya-20261011-030",
+      "id": "konya-20261011-033",
       "city": "Konya",
       "date": "2026-10-11",
       "time": "10:00",
@@ -1863,7 +1970,7 @@
       }
     },
     {
-      "id": "konya-20261011-031",
+      "id": "konya-20261011-034",
       "city": "Konya",
       "date": "2026-10-11",
       "time": "14:00",
@@ -1908,7 +2015,7 @@
       }
     },
     {
-      "id": "konya-20261018-032",
+      "id": "konya-20261018-035",
       "city": "Konya",
       "date": "2026-10-18",
       "time": "10:00",
@@ -1929,6 +2036,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411812",
@@ -1950,11 +2058,10 @@
           "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
-      "id": "konya-20261025-033",
+      "id": "konya-20261025-036",
       "city": "Konya",
       "date": "2026-10-25",
       "time": "18:00",
@@ -1999,7 +2106,7 @@
       }
     },
     {
-      "id": "konya-20261027-034",
+      "id": "konya-20261027-037",
       "city": "Konya",
       "date": "2026-10-27",
       "time": "20:30",
@@ -2045,7 +2152,7 @@
       }
     },
     {
-      "id": "konya-20261101-035",
+      "id": "konya-20261101-038",
       "city": "Konya",
       "date": "2026-11-01",
       "time": "10:00",
@@ -2090,7 +2197,7 @@
       }
     },
     {
-      "id": "konya-20261107-036",
+      "id": "konya-20261107-039",
       "city": "Konya",
       "date": "2026-11-07",
       "time": "13:00",
@@ -2136,7 +2243,7 @@
       }
     },
     {
-      "id": "konya-20261107-037",
+      "id": "konya-20261107-040",
       "city": "Konya",
       "date": "2026-11-07",
       "time": "18:00",
@@ -2181,11 +2288,45 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "konya-20261115-041",
+      "city": "Konya",
+      "date": "2026-11-15",
+      "time": "17:00",
+      "hall": "75. Yıl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "11",
+      "home_team": "Falcon Atletik Spor Kulübü U18",
+      "away_team": "Seydişehir Cimnastik Spor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:38.980879+00:00",
-  "last_success_at": "2026-11-10T11:19:38.980879+00:00",
-  "content_changed_at": "2026-11-10T11:19:38.980879+00:00",
+  "last_attempt_at": "2026-11-11T06:58:51.790247+00:00",
+  "last_success_at": "2026-11-11T06:58:51.790247+00:00",
+  "content_changed_at": "2026-11-11T06:58:51.790247+00:00",
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.531854"
+  "volleybox_sync_updated_at": "2026-11-11T10:00:09.766248"
 }

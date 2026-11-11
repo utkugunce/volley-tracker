@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:26:37.684330",
+  "updated_at": "2026-11-11T09:58:58.800904",
   "city": "Tokat",
   "slug": "tokat",
   "title": "TVF Tokat Genç & Yıldız Kızlar Süper Lig",
@@ -97,7 +97,22 @@
         "25-21",
         "25-20"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261115-002",
@@ -116,7 +131,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261115-003",
@@ -135,7 +165,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261122-004",
@@ -154,7 +199,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261122-005",
@@ -173,7 +233,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261125-006",
@@ -192,7 +267,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261129-007",
@@ -211,7 +301,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261129-008",
@@ -230,7 +335,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261206-009",
@@ -249,7 +369,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261206-010",
@@ -268,7 +403,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261213-011",
@@ -287,7 +437,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tokat-20261213-012",
@@ -306,10 +471,27 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:26:37.686205+00:00",
-  "last_success_at": "2026-11-10T12:26:37.686205+00:00",
-  "content_changed_at": "2026-11-10T12:26:37.686205+00:00"
+  "last_attempt_at": "2026-11-11T06:58:58.836934+00:00",
+  "last_success_at": "2026-11-11T06:58:58.836934+00:00",
+  "content_changed_at": "2026-11-10T12:26:37.686205+00:00",
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-11-11T10:00:10.012354"
 }

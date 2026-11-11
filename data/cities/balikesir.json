@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:24:24.532785",
+  "updated_at": "2026-11-11T09:58:32.663972",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -299,11 +299,11 @@
       {
         "rank": 1,
         "team": "Ayvalıkspor U16",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 0,
         "form": []
       },
@@ -321,34 +321,34 @@
       {
         "rank": 3,
         "team": "Ayvalıkgücü Belediye SK - B U16",
-        "played": 4,
-        "won": 2,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 6,
-        "sets_won": 7,
+        "points": 9,
+        "sets_won": 10,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
         "team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 5,
         "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
-        "played": 4,
+        "played": 5,
         "won": 1,
-        "lost": 3,
+        "lost": 4,
         "points": 3,
         "sets_won": 6,
-        "sets_lost": 11,
+        "sets_lost": 14,
         "form": []
       },
       {
@@ -868,7 +868,22 @@
         "25-0"
       ],
       "status": "finished",
-      "forfeit": true
+      "forfeit": true,
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261101-010",
@@ -892,7 +907,22 @@
         "0-25"
       ],
       "status": "finished",
-      "forfeit": true
+      "forfeit": true,
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261004-011",
@@ -917,7 +947,22 @@
         "16-25",
         "15-13"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261012-012",
@@ -1032,7 +1077,22 @@
         "28-26",
         "18-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261019-015",
@@ -1100,7 +1160,22 @@
         "25-15",
         "25-18"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261022-017",
@@ -1300,7 +1375,22 @@
         "25-23",
         "26-28"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261103-022",
@@ -1369,7 +1459,22 @@
         "13-25",
         "18-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261105-024",
@@ -1435,7 +1540,22 @@
         "25-22",
         "15-9"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261006-026",
@@ -2005,6 +2125,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "414775",
@@ -2026,8 +2147,7 @@
           "vb_hall": "Ayvalık Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "balikesir-20261110-039",
@@ -2042,11 +2162,30 @@
       "match_no": "14",
       "home_team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
       "away_team": "Ayvalıkspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "8-25",
+        "23-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261110-040",
@@ -2061,11 +2200,30 @@
       "match_no": "15",
       "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "away_team": "Ayvalıkgücü Belediye SK - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "20-25",
+        "18-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261006-041",
@@ -2360,7 +2518,22 @@
         "25-14",
         "27-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261105-048",
@@ -2430,7 +2603,22 @@
         "21-25",
         "15-8"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261112-050",
@@ -2449,7 +2637,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "balikesir-20261005-051",
@@ -2790,6 +2993,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411168",
@@ -2811,8 +3015,7 @@
           "vb_hall": "Neriman Gençer Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "balikesir-20261021-059",
@@ -3131,7 +3334,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:24:24.545457+00:00",
-  "last_success_at": "2026-11-10T12:24:24.545457+00:00",
-  "content_changed_at": "2026-11-10T12:24:24.545457+00:00"
+  "last_attempt_at": "2026-11-11T06:58:32.699000+00:00",
+  "last_success_at": "2026-11-11T06:58:32.699000+00:00",
+  "content_changed_at": "2026-11-11T06:58:32.699000+00:00",
+  "volleybox_synced_matches": 52,
+  "volleybox_sync_updated_at": "2026-11-11T10:00:08.882469"
 }
