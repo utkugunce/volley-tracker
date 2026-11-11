@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-11T09:58:57.995939",
+  "updated_at": "2026-11-11T16:45:42.341197",
   "city": "Sivas",
   "slug": "sivas",
   "title": "TVF Sivas Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 4,
+  "total_matches": 0,
   "source": "https://sivas.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,57 +21,10 @@
       "Kız"
     ],
     "halls": [
-      "Tümü",
-      "Taha Akgül Ss"
+      "Tümü"
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "Pars Akademi Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Sivas Gençlik Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Sivas İl Özel İdaresi Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Sivas Yurdum Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
@@ -152,147 +105,10 @@
       }
     ]
   },
-  "matches": [
-    {
-      "id": "sivas-20261116-001",
-      "city": "Sivas",
-      "date": "2026-11-16",
-      "time": "10:00",
-      "hall": "Taha Akgül Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "1",
-      "home_team": "Pars Akademi Spor Kulübü",
-      "away_team": "Sivas Yurdum Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "sivas-20261116-002",
-      "city": "Sivas",
-      "date": "2026-11-16",
-      "time": "11:30",
-      "hall": "Taha Akgül Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "2",
-      "home_team": "Sivas Gençlik Spor Kulübü",
-      "away_team": "Sivas İl Özel İdaresi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "sivas-20261118-003",
-      "city": "Sivas",
-      "date": "2026-11-18",
-      "time": "10:00",
-      "hall": "Taha Akgül Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "3",
-      "home_team": "Sivas Yurdum Spor Kulübü",
-      "away_team": "Sivas Gençlik Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "sivas-20261118-004",
-      "city": "Sivas",
-      "date": "2026-11-18",
-      "time": "11:30",
-      "hall": "Taha Akgül Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "4",
-      "home_team": "Sivas İl Özel İdaresi Spor Kulübü",
-      "away_team": "Pars Akademi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    }
-  ],
-  "last_attempt_at": "2026-11-11T06:58:57.996817+00:00",
-  "last_success_at": "2026-11-11T06:58:57.996817+00:00",
-  "content_changed_at": "2026-11-11T06:58:57.996817+00:00",
+  "matches": [],
+  "last_attempt_at": "2026-11-11T16:45:42.341694+00:00",
+  "last_success_at": "2026-11-11T16:45:42.341694+00:00",
+  "content_changed_at": "2026-11-11T16:45:42.341694+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-11T11:38:12.052033"
+  "volleybox_sync_updated_at": "2026-11-11T16:47:01.035741"
 }

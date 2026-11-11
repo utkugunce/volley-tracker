@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:31.092438",
+  "updated_at": "2026-11-11T16:45:02.472030",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -1102,7 +1102,7 @@
       "id": "antalya-20261119-016",
       "city": "Antalya",
       "date": "2026-11-19",
-      "time": "14:00",
+      "time": "12:00",
       "hall": "Kepez Ç.A.S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -1739,7 +1739,7 @@
       "city": "Antalya",
       "date": "2026-11-19",
       "time": "11:00",
-      "hall": "Kepez Ç.A.S.S.",
+      "hall": "Fatih O.O.S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -4527,9 +4527,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:31.135571+00:00",
-  "last_success_at": "2026-11-11T06:58:31.135571+00:00",
-  "content_changed_at": "2026-11-11T06:58:31.135571+00:00",
+  "last_attempt_at": "2026-11-11T16:45:02.475249+00:00",
+  "last_success_at": "2026-11-11T16:45:02.475249+00:00",
+  "content_changed_at": "2026-11-11T16:45:02.475249+00:00",
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:08.407391"
+  "volleybox_sync_updated_at": "2026-11-11T16:47:00.964444"
 }
