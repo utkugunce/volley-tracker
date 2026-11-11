@@ -348,8 +348,13 @@ def main():
 
     # HTTP Client oluştur
     if HAS_CURL_CFFI:
-        session = cffi_requests.Session(impersonate="safari17_0")
-        session.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7" 
+        if str(BASE_DIR) not in sys.path:
+            sys.path.insert(0, str(BASE_DIR))
+        from scripts.sync_volleybox_matches import get_ascii_ca_bundle
+
+        ca_bundle = get_ascii_ca_bundle()
+        session = cffi_requests.Session(impersonate="safari17_0", verify=ca_bundle)
+        session.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7"
     else:
         session = httpx.Client(headers=HEADERS, follow_redirects=True, timeout=15)
 

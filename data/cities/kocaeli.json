@@ -1924,8 +1924,8 @@
         "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-elite-spor-u18-c415089",
         "host_name": "Gölcük Belediye Spor Kulübü U18",
         "guest_name": "Kocaeli Elite Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-06",
         "vb_time": "18:30",
         "vb_hall": "Başiskele Spor Salonu",
@@ -1969,8 +1969,8 @@
         "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-siyah-kugular-spor-kulubu-u18-c415090",
         "host_name": "Kandıra Voleybol Kulübü U18",
         "guest_name": "Siyah Kuğular Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-06",
         "vb_time": "19:00",
         "vb_hall": "Kandıra Spor Salonu",
@@ -2015,8 +2015,8 @@
         "url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415091",
         "host_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "guest_name": "5 Renk Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-06",
         "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
@@ -2060,8 +2060,8 @@
         "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kocaeli-19-mays-spor-kulubu-u18-c415772",
         "host_name": "Körfez Vaveyla Spor Kulübü U18",
         "guest_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "14:00",
         "vb_hall": "Derince Spor Salonu",
@@ -2105,8 +2105,8 @@
         "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-elite-spor-u18-c415093",
         "host_name": "Kocaeli Anka Spor Kulübü U18",
         "guest_name": "Kocaeli Elite Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "15:30",
         "vb_hall": "Derince Spor Salonu",
@@ -2150,8 +2150,8 @@
         "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-zmit-spor-u18-c415094",
         "host_name": "Kandıra Voleybol Kulübü U18",
         "guest_name": "İzmit Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "16:00",
         "vb_hall": "Kandıra Spor Salonu",
@@ -2196,20 +2196,20 @@
         "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415092",
         "host_name": "Gölcük Belediye Spor Kulübü U18",
         "guest_name": "İzmit Yahya Kaptan SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-07",
-        "vb_time": "14:00",
+        "vb_time": "16:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-07",
-          "vb_time": "14:00",
+          "vb_time": "16:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:30 / VB: 14:00)"
+          "details": null
         }
       }
     },
@@ -2489,14 +2489,14 @@
         "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-16",
           "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
         }
       }
     },
@@ -2530,14 +2530,14 @@
         "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-16",
           "vb_time": "18:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:30 / VB: 18:30)"
         }
       }
     },
@@ -2571,14 +2571,14 @@
         "vb_time": "20:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-16",
           "vb_time": "20:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
         }
       }
     },
@@ -2653,14 +2653,14 @@
         "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "18:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
         }
       }
     },
@@ -2694,14 +2694,14 @@
         "vb_time": "20:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "20:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:30 / VB: 20:00)"
         }
       }
     },
@@ -2735,14 +2735,14 @@
         "vb_time": "18:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "18:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:30 / VB: 18:30)"
         }
       }
     },
@@ -2776,14 +2776,14 @@
         "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-18",
           "vb_time": "20:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 20:00)"
         }
       }
     },
@@ -2858,14 +2858,14 @@
         "vb_time": "18:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "18:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
         }
       }
     },
@@ -2899,14 +2899,14 @@
         "vb_time": "20:00",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "20:00",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:30 / VB: 20:00)"
         }
       }
     },
@@ -3667,18 +3667,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415125",
+        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415125",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-26",
+        "vb_time": "20:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-26",
+          "vb_time": "20:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-12-03 / VB: 2026-11-26)"
         }
       }
     },
@@ -4847,8 +4854,8 @@
         "url": "https://women.volleybox.net/tr/dilovas-belediye-spor-kulubu-u18-darca-cnaralt-genclik-ve-spor-kulubu-u18-c415144",
         "host_name": "Dilovası Belediye Spor Kulübü U18",
         "guest_name": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "19:00",
         "vb_hall": "Dilovası Spor Salonu",
@@ -4892,8 +4899,8 @@
         "url": "https://women.volleybox.net/tr/darca-anadolu-spor-kulubu-u18-darca-cnaralt-genclik-ve-spor-kulubu-u18-c415145",
         "host_name": "Darıca Anadolu Spor Kulübü U18",
         "guest_name": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-04",
         "vb_time": "18:30",
         "vb_hall": "Darıca Spor Salonu",
@@ -4937,8 +4944,8 @@
         "url": "https://women.volleybox.net/tr/dilovas-belediye-spor-kulubu-u18-umut-can-spor-kulubu-u18-c415147",
         "host_name": "Dilovası Belediye Spor Kulübü U18",
         "guest_name": "Umut Can Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-04",
         "vb_time": "19:00",
         "vb_hall": "Dilovası Spor Salonu",
@@ -4982,8 +4989,8 @@
         "url": "https://women.volleybox.net/tr/darca-kuzey-yldz-sk-u18-darca-yldz-spor-kulubu-u18-c415148",
         "host_name": "Darıca Kuzey Yıldızı SK U18",
         "guest_name": "Darıca Yıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-04",
         "vb_time": "20:00",
         "vb_hall": "Darıca Spor Salonu",
@@ -5027,8 +5034,8 @@
         "url": "https://women.volleybox.net/tr/dev-ay-spor-kulubu-u18-gebze-genclik-voleybol-kulubu-u18-c415149",
         "host_name": "Dev Ay Spor Kulübü U18",
         "guest_name": "Gebze Gençlik Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-06",
         "vb_time": "18:30",
         "vb_hall": "Gebze Spor Salonu",
@@ -5072,8 +5079,8 @@
         "url": "https://women.volleybox.net/tr/gebze-olimpik-spor-kulubu-u18-cayrova-belediyesi-egitim-sk-u18-c415151",
         "host_name": "Gebze Olimpik Spor Kulübü U18",
         "guest_name": "Çayırova Belediyesi Eğitim SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-06",
         "vb_time": "20:00",
         "vb_hall": "Gebze Spor Salonu",
@@ -5119,8 +5126,8 @@
         "url": "https://women.volleybox.net/tr/dev-ay-spor-kulubu-u18-dilovas-belediye-spor-kulubu-u18-c415152",
         "host_name": "Dev Ay Spor Kulübü U18",
         "guest_name": "Dilovası Belediye Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "16:00",
         "vb_hall": "Gebze Spor Salonu",
@@ -5164,8 +5171,8 @@
         "url": "https://women.volleybox.net/tr/yelkenkaya-spor-kulubu-u18-darca-yldz-spor-kulubu-u18-c415155",
         "host_name": "Yelkenkaya Spor Kulübü U18",
         "guest_name": "Darıca Yıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "13:00",
         "vb_hall": "Darıca Spor Salonu",
@@ -5210,8 +5217,8 @@
         "url": "https://women.volleybox.net/tr/darca-anadolu-spor-kulubu-u18-umut-can-spor-kulubu-u18-c415156",
         "host_name": "Darıca Anadolu Spor Kulübü U18",
         "guest_name": "Umut Can Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "14:30",
         "vb_hall": "Darıca Spor Salonu",
@@ -5255,8 +5262,8 @@
         "url": "https://women.volleybox.net/tr/darca-kuzey-yldz-sk-u18-cayrova-belediyesi-egitim-sk-u18-c415157",
         "host_name": "Darıca Kuzey Yıldızı SK U18",
         "guest_name": "Çayırova Belediyesi Eğitim SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "16:00",
         "vb_hall": "Darıca Spor Salonu",
@@ -5300,8 +5307,8 @@
         "url": "https://women.volleybox.net/tr/dilovas-belediye-spor-kulubu-u18-gebze-genclik-voleybol-kulubu-u18-c415158",
         "host_name": "Dilovası Belediye Spor Kulübü U18",
         "guest_name": "Gebze Gençlik Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-09",
         "vb_time": "19:00",
         "vb_hall": "Dilovası Spor Salonu",
@@ -5798,14 +5805,14 @@
         "vb_time": "18:30",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "18:30",
           "vb_hall": "Darıca Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
         }
       }
     },
@@ -5839,14 +5846,14 @@
         "vb_time": "20:00",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "20:00",
           "vb_hall": "Darıca Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:30 / VB: 20:00)"
         }
       }
     },
@@ -5921,14 +5928,14 @@
         "vb_time": "18:30",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-20",
           "vb_time": "18:30",
           "vb_hall": "Darıca Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:00 / VB: 18:30)"
         }
       }
     },
@@ -5962,14 +5969,14 @@
         "vb_time": "20:00",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-20",
           "vb_time": "20:00",
           "vb_hall": "Darıca Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 15:30 / VB: 20:00)"
         }
       }
     },
@@ -5992,18 +5999,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415153",
+        "url": "https://women.volleybox.net/tr/gebze-genclik-voleybol-kulubu-u18-darca-kuzey-yldz-sk-u18-c415153",
+        "host_name": "Gebze Gençlik Voleybol Kulübü U18",
+        "guest_name": "Darıca Kuzey Yıldızı SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "19:30",
+        "vb_hall": "Gebze Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "19:30",
+          "vb_hall": "Gebze Spor Salonu",
+          "details": null
         }
       }
     },
@@ -6093,6 +6107,6 @@
   "last_attempt_at": "2026-11-11T06:58:51.537097+00:00",
   "last_success_at": "2026-11-11T06:58:51.537097+00:00",
   "content_changed_at": "2026-11-11T06:58:51.537097+00:00",
-  "volleybox_synced_matches": 131,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:09.726781"
+  "volleybox_synced_matches": 133,
+  "volleybox_sync_updated_at": "2026-11-11T11:38:04.377336"
 }

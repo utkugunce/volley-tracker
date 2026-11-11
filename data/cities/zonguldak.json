@@ -220,8 +220,8 @@
         "url": "https://women.volleybox.net/tr/karadeniz-eregli-voleybol-spor-kulubu-b-u18-kyal-spor-kulubu-u18-c413307",
         "host_name": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
         "guest_name": "KYAL Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "14:00",
         "vb_hall": "Ereğli Atatürk Spor Salonu",
@@ -334,8 +334,8 @@
         "url": "https://women.volleybox.net/tr/mec-spor-kulubu-u18-zonguldak-as-spor-kulubu-u18-c413308",
         "host_name": "MEC Spor Kulübü U18",
         "guest_name": "Zonguldak As Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "14:00",
         "vb_hall": "Kozlu Spor Salonu",
@@ -356,5 +356,5 @@
   "last_success_at": "2026-11-11T07:02:51.041842+00:00",
   "content_changed_at": "2026-11-11T07:02:51.041842+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-11T10:02:53.236801"
+  "volleybox_sync_updated_at": "2026-11-11T11:38:16.152047"
 }

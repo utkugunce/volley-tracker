@@ -509,14 +509,14 @@
         "vb_time": "14:00",
         "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-14",
           "vb_time": "14:00",
           "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 15:00 / VB: 14:00)"
         }
       }
     },
@@ -539,18 +539,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "414620",
+        "url": "https://women.volleybox.net/tr/skofya-spor-kulubu-b-u18-revup-spor-kulubu-u18-c414620",
+        "host_name": "İskofya Spor Kulübü - B U18",
+        "guest_name": "REVUP Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "14:00",
+        "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "14:00",
+          "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -573,18 +580,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "414621",
+        "url": "https://women.volleybox.net/tr/skofya-spor-kulubu-u18-akcaabat-belediyesi-sk-u18-c414621",
+        "host_name": "İskofya Spor Kulübü U18",
+        "guest_name": "Akçaabat Belediyesi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "16:00",
+        "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "16:00",
+          "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     }
@@ -592,6 +606,6 @@
   "last_attempt_at": "2026-11-11T06:58:58.998703+00:00",
   "last_success_at": "2026-11-11T06:58:58.998703+00:00",
   "content_changed_at": "2026-11-11T06:58:58.998703+00:00",
-  "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:10.022058"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-11-11T11:38:15.893750"
 }

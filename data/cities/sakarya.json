@@ -342,8 +342,8 @@
         "url": "https://women.volleybox.net/tr/serdivan-belediyesi-spor-kulubu-u18-sarachane-54-spor-kulubu-u18-c414625",
         "host_name": "Serdivan Belediyesi Spor Kulübü U18",
         "guest_name": "Saraçhane 54 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
@@ -940,8 +940,8 @@
         "url": "https://women.volleybox.net/tr/erenler-anadolu-voleybol-spor-kulubu-u18-sapanca-ayyldz-spor-kulubu-u18-c414627",
         "host_name": "Erenler Anadolu Voleybol Spor Kulübü U18",
         "guest_name": "Sapanca Ayyıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "18:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
@@ -1370,5 +1370,5 @@
   "last_success_at": "2026-11-11T06:58:56.718096+00:00",
   "content_changed_at": "2026-11-11T06:58:56.718096+00:00",
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:09.908522"
+  "volleybox_sync_updated_at": "2026-11-11T11:38:08.425713"
 }

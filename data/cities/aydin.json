@@ -661,8 +661,8 @@
         "url": "https://women.volleybox.net/tr/aydn-ds-spor-kulubu-u18-soke-voleybol-spor-kulubu-u18-c406616",
         "host_name": "Aydın DSİ Spor Kulübü U18",
         "guest_name": "Söke Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-09",
         "vb_time": "19:00",
         "vb_hall": "Mimar Sinan Spor Salonu",
@@ -706,8 +706,8 @@
         "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-aydn-genclik-ve-spor-l-mudurlugu-spor-kulubu-u18-c406618",
         "host_name": "Aydın Büyükşehir Belediyespor U18",
         "guest_name": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-09",
         "vb_time": "20:30",
         "vb_hall": "Mimar Sinan Spor Salonu",
@@ -974,5 +974,5 @@
   "last_success_at": "2026-11-11T06:58:31.419030+00:00",
   "content_changed_at": "2026-11-11T06:58:31.419030+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:08.826016"
+  "volleybox_sync_updated_at": "2026-11-11T11:37:08.705323"
 }

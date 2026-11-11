@@ -479,8 +479,8 @@
         "url": "https://women.volleybox.net/tr/diyarbakr-genclik-spor-kulubu-u18-diyarbakr-buyuksehir-belediyespor-u18-c415717",
         "host_name": "Diyarbakır Gençlik Spor Kulübü U18",
         "guest_name": "Diyarbakır Büyükşehir Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-04",
         "vb_time": "18:00",
         "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
@@ -524,8 +524,8 @@
         "url": "https://women.volleybox.net/tr/diyarbakr-buyuksehir-belediyespor-u18-megaron-nsaat-diyarbakr-spor-kulubu-u18-c415719",
         "host_name": "Diyarbakır Büyükşehir Belediyespor U18",
         "guest_name": "Megaron İnşaat Diyarbakır Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "18:00",
         "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
@@ -546,5 +546,5 @@
   "last_success_at": "2026-11-10T11:19:26.811379+00:00",
   "content_changed_at": "2026-11-10T11:19:26.811379+00:00",
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:09.107204"
+  "volleybox_sync_updated_at": "2026-11-11T11:37:17.820731"
 }

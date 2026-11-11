@@ -330,8 +330,8 @@
         "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u18-luleburgaz-akademi-spor-c-u18-c415798",
         "host_name": "Lüleburgaz Akademi Spor U18",
         "guest_name": "Lüleburgaz Akademi Spor - C U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "14:00",
         "vb_hall": "Lüleburgaz Spor Salonu",
@@ -375,8 +375,8 @@
         "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-d-u18-luleburgaz-akademi-spor-b-u18-c415799",
         "host_name": "Lüleburgaz Akademi Spor - D U18",
         "guest_name": "Lüleburgaz Akademi Spor - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "16:00",
         "vb_hall": "Lüleburgaz Spor Salonu",
@@ -2589,5 +2589,5 @@
   "last_success_at": "2026-11-11T06:58:48.398311+00:00",
   "content_changed_at": "2026-11-11T06:58:48.398311+00:00",
   "volleybox_synced_matches": 50,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:09.573406"
+  "volleybox_sync_updated_at": "2026-11-11T11:37:44.401869"
 }

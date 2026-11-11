@@ -692,8 +692,8 @@
         "url": "https://women.volleybox.net/tr/degerli-zamanlar-spor-kulubu-u18-akhisar-lce-spor-kulubu-u18-c415766",
         "host_name": "Değerli Zamanlar Spor Kulübü U18",
         "guest_name": "Akhisar İlçe Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "18:30",
         "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
@@ -1394,8 +1394,8 @@
         "url": "https://women.volleybox.net/tr/yunusemre-belediyespor-u18-turgutlu-belediyespor-u18-c415182",
         "host_name": "Yunusemre Belediyespor U18",
         "guest_name": "Turgutlu Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "20:30",
         "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
@@ -1518,5 +1518,5 @@
   "last_success_at": "2026-11-11T06:58:52.662838+00:00",
   "content_changed_at": "2026-11-11T06:58:52.662838+00:00",
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-11-11T10:00:09.826315"
+  "volleybox_sync_updated_at": "2026-11-11T11:38:06.328677"
 }

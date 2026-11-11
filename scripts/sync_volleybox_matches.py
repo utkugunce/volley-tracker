@@ -295,8 +295,48 @@ def extract_tournament_id(url: str) -> Optional[str]:
     return m.group(1) if m else None
 
 
+_ASCII_CA_BUNDLE: Optional[str] = None
+
+
+def get_ascii_ca_bundle() -> Optional[str]:
+    """Windows üzerinde Türkçe/Unicode karakter içeren yollarda libcurl SSL(77) hatasını önler."""
+    global _ASCII_CA_BUNDLE
+    if _ASCII_CA_BUNDLE and Path(_ASCII_CA_BUNDLE).exists():
+        return _ASCII_CA_BUNDLE
+    try:
+        import certifi
+        import shutil
+        ca_path = certifi.where()
+        try:
+            ca_path.encode("ascii")
+            _ASCII_CA_BUNDLE = ca_path
+            return _ASCII_CA_BUNDLE
+        except UnicodeEncodeError:
+            candidates = [
+                BASE_DIR / ".cacert.pem",
+                Path("C:/ProgramData/volley-tracker-cacert.pem"),
+            ]
+            for target in candidates:
+                try:
+                    str(target).encode("ascii")
+                    if not target.exists() or target.stat().st_size != Path(ca_path).stat().st_size:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(ca_path, target)
+                    _ASCII_CA_BUNDLE = str(target)
+                    return _ASCII_CA_BUNDLE
+                except Exception:
+                    continue
+    except Exception:
+        pass
+    return None
+
+
 def get_cffi_client(target: str = "safari17_0"):
-    c = cffi_requests.Session(impersonate=target)
+    ca_bundle = get_ascii_ca_bundle()
+    kwargs = {"impersonate": target}
+    if ca_bundle:
+        kwargs["verify"] = ca_bundle
+    c = cffi_requests.Session(**kwargs)
     c.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7"
     return c
 
@@ -313,6 +353,7 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     try:
         if HAS_CURL_CFFI:
             resp = None
+            last_err = None
             for imp in ["safari17_0", "chrome124", "safari15_5", "chrome120"]:
                 try:
                     if client:
@@ -321,9 +362,12 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
                     resp = client.get(matches_url, timeout=15.0)
                     if resp.status_code == 200:
                         break
-                except Exception:
+                except Exception as ex:
+                    last_err = ex
                     continue
             if resp is None:
+                if last_err:
+                    print(f"  [UYARI] Volleybox curl_cffi bağlantı hatası ({tournament_url.split('/')[-1]}): {last_err}")
                 return []
         else:
             client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
