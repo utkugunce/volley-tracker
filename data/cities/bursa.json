@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:35.314242",
+  "updated_at": "2026-11-12T17:13:11.886014",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -535,22 +535,22 @@
       },
       {
         "rank": 3,
-        "team": "Hürriyet Spor Kulübü U16",
-        "played": 2,
+        "team": "Nilüfer Belediyespor Eker (A)",
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Nilüfer Belediyespor Eker (A)",
-        "played": 2,
-        "won": 0,
+        "team": "Hürriyet Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 1,
+        "points": 3,
         "sets_won": 3,
         "sets_lost": 6,
         "form": []
@@ -4273,11 +4273,15 @@
       "match_no": "8",
       "home_team": "Hürriyet Spor Kulübü U16",
       "away_team": "Nilüfer Belediyespor Eker (A)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "7-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415232",
@@ -4336,9 +4340,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:35.375526+00:00",
-  "last_success_at": "2026-11-11T06:58:35.375526+00:00",
-  "content_changed_at": "2026-11-11T06:58:35.375526+00:00",
+  "last_attempt_at": "2026-11-12T17:13:11.888386+00:00",
+  "last_success_at": "2026-11-12T17:13:11.888386+00:00",
+  "content_changed_at": "2026-11-12T17:13:11.888386+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:14.303776"
+  "volleybox_sync_updated_at": "2026-11-12T17:14:59.667798"
 }

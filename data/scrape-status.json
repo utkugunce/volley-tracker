@@ -1,11 +1,331 @@
 {
-  "last_attempt_at": "2026-11-11T07:02:47.309320+00:00",
+  "last_attempt_at": "2026-11-12T17:12:52.451836+00:00",
   "last_success_at": "2026-11-11T07:02:51.122067+00:00",
-  "status": "success",
+  "status": "partial",
   "cities": [
+    {
+      "slug": "adana",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "adiyaman",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "afyon",
+      "status": "Aktif (21 Maç Mevcut)"
+    },
+    {
+      "slug": "agri",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "amasya",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "ankara",
+      "status": "Aktif (192 Maç Mevcut)"
+    },
+    {
+      "slug": "antalya",
+      "status": "Aktif (97 Maç Mevcut)"
+    },
+    {
+      "slug": "artvin",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "aydin",
+      "status": "Aktif (20 Maç Mevcut)"
+    },
+    {
+      "slug": "balikesir",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (65 Maç Mevcut)"
+    },
+    {
+      "slug": "bilecik",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+    },
+    {
+      "slug": "bingol",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "bitlis",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "bolu",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "burdur",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (6 Maç Mevcut)"
+    },
+    {
+      "slug": "bursa",
+      "status": "Aktif (87 Maç Mevcut)"
+    },
+    {
+      "slug": "canakkale",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)"
+    },
+    {
+      "slug": "cankiri",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "corum",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)"
+    },
+    {
+      "slug": "denizli",
+      "status": "Aktif (47 Maç Mevcut)"
+    },
+    {
+      "slug": "diyarbakir",
+      "status": "Aktif (10 Maç Mevcut)"
+    },
+    {
+      "slug": "edirne",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "elazig",
+      "status": "Aktif (28 Maç Mevcut)"
+    },
+    {
+      "slug": "erzincan",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "erzurum",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "eskisehir",
+      "status": "Aktif (67 Maç Mevcut)"
+    },
+    {
+      "slug": "gaziantep",
+      "status": "Aktif (35 Maç Mevcut)"
+    },
+    {
+      "slug": "giresun",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (30 Maç Mevcut)"
+    },
+    {
+      "slug": "gumushane",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "hakkari",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "hatay",
+      "status": "Aktif (56 Maç Mevcut)"
+    },
+    {
+      "slug": "isparta",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "mersin",
+      "status": "Aktif (27 Maç Mevcut)"
+    },
+    {
+      "slug": "istanbul",
+      "status": "Aktif (159 Maç Mevcut)"
+    },
+    {
+      "slug": "izmir",
+      "status": "Aktif (217 Maç Mevcut)"
+    },
+    {
+      "slug": "kars",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "kastamonu",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "kayseri",
+      "status": "Aktif (48 Maç Mevcut)"
+    },
+    {
+      "slug": "kirklareli",
+      "status": "Aktif (59 Maç Mevcut)"
+    },
+    {
+      "slug": "kirsehir",
+      "status": "Aktif (36 Maç Mevcut)"
+    },
+    {
+      "slug": "kocaeli",
+      "status": "Aktif (133 Maç Mevcut)"
+    },
+    {
+      "slug": "konya",
+      "status": "Aktif (41 Maç Mevcut)"
+    },
+    {
+      "slug": "kutahya",
+      "status": "Aktif (17 Maç Mevcut)"
+    },
+    {
+      "slug": "malatya",
+      "status": "Aktif (74 Maç Mevcut)"
+    },
+    {
+      "slug": "manisa",
+      "status": "Aktif (37 Maç Mevcut)"
+    },
+    {
+      "slug": "kahramanmaras",
+      "status": "Aktif (19 Maç Mevcut)"
+    },
+    {
+      "slug": "mardin",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "mugla",
+      "status": "Aktif (44 Maç Mevcut)"
+    },
+    {
+      "slug": "mus",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "nevsehir",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "nigde",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "ordu",
+      "status": "Aktif (6 Maç Mevcut)"
+    },
+    {
+      "slug": "rize",
+      "status": "Aktif (38 Maç Mevcut)"
+    },
+    {
+      "slug": "sakarya",
+      "status": "Aktif (32 Maç Mevcut)"
+    },
+    {
+      "slug": "samsun",
+      "status": "Aktif (64 Maç Mevcut)"
+    },
+    {
+      "slug": "siirt",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "sinop",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "sivas",
+      "status": "Puan Durumu Var (1 Tablo)"
+    },
+    {
+      "slug": "tekirdag",
+      "status": "Aktif (80 Maç Mevcut)"
+    },
+    {
+      "slug": "tokat",
+      "status": "Aktif (12 Maç Mevcut)"
+    },
+    {
+      "slug": "trabzon",
+      "status": "Aktif (12 Maç Mevcut)"
+    },
+    {
+      "slug": "tunceli",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "sanliurfa",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "usak",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "van",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "yozgat",
+      "status": "Fikstür Açıklanmadı"
+    },
     {
       "slug": "zonguldak",
       "status": "Aktif (4 Maç Mevcut)"
+    },
+    {
+      "slug": "aksaray",
+      "status": "Aktif (24 Maç Mevcut)"
+    },
+    {
+      "slug": "bayburt",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "karaman",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "kirikkale",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "batman",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "sirnak",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "bartin",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "ardahan",
+      "status": "Devre Dışı"
+    },
+    {
+      "slug": "igdir",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "yalova",
+      "status": "Aktif (20 Maç Mevcut)"
+    },
+    {
+      "slug": "karabuk",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "kilis",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "osmaniye",
+      "status": "Fikstür Açıklanmadı"
+    },
+    {
+      "slug": "duzce",
+      "status": "Aktif (6 Maç Mevcut)"
     }
   ]
 }

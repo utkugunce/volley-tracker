@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:59:00.693461",
+  "updated_at": "2026-11-12T17:13:48.215859",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -31,27 +31,38 @@
       {
         "rank": 1,
         "team": "Kuzeyboru Maxipipe Spor Kulübü U18",
-        "played": 4,
-        "won": 4,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 18,
+        "sets_won": 18,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Aksaray Yıldız Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 4,
-        "lost": 1,
+        "lost": 2,
         "points": 12,
-        "sets_won": 12,
-        "sets_lost": 3,
+        "sets_won": 13,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
+        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
+        "played": 6,
+        "won": 4,
+        "lost": 2,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "MBA Aksaray Anka Spor Kulübü U18",
         "played": 4,
         "won": 3,
@@ -59,17 +70,6 @@
         "points": 9,
         "sets_won": 9,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
-        "played": 5,
-        "won": 3,
-        "lost": 2,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 6,
         "form": []
       },
       {
@@ -86,28 +86,28 @@
       {
         "rank": 6,
         "team": "Eskil Tuzgölü Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 1,
-        "lost": 3,
+        "lost": 4,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Kuzeyboru U18",
-        "played": 4,
-        "won": 0,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 0,
         "sets_lost": 12,
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 7,
         "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
+        "played": 5,
+        "won": 0,
+        "lost": 5,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 15,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Kuzeyboru U18",
         "played": 5,
         "won": 0,
         "lost": 5,
@@ -928,11 +928,15 @@
       "match_no": "19",
       "home_team": "Eskil Tuzgölü Spor Kulübü U18",
       "away_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "7-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -962,11 +966,16 @@
       "match_no": "20",
       "home_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
       "away_team": "Kuzeyboru U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -996,11 +1005,16 @@
       "match_no": "21",
       "home_team": "MBA Aksaray Anka Spor Kulübü - B U18",
       "away_team": "Aksaray Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "25-27",
+        "25-18",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1120,9 +1134,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:59:00.821385+00:00",
-  "last_success_at": "2026-11-11T06:59:00.821385+00:00",
-  "content_changed_at": "2026-11-11T06:59:00.821385+00:00",
+  "last_attempt_at": "2026-11-12T17:13:48.216611+00:00",
+  "last_success_at": "2026-11-12T17:13:48.216611+00:00",
+  "content_changed_at": "2026-11-12T17:13:48.216611+00:00",
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-11T11:36:57.760089"
+  "volleybox_sync_updated_at": "2026-11-12T17:14:59.758276"
 }

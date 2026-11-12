@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:58.868619",
+  "updated_at": "2026-11-12T17:13:44.719838",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -101,34 +101,34 @@
       },
       {
         "rank": 7,
+        "team": "Bafra Akademi Gençlik SK U18",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 0,
+        "sets_won": 3,
+        "sets_lost": 14,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Bafra Vera Spor Kulübü U18",
+        "played": 4,
+        "won": 0,
+        "lost": 4,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 12,
+        "form": []
+      },
+      {
+        "rank": 9,
         "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "played": 4,
         "won": 0,
         "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Bafra Vera Spor Kulübü U18",
-        "played": 3,
-        "won": 0,
-        "lost": 3,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Bafra Akademi Gençlik SK U18",
-        "played": 4,
-        "won": 0,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 0,
         "sets_lost": 12,
         "form": []
       }
@@ -1093,11 +1093,17 @@
       "match_no": "20",
       "home_team": "Bafra Vera Spor Kulübü U18",
       "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "23-25",
+        "25-13",
+        "25-22",
+        "15-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402794",
@@ -3006,9 +3012,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:58.909675+00:00",
-  "last_success_at": "2026-11-11T06:58:58.909675+00:00",
-  "content_changed_at": "2026-11-11T06:58:58.909675+00:00",
+  "last_attempt_at": "2026-11-12T17:13:44.721534+00:00",
+  "last_success_at": "2026-11-12T17:13:44.721534+00:00",
+  "content_changed_at": "2026-11-12T17:13:44.721534+00:00",
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-11-11T11:38:12.041320"
+  "volleybox_sync_updated_at": "2026-11-12T17:14:59.732332"
 }
