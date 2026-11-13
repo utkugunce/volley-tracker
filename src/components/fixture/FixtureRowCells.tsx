@@ -37,12 +37,13 @@ export function FixtureFavoriteCell({ match, isFav, hasDiff, cardBorderClass, on
 interface FixtureDateCellProps extends FixtureCellBaseProps {
   disc: DiscrepancyInfo | null | undefined;
   formattedDate: string;
+  hasDiff?: boolean;
 }
 
 /** 1. Tarih */
-export function FixtureDateCell({ disc, formattedDate, cardBorderClass }: FixtureDateCellProps) {
+export function FixtureDateCell({ disc, formattedDate, cardBorderClass, hasDiff }: FixtureDateCellProps) {
   return (
-    <td className={`py-2.5 px-2 whitespace-nowrap w-[85px] border-y ${cardBorderClass}`}>
+    <td className={`py-2.5 px-2 whitespace-nowrap w-[85px] rounded-l-xl border-l border-y ${cardBorderClass} ${hasDiff ? "border-l-4 border-l-amber-500" : ""}`}>
       <div className="inline-flex flex-col">
         <span className={`inline-flex items-center font-mono font-bold text-[11px] px-2 py-0.5 rounded-md whitespace-nowrap shadow-xs ${
           disc?.date_diff

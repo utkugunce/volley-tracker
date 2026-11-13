@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
-import { ChevronRight } from "lucide-react";
+import React, { useState } from "react";
+import { AlertTriangle, Check, ChevronRight, ClipboardCopy } from "lucide-react";
 import type { Match, StandingItem } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { summarizeTeam } from "@/utils/standingsForm";
 import type { ParsedStandingContext } from "@/utils/standingsParsing";
+import { getResolvedVolleyboxTeamName, type StandingsAnomalyTeamDiff } from "@/utils/volleyboxWorkbench";
 import { FormDots } from "./FormDots";
 import { StandingsDetailRow } from "./StandingsDetailRow";
 
@@ -15,22 +16,39 @@ interface StandingsRowProps {
   activeContext: ParsedStandingContext | undefined;
   city?: string;
   matches?: Match[];
+  teamDiff?: StandingsAnomalyTeamDiff;
   toggleDetail: (row: StandingItem) => void;
 }
 
 /** Tek bir takımın puan durumu satırı (+ açıldığında detay satırı). */
-export function StandingsRow({ row, isExpanded, activeContext, city, matches, toggleDetail }: StandingsRowProps) {
+export function StandingsRow({ row, isExpanded, activeContext, city, matches, teamDiff, toggleDetail }: StandingsRowProps) {
+  const [copiedTeam, setCopiedTeam] = useState(false);
   const isTop4 = row.rank <= 4;
   const isPlayoff = row.rank <= 2;
   const isKlasman = row.rank > 2 && row.rank <= 8;
 
+  const effectiveCity = activeContext?.city || city || "";
+  const vbTeamName = getResolvedVolleyboxTeamName(row.team, activeContext?.leagueFullName, effectiveCity);
+
   const summary = summarizeTeam(
     row,
     activeContext
-      ? { city: activeContext.city || city || "", leagueName: activeContext.leagueFullName, groupName: activeContext.displayGroup }
+      ? { city: effectiveCity, leagueName: activeContext.leagueFullName, groupName: activeContext.displayGroup }
       : null,
     matches
   );
+
+  const handleCopyTeam = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!vbTeamName) return;
+    try {
+      void navigator.clipboard?.writeText(vbTeamName);
+      setCopiedTeam(true);
+      setTimeout(() => setCopiedTeam(false), 1400);
+    } catch {
+      // Clipboard API unavailable
+    }
+  };
 
   return (
     <React.Fragment>
@@ -70,18 +88,36 @@ export function StandingsRow({ row, isExpanded, activeContext, city, matches, to
         </td>
 
         {/* Takım Adı */}
-        <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-ink whitespace-nowrap text-xs sm:text-sm">
-          <div className="flex items-center gap-1.5">
+        <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-ink text-xs sm:text-sm">
+          <div className="flex items-center gap-1.5 min-w-0">
             <TeamVolleyboxLink
               teamName={row.team}
               category={activeContext?.leagueFullName}
-              city={activeContext?.city || city}
+              city={effectiveCity}
               className={`transition-colors ${
                 isTop4
                   ? "font-bold text-ink"
                   : "font-semibold text-ink-2 hover:text-ink"
               }`}
             />
+            {teamDiff && (
+              <span
+                className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[9px] font-scoreboard tabular-nums font-bold shrink-0"
+                title={`TVF Tablosu: ${teamDiff.tvfPlayed}O / ${teamDiff.tvfWon}G · Fikstürdeki Biten Maç: ${teamDiff.calcPlayed}O / ${teamDiff.calcWon}G`}
+              >
+                <AlertTriangle size={9} className="text-amber-400" />
+                <span>{teamDiff.tvfPlayed}≠{teamDiff.calcPlayed}</span>
+              </span>
+            )}
+            <button
+              type="button"
+              onClick={handleCopyTeam}
+              className="hidden sm:inline-flex h-6 w-6 shrink-0 items-center justify-center rounded text-ink-3 hover:bg-surface-raised hover:text-primary transition-colors cursor-pointer"
+              title={`Volleybox takım adını kopyala: ${vbTeamName}`}
+              aria-label={`${vbTeamName} adını kopyala`}
+            >
+              {copiedTeam ? <Check size={12} className="text-emerald-400" /> : <ClipboardCopy size={12} />}
+            </button>
             <button
               type="button"
               onClick={(e) => {
@@ -118,6 +154,16 @@ export function StandingsRow({ row, isExpanded, activeContext, city, matches, to
         {/* Set (combined, sm: only) */}
         <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden sm:table-cell font-display font-scoreboard tabular-nums text-ink-2 text-[11px] sm:text-xs">
           {row.sets_won}-{row.sets_lost}
+        </td>
+
+        {/* Set Oranı (md: only) */}
+        <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden md:table-cell font-display font-scoreboard tabular-nums text-ink-2 text-[11px]">
+          {row.set_ratio || "-"}
+        </td>
+
+        {/* Sayı (lg: only) */}
+        <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden lg:table-cell font-display font-scoreboard tabular-nums text-ink-3 text-[11px]">
+          {row.points_won}-{row.points_lost}
         </td>
 
         {/* Puan */}

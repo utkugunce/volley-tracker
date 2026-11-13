@@ -10,8 +10,10 @@ import { useStandingsCityDropdown } from "@/hooks/useStandingsCityDropdown";
 import { useStandingsRowExpansion } from "@/hooks/useStandingsRowExpansion";
 import type { StandingsTeamContext } from "@/utils/standingsParsing";
 import { detectStandingsAnomalies } from "@/utils/volleyboxWorkbench";
+import { isMatchScored } from "@/utils/matchScoring";
 import { StandingsEmptyState } from "./standings/StandingsEmptyState";
 import { StandingsSelectorBar } from "./standings/StandingsSelectorBar";
+import { StandingsOperatorBanner } from "./standings/StandingsOperatorBanner";
 import { StandingsHeaderStrip } from "./standings/StandingsHeaderStrip";
 import { StandingsNoDataState } from "./standings/StandingsNoDataState";
 import { StandingsTableView } from "./standings/StandingsTableView";
@@ -46,7 +48,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
   onToggleFavorite,
 }) => {
   const [showSimulator, setShowSimulator] = useState(false);
-  const [matchesLayout, setMatchesLayout] = useState<"split" | "results" | "fixtures">("split");
+  const [matchesLayout, setMatchesLayout] = useState<"split" | "results" | "fixtures" | "vb-actionable">("split");
   const {
     allKeys,
     distinctCities,
@@ -106,6 +108,16 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
     return found[0] || null;
   }, [finishedMatches, activeContext, items, city]);
 
+  const vbActionableMatches = useMemo(() => {
+    return [...finishedMatches, ...upcomingMatches].filter((m) => {
+      const hasValidDate = Boolean(m.date && /^\d{4}-\d{2}-\d{2}$/.test(m.date));
+      const needsScore = isMatchScored(m) && m.volleybox?.synced && !m.volleybox?.has_score;
+      const needsEntry = hasValidDate && !m.volleybox?.synced;
+      const hasDiff = Boolean(m.volleybox?.synced && m.volleybox?.discrepancy?.has_diff);
+      return needsScore || needsEntry || hasDiff;
+    });
+  }, [finishedMatches, upcomingMatches]);
+
   if (allKeys.length === 0) {
     return <StandingsEmptyState />;
   }
@@ -127,6 +139,19 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
         selectedGroupKey={selectedGroupKey}
         setSelectedGroupKey={setSelectedGroupKey}
       />
+
+      {/* Grup Operatör Özet Şeridi */}
+      {items.length > 0 && (
+        <StandingsOperatorBanner
+          activeContext={activeContext}
+          city={city}
+          items={items}
+          finishedMatches={finishedMatches}
+          upcomingMatches={upcomingMatches}
+          forfeitCount={groupAnomaly?.forfeitMatchCount || 0}
+          discrepancyTeams={groupAnomaly?.discrepancyTeams || []}
+        />
+      )}
 
       {/* Puan Durumu Tablosu veya Boş Durum */}
       <div className="rounded-2xl border border-line bg-surface shadow-card overflow-hidden">
@@ -163,6 +188,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
             activeContext={activeContext}
             city={city}
             matches={matches}
+            discrepancyTeams={groupAnomaly?.discrepancyTeams || []}
             expandedTeam={expandedTeam}
             toggleDetail={toggleDetail}
           />
@@ -180,7 +206,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
             <span className="text-xs font-bold uppercase tracking-wider text-ink-3">
               Grup Maç Programı & Skorlar
             </span>
-            <div className="inline-flex items-center p-0.5 rounded-xl bg-surface border border-line text-xs font-semibold self-start sm:self-auto shadow-xs">
+            <div className="inline-flex flex-wrap items-center p-0.5 rounded-xl bg-surface border border-line text-xs font-semibold self-start sm:self-auto shadow-xs">
               <button
                 type="button"
                 onClick={() => setMatchesLayout("split")}
@@ -191,6 +217,17 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
                 }`}
               >
                 Yan Yana ({finishedMatches.length + upcomingMatches.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatchesLayout("vb-actionable")}
+                className={`px-3 py-1 rounded-lg text-[11px] transition-colors cursor-pointer ${
+                  matchesLayout === "vb-actionable"
+                    ? "bg-amber-500 text-black font-bold shadow-xs"
+                    : "text-amber-300 hover:text-white"
+                }`}
+              >
+                VB Eksik ({vbActionableMatches.length})
               </button>
               <button
                 type="button"
@@ -217,7 +254,32 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
             </div>
           </div>
 
-          <div className={matchesLayout === "split" ? "grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start" : "space-y-3"}>
+          {matchesLayout === "vb-actionable" ? (
+            vbActionableMatches.length > 0 ? (
+              <div className="min-w-0">
+                <LeagueSection
+                  leagueTitle={activeContext?.leagueFullName || "Voleybol Ligi"}
+                  sectionLabel={
+                    activeContext?.displayGroup
+                      ? `${activeContext.displayGroup} · Volleybox Giriş / Skor Bekleyenler`
+                      : "Volleybox Giriş / Skor Bekleyenler"
+                  }
+                  cityName={activeContext?.city || city}
+                  matches={vbActionableMatches}
+                  mode="today"
+                  showGroupBadge={false}
+                  onSelectMatch={onSelectMatch}
+                  favorites={favorites}
+                  onToggleFavorite={onToggleFavorite}
+                />
+              </div>
+            ) : (
+              <div className="rounded-xl border border-line bg-surface p-5 text-center text-xs text-ink-2">
+                Bu grupta Volleybox girişi veya skoru eksik maç bulunmuyor.
+              </div>
+            )
+          ) : (
+            <div className={matchesLayout === "split" ? "grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start" : "space-y-3"}>
             {(matchesLayout === "split" || matchesLayout === "results") && finishedMatches.length > 0 && (
               <div className="min-w-0">
                 <LeagueSection
@@ -249,6 +311,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
               </div>
             )}
           </div>
+          )}
         </div>
       )}
     </div>

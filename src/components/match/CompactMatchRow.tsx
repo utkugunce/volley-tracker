@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CalendarPlus, Star } from "lucide-react";
+import { CalendarPlus } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
@@ -42,8 +42,6 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   match,
   isSelected = false,
   onSelect,
-  isFavorite = false,
-  onToggleFavorite,
   mode = "today",
   showGroupBadge = false,
 }) => {
@@ -335,9 +333,9 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         </div>
       </div>
 
-      {/* 3. Sağ Kısım: Favori Yıldızı */}
-      <div className="shrink-0 flex items-center gap-0.5 pl-1.5 pr-0.5">
-        {mode === "fixtures" && (
+      {/* 3. Sağ Kısım: Takvime Ekle */}
+      {mode === "fixtures" && (
+        <div className="shrink-0 flex items-center gap-0.5 pl-1.5 pr-0.5">
           <button
             type="button"
             aria-label="Takvime ekle"
@@ -348,23 +346,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           >
             <CalendarPlus size={13} />
           </button>
-        )}
-        <button
-          type="button"
-          aria-label={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleFavorite?.(match.id);
-          }}
-          className={`p-1 rounded-md transition-colors ${
-            isFavorite
-              ? "text-amber-400"
-              : "text-ink-2 hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
-          }`}
-        >
-          <Star size={13} className={isFavorite ? "fill-amber-400" : ""} />
-        </button>
-      </div>
+        </div>
+      )}
     </div>
   );
 };

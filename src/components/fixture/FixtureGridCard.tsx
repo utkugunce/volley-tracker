@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star, MapPin, CalendarPlus, Copy, Check, AlertTriangle, ChevronRight } from "lucide-react";
+import { MapPin, CalendarPlus, Copy, Check, AlertTriangle, ChevronRight } from "lucide-react";
 import type { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { isMatchOverdueForScore } from "@/utils/calendar";
@@ -108,14 +108,6 @@ export function FixtureGridCard({
               title="Maç Detayını Kopyala"
             >
               {isCopied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
-            </button>
-            <button
-              onClick={() => onToggleFavorite?.(match.id)}
-              className="p-1 min-w-[28px] min-h-[28px] flex items-center justify-center rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
-              title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
-              aria-label={isFav ? `${match.home_team} - ${match.away_team} maçını favorilerden çıkar` : `${match.home_team} - ${match.away_team} maçını favorilere ekle`}
-            >
-              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
             </button>
           </div>
         </div>

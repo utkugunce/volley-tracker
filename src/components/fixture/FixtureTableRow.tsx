@@ -3,7 +3,7 @@
 import React from "react";
 import type { Match } from "@/types/fixture";
 import { getFixtureRowState } from "@/utils/fixtureTable";
-import { FixtureFavoriteCell, FixtureDateCell, FixtureTimeCell, FixtureHallCell } from "./FixtureRowCells";
+import { FixtureDateCell, FixtureTimeCell, FixtureHallCell } from "./FixtureRowCells";
 import { FixtureHomeTeamCell, FixtureScoreCell, FixtureAwayTeamCell, FixtureSetScoresCell } from "./FixtureRowTeamCells";
 import { FixtureVolleyboxCell, FixtureActionsCell } from "./FixtureRowStatusCells";
 
@@ -38,7 +38,6 @@ export function FixtureTableRow({
   handleDownloadIcs,
 }: FixtureTableRowProps) {
   const {
-    isFav,
     isFinished,
     homeWon,
     awayWon,
@@ -54,15 +53,13 @@ export function FixtureTableRow({
 
   const cardBorderClass = hasDiff
     ? "border-amber-500/60 bg-amber-950/25 group-hover:bg-amber-950/45 group-hover:border-amber-500/80"
-    : isFav
-    ? "border-amber-500/40 bg-amber-500/10 group-hover:bg-amber-500/20 group-hover:border-amber-400/60"
     : "border-slate-800/80 bg-slate-900/65 group-hover:bg-slate-850/90 group-hover:border-slate-700/80";
 
   return (
     <React.Fragment>
       {isFirstOfGroup && (
         <tr >
-          <td colSpan={10} className="py-2 px-3.5 rounded-lg bg-surface-muted border border-line/60 text-ink font-bold text-[11px] uppercase tracking-wider">
+          <td colSpan={9} className="py-2 px-3.5 rounded-lg bg-surface-muted border border-line/60 text-ink font-bold text-[11px] uppercase tracking-wider">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary"></span>
@@ -81,17 +78,8 @@ export function FixtureTableRow({
           onSelectMatch ? "cursor-pointer" : ""
         } hover:bg-surface-raised/40`}
       >
-        {/* ⭐ Favori */}
-        <FixtureFavoriteCell
-          match={match}
-          isFav={isFav}
-          hasDiff={hasDiff}
-          cardBorderClass={cardBorderClass}
-          onToggleFavorite={onToggleFavorite}
-        />
-
         {/* 1. Tarih */}
-        <FixtureDateCell disc={disc} formattedDate={formattedDate} cardBorderClass={cardBorderClass} />
+        <FixtureDateCell disc={disc} formattedDate={formattedDate} cardBorderClass={cardBorderClass} hasDiff={hasDiff} />
 
         {/* 2. Saat */}
         <FixtureTimeCell match={match} disc={disc} cardBorderClass={cardBorderClass} />

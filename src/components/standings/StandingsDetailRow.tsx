@@ -13,7 +13,7 @@ interface StandingsDetailRowProps {
 export function StandingsDetailRow({ row, summary }: StandingsDetailRowProps) {
   return (
     <tr data-detail-for={row.team}>
-      <td colSpan={8} className="p-0">
+      <td colSpan={10} className="p-0">
         <div className="bg-surface-raised border-t border-line relative">
           <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-primary" />
           <div className="pl-6 pr-4 py-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">

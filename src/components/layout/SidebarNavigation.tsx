@@ -3,7 +3,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import {
   Trophy,
-  Star,
   MapPin,
   ChevronDown,
   Layers,
@@ -31,11 +30,9 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
   matches = [],
   selectedCategory = "Tümü",
   onSelectCategory,
-  favoritesCount = 0,
   totalMatches = 0,
   onToggleCollapse,
 }) => {
-  const [isFavoritesOpen, setIsFavoritesOpen] = useState(true);
   const [expandedCities, setExpandedCities] = useState<Record<string, boolean>>({
     [currentCity]: true,
     all: true,
@@ -114,39 +111,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
       </div>
 
       <div className="flex-1 overflow-y-auto custom-scrollbar p-2.5 space-y-3">
-        {/* 1. BÖLÜM: FAVORİLERİM & HIZLI ERİŞİM */}
-        <div className="space-y-1 pb-2 border-b border-line/50">
-          <button
-            type="button"
-            onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
-            className="w-full flex items-center justify-between text-[11px] font-bold text-ink-3 hover:text-white px-2 py-1 rounded transition-colors cursor-pointer"
-          >
-            <span className="flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
-              <Star size={12} className="text-warn" />
-              <span>Favorilerim</span>
-            </span>
-            <ChevronDown
-              size={12}
-              className={`transform transition-transform duration-200 ${isFavoritesOpen ? "rotate-0" : "-rotate-90"}`}
-            />
-          </button>
-
-          {isFavoritesOpen && (
-            <div className="space-y-0.5 pt-0.5">
-              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-ink-2">
-                <span className="flex items-center gap-2">
-                  <Star size={12} className="text-warn" />
-                  <span className="font-medium text-[11px]">Yıldızlı Maçlar</span>
-                </span>
-                <span className="font-display font-semibold tabular-nums text-ink-3 text-[11px]">
-                  {favoritesCount}
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* 2. BÖLÜM: İLLER & ALTYAPI LİGLERİ HİYERARŞİSİ */}
+        {/* İLLER & ALTYAPI LİGLERİ HİYERARŞİSİ */}
         <div className="space-y-1">
           <div className="flex items-center justify-between px-2 py-1 text-[10px] uppercase font-bold tracking-wider text-ink-3">
             <span className="flex items-center gap-1.5">

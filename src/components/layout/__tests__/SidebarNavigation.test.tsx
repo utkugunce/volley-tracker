@@ -107,7 +107,7 @@ describe("SidebarNavigation & leagueHierarchy", () => {
   });
 
   describe("SidebarNavigation UI Entegrasyonu", () => {
-    it("Favorilerim ve İller & Altyapı Ligleri başlıklarını render eder", () => {
+    it("Favorilerim bölümünü göstermeden İller & Altyapı Ligleri başlıklarını render eder", () => {
       render(
         <SidebarNavigation
           cities={sampleCities}
@@ -119,7 +119,7 @@ describe("SidebarNavigation & leagueHierarchy", () => {
       );
 
       expect(screen.getByText("Lig Ağacı")).toBeDefined();
-      expect(screen.getByText("Favorilerim")).toBeDefined();
+      expect(screen.queryByText("Favorilerim")).toBeNull();
       expect(screen.getByText("İller & Altyapı Ligleri")).toBeDefined();
       expect(screen.getByText("Tümünü Göster")).toBeDefined();
     });

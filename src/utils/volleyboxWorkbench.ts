@@ -64,6 +64,175 @@ export interface VolleyboxWorkbenchData {
 
 const VALID_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
+/** Converts a Volleybox tournament URL to its editable `/tr/<slug>/matches` tab URL. */
+export function toVolleyboxMatchesUrl(url?: string | null): string | null {
+  if (!url || !url.trim()) return null;
+  let clean = url.trim().replace(/\/+$/, "");
+  if (clean.startsWith("https://women.volleybox.net/") && !clean.includes("/tr/")) {
+    clean = clean.replace("https://women.volleybox.net/", "https://women.volleybox.net/tr/");
+  }
+  if (!clean.endsWith("/matches")) {
+    clean = `${clean}/matches`;
+  }
+  return clean;
+}
+
+/** Resolves the editable Volleybox tournament `/matches` tab URL for a TVF league/city pair. */
+export function getVolleyboxTournamentMatchesUrl(category?: string, city?: string): string | null {
+  if (!category || !category.trim()) return null;
+  const mapping = getVolleyboxLeagueMapping(category, city);
+  return toVolleyboxMatchesUrl(mapping?.volleybox_url);
+}
+
+const HALL_NOISE_WORDS = [
+  "spor kompleksi",
+  "voleybol salonu",
+  "spor salonu",
+  "kapalı spor salonu",
+  "kapali spor salonu",
+  "çok amaçlı",
+  "cok amacli",
+  "gençlik merkezi",
+  "genclik merkezi",
+  "voleybol",
+  "salonu",
+  "kompleksi",
+  "tesisi",
+  "tesisleri",
+  "lisesi",
+  "belediyesi",
+  "tvf",
+  "gençlik",
+  "genclik",
+  "spor",
+  "saha",
+  "vestel",
+];
+
+const CURATED_VOLLEYBOX_HALLS: Array<{ city?: string; keywords: string[]; vbName: string }> = [
+  { city: "istanbul", keywords: ["50. yıl", "50.yıl", "50 yıl", "deniz esinduy"], vbName: "50. Yıl Deniz Esinduy Voleybol Salonu" },
+  { city: "istanbul", keywords: ["hasan doğan", "hasan dogan"], vbName: "Hasan Doğan Spor Kompleksi" },
+  { city: "istanbul", keywords: ["mimar sinan"], vbName: "Mimar Sinan Spor Salonu" },
+  { city: "istanbul", keywords: ["bahçelievler engelliler", "bahcelievler engelliler", "engelliler"], vbName: "Bahçelievler Engelliler Spor Salonu" },
+  { city: "istanbul", keywords: ["gazanfer bilge"], vbName: "Gazanfer Bilge Spor Salonu" },
+  { city: "istanbul", keywords: ["kurtköy", "kurtkoy"], vbName: "Kurtköy Spor Salonu" },
+  { city: "istanbul", keywords: ["mehmet beyazıt", "mehmet beyazit"], vbName: "Mehmet Beyazıt Lisesi Spor Salonu" },
+  { city: "istanbul", keywords: ["osman altınkuyu", "osman altinkuyu"], vbName: "Şehit Osman Altınkuyu Spor Salonu" },
+  { city: "istanbul", keywords: ["es voleybol"], vbName: "ES Voleybol Salonu" },
+  { city: "istanbul", keywords: ["burhan felek"], vbName: "TVF Burhan Felek Vestel Voleybol Salonu" },
+  { city: "istanbul", keywords: ["hidayet türkoğlu", "hidayet turkoglu"], vbName: "Hidayet Türkoğlu Spor Kompleksi" },
+  { city: "istanbul", keywords: ["tozkoparan"], vbName: "Tozkoparan Spor Salonu" },
+  { city: "istanbul", keywords: ["caferağa", "caferaga"], vbName: "Caferağa Spor Salonu" },
+  { city: "istanbul", keywords: ["sarıyer", "sariyer"], vbName: "Sarıyer Spor Salonu" },
+  { city: "istanbul", keywords: ["müzahir sille", "muzahir sille"], vbName: "Müzahir Sille Spor Salonu" },
+  { city: "istanbul", keywords: ["beylikdüzü", "beylikduzu"], vbName: "Beylikdüzü Spor Kompleksi" },
+  { city: "istanbul", keywords: ["bağcılar çok amaçlı", "bagcilar cok amacli"], vbName: "Bağcılar Çok Amaçlı Spor Salonu" },
+  { city: "ankara", keywords: ["beştepe", "bestepe"], vbName: "Beştepe Voleybol Salonu" },
+  { city: "ankara", keywords: ["selim sırrı", "selim sirri"], vbName: "Selim Sırrı Tarcan Zeren Voleybol Salonu" },
+  { city: "ankara", keywords: ["başkent", "baskent"], vbName: "TVF Başkent Voleybol Salonu" },
+  { city: "ankara", keywords: ["yenimahalle"], vbName: "Yenimahalle Spor Kompleksi" },
+  { city: "izmir", keywords: ["fuar izmir", "gaziemir"], vbName: "Fuar İzmir Spor Salonu" },
+  { city: "izmir", keywords: ["alsancak", "atatürk voleybol"], vbName: "Atatürk Voleybol Salonu Vestel Spor Kompleksi" },
+  { city: "izmir", keywords: ["balçova", "balcova"], vbName: "Balçova Spor Salonu" },
+  { city: "izmir", keywords: ["serdar yereli"], vbName: "Serdar Yereli Spor Salonu" },
+  { city: "izmir", keywords: ["celal atik"], vbName: "Celal Atik Spor Salonu" },
+  { city: "izmir", keywords: ["kınık", "kinik"], vbName: "Kınık Spor Salonu" },
+  { city: "bursa", keywords: ["cengiz göllü", "cengiz gollu"], vbName: "TVF Cengiz Göllü Voleybol Salonu" },
+  { city: "bursa", keywords: ["çekirge", "cekirge"], vbName: "Çekirge Spor Salonu" },
+];
+
+function asciiFoldTr(text: string): string {
+  return text
+    .replace(/İ/g, "i")
+    .replace(/I/g, "i")
+    .replace(/ı/g, "i")
+    .replace(/Ş/g, "s")
+    .replace(/ş/g, "s")
+    .replace(/Ğ/g, "g")
+    .replace(/ğ/g, "g")
+    .replace(/Ü/g, "u")
+    .replace(/ü/g, "u")
+    .replace(/Ö/g, "o")
+    .replace(/ö/g, "o")
+    .replace(/Ç/g, "c")
+    .replace(/ç/g, "c")
+    .toLowerCase();
+}
+
+function normalizeHallForComparison(hall: string): string {
+  let h = asciiFoldTr(hall).replace(/[.,\-_/()']/g, " ").replace(/\s+/g, " ").trim();
+  for (const noise of HALL_NOISE_WORDS) {
+    h = h.replace(new RegExp(`\\b${asciiFoldTr(noise)}\\b`, "gi"), " ");
+  }
+  return h.replace(/\s+/g, " ").trim();
+}
+
+export function doHallsMatch(tvfHall: string, vbHall: string): boolean {
+  if (!tvfHall || !vbHall) return false;
+  const h1 = normalizeHallForComparison(tvfHall);
+  const h2 = normalizeHallForComparison(vbHall);
+  if (!h1 || !h2) return false;
+  if (h1 === h2) return true;
+  if (h1.length >= 4 && h2.includes(h1)) return true;
+  if (h2.length >= 4 && h1.includes(h2)) return true;
+
+  const w1 = new Set(h1.split(" ").filter((w) => w.length >= 3));
+  const w2 = new Set(h2.split(" ").filter((w) => w.length >= 3));
+  if (w1.size === 0 || w2.size === 0) return false;
+
+  let commonCount = 0;
+  for (const word of w1) {
+    if (w2.has(word)) commonCount += 1;
+  }
+  const minLen = Math.min(w1.size, w2.size);
+  return minLen > 0 && commonCount / minLen >= 0.6;
+}
+
+/** Resolves a TVF hall string to its official Volleybox arena name when known. */
+export function getResolvedVolleyboxHallName(
+  tvfHall?: string | null,
+  city?: string,
+  allMatches?: Match[],
+  matchVbHall?: string | null
+): string {
+  const cleanHall = (tvfHall || "").trim();
+  if (!cleanHall || cleanHall === "TBD") return "";
+
+  if (matchVbHall && matchVbHall.trim() && doHallsMatch(cleanHall, matchVbHall.trim())) {
+    return matchVbHall.trim();
+  }
+
+  const cityNorm = city && city !== "Tüm İller" ? asciiFoldTr(city.trim()) : "";
+
+  if (allMatches && allMatches.length > 0) {
+    for (const m of allMatches) {
+      const candidateVbHall = m.volleybox?.vb_hall?.trim();
+      if (!candidateVbHall) continue;
+      if (cityNorm && m.city && asciiFoldTr(m.city.trim()) !== cityNorm) continue;
+      if (doHallsMatch(cleanHall, candidateVbHall)) {
+        return candidateVbHall;
+      }
+    }
+    for (const m of allMatches) {
+      const candidateVbHall = m.volleybox?.vb_hall?.trim();
+      if (!candidateVbHall) continue;
+      if (doHallsMatch(cleanHall, candidateVbHall)) {
+        return candidateVbHall;
+      }
+    }
+  }
+
+  const hallFolded = asciiFoldTr(cleanHall);
+  for (const entry of CURATED_VOLLEYBOX_HALLS) {
+    if (entry.city && cityNorm && entry.city !== cityNorm) continue;
+    if (entry.keywords.some((kw) => hallFolded.includes(asciiFoldTr(kw)))) {
+      return entry.vbName;
+    }
+  }
+
+  return cleanHall;
+}
+
 /** Resolves official Volleybox team name (`matched_as`) with TVF name fallback. */
 export function getResolvedVolleyboxTeamName(
   teamName: string,
@@ -91,7 +260,11 @@ export function formatSetScoresForVolleybox(setScores?: string[] | null): string
 }
 
 /** Builds a concise single-line Volleybox operator entry summary for a match. */
-export function formatMatchForVolleyboxCopy(match: Match, defaultCity?: string): string {
+export function formatMatchForVolleyboxCopy(
+  match: Match,
+  defaultCity?: string,
+  allMatches?: Match[]
+): string {
   const effectiveCity = match.city || (defaultCity && defaultCity !== "Tüm İller" ? defaultCity : undefined);
   const home = getResolvedVolleyboxTeamName(match.home_team, match.category, effectiveCity);
   const away = getResolvedVolleyboxTeamName(match.away_team, match.category, effectiveCity);
@@ -105,7 +278,7 @@ export function formatMatchForVolleyboxCopy(match: Match, defaultCity?: string):
     : "";
   const setsText = scored ? formatSetScoresForVolleybox(match.set_scores) : "";
   const resultPart = scorePart ? (setsText ? `${scorePart} (${setsText})` : scorePart) : "";
-  const hallPart = match.hall && match.hall !== "TBD" ? match.hall : "";
+  const hallPart = getResolvedVolleyboxHallName(match.hall, effectiveCity, allMatches, match.volleybox?.vb_hall);
 
   return [datePart, `${home} - ${away}`, resultPart, hallPart].filter(Boolean).join(" | ");
 }

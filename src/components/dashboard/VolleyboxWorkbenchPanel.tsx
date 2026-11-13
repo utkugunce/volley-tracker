@@ -19,7 +19,9 @@ import {
   buildVolleyboxWorkbenchData,
   formatMatchForVolleyboxCopy,
   formatSetScoresForVolleybox,
+  getResolvedVolleyboxHallName,
   getResolvedVolleyboxTeamName,
+  getVolleyboxTournamentMatchesUrl,
   type VolleyboxQueueTab,
 } from "@/utils/volleyboxWorkbench";
 
@@ -303,11 +305,14 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                 const effCity = m.city || city || "";
                 const vbHome = getResolvedVolleyboxTeamName(m.home_team, m.category, effCity);
                 const vbAway = getResolvedVolleyboxTeamName(m.away_team, m.category, effCity);
+                const vbHall = getResolvedVolleyboxHallName(m.hall, effCity, matches, m.volleybox?.vb_hall);
                 const setsText = formatSetScoresForVolleybox(m.set_scores);
-                const fullMatchText = formatMatchForVolleyboxCopy(m, effCity);
+                const fullMatchText = formatMatchForVolleyboxCopy(m, effCity, matches);
                 const vbUrl =
                   m.volleybox?.url ||
                   (m.volleybox?.match_id ? `https://women.volleybox.net/m${m.volleybox.match_id}` : null);
+                const vbMatchesUrl = getVolleyboxTournamentMatchesUrl(m.category, effCity);
+                const editUrl = vbMatchesUrl || vbUrl;
 
                 return (
                   <div
@@ -337,6 +342,11 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                           Setler: <span className="text-ink font-semibold">{setsText}</span>
                         </div>
                       )}
+                      {vbHall && (
+                        <div className="text-[11px] text-ink-2 truncate">
+                          Salon (VB): <span className="text-ink font-medium">{vbHall}</span>
+                        </div>
+                      )}
                     </div>
 
                     <div
@@ -344,15 +354,19 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                       onClick={(e) => e.stopPropagation()}
                     >
                       {setsText && renderCopyButton(`sets-${m.id}`, setsText, "Setleri Kopyala")}
+                      {m.date && m.date !== "TBD" && renderCopyButton(`ms-date-${m.id}`, m.date, `Tarih (${m.date})`)}
+                      {m.time && m.time !== "--:--" && renderCopyButton(`ms-time-${m.id}`, m.time, `Saat (${m.time})`)}
+                      {vbHall && renderCopyButton(`ms-hall-${m.id}`, vbHall, "Salonu Kopyala")}
                       {renderCopyButton(`match-${m.id}`, fullMatchText, "Maçı Kopyala")}
-                      {vbUrl && (
+                      {editUrl && (
                         <a
-                          href={vbUrl}
+                          href={editUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title="Volleybox lig maçlar sekmesinde skoru gir"
                           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold transition-colors"
                         >
-                          <span>VB Maç Sayfası</span>
+                          <span>VB Maçlar Sekmesi</span>
                           <ExternalLink size={11} />
                         </a>
                       )}
@@ -366,10 +380,13 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                 const effCity = m.city || city || "";
                 const vbHome = getResolvedVolleyboxTeamName(m.home_team, m.category, effCity);
                 const vbAway = getResolvedVolleyboxTeamName(m.away_team, m.category, effCity);
+                const vbHall = getResolvedVolleyboxHallName(m.hall, effCity, matches);
                 const disc = m.volleybox?.discrepancy;
                 const vbUrl =
                   m.volleybox?.url ||
                   (m.volleybox?.match_id ? `https://women.volleybox.net/m${m.volleybox.match_id}` : null);
+                const vbMatchesUrl = getVolleyboxTournamentMatchesUrl(m.category, effCity);
+                const editUrl = vbMatchesUrl || vbUrl;
 
                 return (
                   <div
@@ -400,7 +417,7 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                         )}
                         {disc?.hall_diff && (
                           <span className="px-2 py-0.5 rounded bg-surface border border-amber-500/40 text-amber-200 font-sans">
-                            Salon: {disc.vb_hall || "?"} → <strong>{m.hall}</strong>
+                            Salon: {disc.vb_hall || "?"} → <strong>{vbHall || m.hall}</strong>
                           </span>
                         )}
                       </div>
@@ -410,16 +427,18 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                       className="flex items-center gap-1.5 flex-wrap shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {renderCopyButton(`disc-date-${m.id}`, `${m.date} ${m.time}`.trim(), "Tarih/Saat")}
-                      {m.hall && m.hall !== "TBD" && renderCopyButton(`disc-hall-${m.id}`, m.hall, "Salonu Kopyala")}
-                      {vbUrl && (
+                      {m.date && m.date !== "TBD" && renderCopyButton(`disc-date-${m.id}`, m.date, `Tarih (${m.date})`)}
+                      {m.time && m.time !== "--:--" && renderCopyButton(`disc-time-${m.id}`, m.time, `Saat (${m.time})`)}
+                      {vbHall && renderCopyButton(`disc-hall-${m.id}`, vbHall, "Salonu Kopyala")}
+                      {editUrl && (
                         <a
-                          href={vbUrl}
+                          href={editUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title="Volleybox lig maçlar sekmesinde düzenle"
                           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 text-[11px] font-bold transition-colors"
                         >
-                          <span>VB&apos;de Düzenle</span>
+                          <span>VB&apos;de Düzenle (Maçlar)</span>
                           <ExternalLink size={11} />
                         </a>
                       )}
@@ -433,7 +452,9 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                 const effCity = m.city || city || "";
                 const vbHome = getResolvedVolleyboxTeamName(m.home_team, m.category, effCity);
                 const vbAway = getResolvedVolleyboxTeamName(m.away_team, m.category, effCity);
+                const vbHall = getResolvedVolleyboxHallName(m.hall, effCity, matches, m.volleybox?.vb_hall);
                 const leagueUrl = getVolleyboxLeagueMapping(m.category, effCity)?.volleybox_url;
+                const vbMatchesUrl = getVolleyboxTournamentMatchesUrl(m.category, effCity) || leagueUrl;
                 const setsText = formatSetScoresForVolleybox(m.set_scores);
 
                 return (
@@ -465,8 +486,11 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                           </span>
                         )}
                       </div>
-                      {m.hall && m.hall !== "TBD" && (
-                        <div className="text-[11px] text-ink-2 truncate">Salon: {m.hall}</div>
+                      {vbHall && (
+                        <div className="text-[11px] text-ink-2 truncate">
+                          Salon (VB): <span className="text-ink font-medium">{vbHall}</span>
+                          {vbHall !== m.hall && <span className="text-ink-3"> · TVF: {m.hall}</span>}
+                        </div>
                       )}
                     </div>
 
@@ -474,18 +498,21 @@ export const VolleyboxWorkbenchPanel: React.FC<VolleyboxWorkbenchPanelProps> = (
                       className="flex items-center gap-1.5 flex-wrap shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {renderCopyButton(`u-date-${m.id}`, m.date, m.date)}
+                      {m.date && m.date !== "TBD" && renderCopyButton(`u-date-${m.id}`, m.date, `Tarih (${m.date})`)}
+                      {m.time && m.time !== "--:--" && renderCopyButton(`u-time-${m.id}`, m.time, `Saat (${m.time})`)}
                       {renderCopyButton(`u-home-${m.id}`, vbHome, "Ev Sahibi")}
                       {renderCopyButton(`u-away-${m.id}`, vbAway, "Deplasman")}
+                      {vbHall && renderCopyButton(`u-hall-${m.id}`, vbHall, "Salonu Kopyala")}
                       {setsText && renderCopyButton(`u-sets-${m.id}`, setsText, "Setler")}
-                      {leagueUrl && (
+                      {vbMatchesUrl && (
                         <a
-                          href={leagueUrl}
+                          href={vbMatchesUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title="Volleybox lig maçlar sekmesinde yeni maç ekle"
                           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 text-[11px] font-bold transition-colors"
                         >
-                          <span>VB Turnuvası</span>
+                          <span>VB Maçlar Sekmesi</span>
                           <ExternalLink size={11} />
                         </a>
                       )}

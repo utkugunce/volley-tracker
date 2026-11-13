@@ -4,7 +4,6 @@ import React, { useState, useMemo } from "react";
 import { Header } from "@/components/Header";
 import { CityTabBar } from "@/components/CityTabBar";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { AppShell } from "@/components/layout/AppShell";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
@@ -40,10 +39,6 @@ const MobileMatchDrawer = dynamic(
   { loading: TabViewLoading }
 );
 
-const NotificationBanner = dynamic(
-  () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
-  { ssr: false }
-);
 const SpotlightSearchModal = dynamic(
   () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
   { ssr: false }
@@ -185,9 +180,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       <AppShell
         header={
           <>
-            {/* 0. Favori Maç Hatırlatma Banner'ı */}
-            <NotificationBanner favoritesCount={favorites.length} />
-
             {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
             <Header
               city={data?.city}
@@ -257,14 +249,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         footer={<DashboardFooter city={data?.city} />}
       >
         <div className="space-y-4">
-          {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
-          <PrimaryTeamWidget
-            matches={data?.matches || []}
-            city={data?.city}
-            onSelectMatch={handleSelectMatch}
-            availableTeams={allTeamNames}
-          />
-
         {/* Hata Durumu */}
         {error && (
           <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-300 flex items-center gap-2 mb-4 text-xs font-semibold shadow-md">
@@ -379,12 +363,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         </div>
       </AppShell>
 
-      {/* 4. Mobil Sabit Alt Menü (Sofascore Standardı) */}
+      {/* 4. Mobil Sabit Alt Menü */}
       <MobileBottomNav
         activeTab={
-          showOnlyFavorites
-            ? "favorites"
-            : filters.statusFilter === "live"
+          filters.statusFilter === "live"
             ? "live"
             : activeMainTab === "standings"
             ? "standings"
@@ -409,13 +391,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             handleSelectTab("standings");
           } else if (tab === "leagues") {
             setIsLeaguesMenuOpen(true);
-          } else if (tab === "favorites") {
-            setIsLeaguesMenuOpen(false);
-            setShowOnlyFavorites(true);
-            handleSelectTab("fixtures");
           }
         }}
-        favoriteCount={favorites.length}
         liveCount={liveMatchesCount}
         todayMatchesCount={todayMatchesCount}
         resultsCount={resultsCount}

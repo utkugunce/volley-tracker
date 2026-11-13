@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
 import { formatDateTurkish, getYesterdayString, isMatchPassed } from "@/utils/calendar";
@@ -28,17 +28,12 @@ export interface VolleyMatchRowProps {
 export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
   match,
   isSelected = false,
-  isFavorite = false,
-  onToggleFavorite = () => {},
   onSelectMatch = () => {},
   todayStr,
   leagueFallback,
   cityName,
   city,
   leagueLabel,
-  showHall,
-  showDate,
-  showGroupBadge,
 }) => {
   const effectiveCity = cityName || city || match.city;
   const effectiveLeague = leagueLabel || leagueFallback || match.category;
@@ -228,22 +223,6 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
             {hasScore && awayScore !== undefined ? awayScore : "-"}
           </span>
         </div>
-
-        {/* Favori Yıldızı */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleFavorite(match.id);
-          }}
-          className={`p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg transition-colors ${
-            isFavorite ? "text-warn" : "text-ink-3 hover:text-warn"
-          }`}
-          title={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}
-          aria-label={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}
-        >
-          <Star size={14} className={isFavorite ? "fill-warn" : ""} />
-        </button>
       </div>
     </div>
   );

@@ -5,7 +5,10 @@ import {
   detectStandingsAnomalies,
   formatMatchForVolleyboxCopy,
   formatSetScoresForVolleybox,
+  getResolvedVolleyboxHallName,
   getResolvedVolleyboxTeamName,
+  getVolleyboxTournamentMatchesUrl,
+  toVolleyboxMatchesUrl,
 } from "../volleyboxWorkbench";
 
 function makeMatch(overrides: Partial<Match> = {}): Match {
@@ -45,8 +48,47 @@ describe("volleyboxWorkbench utility", () => {
     const text = formatMatchForVolleyboxCopy(m, "İstanbul");
     expect(text).toContain("2026-10-20 14:00");
     expect(text).toContain("3-1 (25-18, 22-25, 25-20, 25-19)");
-    expect(text).toContain("TVF 50. Yıl Deniz Esinduy");
+    expect(text).toContain("50. Yıl Deniz Esinduy Voleybol Salonu");
     expect(text).toContain(getResolvedVolleyboxTeamName("VakıfBank", m.category, "İstanbul"));
+  });
+
+  it("toVolleyboxMatchesUrl and getVolleyboxTournamentMatchesUrl produce editable /tr/.../matches URLs", () => {
+    expect(toVolleyboxMatchesUrl("https://women.volleybox.net/istanbul-genc-kizlar-super-ligi-o35611")).toBe(
+      "https://women.volleybox.net/tr/istanbul-genc-kizlar-super-ligi-o35611/matches"
+    );
+    expect(toVolleyboxMatchesUrl("https://women.volleybox.net/tr/istanbul-u18-o123/matches/")).toBe(
+      "https://women.volleybox.net/tr/istanbul-u18-o123/matches"
+    );
+    expect(toVolleyboxMatchesUrl("")).toBeNull();
+
+    const matchesUrl = getVolleyboxTournamentMatchesUrl("Genç Kızlar Süper Lig", "İstanbul");
+    if (matchesUrl) {
+      expect(matchesUrl).toContain("https://women.volleybox.net/tr/");
+      expect(matchesUrl.endsWith("/matches")).toBe(true);
+    }
+  });
+
+  it("getResolvedVolleyboxHallName resolves TVF hall to synced Volleybox arena name or curated mapping", () => {
+    const dataset: Match[] = [
+      makeMatch({
+        id: "synced-hall",
+        city: "İstanbul",
+        hall: "Bahçelievler Hasan Doğan Spor Salonu",
+        volleybox: {
+          synced: true,
+          vb_hall: "Hasan Doğan Spor Kompleksi",
+        },
+      }),
+    ];
+
+    expect(getResolvedVolleyboxHallName("Hasan Doğan S.S.", "İstanbul", dataset)).toBe(
+      "Hasan Doğan Spor Kompleksi"
+    );
+    expect(getResolvedVolleyboxHallName("TVF 50. Yıl Deniz Esinduy", "İstanbul")).toBe(
+      "50. Yıl Deniz Esinduy Voleybol Salonu"
+    );
+    expect(getResolvedVolleyboxHallName("Bilinmeyen Salon", "Ankara")).toBe("Bilinmeyen Salon");
+    expect(getResolvedVolleyboxHallName("TBD", "İstanbul")).toBe("");
   });
 
   it("buildVolleyboxWorkbenchData classifies missingScores, discrepancies, unsynced, unmappedTeams", () => {
