@@ -15,8 +15,19 @@ class TestValidateDataFiles(unittest.TestCase):
         ]
 
         with self.assertRaises(SystemExit) as context:
-            main()
+            main([])
 
+        self.assertNotEqual(context.exception.code, 0)
+
+    @patch("scripts.validate_data_files.collect_freshness_issues", return_value=["Stale data file: data/cities.json"])
+    @patch("scripts.validate_data_files.validate_volleybox_sync_integrity", return_value={"valid": True, "errors": [], "summary": "OK"})
+    @patch("scripts.validate_data_files.validate_file", return_value={"valid": True, "errors": [], "summary": "OK"})
+    def test_stale_data_warns_by_default_and_fails_with_require_fresh(
+        self, _mock_validate_file, _mock_vb, _mock_freshness
+    ):
+        main([])
+        with self.assertRaises(SystemExit) as context:
+            main(["--require-fresh"])
         self.assertNotEqual(context.exception.code, 0)
 
 

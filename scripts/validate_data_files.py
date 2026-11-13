@@ -80,7 +80,10 @@ def validate_volleybox_sync_integrity() -> dict:
     }
 
 
-def main():
+def main(argv=None):
+    args = sys.argv[1:] if argv is None else list(argv)
+    require_fresh = "--require-fresh" in args
+
     vb_integrity = validate_volleybox_sync_integrity()
     results = [
         ("81 il", validate_file("data/cities.json", "cities")),
@@ -94,11 +97,12 @@ def main():
     ]
     freshness_issues = collect_freshness_issues(freshness_files, max_age_hours=24)
     if freshness_issues:
-        print("\n📊 Data freshness validation: FAILED")
+        status_label = "FAILED" if require_fresh else "WARNING"
+        print(f"\n📊 Data freshness validation: {status_label}")
         for issue in freshness_issues:
             print(f"   - {issue}")
 
-    if any(not result.get("valid", False) for _, result in results) or freshness_issues:
+    if any(not result.get("valid", False) for _, result in results) or (require_fresh and freshness_issues):
         raise SystemExit(1)
 
 
