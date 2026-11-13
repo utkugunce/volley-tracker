@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-11T09:58:54.788129",
+  "updated_at": "2026-11-13T17:56:31.858627",
   "city": "Ordu",
   "slug": "ordu",
   "title": "TVF Ordu Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 6,
   "source": "https://ordu.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Atatürk S.S"
     ]
   },
   "standings": {
@@ -254,10 +255,215 @@
       }
     ]
   },
-  "matches": [],
-  "last_attempt_at": "2026-11-13T13:38:40.176836+03:00",
-  "last_success_at": "2026-11-11T06:58:54.790331+00:00",
-  "content_changed_at": "2026-11-11T06:58:54.790331+00:00",
+  "matches": [
+    {
+      "id": "ordu-20261115-001",
+      "city": "Ordu",
+      "date": "2026-11-15",
+      "time": "15:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "1",
+      "home_team": "52 Çamlık Spor",
+      "away_team": "Pars Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ordu-20261115-002",
+      "city": "Ordu",
+      "date": "2026-11-15",
+      "time": "17:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "2",
+      "home_team": "Academy Volley B",
+      "away_team": "1921 Ordu Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ordu-20261116-003",
+      "city": "Ordu",
+      "date": "2026-11-16",
+      "time": "11:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "3",
+      "home_team": "Academy Volley A",
+      "away_team": "Academy Volley B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ordu-20261116-004",
+      "city": "Ordu",
+      "date": "2026-11-16",
+      "time": "13:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "4",
+      "home_team": "1921 Ordu Spor",
+      "away_team": "52 Çamlık Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ordu-20261117-005",
+      "city": "Ordu",
+      "date": "2026-11-17",
+      "time": "11:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "5",
+      "home_team": "Pars Spor",
+      "away_team": "1921 Ordu Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ordu-20261117-006",
+      "city": "Ordu",
+      "date": "2026-11-17",
+      "time": "13:00",
+      "hall": "Atatürk S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "6",
+      "home_team": "52 Çamlık Spor",
+      "away_team": "Academy Volley A",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "last_attempt_at": "2026-11-13T14:56:31.867844+00:00",
+  "last_success_at": "2026-11-13T14:56:31.867844+00:00",
+  "content_changed_at": "2026-11-13T14:56:31.867844+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-13T13:46:35.979180"
+  "volleybox_sync_updated_at": "2026-11-13T18:04:20.260137"
 }

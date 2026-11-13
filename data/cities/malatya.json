@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-11T09:58:54.042122",
+  "updated_at": "2026-11-13T17:56:31.134597",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 72,
+  "total_matches": 74,
   "source": "https://malatya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -309,73 +309,7 @@
     "Genç Kızlar 1. Ligi - Final Grubu": [
       {
         "rank": 1,
-        "team": "Şehriban Günata Anadolu Lisesi",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
         "team": "Battalgazi Anadolu Lisesi",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Beydağı Anadolu Lisesi",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Malatya Spor Lisesi",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Akçadağ Fatih Fen Lisesi",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Şehit Serdal Toprak Anadolu Lisesi",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Akmercan Anadolu Lisesi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -385,7 +319,7 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 2,
         "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -400,16 +334,51 @@
       {
         "rank": 1,
         "team": "Battalgazi Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Beydağı Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehriban Günata Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - 3-4 Lük Maçı": [
+      {
+        "rank": 1,
         "team": "Beydağı Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -420,18 +389,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 2,
         "team": "Şehriban Günata Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -2964,11 +2922,15 @@
       "match_no": "1",
       "home_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
       "away_team": "Şehriban Günata Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-13",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2998,6 +2960,78 @@
       "match_no": "2",
       "home_team": "Beydağı Anadolu Lisesi",
       "away_team": "Battalgazi Anadolu Lisesi",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "8-25",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261112-073",
+      "city": "Malatya",
+      "date": "2026-11-12",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "away_team": "Battalgazi Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261112-074",
+      "city": "Malatya",
+      "date": "2026-11-12",
+      "time": "11:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "3-4 Lük Maçı",
+      "match_no": "1",
+      "home_team": "Beydağı Anadolu Lisesi",
+      "away_team": "Şehriban Günata Anadolu Lisesi",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3020,9 +3054,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T13:38:35.202781+03:00",
-  "last_success_at": "2026-11-11T06:58:54.086194+00:00",
-  "content_changed_at": "2026-11-11T06:58:54.086194+00:00",
+  "last_attempt_at": "2026-11-13T14:56:31.177491+00:00",
+  "last_success_at": "2026-11-13T14:56:31.177491+00:00",
+  "content_changed_at": "2026-11-13T14:56:31.177491+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-13T13:46:34.227860"
+  "volleybox_sync_updated_at": "2026-11-13T18:04:19.457121"
 }

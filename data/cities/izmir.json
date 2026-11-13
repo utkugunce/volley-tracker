@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T13:38:24.100759",
+  "updated_at": "2026-11-13T17:56:24.074597",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -4619,8 +4619,8 @@
         "url": "https://women.volleybox.net/tr/monza-spor-kulubu-u18-karsyaka-sk-b-u18-c415052",
         "host_name": "Monza Spor Kulübü U18",
         "guest_name": "Karşıyaka SK - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-11",
         "vb_time": "20:00",
         "vb_hall": "Menemen Spor Salonu",
@@ -10817,9 +10817,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T10:38:24.180725+00:00",
-  "last_success_at": "2026-11-13T10:38:24.180725+00:00",
-  "content_changed_at": "2026-11-13T10:38:24.180725+00:00",
+  "last_attempt_at": "2026-11-13T14:56:24.181798+00:00",
+  "last_success_at": "2026-11-13T14:56:24.181798+00:00",
+  "content_changed_at": "2026-11-13T14:56:24.181798+00:00",
   "volleybox_synced_matches": 199,
-  "volleybox_sync_updated_at": "2026-11-13T13:46:16.941376"
+  "volleybox_sync_updated_at": "2026-11-13T18:04:10.993520"
 }
