@@ -64,7 +64,6 @@ export const CITY_SLUGS: readonly string[] = [
   "kocaeli",
   "konya",
   "kutahya",
-  "malatya",
   "manisa",
   "mardin",
   "mersin",

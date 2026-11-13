@@ -8,6 +8,7 @@ import { slugify } from "./slugify";
  * - erzurum: Yalnızca kamu sporları turnuvası mevcut, resmi altyapı ligi yok
  * - isparta: Genç ve yıldız kulüp turnuvası değil (Cumhuriyet Kupası)
  * - bayburt, ardahan: Verisi henüz açıklanmamış/boş iller
+ * - malatya: Geçici olarak kaldırıldı
  */
 export const HIDDEN_CITY_SLUGS = new Set<string>([
   "kirikkale",
@@ -17,6 +18,7 @@ export const HIDDEN_CITY_SLUGS = new Set<string>([
   "isparta",
   "bayburt",
   "ardahan",
+  "malatya",
 ]);
 
 /**

@@ -24175,6 +24175,54 @@
         "Diyarbakır Büyükşehir Belediyespor U18",
         "Diyarbakır Büyükşehir Belediyespor"
       ]
+    },
+    {
+      "internal_name": "MEKTEBİM SPOR KULÜBÜ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Tokat",
+      "city_slug": "tokat",
+      "matched_as": "Tokat Mektebim Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/mektebim-spor-kulubu-u18-t55995",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "TOKAT SPOR LİSESİ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Tokat",
+      "city_slug": "tokat",
+      "matched_as": "Tokat Spor Lisesi U18",
+      "volleybox_url": "https://women.volleybox.net/tr/tokat-spor-lisesi-a-u18-t44806",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "TOKAT VOLEYBOL AKADEMİ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Tokat",
+      "city_slug": "tokat",
+      "matched_as": "Tokat Voleybol Akademisi SK U18",
+      "volleybox_url": "https://women.volleybox.net/tr/tokat-voleybol-akademisi-sk-u18-t55994",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "ÖZEL ŞEHİR KOLEJİ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Tokat",
+      "city_slug": "tokat",
+      "matched_as": "Tokat Özel Şehir Koleji Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/tokat-ozel-sehir-koleji-spo-kulubu-u18-t55996",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-11-13"
     }
   ],
   "leagues": [
@@ -25136,6 +25184,39 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-11-04"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-elazg-super-ligi-u18-2026-27-o52052",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "Ordu Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-ordu-super-ligi-u18-2026-27-o52054",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Rize Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-rize-super-ligi-u18-2026-27-o52055",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-13"
     }
   ]
 }
