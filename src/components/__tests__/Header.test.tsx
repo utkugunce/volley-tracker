@@ -198,7 +198,10 @@ describe("Header Component", () => {
     expect(screen.queryByRole("link", { name: /TAKVİM/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /REHBER/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Favoriler/i })).not.toBeInTheDocument();
-    expect(screen.getByText("GRUP DURUMU").closest("button")).toBeInTheDocument();
+    const groupBtn = screen.getByText("GRUP DURUMU").closest("button")!;
+    expect(groupBtn).toBeInTheDocument();
+    expect(groupBtn.className).toContain("sm:flex-1");
+    expect(groupBtn.className).toContain("sm:justify-center");
   });
 
   it("hides fixture and results counts when they are omitted", () => {
