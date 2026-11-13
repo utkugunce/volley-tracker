@@ -982,8 +982,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "17",
-      "home_team": "Denizli Anadolu Pars GSK U18",
-      "away_team": "Denizli Büyükşehir Belediyespor U18",
+      "home_team": "Anadolu Pars Spor Kulübü",
+      "away_team": "Yeşil Çivril Belediye Spor Kulübü",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -994,26 +994,13 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415429",
-        "url": "https://women.volleybox.net/tr/denizli-anadolu-pars-gsk-u18-denizli-buyuksehir-belediyespor-u18-c415429",
-        "host_name": "Denizli Anadolu Pars GSK U18",
-        "guest_name": "Denizli Büyükşehir Belediyespor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-03",
-        "vb_time": "18:30",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-03",
-          "vb_time": "18:30",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
-        }
+        "has_score": false
       }
     },
     {
