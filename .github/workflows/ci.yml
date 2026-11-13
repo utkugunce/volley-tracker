@@ -40,7 +40,12 @@ jobs:
         run: python scripts/validate_data_files.py
 
       - name: Check data freshness
-        run: python scripts/check_data_freshness.py
+        run: |
+          if [[ "${{ github.ref_name }}" == automation/tvf-data-* || "${{ github.head_ref }}" == automation/tvf-data-* ]]; then
+            python scripts/check_data_freshness.py
+          else
+            python scripts/check_data_freshness.py || echo "::warning::data/cities.json 24 saatten eski (kod PR doğrulaması devam ediyor)"
+          fi
 
       # data/cities.json değiştiyse src/utils/citySlugs.ts (edge 404 allowlist'i)
       # yeniden üretilmek zorunda; aksi halde geçersiz il adresleri 200 döner (soft 404).
