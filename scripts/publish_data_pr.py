@@ -3,15 +3,51 @@
 GITHUB_TOKEN-created PR events do not start other workflows, so dispatch CI
 explicitly on the exact data branch. Requires Actions' PR creation permission.
 """
+import json
 import os
 import re
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
 
 
 def run(*args):
-    return subprocess.run(args, check=True, text=True, capture_output=True).stdout.strip()
+    cmd = shutil.which(args[0]) or args[0]
+    return subprocess.run((cmd, *args[1:]), check=True, text=True, capture_output=True).stdout.strip()
+
+
+def close_superseded_prs(repository: str, current_branch: str) -> None:
+    try:
+        raw = run(
+            'gh', 'pr', 'list',
+            '--repo', repository,
+            '--state', 'open',
+            '--base', 'main',
+            '--json', 'number,headRefName',
+        )
+        prs = json.loads(raw) if raw else []
+    except Exception:
+        return
+
+    for pr in prs:
+        head_ref = pr.get('headRefName', '')
+        number = pr.get('number')
+        if (
+            isinstance(head_ref, str)
+            and head_ref.startswith('automation/tvf-data-')
+            and head_ref != current_branch
+            and number is not None
+        ):
+            try:
+                run(
+                    'gh', 'pr', 'close', str(number),
+                    '--repo', repository,
+                    '--delete-branch',
+                    '--comment', "Yeni veri PR'ı açıldığı için önceki veri PR'ı otomatik kapatıldı.",
+                )
+            except Exception:
+                pass
 
 
 def publish():
@@ -49,6 +85,7 @@ def publish():
                   '--body-file', str(body))
     print(url)
     run('gh', 'workflow', 'run', 'ci.yml', '--repo', repository, '--ref', branch)
+    close_superseded_prs(repository, branch)
     return branch
 
 

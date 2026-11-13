@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 import pytest
 from scripts.publish_data_pr import publish
@@ -29,8 +30,11 @@ def repository(tmp_path, monkeypatch):
 import json,os,sys
 with open(os.environ['FAKE_GH_LOG'],'a') as f: f.write(json.dumps(sys.argv[1:])+'\\n')
 if sys.argv[1:3] == ['pr','create']: print('https://github.com/acme/test/pull/1')
+elif sys.argv[1:3] == ['pr','list']: print(os.environ.get('FAKE_GH_PR_LIST', '[]'))
 ''')
     fake_gh.chmod(0o755)
+    fake_gh_cmd = tools / 'gh.cmd'
+    fake_gh_cmd.write_text(f'@"{sys.executable}" "%~dp0gh" %*\r\n')
     log = tmp_path / 'gh.jsonl'
     monkeypatch.setenv('PATH', str(tools) + os.pathsep + os.environ['PATH'])
     monkeypatch.setenv('FAKE_GH_LOG', str(log))
@@ -76,3 +80,26 @@ def test_generated_city_allowlist_can_accompany_data(repository):
     (repo / 'src/utils').mkdir(parents=True)
     (repo / 'src/utils/citySlugs.ts').write_text('export const CITY_SLUGS = [];')
     assert publish() == 'automation/tvf-data-12345-2'
+
+
+def test_closes_superseded_automation_prs(repository, monkeypatch):
+    repo, _, log = repository
+    monkeypatch.setenv(
+        'FAKE_GH_PR_LIST',
+        json.dumps([
+            {'number': 70, 'headRefName': 'automation/tvf-data-11111-1'},
+            {'number': 71, 'headRefName': 'feat/other'},
+            {'number': 72, 'headRefName': 'automation/tvf-data-12345-2'},
+        ]),
+    )
+    (repo / 'data/cities.json').write_text('{"value":3}')
+    branch = publish()
+    assert branch == 'automation/tvf-data-12345-2'
+    calls = [json.loads(line) for line in log.read_text().splitlines()]
+    assert calls[0][:2] == ['pr', 'create']
+    assert calls[1] == ['workflow', 'run', 'ci.yml', '--repo', 'acme/test', '--ref', branch]
+    assert calls[2][:2] == ['pr', 'list']
+    close_calls = [c for c in calls if c[:2] == ['pr', 'close']]
+    assert len(close_calls) == 1
+    assert close_calls[0][:3] == ['pr', 'close', '70']
+    assert '--delete-branch' in close_calls[0]
