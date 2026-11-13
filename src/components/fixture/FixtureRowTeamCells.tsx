@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Check, Copy } from "lucide-react";
 import type { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { isHomeSetWin } from "@/utils/fixtureTable";
 import type { MatchForfeitInfo } from "@/utils/forfeit";
+import { formatSetScoresForVolleybox } from "@/utils/volleyboxWorkbench";
 import type { FixtureCellBaseProps } from "./FixtureRowCells";
 
 interface FixtureTeamCellProps extends FixtureCellBaseProps {
@@ -96,27 +100,55 @@ export function FixtureAwayTeamCell({ match, city, won: awayWon, isFinished, car
   );
 }
 
-/** 7. Set Skorları */
+/** 7. Set Skorları (Volleybox için tek tıkla kopyalanabilir) */
 export function FixtureSetScoresCell({ match, isFinished, forfeitInfo, cardBorderClass }: FixtureScoreCellProps) {
+  const [copiedSets, setCopiedSets] = useState(false);
+
+  const handleCopySets = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const formatted = formatSetScoresForVolleybox(match.set_scores);
+    if (!formatted) return;
+    try {
+      void navigator.clipboard?.writeText(formatted);
+    } catch {
+      // Clipboard API unavailable
+    }
+    setCopiedSets(true);
+    setTimeout(() => setCopiedSets(false), 1500);
+  };
+
   return (
     <td className={`py-2.5 px-2 text-left whitespace-nowrap border-y ${cardBorderClass}`}>
       {isFinished && match.set_scores && match.set_scores.length > 0 ? (
         <div className="flex items-center gap-1.5 flex-nowrap">
-          {match.set_scores.map((set, sIdx) => {
-            const isHomeSet = isHomeSetWin(set);
-            return (
-              <span
-                key={sIdx}
-                className={`font-mono font-scoreboard tabular-nums text-[11px] px-1 py-0.5 rounded ${
-                  isHomeSet
-                    ? "text-ink font-semibold"
-                    : "text-ink-3 font-normal"
-                }`}
-              >
-                {set}
-              </span>
-            );
-          })}
+          <button
+            type="button"
+            onClick={handleCopySets}
+            className="inline-flex items-center gap-1 flex-nowrap rounded-md px-1 py-0.5 hover:bg-surface-raised/80 transition-colors cursor-pointer group/sets"
+            title="Set skorlarını Volleybox için kopyala"
+            aria-label="Set skorlarını kopyala"
+          >
+            {match.set_scores.map((set, sIdx) => {
+              const isHomeSet = isHomeSetWin(set);
+              return (
+                <span
+                  key={sIdx}
+                  className={`font-mono font-scoreboard tabular-nums text-[11px] px-1 py-0.5 rounded ${
+                    isHomeSet
+                      ? "text-ink font-semibold"
+                      : "text-ink-3 font-normal"
+                  }`}
+                >
+                  {set}
+                </span>
+              );
+            })}
+            {copiedSets ? (
+              <Check size={11} className="text-emerald-400 shrink-0" />
+            ) : (
+              <Copy size={10} className="text-ink-3 opacity-0 group-hover/sets:opacity-100 transition-opacity shrink-0" />
+            )}
+          </button>
           {forfeitInfo.isForfeit && (
             <span
               className="inline-flex items-center gap-0.5 text-[10px] font-black px-1.5 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 shadow-2xs"

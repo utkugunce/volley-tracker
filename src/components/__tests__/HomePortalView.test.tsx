@@ -144,4 +144,70 @@ describe("HomePortalView Component", () => {
     expect(onSelectDate).toHaveBeenCalledWith("2026-09-24");
     expect(onNavigateTab).toHaveBeenCalledWith("today");
   });
+
+  it("renders Volleybox Operatör İş Kuyruğu tabs, copies set scores, and triggers full data load", () => {
+    const onEnsureFullData = vi.fn();
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    vi.stubGlobal("navigator", { clipboard: { writeText } });
+
+    const workbenchMatches: Match[] = [
+      ...mockMatches,
+      {
+        id: "m-vb-missing",
+        city: "Ankara",
+        date: "2026-09-24",
+        time: "18:00",
+        hall: "TVF Başkent",
+        category: "Genç Kızlar Süper Lig",
+        age_group: "Genç",
+        gender: "Kız",
+        group: "A Grubu",
+        match_no: "501",
+        home_team: "Bilinmeyen SK A",
+        away_team: "Bilinmeyen SK B",
+        status: "finished",
+        home_score: 3,
+        away_score: 0,
+        score: "3 - 0",
+        set_scores: ["25-18", "25-19", "25-14"],
+        volleybox: {
+          synced: true,
+          match_id: 777,
+          url: "https://women.volleybox.net/m777",
+          has_score: false,
+        },
+      },
+    ];
+
+    render(
+      <HomePortalView
+        matches={workbenchMatches}
+        city="Tüm İller"
+        currentCitySlug="all"
+        onSelectCity={vi.fn()}
+        citiesList={mockCitiesList}
+        standings={{}}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        onSelectMatch={vi.fn()}
+        onNavigateTab={vi.fn()}
+        todayStr="2026-09-24"
+        yesterdayStr="2026-09-23"
+        isPartialData={true}
+        onEnsureFullData={onEnsureFullData}
+      />
+    );
+
+    expect(screen.getByText(/Volleybox Operatör İş Kuyruğu/i)).toBeInTheDocument();
+    const copySetsBtn = screen.getByRole("button", { name: /Setleri Kopyala/i });
+    fireEvent.click(copySetsBtn);
+    expect(writeText).toHaveBeenCalledWith("25-18, 25-19, 25-14");
+
+    const unmappedTab = screen.getByRole("tab", { name: /Eşleşmeyen Takımlar/i });
+    fireEvent.click(unmappedTab);
+    expect(onEnsureFullData).toHaveBeenCalledTimes(1);
+    expect(screen.getAllByText(/Volleybox'ta Ara/i).length).toBeGreaterThan(0);
+
+    vi.unstubAllGlobals();
+  });
 });

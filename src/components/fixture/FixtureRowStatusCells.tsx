@@ -1,7 +1,10 @@
-import React from "react";
-import { CalendarPlus, Copy, Check, ChevronRight, ExternalLink, AlertTriangle } from "lucide-react";
+"use client";
+
+import React, { useState } from "react";
+import { ClipboardCopy, Copy, Check, ChevronRight, ExternalLink, AlertTriangle } from "lucide-react";
 import type { DiscrepancyInfo, Match } from "@/types/fixture";
 import { isMatchOverdueForScore } from "@/utils/calendar";
+import { formatMatchForVolleyboxCopy } from "@/utils/volleyboxWorkbench";
 import type { FixtureCellBaseProps } from "./FixtureRowCells";
 
 interface FixtureVolleyboxCellProps extends FixtureCellBaseProps {
@@ -83,39 +86,54 @@ export function FixtureVolleyboxCell({ match, hasDiff, disc, cardBorderClass }: 
 
 interface FixtureActionsCellProps extends FixtureCellBaseProps {
   match: Match;
-  isFinished: boolean;
+  isFinished?: boolean;
   isCopied: boolean;
   onSelectMatch?: (match: Match) => void;
-  handleDownloadIcs: (e: React.MouseEvent, match: Match) => void;
+  handleDownloadIcs?: (e: React.MouseEvent, match: Match) => void;
   handleCopy: (e: React.MouseEvent, match: Match) => void;
 }
 
-/** 9. İşlemler */
+/** 9. İşlemler (Volleybox Satır Kopyala, Detay Kopyala, İncele) */
 export function FixtureActionsCell({
   match,
-  isFinished,
   isCopied,
   onSelectMatch,
-  handleDownloadIcs,
   handleCopy,
   cardBorderClass,
 }: FixtureActionsCellProps) {
+  const [vbCopied, setVbCopied] = useState(false);
+
+  const handleCopyVolleyboxLine = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const summary = formatMatchForVolleyboxCopy(match);
+    if (!summary) return;
+    try {
+      void navigator.clipboard?.writeText(summary);
+    } catch {
+      // Clipboard API unavailable
+    }
+    setVbCopied(true);
+    setTimeout(() => setVbCopied(false), 1500);
+  };
+
   return (
     <td className={`py-2.5 px-2 text-center whitespace-nowrap no-print rounded-r-xl border-r border-y ${cardBorderClass}`}>
         <div className="flex items-center justify-center gap-0.5">
-          {!isFinished && match.date !== "TBD" && (
-            <button
-              onClick={(e) => handleDownloadIcs(e, match)}
-              className="p-1 rounded hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors cursor-pointer"
-              title="Takvime Ekle (.ics)"
-            >
-              <CalendarPlus size={12} />
-            </button>
-          )}
           <button
+            type="button"
+            onClick={handleCopyVolleyboxLine}
+            className="p-1 rounded hover:bg-slate-700 text-slate-400 hover:text-primary transition-colors cursor-pointer"
+            title="Volleybox Giriş Satırını Kopyala"
+            aria-label="Volleybox Giriş Satırını Kopyala"
+          >
+            {vbCopied ? <Check size={12} className="text-emerald-400" /> : <ClipboardCopy size={12} />}
+          </button>
+          <button
+            type="button"
             onClick={(e) => handleCopy(e, match)}
             className="p-1 rounded hover:bg-slate-700 text-slate-500 hover:text-white transition-colors cursor-pointer"
             title="Maç Detayını Kopyala"
+            aria-label="Maç Detayını Kopyala"
           >
             {isCopied ? (
               <Check size={12} className="text-emerald-400" />
@@ -125,6 +143,7 @@ export function FixtureActionsCell({
           </button>
           {onSelectMatch && (
             <button
+              type="button"
               onClick={(e) => {
                 e.stopPropagation();
                 onSelectMatch(match);
