@@ -2,14 +2,13 @@
 
 import React from "react";
 import { useLanguage } from "@/i18n/useLanguage";
-import { CalendarDays, Flame, BarChart3, Layers, Star } from "lucide-react";
+import { CalendarDays, Flame, BarChart3, Layers } from "lucide-react";
 
 export type MobileTab =
   | "matches"
   | "live"
   | "standings"
   | "leagues"
-  | "favorites"
   | "today"
   | "results"
   | "fixtures";
@@ -26,7 +25,6 @@ export interface MobileBottomNavProps {
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   activeTab,
   onSelectTab,
-  favoriteCount = 0,
   liveCount = 0,
   todayMatchesCount = 0,
 }) => {
@@ -61,12 +59,6 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       label: t("mobile.leagues"),
       icon: Layers,
     },
-    {
-      id: "favorites",
-      label: t("mobile.favorites"),
-      icon: Star,
-      badge: favoriteCount > 0 ? favoriteCount : undefined,
-    },
   ];
 
   return (
@@ -86,8 +78,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 activeTab === "fixtures")) ||
             (item.id === "live" && activeTab === "live") ||
             (item.id === "standings" && activeTab === "standings") ||
-            (item.id === "leagues" && activeTab === "leagues") ||
-            (item.id === "favorites" && activeTab === "favorites");
+            (item.id === "leagues" && activeTab === "leagues");
 
           return (
             <button

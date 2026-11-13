@@ -14,7 +14,7 @@ vi.mock("@/utils/volleybox", () => ({
 }));
 
 describe("CompactMatchRow", () => {
-  it("keeps the favorite control visible on touch-sized layouts", () => {
+  it("does not render favorite star button after favorites removal", () => {
     const match = {
       id: "match-1",
       home_team: "Eczacıbaşı",
@@ -26,9 +26,7 @@ describe("CompactMatchRow", () => {
 
     render(<CompactMatchRow match={match} onToggleFavorite={vi.fn()} />);
 
-    const favoriteButton = screen.getByRole("button", { name: "Favoriye Ekle" });
-    expect(favoriteButton.className).toContain("opacity-100");
-    expect(favoriteButton.className).not.toContain("opacity-0");
+    expect(screen.queryByRole("button", { name: /Favori/i })).not.toBeInTheDocument();
   });
 
   it("links team names to their pages and Volleybox profiles and shows logos", () => {

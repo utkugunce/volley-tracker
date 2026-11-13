@@ -4,9 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { getVolleyboxMapping, normalizeCitySlug } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
-import { ExternalLink, Star } from "lucide-react";
-import { useFavorites } from "@/utils/useFavorites";
-import { triggerHaptic } from "@/utils/haptics";
+import { ExternalLink } from "lucide-react";
 
 import { TeamBadge } from "./TeamBadge";
 
@@ -19,6 +17,7 @@ interface TeamVolleyboxLinkProps {
   logoClassName?: string;
   children?: React.ReactNode;
   disableTeamPageLink?: boolean;
+  /** @deprecated Favorites UI removed */
   showFavoriteButton?: boolean;
 }
 
@@ -31,7 +30,6 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   logoClassName = "",
   children,
   disableTeamPageLink = false,
-  showFavoriteButton = true,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category, undefined, city);
   
@@ -68,37 +66,12 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     </a>
   ) : null;
 
-  const { isFavorite, toggleFavorite } = useFavorites();
-  const isFav = isFavorite(displayName);
-
-  const starElement = showFavoriteButton ? (
-    <button
-      type="button"
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerHaptic("selection");
-        toggleFavorite(displayName);
-      }}
-      className={`p-0.5 rounded transition-all shrink-0 inline-flex items-center ml-1 cursor-pointer ${
-        isFav
-          ? "opacity-100 text-amber-400 drop-shadow-xs"
-          : "opacity-0 group-hover:opacity-60 hover:!opacity-100 text-slate-400 hover:text-amber-300"
-      }`}
-      title={isFav ? `${displayName} favorilerden çıkar` : `${displayName} favorilere ekle`}
-      aria-label={isFav ? `${displayName} favorilerden çıkar` : `${displayName} favorilere ekle`}
-    >
-      <Star size={11} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
-    </button>
-  ) : null;
-
   if (disableTeamPageLink) {
     return (
       <span className={`inline-flex items-center max-w-[160px] xs:max-w-[220px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-none ${className}`} title={displayName}>
         {logoElement}
         <span className="truncate">{content}</span>
         {externalVbLink}
-        {starElement}
       </span>
     );
   }
@@ -118,7 +91,6 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
         {content}
       </Link>
       {externalVbLink}
-      {starElement}
     </span>
   );
 };

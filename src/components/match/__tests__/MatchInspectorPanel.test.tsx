@@ -135,7 +135,9 @@ describe("MatchInspectorPanel Component", () => {
     // Üst Başlık (Lig, Tarih, Salon)
     expect(screen.getAllByText(/Genç Kızlar Süper Lig/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/TVF 50\. Yıl Deniz Esinduy/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText("2026-10-20")).toBeInTheDocument();
+    expect(screen.getAllByText("2026-10-20").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("15:30").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText(/Salonu Kopyala/i)).toBeInTheDocument();
 
     // Skorboard Başlığı
     expect(screen.getAllByText("Eczacıbaşı").length).toBeGreaterThanOrEqual(1);

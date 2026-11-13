@@ -37,7 +37,6 @@ export function FixtureListView({
       <table className="w-full text-left border-separate border-spacing-y-2 text-xs">
         <thead>
           <tr className="text-slate-400 font-bold uppercase text-[10px] tracking-wider">
-            <th className="pb-1 px-2 text-center w-8" title="Favorilere Ekle">⭐</th>
             <th className="pb-1 px-2 w-[85px] whitespace-nowrap">Tarih</th>
             <th className="pb-1 px-2 text-center w-14 whitespace-nowrap">Saat</th>
             <th className="pb-1 px-2 min-w-[80px] max-w-[125px] lg:max-w-[150px]">Yer</th>

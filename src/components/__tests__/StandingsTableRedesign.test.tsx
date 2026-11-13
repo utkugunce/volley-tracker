@@ -81,4 +81,25 @@ describe("StandingsTable yeniden tasarım (aşama 04)", () => {
     const s = summarizeTeam(row, { city: "İstanbul", leagueName: "Genç Kızlar Süper Lig", groupName: "A Grubu" }, [other]);
     expect(s.formSource).toBe("none");
   });
+
+  it("puan durumu operatör özet şeridini, Tabloyu Kopyala butonunu ve VB Eksik filtresini gösterir", () => {
+    const ms = [
+      {
+        ...mk(1, "Eczacıbaşı A", "X", 3, 0, "finished"),
+        volleybox: { synced: true, has_score: false, match_id: 99 },
+      },
+      mk(2, "Eczacıbaşı A", "T", null, null, "upcoming"),
+    ];
+    render(
+      <StandingsTable
+        standingsData={{ "Genç Kızlar Süper Lig - A Grubu": [row] }}
+        city="İstanbul"
+        matches={ms}
+      />
+    );
+
+    expect(screen.getByText("Grup İlerlemesi")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Tabloyu Kopyala/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /VB Eksik \(2\)/i })).toBeInTheDocument();
+  });
 });

@@ -3,6 +3,7 @@
 import React from "react";
 import type { Match, StandingItem } from "@/types/fixture";
 import type { ParsedStandingContext } from "@/utils/standingsParsing";
+import type { StandingsAnomalyTeamDiff } from "@/utils/volleyboxWorkbench";
 import { StandingsRow } from "./StandingsRow";
 
 interface StandingsTableViewProps {
@@ -10,6 +11,7 @@ interface StandingsTableViewProps {
   activeContext: ParsedStandingContext | undefined;
   city?: string;
   matches?: Match[];
+  discrepancyTeams?: StandingsAnomalyTeamDiff[];
   expandedTeam: string | null;
   toggleDetail: (row: StandingItem) => void;
 }
@@ -20,6 +22,7 @@ export function StandingsTableView({
   activeContext,
   city,
   matches,
+  discrepancyTeams = [],
   expandedTeam,
   toggleDetail,
 }: StandingsTableViewProps) {
@@ -37,6 +40,8 @@ export function StandingsTableView({
             <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-7 sm:w-10" title="Galibiyet">G</th>
             <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-7 sm:w-10" title="Mağlubiyet">M</th>
             <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden sm:table-cell w-16" title="Set (Aldığı-Verdiği)">Set</th>
+            <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden md:table-cell w-14" title="Set Oranı">SO</th>
+            <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden lg:table-cell w-20" title="Sayı (Attığı-Yediği)">Sayı</th>
             <th className="py-2 sm:py-3 px-1.5 sm:px-3 text-center w-10 sm:w-14 font-black text-ink" title="Puan">Puan</th>
             <th className="py-2 sm:py-3 px-2 sm:px-4 text-center hidden sm:table-cell sm:w-28" title="Son 5 Maç Formu">Form</th>
           </tr>
@@ -44,6 +49,9 @@ export function StandingsTableView({
         <tbody>
           {items.map((row) => {
             const teamKey = `${row.rank}-${row.team}`;
+            const diff = discrepancyTeams.find(
+              (d) => d.team.trim().toLowerCase() === row.team.trim().toLowerCase()
+            );
             return (
               <StandingsRow
                 key={teamKey}
@@ -52,6 +60,7 @@ export function StandingsTableView({
                 activeContext={activeContext}
                 city={city}
                 matches={matches}
+                teamDiff={diff}
                 toggleDetail={toggleDetail}
               />
             );
