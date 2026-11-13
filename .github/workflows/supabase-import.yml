@@ -1,6 +1,7 @@
 name: Import approved data into Supabase
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -25,6 +26,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - name: Check authoritative roles migration (008)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/check_supabase_roles.mjs --sync-missing
       - name: Import reviewed main snapshot
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

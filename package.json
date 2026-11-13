@@ -19,6 +19,7 @@
     "push:volleybox": "python scripts/push_volleybox_matches.py",
     "check:bot": "python scripts/check_bot_health.py",
     "supabase:import": "node scripts/import_json_to_supabase.mjs",
+    "supabase:check-roles": "node scripts/check_supabase_roles.mjs",
     "create-admin": "node scripts/create_admin_user.mjs"
   },
   "dependencies": {
