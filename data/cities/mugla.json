@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:35.592431",
+  "updated_at": "2026-11-13T16:51:14.454520",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -2125,25 +2125,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415198",
-        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
-        "host_name": "Yeşil Marmaris Spor Kulübü U18",
-        "guest_name": "Marmaris Belediyesi GSK U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "17:30",
-        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "17:30",
-          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2362,9 +2355,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:35.676672+00:00",
-  "last_success_at": "2026-11-13T14:56:35.676672+00:00",
-  "content_changed_at": "2026-11-13T14:56:35.676672+00:00",
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:20.257086"
+  "last_attempt_at": "2026-11-13T16:51:14.458204+00:00",
+  "last_success_at": "2026-11-13T16:51:14.458204+00:00",
+  "content_changed_at": "2026-11-13T16:51:14.458204+00:00",
+  "volleybox_synced_matches": 31,
+  "volleybox_sync_updated_at": "2026-11-13T16:53:03.338534"
 }

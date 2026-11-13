@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:08.710062",
+  "updated_at": "2026-11-13T16:50:43.179727",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -982,8 +982,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "17",
-      "home_team": "Anadolu Pars Spor Kulübü",
-      "away_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "home_team": "Denizli Anadolu Pars GSK U18",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1000,7 +1000,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -1193,25 +1199,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411430",
-        "url": "https://women.volleybox.net/tr/cavidilspor-u16-denizli-tutku-gsk-u16-c411430",
-        "host_name": "Cavidilspor U16",
-        "guest_name": "Denizli Tutku GSK U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-05",
-        "vb_time": "20:00",
-        "vb_hall": "KYK Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": "20:00",
-          "vb_hall": "KYK Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1374,25 +1373,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411434",
-        "url": "https://women.volleybox.net/tr/denizli-tutku-gsk-u16-denizli-buyuksehir-belediyespor-u16-c411434",
-        "host_name": "Denizli Tutku GSK U16",
-        "guest_name": "Denizli Büyükşehir Belediyespor U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-09",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-09",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1465,25 +1457,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411436",
-        "url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-u16-denizli-gsm-sk-u16-c411436",
-        "host_name": "Denizli Büyükşehir Belediyespor U16",
-        "guest_name": "Denizli GSİM SK U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-12",
-        "vb_time": "18:30",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-12",
-          "vb_time": "18:30",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1512,25 +1497,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411437",
-        "url": "https://women.volleybox.net/tr/denizli-anadolu-pars-gsk-u16-denizli-tutku-gsk-u16-c411437",
-        "host_name": "Denizli Anadolu Pars GSK U16",
-        "guest_name": "Denizli Tutku GSK U16",
-        "score": "3 - 2",
-        "has_score": true,
-        "vb_date": "2026-10-12",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-12",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1558,25 +1536,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411438",
-        "url": "https://women.volleybox.net/tr/denizli-merkez-akademi-spor-kulubu-u16-denizli-tutku-gsk-u16-c411438",
-        "host_name": "Denizli Merkez Akademi Spor Kulübü U16",
-        "guest_name": "Denizli Tutku GSK U16",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-16",
-        "vb_time": "18:30",
-        "vb_hall": "KYK Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-16",
-          "vb_time": "18:30",
-          "vb_hall": "KYK Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1694,25 +1665,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411444",
-        "url": "https://women.volleybox.net/tr/denizli-anadolu-pars-gsk-u16-cavidilspor-u16-c411444",
-        "host_name": "Denizli Anadolu Pars GSK U16",
-        "guest_name": "Cavidilspor U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-19",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-19",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1739,25 +1703,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411445",
-        "url": "https://women.volleybox.net/tr/denizli-damlaspor-kulubu-u16-denizli-buyuksehir-belediyespor-u16-c411445",
-        "host_name": "Denizli Damlaspor Kulübü U16",
-        "guest_name": "Denizli Büyükşehir Belediyespor U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-20",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-20",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1876,25 +1833,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411448",
-        "url": "https://women.volleybox.net/tr/cavidilspor-u16-denizli-buyuksehir-belediyespor-u16-c411448",
-        "host_name": "Cavidilspor U16",
-        "guest_name": "Denizli Büyükşehir Belediyespor U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-22",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-22",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1923,25 +1873,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411449",
-        "url": "https://women.volleybox.net/tr/denizli-anadolu-pars-gsk-u16-denizli-voleybol-spor-kulubu-u16-c411449",
-        "host_name": "Denizli Anadolu Pars GSK U16",
-        "guest_name": "Denizli Voleybol Spor Kulübü U16",
-        "score": "3 - 2",
-        "has_score": true,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1968,25 +1911,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411450",
-        "url": "https://women.volleybox.net/tr/denizli-tutku-gsk-u16-hierapolis-spor-kulubu-u16-c411450",
-        "host_name": "Denizli Tutku GSK U16",
-        "guest_name": "Hierapolis Spor Kulübü U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
-        "vb_hall": "KYK Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
-          "vb_hall": "KYK Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2014,25 +1950,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411672",
-        "url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-u16-denizli-anadolu-pars-gsk-u16-c411672",
-        "host_name": "Denizli Büyükşehir Belediyespor U16",
-        "guest_name": "Denizli Anadolu Pars GSK U16",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "18:30",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "18:30",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2059,25 +1988,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "412694",
-        "url": "https://women.volleybox.net/tr/denizli-damlaspor-kulubu-u16-denizli-anadolu-pars-gsk-u16-c412694",
-        "host_name": "Denizli Damlaspor Kulübü U16",
-        "guest_name": "Denizli Anadolu Pars GSK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-30",
-        "vb_time": "20:00",
-        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-30",
-          "vb_time": "20:00",
-          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2280,9 +2202,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:08.721253+00:00",
-  "last_success_at": "2026-11-13T14:56:08.721253+00:00",
-  "content_changed_at": "2026-11-13T14:56:08.721253+00:00",
-  "volleybox_synced_matches": 40,
-  "volleybox_sync_updated_at": "2026-11-13T18:03:54.858035"
+  "last_attempt_at": "2026-11-13T16:50:43.185010+00:00",
+  "last_success_at": "2026-11-13T16:50:43.185010+00:00",
+  "content_changed_at": "2026-11-13T16:50:43.185010+00:00",
+  "volleybox_synced_matches": 27,
+  "volleybox_sync_updated_at": "2026-11-13T16:53:03.311253"
 }
