@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:32.663972",
+  "updated_at": "2026-11-13T13:38:10.663441",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -184,24 +184,24 @@
       },
       {
         "rank": 2,
-        "team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
-        "played": 3,
-        "won": 2,
+        "team": "Balıkesir EKA Spor Kulubü U16",
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Balıkesir EKA Spor Kulubü U16",
-        "played": 3,
+        "team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
+        "played": 4,
         "won": 2,
-        "lost": 1,
-        "points": 6,
+        "lost": 2,
+        "points": 3,
         "sets_won": 6,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -242,11 +242,11 @@
       {
         "rank": 2,
         "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
-        "played": 4,
-        "won": 3,
+        "played": 5,
+        "won": 4,
         "lost": 1,
-        "points": 10,
-        "sets_won": 11,
+        "points": 13,
+        "sets_won": 14,
         "sets_lost": 3,
         "form": []
       },
@@ -263,24 +263,24 @@
       },
       {
         "rank": 4,
-        "team": "EBA Spor U16",
-        "played": 4,
-        "won": 1,
+        "team": "TED Balıkesir Koleji SK U16",
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 4,
-        "sets_won": 6,
-        "sets_lost": 9,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 5,
-        "team": "TED Balıkesir Koleji SK U16",
-        "played": 3,
+        "team": "EBA Spor U16",
+        "played": 5,
         "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 7,
+        "lost": 4,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -683,11 +683,16 @@
       "match_no": "5",
       "home_team": "Balıkesir EKA Spor Kulubü U16",
       "away_team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411159",
@@ -1301,11 +1306,15 @@
       "match_no": "9",
       "home_team": "EBA Spor U16",
       "away_team": "TED Balıkesir Koleji SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "9-25",
+        "16-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411631",
@@ -1524,11 +1533,15 @@
       "match_no": "14",
       "home_team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
       "away_team": "TED Balıkesir Koleji SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-23",
+        "25-4"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414772",
@@ -2663,10 +2676,10 @@
       }
     },
     {
-      "id": "balikesir-20261112-050",
+      "id": "balikesir-20261115-050",
       "city": "Balıkesir",
-      "date": "2026-11-12",
-      "time": "20:30",
+      "date": "2026-11-15",
+      "time": "18:00",
       "hall": "Ayvalık Ss.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3376,9 +3389,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:32.699000+00:00",
-  "last_success_at": "2026-11-11T06:58:32.699000+00:00",
-  "content_changed_at": "2026-11-11T06:58:32.699000+00:00",
+  "last_attempt_at": "2026-11-13T10:38:10.684110+00:00",
+  "last_success_at": "2026-11-13T10:38:10.684110+00:00",
+  "content_changed_at": "2026-11-13T10:38:10.684110+00:00",
   "volleybox_synced_matches": 58,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:11.477149"
+  "volleybox_sync_updated_at": "2026-11-13T13:45:54.859007"
 }

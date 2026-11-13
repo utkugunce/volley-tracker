@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:48.246617",
+  "updated_at": "2026-11-13T13:38:25.980543",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -44,17 +44,28 @@
       },
       {
         "rank": 2,
-        "team": "Lüleburgaz Akım Koleji SK U18",
+        "team": "Kırklareli Gençlik Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
+        "team": "Lüleburgaz Akım Koleji SK U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Lüleburgaz Akademi Spor - D U18",
         "played": 2,
         "won": 1,
@@ -65,7 +76,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Lüleburgaz Akademi Spor - B U18",
         "played": 2,
         "won": 0,
@@ -76,7 +87,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Lüleburgaz Akademi Spor - C U18",
         "played": 1,
         "won": 0,
@@ -84,17 +95,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Kırklareli Gençlik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -405,11 +405,16 @@
       "match_no": "5",
       "home_team": "Lüleburgaz Akım Koleji SK U18",
       "away_team": "Kırklareli Gençlik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "18-25",
+        "25-22",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413328",
@@ -2585,9 +2590,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:48.398311+00:00",
-  "last_success_at": "2026-11-11T06:58:48.398311+00:00",
-  "content_changed_at": "2026-11-11T06:58:48.398311+00:00",
+  "last_attempt_at": "2026-11-13T10:38:25.994232+00:00",
+  "last_success_at": "2026-11-13T10:38:25.994232+00:00",
+  "content_changed_at": "2026-11-13T10:38:25.994232+00:00",
   "volleybox_synced_matches": 50,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:44.401869"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:19.482730"
 }

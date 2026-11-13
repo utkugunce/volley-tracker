@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:59:01.866661",
+  "updated_at": "2026-11-13T13:38:56.829115",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -42,45 +42,45 @@
       {
         "rank": 2,
         "team": "Koru Akademi Spor Kulübü U18",
-        "played": 4,
-        "won": 3,
+        "played": 5,
+        "won": 4,
         "lost": 1,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 4,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
         "team": "Yalova Atakent Spor Kulübü U18",
-        "played": 4,
-        "won": 2,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 5,
-        "sets_won": 6,
+        "points": 8,
+        "sets_won": 9,
         "sets_lost": 8,
         "form": []
       },
       {
         "rank": 4,
         "team": "Yalova Voleybol Spor Kulübü - B U18",
-        "played": 4,
+        "played": 5,
         "won": 1,
-        "lost": 3,
+        "lost": 4,
         "points": 4,
-        "sets_won": 5,
-        "sets_lost": 9,
+        "sets_won": 6,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 5,
         "team": "Koru Akademi Spor Kulübü - B U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -552,11 +552,16 @@
       "match_no": "11",
       "home_team": "Yalova Voleybol Spor Kulübü - B U18",
       "away_team": "Koru Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-22",
+        "14-25",
+        "24-26",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398317",
@@ -593,11 +598,15 @@
       "match_no": "12",
       "home_team": "Yalova Atakent Spor Kulübü U18",
       "away_team": "Koru Akademi Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-13",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398318",
@@ -789,7 +798,7 @@
       "id": "yalova-20261129-017",
       "city": "Yalova",
       "date": "2026-11-29",
-      "time": "14:00",
+      "time": "16:00",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -822,7 +831,7 @@
           "vb_date": "2026-12-04",
           "vb_time": "18:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-29 / VB: 2026-12-04) | Saat Değişti (TVF: 14:00 / VB: 18:30)"
+          "details": "Tarih Değişti (TVF: 2026-11-29 / VB: 2026-12-04) | Saat Değişti (TVF: 16:00 / VB: 18:30)"
         }
       }
     },
@@ -830,7 +839,7 @@
       "id": "yalova-20261129-018",
       "city": "Yalova",
       "date": "2026-11-29",
-      "time": "16:00",
+      "time": "18:00",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -863,7 +872,7 @@
           "vb_date": "2026-12-04",
           "vb_time": "20:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-29 / VB: 2026-12-04) | Saat Değişti (TVF: 16:00 / VB: 20:30)"
+          "details": "Tarih Değişti (TVF: 2026-11-29 / VB: 2026-12-04) | Saat Değişti (TVF: 18:00 / VB: 20:30)"
         }
       }
     },
@@ -950,9 +959,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:59:01.903290+00:00",
-  "last_success_at": "2026-11-11T06:59:01.903290+00:00",
-  "content_changed_at": "2026-11-11T06:59:01.903290+00:00",
+  "last_attempt_at": "2026-11-13T10:38:56.832555+00:00",
+  "last_success_at": "2026-11-13T10:38:56.832555+00:00",
+  "content_changed_at": "2026-11-13T10:38:56.832555+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-11T11:38:16.136859"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:41.631732"
 }

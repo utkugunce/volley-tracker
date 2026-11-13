@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-11T09:58:36.032126",
+  "updated_at": "2026-11-13T13:38:15.120272",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 56,
+  "total_matches": 60,
   "source": "https://canakkale.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -2933,11 +2933,147 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "canakkale-20261126-057",
+      "city": "Çanakkale",
+      "date": "2026-11-26",
+      "time": "20:00",
+      "hall": "Sporcu Gelişim Merkezi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "ÇOMÜ Spor Kulübü - B U16",
+      "away_team": "Nehir Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261127-058",
+      "city": "Çanakkale",
+      "date": "2026-11-27",
+      "time": "18:00",
+      "hall": "Sporcu Gelişim Merkezi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "2",
+      "home_team": "Parion Spor Kulübü U16",
+      "away_team": "Çanakkale Barbarosspor U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261128-059",
+      "city": "Çanakkale",
+      "date": "2026-11-28",
+      "time": "14:00",
+      "hall": "Sporcu Gelişim Merkezi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "3",
+      "home_team": "Çan Kale Spor Kulübü U16",
+      "away_team": "Çanakkalespor U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261129-060",
+      "city": "Çanakkale",
+      "date": "2026-11-29",
+      "time": "14:00",
+      "hall": "Sporcu Gelişim Merkezi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "4",
+      "home_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Biga Gelişim Voleybol Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:36.070692+00:00",
-  "last_success_at": "2026-11-11T06:58:36.070692+00:00",
-  "content_changed_at": "2026-11-11T06:58:36.070692+00:00",
+  "last_attempt_at": "2026-11-13T10:38:15.127723+00:00",
+  "last_success_at": "2026-11-13T10:38:15.127723+00:00",
+  "content_changed_at": "2026-11-13T10:38:15.127723+00:00",
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:16.776653"
+  "volleybox_sync_updated_at": "2026-11-13T13:45:59.379124"
 }

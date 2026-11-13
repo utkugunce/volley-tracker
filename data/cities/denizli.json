@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-11T09:58:37.230615",
+  "updated_at": "2026-11-13T13:38:13.483891",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 47,
+  "total_matches": 46,
   "source": "https://denizli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -2291,45 +2291,11 @@
           "has_diff": false
         }
       }
-    },
-    {
-      "id": "denizli-20261114-047",
-      "city": "Denizli",
-      "date": "2026-11-14",
-      "time": "13:00",
-      "hall": "Çivril Spor Salonu",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Gruplar",
-      "match_no": "26",
-      "home_team": "Yeşil Çivril Belediye Spor Kulübü",
-      "away_team": "Hierapolis Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:37.263292+00:00",
-  "last_success_at": "2026-11-11T06:58:37.263292+00:00",
-  "content_changed_at": "2026-11-11T06:58:37.263292+00:00",
+  "last_attempt_at": "2026-11-13T10:38:13.534552+00:00",
+  "last_success_at": "2026-11-13T10:38:13.534552+00:00",
+  "content_changed_at": "2026-11-13T10:38:13.534552+00:00",
   "volleybox_synced_matches": 40,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:17.727318"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:00.150449"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:29.126882",
+  "updated_at": "2026-11-13T13:38:17.987858",
   "city": "Giresun",
   "slug": "giresun",
   "title": "TVF Giresun Genç & Yıldız Kızlar Süper Lig",
@@ -331,6 +331,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -345,14 +346,13 @@
         "discrepancy": {
           "has_diff": false
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "giresun-20261114-007",
       "city": "Giresun",
       "date": "2026-11-14",
-      "time": "13:00",
+      "time": "11:00",
       "hall": "Batlama",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -385,7 +385,7 @@
           "vb_date": "2026-11-15",
           "vb_time": "12:00",
           "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-15) | Saat Değişti (TVF: 13:00 / VB: 12:00) | Salon Değişti (TVF: Batlama / VB: 19 Eylül Spor Salonu)"
+          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-15) | Saat Değişti (TVF: 11:00 / VB: 12:00) | Salon Değişti (TVF: Batlama / VB: 19 Eylül Spor Salonu)"
         }
       }
     },
@@ -393,7 +393,7 @@
       "id": "giresun-20261114-008",
       "city": "Giresun",
       "date": "2026-11-14",
-      "time": "14:30",
+      "time": "12:30",
       "hall": "Batlama",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -426,7 +426,7 @@
           "vb_date": "2026-11-15",
           "vb_time": "13:30",
           "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-15) | Saat Değişti (TVF: 14:30 / VB: 13:30) | Salon Değişti (TVF: Batlama / VB: 19 Eylül Spor Salonu)"
+          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-15) | Saat Değişti (TVF: 12:30 / VB: 13:30) | Salon Değişti (TVF: Batlama / VB: 19 Eylül Spor Salonu)"
         }
       }
     },
@@ -434,7 +434,7 @@
       "id": "giresun-20261114-009",
       "city": "Giresun",
       "date": "2026-11-14",
-      "time": "16:00",
+      "time": "14:00",
       "hall": "Batlama",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -1242,9 +1242,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T09:58:44.103446+03:00",
-  "last_success_at": "2026-11-10T11:19:29.164276+00:00",
-  "content_changed_at": "2026-11-10T11:19:29.164276+00:00",
+  "last_attempt_at": "2026-11-13T10:38:17.990677+00:00",
+  "last_success_at": "2026-11-13T10:38:17.990677+00:00",
+  "content_changed_at": "2026-11-13T10:38:17.990677+00:00",
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:21.066945"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:02.471301"
 }

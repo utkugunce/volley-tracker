@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:35.314242",
+  "updated_at": "2026-11-13T13:38:14.567439",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -321,16 +321,38 @@
       {
         "rank": 1,
         "team": "Eker Spor Kulübü - B U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
+        "team": "23 Nisan Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Doruk Voleybol Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -338,28 +360,6 @@
         "points": 6,
         "sets_won": 7,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "23 Nisan Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 4,
         "form": []
       },
       {
@@ -376,12 +376,12 @@
       {
         "rank": 6,
         "team": "Bursa Genç Saray Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -389,23 +389,23 @@
       {
         "rank": 1,
         "team": "Nilüfer Belediyespor - B U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Bursa Osmangazi Belediye Spor",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 9,
         "sets_won": 9,
-        "sets_lost": 1,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -535,22 +535,22 @@
       },
       {
         "rank": 3,
-        "team": "Hürriyet Spor Kulübü U16",
-        "played": 2,
+        "team": "Nilüfer Belediyespor Eker (A)",
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Nilüfer Belediyespor Eker (A)",
-        "played": 2,
-        "won": 0,
+        "team": "Hürriyet Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 1,
+        "points": 3,
         "sets_won": 3,
         "sets_lost": 6,
         "form": []
@@ -2752,11 +2752,17 @@
       "match_no": "10",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
       "away_team": "23 Nisan Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "25-17",
+        "15-25",
+        "25-19",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415226",
@@ -2793,11 +2799,15 @@
       "match_no": "11",
       "home_team": "Bursa Genç Saray Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "7-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415227",
@@ -3434,11 +3444,15 @@
       "match_no": "12",
       "home_team": "Bursa Osmangazi Belediye Spor",
       "away_team": "Nilüfer Belediyespor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "18-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415231",
@@ -4273,11 +4287,15 @@
       "match_no": "8",
       "home_team": "Hürriyet Spor Kulübü U16",
       "away_team": "Nilüfer Belediyespor Eker (A)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "7-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415232",
@@ -4336,9 +4354,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:35.375526+00:00",
-  "last_success_at": "2026-11-11T06:58:35.375526+00:00",
-  "content_changed_at": "2026-11-11T06:58:35.375526+00:00",
+  "last_attempt_at": "2026-11-13T10:38:14.572500+00:00",
+  "last_success_at": "2026-11-13T10:38:14.572500+00:00",
+  "content_changed_at": "2026-11-13T10:38:14.572500+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-11T11:37:14.303776"
+  "volleybox_sync_updated_at": "2026-11-13T13:45:57.207144"
 }

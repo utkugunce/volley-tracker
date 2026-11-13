@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:51.750390",
+  "updated_at": "2026-11-13T13:38:28.969785",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -46,23 +46,23 @@
       {
         "rank": 2,
         "team": "Ereğli Sümer SK U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "Ereğli Arel Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -137,24 +137,24 @@
       },
       {
         "rank": 3,
-        "team": "Ballas Spor Kulübü U18",
+        "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
         "played": 5,
         "won": 2,
         "lost": 3,
-        "points": 3,
-        "sets_won": 6,
+        "points": 5,
+        "sets_won": 8,
         "sets_lost": 11,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
-        "played": 4,
-        "won": 1,
-        "lost": 3,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 9,
+        "team": "Ballas Spor Kulübü U18",
+        "played": 6,
+        "won": 2,
+        "lost": 4,
+        "points": 4,
+        "sets_won": 8,
+        "sets_lost": 14,
         "form": []
       }
     ],
@@ -719,11 +719,15 @@
       "match_no": "5",
       "home_team": "Ereğli Sümer SK U18",
       "away_team": "Ereğli Arel Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-8",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415749",
@@ -1776,11 +1780,17 @@
       "match_no": "11",
       "home_team": "Ballas Spor Kulübü U18",
       "away_team": "Konya Anadolu Yıldızları Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-17",
+        "22-25",
+        "25-15",
+        "13-25",
+        "8-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2324,9 +2334,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:51.790247+00:00",
-  "last_success_at": "2026-11-11T06:58:51.790247+00:00",
-  "content_changed_at": "2026-11-11T06:58:51.790247+00:00",
+  "last_attempt_at": "2026-11-13T10:38:28.975542+00:00",
+  "last_success_at": "2026-11-13T10:38:28.975542+00:00",
+  "content_changed_at": "2026-11-13T10:38:28.975542+00:00",
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-11T11:38:05.372993"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:34.025191"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:58:56.664349",
+  "updated_at": "2026-11-13T13:38:39.332258",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -34,11 +34,11 @@
       {
         "rank": 1,
         "team": "Serdivan Belediyesi Spor Kulübü U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -56,12 +56,12 @@
       {
         "rank": 3,
         "team": "Alaağaç Spor U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -80,16 +80,27 @@
       {
         "rank": 1,
         "team": "Sakarya Voleybol SK U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 8,
-        "sets_won": 9,
+        "points": 11,
+        "sets_won": 12,
         "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Asaş Spor Kulübü U18",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 11,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Sakarya Gelişim Spor Kulübü U18",
         "played": 4,
         "won": 2,
@@ -100,36 +111,161 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Asaş Spor Kulübü U18",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 8,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Erenler Anadolu Voleybol Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
         "team": "Sapanca Ayyıldız Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "1954 Hendek Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Fener Akademi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Sakarya Voleybol Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Sakarya Gelişim Spor Kulübü A",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Sakarya Gelişim Spor Kulübü B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Serdivan Belediyesi Spor Kulübü A",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Alaağaçspor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Asaş Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Kargenç Çevre Ve Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Sakarya Gelişim Spor Kulübü C",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Saraçhane 54 Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Serdivan Belediyesi Spor Kulübü B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -372,11 +508,15 @@
       "match_no": "6",
       "home_team": "Alaağaç Spor U18",
       "away_team": "Serdivan Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "22-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -970,11 +1110,15 @@
       "match_no": "9",
       "home_team": "Sapanca Ayyıldız Spor Kulübü U18",
       "away_team": "Sakarya Voleybol SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "5-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1004,11 +1148,15 @@
       "match_no": "10",
       "home_team": "Asaş Spor Kulübü U18",
       "away_team": "Erenler Anadolu Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-17",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1366,9 +1514,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-11T06:58:56.718096+00:00",
-  "last_success_at": "2026-11-11T06:58:56.718096+00:00",
-  "content_changed_at": "2026-11-11T06:58:56.718096+00:00",
+  "last_attempt_at": "2026-11-13T10:38:39.337974+00:00",
+  "last_success_at": "2026-11-13T10:38:39.337974+00:00",
+  "content_changed_at": "2026-11-13T10:38:39.337974+00:00",
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-11T11:38:08.425713"
+  "volleybox_sync_updated_at": "2026-11-13T13:46:36.283538"
 }
