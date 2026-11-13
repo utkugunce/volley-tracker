@@ -9,6 +9,7 @@ import { useStandingsSelection } from "@/hooks/useStandingsSelection";
 import { useStandingsCityDropdown } from "@/hooks/useStandingsCityDropdown";
 import { useStandingsRowExpansion } from "@/hooks/useStandingsRowExpansion";
 import type { StandingsTeamContext } from "@/utils/standingsParsing";
+import { detectStandingsAnomalies } from "@/utils/volleyboxWorkbench";
 import { StandingsEmptyState } from "./standings/StandingsEmptyState";
 import { StandingsSelectorBar } from "./standings/StandingsSelectorBar";
 import { StandingsHeaderStrip } from "./standings/StandingsHeaderStrip";
@@ -95,6 +96,16 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
     };
   }, [matches, activeContext, city]);
 
+  const groupAnomaly = useMemo(() => {
+    if (!activeContext?.rawKey || items.length === 0 || finishedMatches.length === 0) return null;
+    const found = detectStandingsAnomalies(
+      finishedMatches,
+      { [activeContext.rawKey]: items },
+      activeContext.city || city
+    );
+    return found[0] || null;
+  }, [finishedMatches, activeContext, items, city]);
+
   if (allKeys.length === 0) {
     return <StandingsEmptyState />;
   }
@@ -126,6 +137,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({
           items={items}
           showSimulator={showSimulator}
           onToggleSimulator={() => setShowSimulator((prev) => !prev)}
+          forfeitCount={groupAnomaly?.forfeitMatchCount || 0}
+          discrepancyCount={groupAnomaly?.discrepancyTeams.length || 0}
         />
 
         {/* Simülatör Açıksa */}

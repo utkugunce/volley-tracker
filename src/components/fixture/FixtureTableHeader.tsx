@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Trophy, CalendarPlus, LayoutGrid, List, ChevronDown, ChevronUp } from "lucide-react";
+import { Trophy, LayoutGrid, List, ChevronDown, ChevronUp } from "lucide-react";
 import type { Match } from "@/types/fixture";
 import { LeagueVolleyboxLink } from "@/components/LeagueVolleyboxLink";
 import { PrintScheduleButton } from "@/components/PrintScheduleButton";
@@ -19,11 +19,11 @@ interface FixtureTableHeaderProps {
   viewMode: FixtureViewMode;
   setViewMode: (mode: FixtureViewMode) => void;
   matches: Match[];
-  favorites: string[];
-  handleDownloadFavoritesIcs: (e: React.MouseEvent) => void;
+  favorites?: string[];
+  handleDownloadFavoritesIcs?: (e: React.MouseEvent) => void;
 }
 
-/** 1. Grup Başlığı (lig adı, görünüm seçici, favori .ics, maç sayısı, daralt/göster düğmesi) */
+/** 1. Grup Başlığı (lig adı, görünüm seçici, maç sayısı, daralt/göster düğmesi) */
 export function FixtureTableHeader({
   title,
   subTitle,
@@ -35,8 +35,6 @@ export function FixtureTableHeader({
   viewMode,
   setViewMode,
   matches,
-  favorites,
-  handleDownloadFavoritesIcs,
 }: FixtureTableHeaderProps) {
   return (
     <div
@@ -107,17 +105,6 @@ export function FixtureTableHeader({
               </button>
             </div>
 
-            {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
-              <button
-                type="button"
-                onClick={handleDownloadFavoritesIcs}
-                className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 px-2.5 py-1 rounded-lg transition-all cursor-pointer shadow-xs active:scale-95"
-                title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
-              >
-                <CalendarPlus size={11} />
-                <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
-              </button>
-            )}
             <PrintScheduleButton />
           </>
         )}

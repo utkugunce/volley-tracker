@@ -24,7 +24,7 @@ import {
 } from "@/utils/calendar";
 import { isMatchScored } from "@/utils/matchScoring";
 import { getVolleyboxMapping } from "@/utils/volleybox";
-import { LeagueFinderWidget } from "@/components/LeagueFinderWidget";
+import { VolleyboxWorkbenchPanel } from "@/components/dashboard/VolleyboxWorkbenchPanel";
 import { ScrollReveal } from "@/components/common/ScrollReveal";
 import { VolleyMatchRow } from "@/components/match/VolleyMatchRow";
 
@@ -44,6 +44,8 @@ interface HomePortalViewProps {
   totalMatchesCount?: number;
   scoredMatchesCount?: number;
   onSelectDate?: (date: string) => void;
+  isPartialData?: boolean;
+  onEnsureFullData?: () => void;
 }
 
 export const HomePortalView: React.FC<HomePortalViewProps> = ({
@@ -62,6 +64,8 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   totalMatchesCount,
   scoredMatchesCount,
   onSelectDate,
+  isPartialData = false,
+  onEnsureFullData,
 }) => {
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
 
@@ -422,6 +426,16 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           </div>
         ) : (
           <div className="space-y-5">
+            {/* VOLLEYBOX OPERATÖR İŞ KUYRUĞU (WORKBENCH) */}
+            <VolleyboxWorkbenchPanel
+              matches={matches}
+              standings={standings}
+              city={city}
+              isPartialData={isPartialData}
+              onEnsureFullData={onEnsureFullData}
+              onSelectMatch={onSelectMatch}
+            />
+
             {/* BÖLÜM 1: BUGÜNÜN MAÇLARI (BELİRGİN SPOTLIGHT HERO KARTI) */}
             {todayMatches.length > 0 ? (
               <div className="relative rounded-2xl p-3.5 sm:p-4 bg-gradient-to-b from-surface-raised/90 via-surface to-surface border-2 border-emerald-500/40 shadow-xl overflow-hidden space-y-3">
@@ -714,18 +728,13 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               </div>
             </ScrollReveal>
 
-            {/* İNTERAKTİF YAŞ & KATEGORİ HESAPLAYICI */}
-            <div className="pt-1">
-              <ScrollReveal><LeagueFinderWidget /></ScrollReveal>
-            </div>
-
-            {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
+            {/* KISA OPERATÖR PLATFORM BİLGİSİ */}
             <div className="rounded-2xl p-3 bg-surface border border-line/60 text-[11px] text-ink-2 flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-primary shrink-0" />
-                <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
+                <span>TVF Altyapı Bülteni & Volleybox Operatör İş Tezgahı</span>
               </div>
-              <span className="font-mono font-semibold text-ink shrink-0">81 İl Takibi</span>
+              <span className="font-scoreboard tabular-nums font-semibold text-ink shrink-0">81 İl Takibi</span>
             </div>
           </div>
         )}

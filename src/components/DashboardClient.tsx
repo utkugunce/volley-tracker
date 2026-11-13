@@ -318,6 +318,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             totalMatchesCount={data?.total_matches}
             scoredMatchesCount={data.scored_matches ?? data.matches.filter(isMatchScored).length}
             onSelectDate={filters.setSelectedDate}
+            isPartialData={isPartialData}
+            onEnsureFullData={ensureFullData}
           />
         ) : activeMainTab === "today" ? (
           /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */

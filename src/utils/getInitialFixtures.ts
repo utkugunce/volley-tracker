@@ -210,9 +210,20 @@ export function getInitialHomeFixtures(resolved?: FixturesData): FixturesData {
     .sort((a, b) => (a.date && b.date ? a.date.localeCompare(b.date) : 0))
     .slice(0, 16);
 
+  // 4. Volleybox operatör kuyruğundan acil öğeler (Skoru eksik & Değişiklik olanlar)
+  const vbMissingScores = allScoredMatches
+    .filter((m) => m.volleybox?.synced && !m.volleybox?.has_score)
+    .sort((a, b) => (b.date && a.date ? b.date.localeCompare(a.date) : 0))
+    .slice(0, 15);
+
+  const vbDiscrepancies = full.matches
+    .filter((m) => m.volleybox?.synced && m.volleybox?.discrepancy?.has_diff)
+    .sort((a, b) => (a.date && b.date ? a.date.localeCompare(b.date) : 0))
+    .slice(0, 15);
+
   // ID'ye göre tekilleştir
   const matchMap = new Map<string, Match>();
-  [...todayAndYesterday, ...scored, ...upcoming].forEach((m) => {
+  [...todayAndYesterday, ...scored, ...upcoming, ...vbMissingScores, ...vbDiscrepancies].forEach((m) => {
     if (m && m.id) matchMap.set(m.id, m);
   });
 

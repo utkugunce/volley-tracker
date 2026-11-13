@@ -30,7 +30,12 @@ import { getHallNavigationUrl } from "@/utils/halls";
 import { generateMatchIcs, downloadIcsFile } from "@/utils/ics";
 import { slugify } from "@/utils/slugify";
 import { triggerHaptic } from "@/utils/haptics";
-import { getVolleyboxMapping } from "@/utils/volleybox";
+import { getVolleyboxLeagueMapping, getVolleyboxMapping } from "@/utils/volleybox";
+import {
+  formatMatchForVolleyboxCopy,
+  formatSetScoresForVolleybox,
+  getResolvedVolleyboxTeamName,
+} from "@/utils/volleyboxWorkbench";
 import { formatLeagueCategoryTitle, formatGroupName } from "@/utils/grouping";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { trLower } from "@/utils/turkishLocale";
@@ -102,7 +107,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   const [activeTab, setActiveTab] = useState<"overview" | "h2h" | "standings">("overview");
   const [showShareModal, setShowShareModal] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState<{
-    action: "text" | "link";
+    action: "text" | "link" | "vb-home" | "vb-away" | "vb-sets" | "vb-line";
     status: "success" | "error";
   } | null>(null);
   const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -145,6 +150,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
   const homeMapping = getVolleyboxMapping(match.home_team, match.category, undefined, effectiveCity);
   const awayMapping = getVolleyboxMapping(match.away_team, match.category, undefined, effectiveCity);
+  const leagueVbMapping = getVolleyboxLeagueMapping(match.category, effectiveCity);
+  const vbHomeName = getResolvedVolleyboxTeamName(match.home_team, match.category, effectiveCity);
+  const vbAwayName = getResolvedVolleyboxTeamName(match.away_team, match.category, effectiveCity);
+  const vbSetsText = formatSetScoresForVolleybox(match.set_scores);
+  const vbLineText = formatMatchForVolleyboxCopy(match, effectiveCity);
   const homeLogo = homeMapping?.local_logo || homeMapping?.logo_url;
   const awayLogo = awayMapping?.local_logo || awayMapping?.logo_url;
   const homeSlug = slugify(homeMapping?.matched_as || match.home_team);
@@ -237,7 +247,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
     return null;
   }, [standings, match.home_team, match.away_team]);
 
-  const copyToClipboard = async (value: string, action: "text" | "link") => {
+  const copyToClipboard = async (
+    value: string,
+    action: "text" | "link" | "vb-home" | "vb-away" | "vb-sets" | "vb-line"
+  ) => {
     try {
       await navigator.clipboard.writeText(value);
       setCopyFeedback({ action, status: "success" });
@@ -517,6 +530,118 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   <ExternalLink size={12} className="text-ink-3 group-hover:text-white" />
                 </a>
               )}
+
+              {/* Volleybox Operatör Kısayolları */}
+              <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-semibold text-white">
+                  <span>Volleybox Operatör Kısayolları</span>
+                  {leagueVbMapping?.volleybox_url && (
+                    <a
+                      href={leagueVbMapping.volleybox_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline font-bold"
+                    >
+                      <span>VB Turnuva Sayfası</span>
+                      <ExternalLink size={10} />
+                    </a>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 gap-1.5 text-[10px]">
+                  <button
+                    type="button"
+                    onClick={() => void copyToClipboard(vbHomeName, "vb-home")}
+                    className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-muted/70 hover:bg-surface-muted border border-line/60 text-left transition-colors cursor-pointer"
+                  >
+                    <span className="truncate text-ink">
+                      <span className="text-ink-3 mr-1">Ev:</span>
+                      <strong className="text-white">{vbHomeName}</strong>
+                    </span>
+                    <span className="shrink-0 font-semibold text-primary inline-flex items-center gap-1">
+                      {copyFeedback?.action === "vb-home" && copyFeedback.status === "success" ? (
+                        <>
+                          <Check size={11} className="text-emerald-400" />
+                          <span className="text-emerald-400">Kopyalandı</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={11} />
+                          <span>Kopyala</span>
+                        </>
+                      )}
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => void copyToClipboard(vbAwayName, "vb-away")}
+                    className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-muted/70 hover:bg-surface-muted border border-line/60 text-left transition-colors cursor-pointer"
+                  >
+                    <span className="truncate text-ink">
+                      <span className="text-ink-3 mr-1">Dep:</span>
+                      <strong className="text-white">{vbAwayName}</strong>
+                    </span>
+                    <span className="shrink-0 font-semibold text-primary inline-flex items-center gap-1">
+                      {copyFeedback?.action === "vb-away" && copyFeedback.status === "success" ? (
+                        <>
+                          <Check size={11} className="text-emerald-400" />
+                          <span className="text-emerald-400">Kopyalandı</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={11} />
+                          <span>Kopyala</span>
+                        </>
+                      )}
+                    </span>
+                  </button>
+
+                  {vbSetsText && (
+                    <button
+                      type="button"
+                      onClick={() => void copyToClipboard(vbSetsText, "vb-sets")}
+                      className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-muted/70 hover:bg-surface-muted border border-line/60 text-left transition-colors cursor-pointer"
+                    >
+                      <span className="truncate font-scoreboard tabular-nums text-ink">
+                        <span className="text-ink-3 font-sans mr-1">Setler:</span>
+                        <strong className="text-white">{vbSetsText}</strong>
+                      </span>
+                      <span className="shrink-0 font-semibold text-emerald-400 inline-flex items-center gap-1">
+                        {copyFeedback?.action === "vb-sets" && copyFeedback.status === "success" ? (
+                          <>
+                            <Check size={11} />
+                            <span>Kopyalandı</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy size={11} />
+                            <span>Setleri Kopyala</span>
+                          </>
+                        )}
+                      </span>
+                    </button>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => void copyToClipboard(vbLineText, "vb-line")}
+                    className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 font-semibold transition-colors cursor-pointer"
+                  >
+                    {copyFeedback?.action === "vb-line" && copyFeedback.status === "success" ? (
+                      <>
+                        <Check size={11} className="text-emerald-400" />
+                        <span className="text-emerald-400">VB Giriş Satırı Kopyalandı ✓</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={11} />
+                        <span>Volleybox Giriş Satırını Kopyala</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
 
               {/* Hızlı Aksiyonlar (2x2 Grid: Skor Kartı Paylaş, Takvime Ekle, Metni Kopyala, Bağlantıyı Kopyala) */}
               <div className="grid grid-cols-2 gap-2 pt-1">
