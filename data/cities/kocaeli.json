@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:28.356629",
+  "updated_at": "2026-11-13T19:57:57.719287",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -2497,17 +2497,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-16",
-        "vb_time": "18:30",
+        "vb_time": "14:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-16",
-          "vb_time": "18:30",
+          "vb_time": "14:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:30 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -2538,17 +2538,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-16",
-        "vb_time": "20:00",
+        "vb_time": "16:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-16",
-          "vb_time": "20:00",
+          "vb_time": "16:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2661,17 +2661,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-17",
-        "vb_time": "18:30",
+        "vb_time": "13:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-17",
-          "vb_time": "18:30",
+          "vb_time": "13:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -2702,17 +2702,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-17",
-        "vb_time": "20:00",
+        "vb_time": "14:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-17",
-          "vb_time": "20:00",
+          "vb_time": "14:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2743,17 +2743,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-17",
-        "vb_time": "18:30",
+        "vb_time": "16:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-17",
-          "vb_time": "18:30",
+          "vb_time": "16:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:30 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -2784,17 +2784,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-18",
-        "vb_time": "20:00",
+        "vb_time": "13:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-18",
-          "vb_time": "20:00",
+          "vb_time": "13:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2866,17 +2866,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-19",
-        "vb_time": "18:30",
+        "vb_time": "15:00",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-19",
-          "vb_time": "18:30",
+          "vb_time": "15:00",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": "Saat Değişti (TVF: 15:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -2907,17 +2907,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-19",
-        "vb_time": "20:00",
+        "vb_time": "16:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-19",
-          "vb_time": "20:00",
+          "vb_time": "16:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -3685,18 +3685,18 @@
         "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-26",
+        "vb_date": "2026-12-03",
         "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-26",
+          "vb_date": "2026-12-03",
           "vb_time": "20:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-12-03 / VB: 2026-11-26)"
+          "details": null
         }
       }
     },
@@ -5818,17 +5818,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-17",
-        "vb_time": "18:30",
+        "vb_time": "13:00",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-17",
-          "vb_time": "18:30",
+          "vb_time": "13:00",
           "vb_hall": "Darıca Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -5859,17 +5859,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-17",
-        "vb_time": "20:00",
+        "vb_time": "14:30",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-17",
-          "vb_time": "20:00",
+          "vb_time": "14:30",
           "vb_hall": "Darıca Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -5941,17 +5941,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-20",
-        "vb_time": "18:30",
+        "vb_time": "14:00",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-20",
-          "vb_time": "18:30",
+          "vb_time": "14:00",
           "vb_hall": "Darıca Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -5982,17 +5982,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-20",
-        "vb_time": "20:00",
+        "vb_time": "15:30",
         "vb_hall": "Darıca Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-20",
-          "vb_time": "20:00",
+          "vb_time": "15:30",
           "vb_hall": "Darıca Spor Salonu",
-          "details": "Saat Değişti (TVF: 15:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -6120,9 +6120,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:28.376231+00:00",
-  "last_success_at": "2026-11-13T14:56:28.376231+00:00",
-  "content_changed_at": "2026-11-13T14:56:28.376231+00:00",
+  "last_attempt_at": "2026-11-13T16:57:57.723948+00:00",
+  "last_success_at": "2026-11-13T16:57:57.723948+00:00",
+  "content_changed_at": "2026-11-13T16:57:57.723948+00:00",
   "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:18.989209"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:21.951406"
 }

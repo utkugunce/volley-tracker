@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:38.301495",
+  "updated_at": "2026-11-13T19:58:05.908305",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -971,8 +971,8 @@
         "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-anadolu-voleybol-akademi-sk-b-u18-c402999",
         "host_name": "Bafra Akademi Gençlik SK U18",
         "guest_name": "Anadolu Voleybol Akademi SK - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "13:00",
         "vb_hall": "Bafra Spor Salonu",
@@ -1018,8 +1018,8 @@
         "url": "https://women.volleybox.net/tr/55-matasyon-spor-kulubu-u18-19-mays-genclik-ve-spor-u18-c402792",
         "host_name": "55 Matasyon Spor Kulübü U18",
         "guest_name": "19 Mayıs Gençlik Ve Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "15:00",
         "vb_hall": "Bahattin Ekinci Spor Salonu",
@@ -2584,8 +2584,8 @@
         "url": "https://women.volleybox.net/tr/samsunspor-u18-terme-genclik-ve-spor-lce-mudurlugu-sk-u18-c403011",
         "host_name": "Samsunspor U18",
         "guest_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "16:00",
         "vb_hall": "Samsun Atatürk Spor Salonu",
@@ -2971,9 +2971,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:38.316788+00:00",
-  "last_success_at": "2026-11-13T14:56:38.316788+00:00",
-  "content_changed_at": "2026-11-13T14:56:38.316788+00:00",
+  "last_attempt_at": "2026-11-13T16:58:05.913837+00:00",
+  "last_success_at": "2026-11-13T16:58:05.913837+00:00",
+  "content_changed_at": "2026-11-13T16:58:05.913837+00:00",
   "volleybox_synced_matches": 62,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:21.436494"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:24.409431"
 }

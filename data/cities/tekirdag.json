@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:40.598827",
+  "updated_at": "2026-11-13T19:58:07.897168",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -2998,18 +2998,18 @@
         "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "16:45",
+        "vb_date": "2026-11-13",
+        "vb_time": "18:00",
         "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "16:45",
+          "vb_date": "2026-11-13",
+          "vb_time": "18:00",
           "vb_hall": "Çorlu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-14) | Saat Değişti (TVF: 18:00 / VB: 16:45)"
+          "details": null
         }
       }
     },
@@ -3959,9 +3959,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:40.620518+00:00",
-  "last_success_at": "2026-11-13T14:56:40.620518+00:00",
-  "content_changed_at": "2026-11-13T14:56:40.620518+00:00",
+  "last_attempt_at": "2026-11-13T16:58:07.902073+00:00",
+  "last_success_at": "2026-11-13T16:58:07.902073+00:00",
+  "content_changed_at": "2026-11-13T16:58:07.902073+00:00",
   "volleybox_synced_matches": 79,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:22.709826"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:25.698272"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:35.592431",
+  "updated_at": "2026-11-13T19:58:03.733515",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -1207,8 +1207,8 @@
         "url": "https://women.volleybox.net/tr/mugla-ss-voleybol-spor-kulubu-u18-mugla-sportif-akademi-spor-kulubu-u18-c411833",
         "host_name": "Muğla SS Voleybol Spor Kulübü U18",
         "guest_name": "Muğla Sportif Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "18:00",
         "vb_hall": "Menteşe Spor Salonu",
@@ -2362,9 +2362,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:35.676672+00:00",
-  "last_success_at": "2026-11-13T14:56:35.676672+00:00",
-  "content_changed_at": "2026-11-13T14:56:35.676672+00:00",
+  "last_attempt_at": "2026-11-13T16:58:03.738855+00:00",
+  "last_success_at": "2026-11-13T16:58:03.738855+00:00",
+  "content_changed_at": "2026-11-13T16:58:03.738855+00:00",
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:20.257086"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:23.231567"
 }

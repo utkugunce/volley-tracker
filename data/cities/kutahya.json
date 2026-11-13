@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-13T17:56:29.220454",
+  "updated_at": "2026-11-13T19:57:57.491259",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 17,
+  "total_matches": 18,
   "source": "https://kutahya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -988,8 +988,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-genclik-ve-spor-l-mudurlugu-sk-b-u18-kutahya-belediyespor-u18-c415180",
         "host_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
         "guest_name": "Kütahya Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "14:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -1074,8 +1074,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-belediyespor-b-u18-kutahya-genclik-ve-spor-l-mudurlugu-sk-u18-c415181",
         "host_name": "Kütahya Belediyespor - B U18",
         "guest_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-08",
         "vb_time": "12:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -1090,11 +1090,45 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "kutahya-20261114-018",
+      "city": "Kütahya",
+      "date": "2026-11-14",
+      "time": "13:00",
+      "hall": "Yeni Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Kütahya Belediyespor U18",
+      "away_team": "Kütahya Belediyespor - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:29.230335+00:00",
-  "last_success_at": "2026-11-13T14:56:29.230335+00:00",
-  "content_changed_at": "2026-11-13T14:56:29.230335+00:00",
+  "last_attempt_at": "2026-11-13T16:57:57.492573+00:00",
+  "last_success_at": "2026-11-13T16:57:57.492573+00:00",
+  "content_changed_at": "2026-11-13T16:57:57.492573+00:00",
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:19.453942"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:22.445462"
 }

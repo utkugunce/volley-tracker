@@ -1,89 +1,2130 @@
 {
-  "generated_at": "2026-11-04T16:21:00.076936",
-  "city_filter": "tokat",
-  "total_candidates": 12,
-  "ready_count": 0,
+  "generated_at": "2026-11-13T19:37:38.975954",
+  "city_filter": "all",
+  "total_candidates": 714,
+  "ready_count": 661,
   "quarantined_count": 0,
-  "missing_teams_count": 4,
-  "blocked_by_missing_teams": 24,
-  "health_score_pct": 0.0,
+  "missing_teams_count": 17,
+  "blocked_by_missing_teams": 87,
+  "health_score_pct": 92.6,
   "missing_teams": [
     {
-      "team_name": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-      "city": "Tokat",
-      "city_slug": "tokat",
-      "category": "Genç Kızlar 1. Ligi",
-      "match_count": 6,
+      "team_name": "Kırklareli Belediyesi Bil Koleji S.K.",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "category": "Yıldız Kızlar Süper Lig",
+      "match_count": 9,
       "blocked_matches": [
-        "tokat-20261108-001",
-        "tokat-20261115-003",
-        "tokat-20261122-005",
-        "tokat-20261129-007",
-        "tokat-20261206-009",
-        "tokat-20261213-011"
+        "kirklareli-20270203-015",
+        "kirklareli-20270209-022",
+        "kirklareli-20270213-028",
+        "kirklareli-20270215-029",
+        "kirklareli-20270224-034",
+        "kirklareli-20270303-040",
+        "kirklareli-20270318-046",
+        "kirklareli-20270325-052",
+        "kirklareli-20270329-056"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40248",
+          "name": "Kırklareli Gençlik Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
+          "city": "Kirklareli̇",
+          "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor - B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
+        },
+        {
+          "team_id": "42428",
+          "name": "Akademi Spor Kulübü A",
+          "url": "https://women.volleybox.net/team-t42428",
+          "city": "Kırklareli",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Elazığ Voleybol Akademi Spor Kulübü",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-001",
+        "elazig-20261115-007",
+        "elazig-20261116-012",
+        "elazig-20261118-014",
+        "elazig-20261119-017",
+        "elazig-20261121-023",
+        "elazig-20261122-025"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Elazığ Belediyesi Spor Kulübü",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-002",
+        "elazig-20261115-005",
+        "elazig-20261116-010",
+        "elazig-20261118-016",
+        "elazig-20261119-017",
+        "elazig-20261121-021",
+        "elazig-20261122-027"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "MSE Filo Elazığ Ekol Spor-B",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-002",
+        "elazig-20261115-006",
+        "elazig-20261116-009",
+        "elazig-20261118-014",
+        "elazig-20261119-018",
+        "elazig-20261121-022",
+        "elazig-20261122-028"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-003",
+        "elazig-20261115-006",
+        "elazig-20261116-011",
+        "elazig-20261118-015",
+        "elazig-20261119-020",
+        "elazig-20261121-021",
+        "elazig-20261122-025"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Elazığ Voleybol Spor Kulübü-A",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-003",
+        "elazig-20261115-007",
+        "elazig-20261116-009",
+        "elazig-20261118-013",
+        "elazig-20261119-019",
+        "elazig-20261121-024",
+        "elazig-20261122-027"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Elazığ Voleybol Spor Kulübü-B",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-004",
+        "elazig-20261115-008",
+        "elazig-20261116-012",
+        "elazig-20261118-016",
+        "elazig-20261119-020",
+        "elazig-20261121-024",
+        "elazig-20261122-028"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Atlas 23 SK",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 7,
+      "blocked_matches": [
+        "elazig-20261114-004",
+        "elazig-20261115-005",
+        "elazig-20261116-011",
+        "elazig-20261118-013",
+        "elazig-20261119-018",
+        "elazig-20261121-023",
+        "elazig-20261122-026"
+      ],
+      "suggestions": [
+        {
+          "team_id": "40635",
+          "name": "Malatya Voleybol Kulübü",
+          "url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+          "city": "Elaziğ",
+          "score": 99
+        },
+        {
+          "team_id": "36123",
+          "name": "MSE Filo Elazığ Ekol Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+          "city": "Elaziğ",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 4,
+      "blocked_matches": [
+        "rize-20261117-001",
+        "rize-20261119-004",
+        "rize-20261121-005",
+        "rize-20261212-007"
       ],
       "suggestions": []
     },
     {
-      "team_name": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-      "city": "Tokat",
-      "city_slug": "tokat",
-      "category": "Genç Kızlar 1. Ligi",
-      "match_count": 6,
+      "team_name": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 4,
       "blocked_matches": [
-        "tokat-20261108-001",
-        "tokat-20261115-004",
-        "tokat-20261122-006",
-        "tokat-20261129-007",
-        "tokat-20261206-010",
-        "tokat-20261213-012"
+        "rize-20261117-001",
+        "rize-20261119-003",
+        "rize-20261212-008",
+        "rize-20261213-010"
       ],
       "suggestions": []
     },
     {
-      "team_name": "MEKTEBİM SPOR KULÜBÜ",
-      "city": "Tokat",
-      "city_slug": "tokat",
-      "category": "Genç Kızlar 1. Ligi",
-      "match_count": 6,
+      "team_name": "Superpool Fındıklı 1974 Spor Kulübü",
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 4,
       "blocked_matches": [
-        "tokat-20261108-002",
-        "tokat-20261115-004",
-        "tokat-20261122-005",
-        "tokat-20261129-008",
-        "tokat-20261206-010",
-        "tokat-20261213-011"
+        "rize-20261117-002",
+        "rize-20261121-006",
+        "rize-20261212-007",
+        "rize-20261213-010"
       ],
       "suggestions": []
     },
     {
-      "team_name": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-      "city": "Tokat",
-      "city_slug": "tokat",
-      "category": "Genç Kızlar 1. Ligi",
-      "match_count": 6,
+      "team_name": "Rize DNZ Spor Kulübü",
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 4,
       "blocked_matches": [
-        "tokat-20261108-002",
-        "tokat-20261115-003",
-        "tokat-20261122-006",
-        "tokat-20261129-008",
-        "tokat-20261206-009",
-        "tokat-20261213-012"
+        "rize-20261117-002",
+        "rize-20261119-003",
+        "rize-20261121-005",
+        "rize-20261213-009"
       ],
       "suggestions": []
+    },
+    {
+      "team_name": "Kurtözü Spor Kulübü",
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 4,
+      "blocked_matches": [
+        "rize-20261119-004",
+        "rize-20261121-006",
+        "rize-20261212-008",
+        "rize-20261213-009"
+      ],
+      "suggestions": []
+    },
+    {
+      "team_name": "1921 Ordu Spor",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 3,
+      "blocked_matches": [
+        "ordu-20261115-002",
+        "ordu-20261116-004",
+        "ordu-20261117-005"
+      ],
+      "suggestions": [
+        {
+          "team_id": "7344",
+          "name": "52 Çamlık Spor",
+          "url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
+          "city": "Ordu",
+          "score": 99
+        },
+        {
+          "team_id": "36220",
+          "name": "Rize DNZ Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-t36220",
+          "city": "Ordu",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Pars Spor",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 2,
+      "blocked_matches": [
+        "ordu-20261115-001",
+        "ordu-20261117-005"
+      ],
+      "suggestions": [
+        {
+          "team_id": "7344",
+          "name": "52 Çamlık Spor",
+          "url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
+          "city": "Ordu",
+          "score": 99
+        },
+        {
+          "team_id": "36220",
+          "name": "Rize DNZ Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-t36220",
+          "city": "Ordu",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Academy Volley B",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 2,
+      "blocked_matches": [
+        "ordu-20261115-002",
+        "ordu-20261116-003"
+      ],
+      "suggestions": [
+        {
+          "team_id": "7344",
+          "name": "52 Çamlık Spor",
+          "url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
+          "city": "Ordu",
+          "score": 99
+        },
+        {
+          "team_id": "36220",
+          "name": "Rize DNZ Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-t36220",
+          "city": "Ordu",
+          "score": 99
+        }
+      ]
+    },
+    {
+      "team_name": "Academy Volley A",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "category": "Genç Kızlar Süper Lig",
+      "match_count": 2,
+      "blocked_matches": [
+        "ordu-20261116-003",
+        "ordu-20261117-006"
+      ],
+      "suggestions": [
+        {
+          "team_id": "7344",
+          "name": "52 Çamlık Spor",
+          "url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
+          "city": "Ordu",
+          "score": 99
+        },
+        {
+          "team_id": "36220",
+          "name": "Rize DNZ Spor Kulübü",
+          "url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-t36220",
+          "city": "Ordu",
+          "score": 99
+        }
+      ]
     }
   ],
   "quarantined_matches": [],
   "tournaments": [
     {
-      "tournament_url": "https://women.volleybox.net/women-tokat-super-ligi-u18-2026-27-o51961",
-      "tournament_slug": "women-tokat-super-ligi-u18-2026-27-o51961",
-      "city": "Tokat",
-      "category": "Genç Kızlar 1. Ligi",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749",
+      "tournament_slug": "women-aksaray-super-ligi-u18-2026-27-o51749",
+      "city": "Aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 6,
+      "ready_matches": 6,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021",
+      "tournament_slug": "women-ankara-super-ligi-u18-2026-27-o51021",
+      "city": "Ankara",
+      "category": "Genç Kızlar Süper Lig",
       "total_matches": 12,
+      "ready_matches": 12,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750",
+      "tournament_slug": "women-ankara-1-lig-u18-2026-27-o51750",
+      "city": "Ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "total_matches": 27,
+      "ready_matches": 27,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022",
+      "tournament_slug": "women-ankara-super-ligi-u16-2026-27-o51022",
+      "city": "Ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 9,
+      "ready_matches": 9,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896",
+      "tournament_slug": "women-antalya-super-ligi-u18-2026-27-o50896",
+      "city": "Antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 7,
+      "ready_matches": 7,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897",
+      "tournament_slug": "women-antalya-super-ligi-u16-2026-27-o50897",
+      "city": "Antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 19,
+      "ready_matches": 19,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181",
+      "tournament_slug": "women-balkesir-super-ligi-u16-2026-27-o51181",
+      "city": "Balıkesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 7,
+      "ready_matches": 7,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-bursa-super-ligi-u18-2026-27-o50939",
+      "tournament_slug": "women-bursa-super-ligi-u18-2026-27-o50939",
+      "city": "Bursa",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 3,
+      "ready_matches": 3,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941",
+      "tournament_slug": "women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941",
+      "city": "Bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 12,
+      "ready_matches": 12,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-canakkale-super-ligi-u16-2026-27-o51183",
+      "tournament_slug": "women-canakkale-super-ligi-u16-2026-27-o51183",
+      "city": "Çanakkale",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 4,
+      "ready_matches": 4,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-denizli-super-ligi-u18-2026-27-o51580",
+      "tournament_slug": "women-denizli-super-ligi-u18-2026-27-o51580",
+      "city": "Denizli",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 2,
+      "ready_matches": 2,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-denizli-super-ligi-u16-2026-27-o51581",
+      "tournament_slug": "women-denizli-super-ligi-u16-2026-27-o51581",
+      "city": "Denizli",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 4,
+      "ready_matches": 4,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-elazg-super-ligi-u18-2026-27-o52052",
+      "tournament_slug": "women-elazg-super-ligi-u18-2026-27-o52052",
+      "city": "Elazığ",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 28,
       "ready_matches": 0,
-      "blocked_matches": 12
+      "blocked_matches": 28
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-eskisehir-super-ligi-u18-2026-27-o51045",
+      "tournament_slug": "women-eskisehir-super-ligi-u18-2026-27-o51045",
+      "city": "Eskişehir",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 5,
+      "ready_matches": 5,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-eskisehir-super-ligi-u16-2026-27-o48330",
+      "tournament_slug": "women-eskisehir-super-ligi-u16-2026-27-o48330",
+      "city": "Eskişehir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 5,
+      "ready_matches": 5,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-gaziantep-super-ligi-u18-2026-27-o51462",
+      "tournament_slug": "women-gaziantep-super-ligi-u18-2026-27-o51462",
+      "city": "Gaziantep",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 5,
+      "ready_matches": 5,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-gaziantep-super-ligi-u16-2026-27-o51463",
+      "tournament_slug": "women-gaziantep-super-ligi-u16-2026-27-o51463",
+      "city": "Gaziantep",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 10,
+      "ready_matches": 10,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-giresun-super-ligi-u18-2026-27-o51748",
+      "tournament_slug": "women-giresun-super-ligi-u18-2026-27-o51748",
+      "city": "Giresun",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 16,
+      "ready_matches": 16,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-ligi-2-bolge-u18-2026-27-o50867",
+      "tournament_slug": "women-stanbul-ligi-2-bolge-u18-2026-27-o50867",
+      "city": "İstanbul",
+      "category": "Genç Kızlar 1. Lig 2. Bölge",
+      "total_matches": 6,
+      "ready_matches": 6,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-super-ligi-u16-2026-27-o50865",
+      "tournament_slug": "women-stanbul-super-ligi-u16-2026-27-o50865",
+      "city": "İstanbul",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 15,
+      "ready_matches": 15,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-ligi-3-bolge-u18-2026-27-o50868",
+      "tournament_slug": "women-stanbul-ligi-3-bolge-u18-2026-27-o50868",
+      "city": "İstanbul",
+      "category": "Genç Kızlar 1. Lig 3. Bölge",
+      "total_matches": 3,
+      "ready_matches": 3,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-ligi-4-bolge-u18-2026-27-o50869",
+      "tournament_slug": "women-stanbul-ligi-4-bolge-u18-2026-27-o50869",
+      "city": "İstanbul",
+      "category": "Genç Kızlar 1. Lig 4. Bölge",
+      "total_matches": 3,
+      "ready_matches": 3,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-ligi-5-bolge-u18-2026-27-o50894",
+      "tournament_slug": "women-stanbul-ligi-5-bolge-u18-2026-27-o50894",
+      "city": "İstanbul",
+      "category": "Genç Kızlar 1. Lig 5. Bölge",
+      "total_matches": 4,
+      "ready_matches": 4,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-super-ligi-u18-2026-27-o50864",
+      "tournament_slug": "women-stanbul-super-ligi-u18-2026-27-o50864",
+      "city": "İstanbul",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 7,
+      "ready_matches": 7,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-stanbul-1-ligi-u18-2026-27-o50866",
+      "tournament_slug": "women-stanbul-1-ligi-u18-2026-27-o50866",
+      "city": "İstanbul",
+      "category": "Genç Kızlar 1. Lig 1. Bölge",
+      "total_matches": 1,
+      "ready_matches": 1,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-zmir-super-ligi-u18-2026-27-o49401",
+      "tournament_slug": "women-zmir-super-ligi-u18-2026-27-o49401",
+      "city": "İzmir",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 6,
+      "ready_matches": 6,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-zmir-super-ligi-u16-2026-27-o49397",
+      "tournament_slug": "women-zmir-super-ligi-u16-2026-27-o49397",
+      "city": "İzmir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 12,
+      "ready_matches": 12,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847",
+      "tournament_slug": "women-krklareli-super-ligi-u16-2026-27-o51847",
+      "city": "Kırklareli",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 9,
+      "ready_matches": 0,
+      "blocked_matches": 9
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-konya-super-ligi-u18-2026-27-o51236",
+      "tournament_slug": "women-konya-super-ligi-u18-2026-27-o51236",
+      "city": "Konya",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 5,
+      "ready_matches": 5,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-kutahya-super-ligi-u18-2026-27-o51465",
+      "tournament_slug": "women-kutahya-super-ligi-u18-2026-27-o51465",
+      "city": "Kütahya",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 1,
+      "ready_matches": 1,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-manisa-super-ligi-u18-2026-27-o51238",
+      "tournament_slug": "women-manisa-super-ligi-u18-2026-27-o51238",
+      "city": "Manisa",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 9,
+      "ready_matches": 9,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-mugla-super-ligi-u18-2026-27-o51468",
+      "tournament_slug": "women-mugla-super-ligi-u18-2026-27-o51468",
+      "city": "Muğla",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 7,
+      "ready_matches": 7,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-mugla-super-ligi-u16-2026-27-o51469",
+      "tournament_slug": "women-mugla-super-ligi-u16-2026-27-o51469",
+      "city": "Muğla",
+      "category": "Yıldız Kızlar Süper Lig",
+      "total_matches": 5,
+      "ready_matches": 5,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-ordu-super-ligi-u18-2026-27-o52054",
+      "tournament_slug": "women-ordu-super-ligi-u18-2026-27-o52054",
+      "city": "Ordu",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 6,
+      "ready_matches": 0,
+      "blocked_matches": 6
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-rize-super-ligi-u18-2026-27-o52055",
+      "tournament_slug": "women-rize-super-ligi-u18-2026-27-o52055",
+      "city": "Rize",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 10,
+      "ready_matches": 0,
+      "blocked_matches": 10
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-sakarya-super-ligi-u18-2026-27-o51470",
+      "tournament_slug": "women-sakarya-super-ligi-u18-2026-27-o51470",
+      "city": "Sakarya",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 19,
+      "ready_matches": 19,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-samsun-super-ligi-u18-2026-27-o51185",
+      "tournament_slug": "women-samsun-super-ligi-u18-2026-27-o51185",
+      "city": "Samsun",
+      "category": "Genç Kızlar 1. Ligi",
+      "total_matches": 1,
+      "ready_matches": 1,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-tekirdag-super-ligi-u18-2026-27-o51217",
+      "tournament_slug": "women-tekirdag-super-ligi-u18-2026-27-o51217",
+      "city": "Tekirdağ",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 1,
+      "ready_matches": 1,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/women-zonguldak-super-ligi-u18-2026-27-o51856",
+      "tournament_slug": "women-zonguldak-super-ligi-u18-2026-27-o51856",
+      "city": "Zonguldak",
+      "category": "Genç Kızlar Süper Lig",
+      "total_matches": 2,
+      "ready_matches": 2,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
+      "tournament_slug": "women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
+      "city": "MERSİN",
+      "category": "Kadınlar 2. Ligi",
+      "total_matches": 232,
+      "ready_matches": 232,
+      "blocked_matches": 0
+    },
+    {
+      "tournament_url": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+      "tournament_slug": "women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+      "city": "İSTANBUL",
+      "category": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "total_matches": 169,
+      "ready_matches": 169,
+      "blocked_matches": 0
     }
   ],
-  "ready_matches": []
+  "ready_matches": [
+    {
+      "id": "aksaray-20261109-017",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Aksaray Yıldız Spor Kulübü U18",
+      "away_team": "MBA Aksaray Anka Spor Kulübü - C U18",
+      "date": "2026-11-09",
+      "time": "18:30",
+      "resolved_home": "Aksaray Yıldız Spor Kulübü U18",
+      "resolved_guest": "MBA Aksaray Anka Spor Kulübü - C U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "aksaray-20261109-018",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
+      "away_team": "MBA Aksaray Anka Spor Kulübü - B U18",
+      "date": "2026-11-09",
+      "time": "20:00",
+      "resolved_home": "Aksaray Eğitim Futbol Spor Kulübü U18",
+      "resolved_guest": "MBA Aksaray Anka Spor Kulübü - B U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "aksaray-20261110-019",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Eskil Tuzgölü Spor Kulübü U18",
+      "away_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "date": "2026-11-10",
+      "time": "18:30",
+      "resolved_home": "Eskil Tuzgölü Spor Kulübü U18",
+      "resolved_guest": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "aksaray-20261110-020",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "away_team": "Kuzeyboru U18",
+      "date": "2026-11-10",
+      "time": "20:00",
+      "resolved_home": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "resolved_guest": "Kuzeyboru U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "aksaray-20261111-021",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "MBA Aksaray Anka Spor Kulübü - B U18",
+      "away_team": "Aksaray Yıldız Spor Kulübü U18",
+      "date": "2026-11-11",
+      "time": "18:30",
+      "resolved_home": "MBA Aksaray Anka Spor Kulübü - B U18",
+      "resolved_guest": "Aksaray Yıldız Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "aksaray-20261113-024",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "MBA Aksaray Anka Spor Kulübü - C U18",
+      "away_team": "MBA Aksaray Anka Spor Kulübü U18",
+      "date": "2026-11-13",
+      "time": "20:00",
+      "resolved_home": "MBA Aksaray Anka Spor Kulübü - C U18",
+      "resolved_guest": "MBA Aksaray Anka Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749"
+    },
+    {
+      "id": "ankara-20261117-045",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "TVF Spor Lisesi",
+      "away_team": "TED Ankara Kolejliler U18",
+      "date": "2026-11-17",
+      "time": "10:00",
+      "resolved_home": "TVF Spor Lisesi U18",
+      "resolved_guest": "TED Ankara Kolejliler U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261117-046",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "İlbank ll",
+      "away_team": "Akademi Atletik Spor",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "resolved_home": "İlbank ll",
+      "resolved_guest": "Akademi Atletik Spor U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261117-047",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Karayolları Spor Kulübü U18",
+      "away_team": "Zeren Spor Kulübü U18",
+      "date": "2026-11-17",
+      "time": "14:00",
+      "resolved_home": "Karayolları Spor Kulübü U18",
+      "resolved_guest": "Zeren Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261117-048",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Ankara DSİ GSK",
+      "away_team": "PTT Spor",
+      "date": "2026-11-17",
+      "time": "18:00",
+      "resolved_home": "Ankara DSİ GSK U18",
+      "resolved_guest": "PTT Spor",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261125-049",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "PTT Spor",
+      "away_team": "İlbank ll",
+      "date": "2026-11-25",
+      "time": "18:00",
+      "resolved_home": "PTT Spor",
+      "resolved_guest": "İlbank ll",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261125-050",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Akademi Atletik Spor",
+      "away_team": "TVF Spor Lisesi",
+      "date": "2026-11-25",
+      "time": "18:00",
+      "resolved_home": "Akademi Atletik Spor U18",
+      "resolved_guest": "TVF Spor Lisesi U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261125-051",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "TED Ankara Kolejliler U18",
+      "away_team": "Karayolları Spor Kulübü U18",
+      "date": "2026-11-25",
+      "time": "19:30",
+      "resolved_home": "TED Ankara Kolejliler U18",
+      "resolved_guest": "Karayolları Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261125-052",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Zeren Spor Kulübü U18",
+      "away_team": "Ankara DSİ GSK",
+      "date": "2026-11-25",
+      "time": "19:30",
+      "resolved_home": "Zeren Spor Kulübü U18",
+      "resolved_guest": "Ankara DSİ GSK U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261202-053",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "İlbank ll",
+      "away_team": "TVF Spor Lisesi",
+      "date": "2026-12-02",
+      "time": "18:00",
+      "resolved_home": "İlbank ll",
+      "resolved_guest": "TVF Spor Lisesi U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261202-054",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Karayolları Spor Kulübü U18",
+      "away_team": "Akademi Atletik Spor",
+      "date": "2026-12-02",
+      "time": "18:00",
+      "resolved_home": "Karayolları Spor Kulübü U18",
+      "resolved_guest": "Akademi Atletik Spor U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261202-055",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "PTT Spor",
+      "away_team": "Zeren Spor Kulübü U18",
+      "date": "2026-12-02",
+      "time": "19:30",
+      "resolved_home": "PTT Spor",
+      "resolved_guest": "Zeren Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261202-056",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Ankara DSİ GSK",
+      "away_team": "TED Ankara Kolejliler U18",
+      "date": "2026-12-02",
+      "time": "19:30",
+      "resolved_home": "Ankara DSİ GSK U18",
+      "resolved_guest": "TED Ankara Kolejliler U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021"
+    },
+    {
+      "id": "ankara-20261117-079",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Anadolu Birlik Spor Kulübü",
+      "away_team": "Gölbaşı Sporium Spor Kulübü U18",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "resolved_home": "Anadolu Birlik Spor Kulübü - B U18",
+      "resolved_guest": "Gölbaşı Sporium Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261117-080",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Master Volley Akademi Spor Kulübü U18",
+      "away_team": "Başkent Zirve Spor Kulübü - B U18",
+      "date": "2026-11-17",
+      "time": "16:00",
+      "resolved_home": "Master Volley Akademi Spor Kulübü U18",
+      "resolved_guest": "Başkent Zirve Spor Kulübü - B U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261117-085",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Çayyolu Akademi Spor Kulübü U18",
+      "away_team": "Zirvenin Sultanları SK U18",
+      "date": "2026-11-17",
+      "time": "10:00",
+      "resolved_home": "Çayyolu Akademi Spor Kulübü U18",
+      "resolved_guest": "Zirvenin Sultanları SK U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261117-086",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Başkent Eryamangücü U18",
+      "away_team": "Karşıyaka SK - B U18",
+      "date": "2026-11-17",
+      "time": "14:00",
+      "resolved_home": "Başkent Eryamangücü U18",
+      "resolved_guest": "Karşıyaka Ankara SK - B U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261117-090",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Anadolubeyi Spor Kulübü U18",
+      "away_team": "Polatlı Kartaltepe Spor Kulübü U18",
+      "date": "2026-11-17",
+      "time": "16:00",
+      "resolved_home": "Anadolubeyi Spor Kulübü U18",
+      "resolved_guest": "Polatlı Kartaltepe Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-091",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Polatlı Duatepe Akademi Spor Kulübü U18",
+      "away_team": "Mamak Gelişim Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "14:00",
+      "resolved_home": "Polatlı Duatepe Akademi Spor Kulübü U18",
+      "resolved_guest": "Mamak Gelişim Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-092",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Vamos Akademi Spor Kulübü U18",
+      "away_team": "Ufuk Üniversitesi Üç Pas Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "14:00",
+      "resolved_home": "Vamos Akademi Spor Kulübü U18",
+      "resolved_guest": "Ufuk Üniversitesi Üç Pas Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-096",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Tek Akademi Spor Kulübü U18",
+      "away_team": "Sincan Basketbol Akademi Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "10:00",
+      "resolved_home": "Tek Akademi Spor Kulübü U18",
+      "resolved_guest": "Sincan Basketbol Akademi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-097",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Genç Oyuncular Spor Kulübü U18",
+      "away_team": "Hedef Akademi Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "12:00",
+      "resolved_home": "Genç Oyuncular Spor Kulübü U18",
+      "resolved_guest": "Hedef Akademi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-098",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Bilge Okçuluk Spor Kulübü U18",
+      "away_team": "Batı Yıldızı Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "12:00",
+      "resolved_home": "Bilge Okçuluk Spor Kulübü U18",
+      "resolved_guest": "Batı Yıldızı Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-101",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "MKE Ankaragücü ALS U18",
+      "away_team": "Atasev Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "10:00",
+      "resolved_home": "MKE Ankaragücü ALS U18",
+      "resolved_guest": "Atasev Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-102",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Nesibe Aydın Spor Kulübü U18",
+      "away_team": "Başkent Ada Spor U18",
+      "date": "2026-11-18",
+      "time": "14:00",
+      "resolved_home": "Nesibe Aydın Spor Kulübü U18",
+      "resolved_guest": "Başkent Ada Spor U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-103",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "BEST Sports Academy - A U18",
+      "away_team": "Kayra Cansın Batı Kartalları SK - B U18",
+      "date": "2026-11-18",
+      "time": "18:00",
+      "resolved_home": "BEST Sports Academy - A U18",
+      "resolved_guest": "Kayra Cansın Batı Kartalları SK - B U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-108",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Başkent Alsancak Spor Kulübü U18",
+      "away_team": "Anıttepe Ata Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "16:00",
+      "resolved_home": "Başkent Alsancak Spor Kulübü U18",
+      "resolved_guest": "Anıttepe Ata Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-109",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Ankaura Spor Kulübü U18",
+      "away_team": "Başkent Çankayagücü - B U18",
+      "date": "2026-11-18",
+      "time": "18:00",
+      "resolved_home": "Ankaura Spor Kulübü U18",
+      "resolved_guest": "Başkent Çankayagücü - B U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-110",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Ankara Gençlik Merkezleri SK U18",
+      "away_team": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "18:00",
+      "resolved_home": "Ankara Gençlik Merkezleri SK U18",
+      "resolved_guest": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-112",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Eser Akademi Spor Kulübü U18",
+      "away_team": "Ankara Altyapı Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "16:00",
+      "resolved_home": "Eser Akademi Spor Kulübü U18",
+      "resolved_guest": "Ankara Altyapı Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-113",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Anadolu Şahin Spor Kulübü U18",
+      "away_team": "Hedef Zirve Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "18:00",
+      "resolved_home": "Anadolu Şahin Spor Kulübü U18",
+      "resolved_guest": "Hedef Zirve Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-114",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Başkent Arma Spor",
+      "away_team": "Dereli Voleybol Akademi Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "18:00",
+      "resolved_home": "Başkent Arma Spor - B U18",
+      "resolved_guest": "Dereli Voleybol Akademi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-118",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Etimesgut Belediyesi Voleybol Kulübü U18",
+      "away_team": "Eczacı Akademi Spor Kulübü U18",
+      "date": "2026-11-18",
+      "time": "14:00",
+      "resolved_home": "Etimesgut Belediyesi Voleybol Kulübü U18",
+      "resolved_guest": "Eczacı Akademi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-119",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Zirve Voleybol Spor Kulübü U18",
+      "away_team": "BEST Sports Academy - B U18",
+      "date": "2026-11-18",
+      "time": "16:00",
+      "resolved_home": "Zirve Voleybol Spor Kulübü U18",
+      "resolved_guest": "BEST Sports Academy - B U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-120",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Ay Pars SK U18",
+      "away_team": "Eryaman Güçlü Gelişim Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "resolved_home": "Ay Pars SK U18",
+      "resolved_guest": "Eryaman Güçlü Gelişim Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-126",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "AHTO Voleybol Spor Kulübü U18",
+      "away_team": "Başkent Köklü Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "10:00",
+      "resolved_home": "AHTO Voleybol Spor Kulübü U18",
+      "resolved_guest": "Başkent Köklü Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-127",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Ankara Yurdum Spor Kulübü U18",
+      "away_team": "Zirve Altyapı Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "18:00",
+      "resolved_home": "Ankara Yurdum Spor Kulübü U18",
+      "resolved_guest": "Zirve Altyapı Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261118-131",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Kayra Cansın Batı Kartalları SK U18",
+      "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
+      "date": "2026-11-18",
+      "time": "12:00",
+      "resolved_home": "Kayra Cansın Batı Kartalları SK U18",
+      "resolved_guest": "Ahmet Hamdi Tanpınar Ortaokulu SK II U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-132",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "İdeal Akademi Spor Kulübü U18",
+      "away_team": "Başkent Zirve Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "resolved_home": "İdeal Akademi Spor Kulübü U18",
+      "resolved_guest": "Başkent Zirve Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-133",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Genç Kızlar 1. Ligi",
+      "home_team": "Vega Atletik Spor Kulübü",
+      "away_team": "Ankara Çankayagücü Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "18:00",
+      "resolved_home": "Vega Atletik Spor Kulübü U18",
+      "resolved_guest": "Ankara Çankayagücü Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2026-27-o51750"
+    },
+    {
+      "id": "ankara-20261119-188",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "İlbank U16",
+      "away_team": "Akademi Atletik Spor",
+      "date": "2026-11-19",
+      "time": "10:00",
+      "resolved_home": "İlbank U16",
+      "resolved_guest": "Akademi Atletik Spor",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261119-189",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "TVF Spor Lisesi - B U16",
+      "away_team": "Zeren Spor Kulübü U16",
+      "date": "2026-11-19",
+      "time": "18:00",
+      "resolved_home": "TVF Spor Lisesi - B U16",
+      "resolved_guest": "Zeren Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261123-190",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "DHMİ Spor Kulübü U16",
+      "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
+      "date": "2026-11-23",
+      "time": "18:00",
+      "resolved_home": "DHMİ Spor Kulübü U16",
+      "resolved_guest": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261123-191",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "TVF Spor Lisesi U16",
+      "away_team": "Ankara DSİ GSK",
+      "date": "2026-11-23",
+      "time": "19:30",
+      "resolved_home": "TVF Spor Lisesi U16",
+      "resolved_guest": "Ankara DSİ GSK U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261124-192",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "PTT Spor U16",
+      "away_team": "TED Ankara Kolejliler - A U16",
+      "date": "2026-11-24",
+      "time": "19:30",
+      "resolved_home": "PTT Spor U16",
+      "resolved_guest": "TED Ankara Kolejliler - A U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261127-193",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "away_team": "Karayolları Spor Kulübü U16",
+      "date": "2026-11-27",
+      "time": "18:00",
+      "resolved_home": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "resolved_guest": "Karayolları Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261119-194",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "SET UP Spor Kulübü U16",
+      "away_team": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "resolved_home": "SET UP Spor Kulübü U16",
+      "resolved_guest": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261119-195",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Başkent Arma Spor U16",
+      "away_team": "Blue Wolves Spor Kulübü - A U16",
+      "date": "2026-11-19",
+      "time": "16:00",
+      "resolved_home": "Başkent Arma Spor U16",
+      "resolved_guest": "Blue Wolves Spor Kulübü - A U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "ankara-20261123-196",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "İlbank - B U16",
+      "away_team": "Çaba Spor Kulübü U16",
+      "date": "2026-11-23",
+      "time": "19:30",
+      "resolved_home": "İlbank - B U16",
+      "resolved_guest": "Çaba Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022"
+    },
+    {
+      "id": "antalya-20261116-015",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "away_team": "Akdeniz Bilgi Spor Kulübü U18",
+      "date": "2026-11-16",
+      "time": "14:30",
+      "resolved_home": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "resolved_guest": "Akdeniz Bilgi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261119-016",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Antalya Şimşek GSK U18",
+      "away_team": "Akdeniz Bilgi Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "resolved_home": "Antalya Şimşek GSK U18",
+      "resolved_guest": "Akdeniz Bilgi Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261120-017",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "away_team": "Luna Spor Kulübü U18",
+      "date": "2026-11-20",
+      "time": "11:30",
+      "resolved_home": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "resolved_guest": "Luna Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261122-018",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "away_team": "07 Zenit Spor Kulübü U18",
+      "date": "2026-11-22",
+      "time": "14:30",
+      "resolved_home": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+      "resolved_guest": "07 Zenit Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261126-019",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Akdeniz Bilgi Spor Kulübü U18",
+      "away_team": "Luna Spor Kulübü U18",
+      "date": "2026-11-26",
+      "time": "18:30",
+      "resolved_home": "Akdeniz Bilgi Spor Kulübü U18",
+      "resolved_guest": "Luna Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261119-031",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "07 Mega Spor Kulübü U18",
+      "away_team": "Antalya Açı Koleji Spor Kulübü U18",
+      "date": "2026-11-19",
+      "time": "11:00",
+      "resolved_home": "07 Mega Spor Kulübü U18",
+      "resolved_guest": "Antalya Açı Koleji Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261124-032",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Güral Premier Antalyaspor",
+      "away_team": "Nova Spor Kulübü U18",
+      "date": "2026-11-24",
+      "time": "18:30",
+      "resolved_home": "Güral Premier Antalyaspor",
+      "resolved_guest": "Nova Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896"
+    },
+    {
+      "id": "antalya-20261116-051",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Antalya Açı Koleji Spor Kulübü U16",
+      "away_team": "Vera Spor Kulübü U16",
+      "date": "2026-11-16",
+      "time": "11:00",
+      "resolved_home": "Antalya Açı Koleji Spor Kulübü U16",
+      "resolved_guest": "Vera Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261117-052",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Kemer Sarp Spor Kulübü U16",
+      "away_team": "07 Mega Spor Kulübü U16",
+      "date": "2026-11-17",
+      "time": "13:00",
+      "resolved_home": "Kemer Sarp Spor Kulübü U16",
+      "resolved_guest": "07 Mega Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261118-053",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Nova Spor Kulübü U16",
+      "away_team": "Sistem Eğitim Spor Kulübü U16",
+      "date": "2026-11-18",
+      "time": "11:00",
+      "resolved_home": "Nova Spor Kulübü U16",
+      "resolved_guest": "Sistem Eğitim Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261120-054",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Elit Akdeniz Spor Kulübü U16",
+      "away_team": "07 Mega Spor Kulübü U16",
+      "date": "2026-11-20",
+      "time": "10:00",
+      "resolved_home": "Elit Akdeniz Spor Kulübü U16",
+      "resolved_guest": "07 Mega Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261120-055",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Antalya Şimşek GSK U16",
+      "away_team": "Kemer Sarp Spor Kulübü U16",
+      "date": "2026-11-20",
+      "time": "11:30",
+      "resolved_home": "Antalya Şimşek GSK U16",
+      "resolved_guest": "Kemer Sarp Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261116-076",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "07 Zenit Spor Kulübü U16",
+      "away_team": "Antalya 1907 Spor Kulübü U16",
+      "date": "2026-11-16",
+      "time": "12:30",
+      "resolved_home": "07 Zenit Spor Kulübü U16",
+      "resolved_guest": "Antalya 1907 Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261118-077",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Antalya DSİ Spor Kulübü U16",
+      "away_team": "Güral Premier Antalyaspor",
+      "date": "2026-11-18",
+      "time": "11:00",
+      "resolved_home": "Antalya DSİ Spor Kulübü U16",
+      "resolved_guest": "Güral Premier Antalyaspor",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261118-078",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "07 Alya Spor U16",
+      "away_team": "Luna Spor Kulübü U16",
+      "date": "2026-11-18",
+      "time": "12:30",
+      "resolved_home": "07 Alya Spor U16",
+      "resolved_guest": "Luna Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261121-079",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Antalya 1907 Spor Kulübü U16",
+      "away_team": "Antalya DSİ Spor Kulübü U16",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "resolved_home": "Antalya 1907 Spor Kulübü U16",
+      "resolved_guest": "Antalya DSİ Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261121-080",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Akdeniz Bilgi Spor Kulübü U16",
+      "away_team": "Luna Spor Kulübü U16",
+      "date": "2026-11-21",
+      "time": "12:30",
+      "resolved_home": "Akdeniz Bilgi Spor Kulübü U16",
+      "resolved_guest": "Luna Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261125-081",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Güral Premier Antalyaspor",
+      "away_team": "07 Zenit Spor Kulübü U16",
+      "date": "2026-11-25",
+      "time": "18:30",
+      "resolved_home": "Güral Premier Antalyaspor",
+      "resolved_guest": "07 Zenit Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261128-082",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Antalya DSİ Spor Kulübü U16",
+      "away_team": "07 Anka Spor Kulübü U16",
+      "date": "2026-11-28",
+      "time": "11:00",
+      "resolved_home": "Antalya DSİ Spor Kulübü U16",
+      "resolved_guest": "07 Anka Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261115-091",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "ON Hotels Erse Spor Kulübü U16",
+      "away_team": "Alanya MASK Spor Kulübü",
+      "date": "2026-11-15",
+      "time": "10:00",
+      "resolved_home": "ON Hotels Erse Spor Kulübü U16",
+      "resolved_guest": "Alanya MASK Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261116-092",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "away_team": "Manavgat Belediyespor U16",
+      "date": "2026-11-16",
+      "time": "11:00",
+      "resolved_home": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "resolved_guest": "Manavgat Belediyespor U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261118-093",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Alanya Belediyespor U16",
+      "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "date": "2026-11-18",
+      "time": "11:00",
+      "resolved_home": "Alanya Belediyespor U16",
+      "resolved_guest": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261119-094",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "ON Hotels Erse Spor Kulübü U16",
+      "away_team": "Net Voleybol Akademi Spor Kulübü U16",
+      "date": "2026-11-19",
+      "time": "13:30",
+      "resolved_home": "ON Hotels Erse Spor Kulübü U16",
+      "resolved_guest": "Net Voleybol Akademi Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261121-095",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Alanya Belediyespor U16",
+      "away_team": "ON Hotels Erse Spor Kulübü U16",
+      "date": "2026-11-21",
+      "time": "18:00",
+      "resolved_home": "Alanya Belediyespor U16",
+      "resolved_guest": "ON Hotels Erse Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261122-096",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "away_team": "Net Voleybol Akademi Spor Kulübü U16",
+      "date": "2026-11-22",
+      "time": "11:00",
+      "resolved_home": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "resolved_guest": "Net Voleybol Akademi Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "antalya-20261129-097",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Alanya MASK Spor Kulübü",
+      "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "date": "2026-11-29",
+      "time": "11:00",
+      "resolved_home": "Alanya MASK Spor Kulübü U18",
+      "resolved_guest": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897"
+    },
+    {
+      "id": "balikesir-20261029-009",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Balıkesir DSİ Spor U16",
+      "away_team": "Balıkesir Nets Basket Spor Kulübü U16",
+      "date": "2026-10-29",
+      "time": "16:00",
+      "resolved_home": "Balıkesir DSİ Spor U16",
+      "resolved_guest": "Balıkesir Nets Basket Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261101-010",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Balıkesir Nets Basket Spor Kulübü U16",
+      "away_team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
+      "date": "2026-11-01",
+      "time": "10:00",
+      "resolved_home": "Balıkesir Nets Basket Spor Kulübü U16",
+      "resolved_guest": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261109-025",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Günyaka Spor U16",
+      "away_team": "EBA Spor U16",
+      "date": "2026-11-09",
+      "time": "19:30",
+      "resolved_home": "Günyaka Spor U16",
+      "resolved_guest": "EBA Spor U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261110-039",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
+      "away_team": "Ayvalıkspor U16",
+      "date": "2026-11-10",
+      "time": "19:00",
+      "resolved_home": "Edremit Belediyesi Altınoluk Spor Kulübü U16",
+      "resolved_guest": "Ayvalıkspor U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261110-040",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
+      "away_team": "Ayvalıkgücü Belediye SK - B U16",
+      "date": "2026-11-10",
+      "time": "20:30",
+      "resolved_home": "Balıkesir Büyükşehir Belediyespor Edremit U16",
+      "resolved_guest": "Ayvalıkgücü Belediye SK - B U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261109-049",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Kuzey Ege Gelişim Spor Kulübü U16",
+      "away_team": "Ayvalıkspor - B U16",
+      "date": "2026-11-09",
+      "time": "20:30",
+      "resolved_home": "Kuzey Ege Gelişim Spor Kulübü U16",
+      "resolved_guest": "Ayvalıkspor - B U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "balikesir-20261115-050",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Ayvalık Gelişim Spor Kulübü U16",
+      "away_team": "Kuzey Ege Gelişim Spor Kulübü U16",
+      "date": "2026-11-15",
+      "time": "18:00",
+      "resolved_home": "Ayvalık Gelişim Spor Kulübü U16",
+      "resolved_guest": "Kuzey Ege Gelişim Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-balkesir-super-ligi-u16-2026-27-o51181"
+    },
+    {
+      "id": "bursa-20261116-007",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Oksijen Spor Kulübü U18",
+      "away_team": "Bursa Ayyıldız Spor Kulübü U18",
+      "date": "2026-11-16",
+      "time": "17:00",
+      "resolved_home": "Oksijen Spor Kulübü U18",
+      "resolved_guest": "Bursa Ayyıldız Spor Kulübü U18",
+      "tournament_url": "https://women.volleybox.net/women-bursa-super-ligi-u18-2026-27-o50939"
+    },
+    {
+      "id": "bursa-20261117-008",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Bursa Fethiye 1973 Spor Kulübü",
+      "away_team": "Bursa Koç Spor Kulübü - B U18",
+      "date": "2026-11-17",
+      "time": "11:00",
+      "resolved_home": "Bursa Fethiye 1973 Spor Kulübü U18",
+      "resolved_guest": "Bursa Koç Spor Kulübü - B U18",
+      "tournament_url": "https://women.volleybox.net/women-bursa-super-ligi-u18-2026-27-o50939"
+    },
+    {
+      "id": "bursa-20261118-021",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Bursa Koç Spor Kulübü - A U18",
+      "away_team": "Bursa Büyükşehir Belediyespor U18",
+      "date": "2026-11-18",
+      "time": "17:00",
+      "resolved_home": "Bursa Koç Spor Kulübü - A U18",
+      "resolved_guest": "Bursa Büyükşehir Belediyespor U18",
+      "tournament_url": "https://women.volleybox.net/women-bursa-super-ligi-u18-2026-27-o50939"
+    },
+    {
+      "id": "bursa-20261119-040",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "MG Spor Kulübü",
+      "away_team": "Eker Spor Kulübü - A U16",
+      "date": "2026-11-19",
+      "time": "15:00",
+      "resolved_home": "MG Spor Kulübü U16",
+      "resolved_guest": "Eker Spor Kulübü - A U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261117-053",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "23 Nisan Spor Kulübü U16",
+      "away_team": "Doruk Voleybol Spor Kulübü U16",
+      "date": "2026-11-17",
+      "time": "13:00",
+      "resolved_home": "23 Nisan Spor Kulübü U16",
+      "resolved_guest": "Doruk Voleybol Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261119-054",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Eker Spor Kulübü - B U16",
+      "away_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
+      "date": "2026-11-19",
+      "time": "13:00",
+      "resolved_home": "Eker Spor Kulübü - B U16",
+      "resolved_guest": "Bursa Fethiye 1973 Spor Kulübü - B U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261110-065",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Mesut Kökel Spor Kulübü U16",
+      "away_team": "Oksijen Spor Kulübü U16",
+      "date": "2026-11-10",
+      "time": "18:00",
+      "resolved_home": "Mesut Kökel Spor Kulübü U16",
+      "resolved_guest": "Oksijen Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261118-067",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Bursa Ayyıldız Spor Kulübü U16",
+      "away_team": "Oksijen Spor Kulübü U16",
+      "date": "2026-11-18",
+      "time": "15:00",
+      "resolved_home": "Bursa Ayyıldız Spor Kulübü U16",
+      "resolved_guest": "Oksijen Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261119-068",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Nilüfer Belediyespor - B U16",
+      "away_team": "Hk Volleyball Academy Spor Kulübü U16",
+      "date": "2026-11-19",
+      "time": "20:00",
+      "resolved_home": "Nilüfer Belediyespor - B U16",
+      "resolved_guest": "Hk Volleyball Academy Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261109-075",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Akademi16 Spor Kulübü U16",
+      "away_team": "Nilüfer Olimpik Spor Kulübü U16",
+      "date": "2026-11-09",
+      "time": "18:00",
+      "resolved_home": "Akademi16 Spor Kulübü U16",
+      "resolved_guest": "Nilüfer Olimpik Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261109-076",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Nilüfer Beşevler Spor Kulübü U16",
+      "away_team": "DSİ Nilüfer Spor Kulübü U16",
+      "date": "2026-11-09",
+      "time": "20:00",
+      "resolved_home": "Nilüfer Beşevler Spor Kulübü U16",
+      "resolved_guest": "DSİ Nilüfer Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261118-077",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Nilüfer Olimpik Spor Kulübü U16",
+      "away_team": "Nilüfer Beşevler Spor Kulübü U16",
+      "date": "2026-11-18",
+      "time": "13:00",
+      "resolved_home": "Nilüfer Olimpik Spor Kulübü U16",
+      "resolved_guest": "Nilüfer Beşevler Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    },
+    {
+      "id": "bursa-20261119-078",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+      "away_team": "Akademi16 Spor Kulübü U16",
+      "date": "2026-11-19",
+      "time": "11:00",
+      "resolved_home": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+      "resolved_guest": "Akademi16 Spor Kulübü U16",
+      "tournament_url": "https://women.volleybox.net/women-bursa-kulupler-aras-voleybol-turnuvas-2026-27-o50941"
+    }
+  ]
 }

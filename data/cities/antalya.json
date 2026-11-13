@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:00.181969",
+  "updated_at": "2026-11-13T19:57:31.899642",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -1049,18 +1049,18 @@
         "guest_name": "Antalya 1907 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
+        "vb_date": "2026-11-15",
         "vb_time": "13:30",
         "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-14",
+          "vb_date": "2026-11-15",
           "vb_time": "13:30",
           "vb_hall": "Alanya Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-15 / VB: 2026-11-14)"
+          "details": null
         }
       }
     },
@@ -2599,17 +2599,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-15",
-        "vb_time": "10:30",
+        "vb_time": "11:00",
         "vb_hall": "Kemer B.T.S.S Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-15",
-          "vb_time": "10:30",
+          "vb_time": "11:00",
           "vb_hall": "Kemer B.T.S.S Spor Salonu",
-          "details": "Saat Değişti (TVF: 11:00 / VB: 10:30)"
+          "details": null
         }
       }
     },
@@ -2809,18 +2809,18 @@
         "guest_name": "Antalya Şimşek GSK U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "10:00",
-        "vb_hall": "Süleyman Evcilmen Spor Salonu",
+        "vb_date": "2026-11-28",
+        "vb_time": "12:30",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-11-14",
-          "vb_time": "10:00",
-          "vb_hall": "Süleyman Evcilmen Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-28 / VB: 2026-11-14) | Saat Değişti (TVF: 12:30 / VB: 10:00) | Salon Değişti (TVF: Döşemealtı S.S. / VB: Süleyman Evcilmen Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "12:30",
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3635,8 +3635,8 @@
         "url": "https://women.volleybox.net/tr/antalyaspor-u16-akdeniz-bilgi-spor-kulubu-u16-c407991",
         "host_name": "Antalyaspor U16",
         "guest_name": "Akdeniz Bilgi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -3680,8 +3680,8 @@
         "url": "https://women.volleybox.net/tr/07-zenit-spor-kulubu-u16-07-alya-spor-u16-c407992",
         "host_name": "07 Zenit Spor Kulübü U16",
         "guest_name": "07 Alya Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -4535,9 +4535,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:00.199771+00:00",
-  "last_success_at": "2026-11-13T14:56:00.199771+00:00",
-  "content_changed_at": "2026-11-13T14:56:00.199771+00:00",
+  "last_attempt_at": "2026-11-13T16:57:31.902953+00:00",
+  "last_success_at": "2026-11-13T16:57:31.902953+00:00",
+  "content_changed_at": "2026-11-13T16:57:31.902953+00:00",
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-13T18:03:47.504936"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:02.349390"
 }

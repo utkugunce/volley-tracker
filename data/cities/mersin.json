@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:17.374078",
+  "updated_at": "2026-11-13T19:57:48.059888",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -1321,8 +1321,8 @@
         "url": "https://women.volleybox.net/tr/yenisehir-genclerbirligi-spor-kulubu-u18-tarsus-gelecek-spor-kulubu-u18-c415794",
         "host_name": "Yenişehir Gençlerbirliği Spor Kulübü U18",
         "guest_name": "Tarsus Gelecek Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "17:15",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -1339,9 +1339,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:17.383291+00:00",
-  "last_success_at": "2026-11-13T14:56:17.383291+00:00",
-  "content_changed_at": "2026-11-13T14:56:17.383291+00:00",
+  "last_attempt_at": "2026-11-13T16:57:48.061314+00:00",
+  "last_success_at": "2026-11-13T16:57:48.061314+00:00",
+  "content_changed_at": "2026-11-13T16:57:48.061314+00:00",
   "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:19.980401"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:22.967057"
 }

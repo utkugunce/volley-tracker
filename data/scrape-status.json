@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-11-13T14:55:47.102049+00:00",
+  "last_attempt_at": "2026-11-13T16:57:18.934408+00:00",
   "last_success_at": "2026-11-11T07:02:51.122067+00:00",
   "status": "partial",
   "cities": [
@@ -13,7 +13,7 @@
     },
     {
       "slug": "afyon",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (21 Maç Mevcut)"
+      "status": "Aktif (21 Maç Mevcut)"
     },
     {
       "slug": "agri",
@@ -37,7 +37,7 @@
     },
     {
       "slug": "aydin",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+      "status": "Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "balikesir",
@@ -69,7 +69,7 @@
     },
     {
       "slug": "canakkale",
-      "status": "Aktif (60 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (60 Maç Mevcut)"
     },
     {
       "slug": "cankiri",
@@ -77,11 +77,11 @@
     },
     {
       "slug": "corum",
-      "status": "Aktif (13 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)"
     },
     {
       "slug": "denizli",
-      "status": "Aktif (46 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (46 Maç Mevcut)"
     },
     {
       "slug": "diyarbakir",
@@ -113,7 +113,7 @@
     },
     {
       "slug": "giresun",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (30 Maç Mevcut)"
+      "status": "Aktif (30 Maç Mevcut)"
     },
     {
       "slug": "gumushane",
@@ -173,7 +173,7 @@
     },
     {
       "slug": "kutahya",
-      "status": "Aktif (17 Maç Mevcut)"
+      "status": "Aktif (18 Maç Mevcut)"
     },
     {
       "slug": "malatya",
@@ -273,7 +273,7 @@
     },
     {
       "slug": "aksaray",
-      "status": "Aktif (24 Maç Mevcut)"
+      "status": "Aktif (26 Maç Mevcut)"
     },
     {
       "slug": "bayburt",
@@ -325,7 +325,7 @@
     },
     {
       "slug": "duzce",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (6 Maç Mevcut)"
+      "status": "Aktif (6 Maç Mevcut)"
     }
   ]
 }

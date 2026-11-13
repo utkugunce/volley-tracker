@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:55:57.011239",
+  "updated_at": "2026-11-13T19:57:27.880997",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -657,7 +657,7 @@
     "Genç Kızlar 1. Ligi - 5. Grup": [
       {
         "rank": 1,
-        "team": "Zirvenin Sultanları SK U18",
+        "team": "Çayyolu Akademi Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -668,6 +668,17 @@
       },
       {
         "rank": 2,
+        "team": "Zirvenin Sultanları SK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Bağlıca Voleybol SK U18",
         "played": 1,
         "won": 0,
@@ -678,30 +689,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Başkent Çankayagücü - A U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Başkent Eryamangücü U18",
-        "played": 0,
+        "team": "Başkent Çankayagücü - A U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Çayyolu Akademi Spor Kulübü U18",
+        "team": "Başkent Eryamangücü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -3720,9 +3720,9 @@
         "url": "https://women.volleybox.net/tr/karayollar-spor-kulubu-u18-ankara-ds-gsk-u18-c412688",
         "host_name": "Karayolları Spor Kulübü U18",
         "guest_name": "Ankara DSİ GSK U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-12",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-09",
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
@@ -3730,7 +3730,7 @@
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-12",
+          "vb_date": "2026-11-09",
           "vb_time": "19:30",
           "vb_hall": "Batıkent Spor Salonu",
           "details": null
@@ -3765,8 +3765,8 @@
         "url": "https://women.volleybox.net/tr/lbank-u18-ted-ankara-kolejliler-u18-c412690",
         "host_name": "İlbank U18",
         "guest_name": "TED Ankara Kolejliler U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
@@ -3810,8 +3810,8 @@
         "url": "https://women.volleybox.net/tr/akademi-atletik-spor-u18-zeren-spor-kulubu-u18-c412687",
         "host_name": "Akademi Atletik Spor U18",
         "guest_name": "Zeren Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -3857,8 +3857,8 @@
         "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-u18-ptt-spor-u18-c412689",
         "host_name": "TVF Spor Lisesi U18",
         "guest_name": "PTT Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
@@ -5353,11 +5353,15 @@
       "match_no": "2",
       "home_team": "Başkent Çankayagücü - A U18",
       "away_team": "Çayyolu Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "20-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412744",
@@ -10143,9 +10147,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:55:57.032281+00:00",
-  "last_success_at": "2026-11-13T14:55:57.032281+00:00",
-  "content_changed_at": "2026-11-13T14:55:57.032281+00:00",
+  "last_attempt_at": "2026-11-13T16:57:27.902046+00:00",
+  "last_success_at": "2026-11-13T16:57:27.902046+00:00",
+  "content_changed_at": "2026-11-13T16:57:27.902046+00:00",
   "volleybox_synced_matches": 148,
-  "volleybox_sync_updated_at": "2026-11-13T18:03:45.330045"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:01.259377"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:00.787188",
+  "updated_at": "2026-11-13T19:57:30.265885",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -699,8 +699,8 @@
         "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-u16-mehmet-seref-eginlioglu-ortaokulu-sk-u16-c411159",
         "host_name": "Balıkesir EKA Spor Kulubü U16",
         "guest_name": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "18:00",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1321,8 +1321,8 @@
         "url": "https://women.volleybox.net/tr/eba-spor-u16-ted-balkesir-koleji-sk-u16-c411631",
         "host_name": "EBA Spor U16",
         "guest_name": "TED Balıkesir Koleji SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-27",
         "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1548,8 +1548,8 @@
         "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-u16-ted-balkesir-koleji-sk-u16-c414772",
         "host_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
         "guest_name": "TED Balıkesir Koleji SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -3389,9 +3389,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:00.800788+00:00",
-  "last_success_at": "2026-11-13T14:56:00.800788+00:00",
-  "content_changed_at": "2026-11-13T14:56:00.800788+00:00",
+  "last_attempt_at": "2026-11-13T16:57:30.268739+00:00",
+  "last_success_at": "2026-11-13T16:57:30.268739+00:00",
+  "content_changed_at": "2026-11-13T16:57:30.268739+00:00",
   "volleybox_synced_matches": 58,
-  "volleybox_sync_updated_at": "2026-11-13T18:03:50.049375"
+  "volleybox_sync_updated_at": "2026-11-13T20:05:03.634789"
 }

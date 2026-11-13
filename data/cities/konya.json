@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:56:27.964806",
+  "updated_at": "2026-11-13T19:57:57.120353",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -734,8 +734,8 @@
         "url": "https://women.volleybox.net/tr/eregli-sumer-sk-u18-eregli-arel-spor-kulubu-u18-c415749",
         "host_name": "Ereğli Sümer SK U18",
         "guest_name": "Ereğli Arel Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "19:00",
         "vb_hall": "Seydişehir Atatürk Spor Salonu",
@@ -1792,18 +1792,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "418245",
+        "url": "https://women.volleybox.net/tr/ballas-spor-kulubu-u18-konya-anadolu-yldzlar-spor-kulubu-u18-c418245",
+        "host_name": "Ballas Spor Kulübü U18",
+        "guest_name": "Konya Anadolu Yıldızları Spor Kulübü U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-12",
+        "vb_time": "20:30",
+        "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-12",
+          "vb_time": "20:30",
+          "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
+          "details": null
         }
       }
     },
@@ -2334,9 +2341,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T14:56:27.974108+00:00",
-  "last_success_at": "2026-11-13T14:56:27.974108+00:00",
-  "content_changed_at": "2026-11-13T14:56:27.974108+00:00",
-  "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-13T18:04:19.364112"
+  "last_attempt_at": "2026-11-13T16:57:57.176171+00:00",
+  "last_success_at": "2026-11-13T16:57:57.176171+00:00",
+  "content_changed_at": "2026-11-13T16:57:57.176171+00:00",
+  "volleybox_synced_matches": 36,
+  "volleybox_sync_updated_at": "2026-11-13T20:05:22.351232"
 }
