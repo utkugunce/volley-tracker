@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:58:03.733515",
+  "updated_at": "2026-11-14T15:25:22.512275",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -233,23 +233,23 @@
       {
         "rank": 1,
         "team": "Muğlatürk Fethiye Zirve Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Fethiye Voleybol Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -465,23 +465,23 @@
       {
         "rank": 3,
         "team": "Bodrum İhtisasspor - B U16",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
         "team": "Milas Belediye Spor Kulübü - B U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -1621,11 +1621,15 @@
       "match_no": "3",
       "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü U16",
       "away_team": "Fethiye Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-19",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2125,25 +2129,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415198",
-        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
-        "host_name": "Yeşil Marmaris Spor Kulübü U18",
-        "guest_name": "Marmaris Belediyesi GSK U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "17:30",
-        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "17:30",
-          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2340,11 +2337,15 @@
       "match_no": "5",
       "home_team": "Milas Belediye Spor Kulübü - B U16",
       "away_team": "Bodrum İhtisasspor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "14-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2362,9 +2363,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T16:58:03.738855+00:00",
-  "last_success_at": "2026-11-13T16:58:03.738855+00:00",
-  "content_changed_at": "2026-11-13T16:58:03.738855+00:00",
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-13T20:05:23.231567"
+  "last_attempt_at": "2026-11-14T15:25:22.518857+00:00",
+  "last_success_at": "2026-11-14T15:25:22.518857+00:00",
+  "content_changed_at": "2026-11-14T15:25:22.518857+00:00",
+  "volleybox_synced_matches": 31,
+  "volleybox_sync_updated_at": "2026-11-14T15:27:07.254511"
 }
