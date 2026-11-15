@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:58:08.856727",
+  "updated_at": "2026-11-15T15:58:31.482976",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -42,11 +42,11 @@
       {
         "rank": 2,
         "team": "MBA Aksaray Anka Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
+        "played": 6,
+        "won": 5,
         "lost": 1,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 3,
         "form": []
       },
@@ -75,12 +75,12 @@
       {
         "rank": 5,
         "team": "MBA Aksaray Anka Spor Kulübü - C U18",
-        "played": 5,
-        "won": 3,
-        "lost": 2,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 6,
+        "played": 7,
+        "won": 4,
+        "lost": 3,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -97,12 +97,12 @@
       {
         "rank": 7,
         "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "played": 6,
+        "played": 7,
         "won": 1,
-        "lost": 5,
+        "lost": 6,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 17,
+        "sets_lost": 20,
         "form": []
       },
       {
@@ -1123,11 +1123,15 @@
       "match_no": "24",
       "home_team": "MBA Aksaray Anka Spor Kulübü - C U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "5-25",
+        "5-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1157,11 +1161,15 @@
       "match_no": "25",
       "home_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü - C U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "10-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1213,9 +1221,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T09:50:49.575103+03:00",
-  "last_success_at": "2026-11-13T16:58:08.857944+00:00",
-  "content_changed_at": "2026-11-13T16:58:08.857944+00:00",
+  "last_attempt_at": "2026-11-15T15:58:31.483615+00:00",
+  "last_success_at": "2026-11-15T15:58:31.483615+00:00",
+  "content_changed_at": "2026-11-15T15:58:31.483615+00:00",
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:34.318007"
+  "volleybox_sync_updated_at": "2026-11-15T15:59:47.115790"
 }

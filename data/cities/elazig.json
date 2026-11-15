@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:11.507658",
+  "updated_at": "2026-11-15T15:57:57.158398",
   "city": "Elazığ",
   "slug": "elazig",
   "title": "TVF Elazığ Genç & Yıldız Kızlar Süper Lig",
@@ -30,11 +30,11 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -96,12 +96,12 @@
       {
         "rank": 7,
         "team": "Atlas 23 SK",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -120,11 +120,11 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -186,12 +186,12 @@
       {
         "rank": 7,
         "team": "Atlas 23 SK",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -210,11 +210,11 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -276,12 +276,12 @@
       {
         "rank": 7,
         "team": "Atlas 23 SK",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -461,11 +461,15 @@
       "match_no": "5",
       "home_team": "Atlas 23 SK",
       "away_team": "Elazığ Belediyesi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "10-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1265,9 +1269,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:11.528130+00:00",
-  "last_success_at": "2026-11-15T06:50:11.528130+00:00",
-  "content_changed_at": "2026-11-15T06:50:11.528130+00:00",
+  "last_attempt_at": "2026-11-15T15:57:57.158860+00:00",
+  "last_success_at": "2026-11-15T15:57:57.158860+00:00",
+  "content_changed_at": "2026-11-15T15:57:57.158860+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:42.774162"
+  "volleybox_sync_updated_at": "2026-11-15T15:59:46.992204"
 }
