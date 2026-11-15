@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:57:54.315259",
+  "updated_at": "2026-11-15T09:50:20.300801",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -44,6 +44,28 @@
       },
       {
         "rank": 2,
+        "team": "Lüleburgaz Akım Koleji SK U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Lüleburgaz Akademi Spor - D U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Kırklareli Gençlik Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -54,30 +76,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Lüleburgaz Akım Koleji SK U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Lüleburgaz Akademi Spor - D U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Lüleburgaz Akademi Spor - B U18",
+        "team": "Lüleburgaz Akademi Spor - C U18",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -88,13 +88,13 @@
       },
       {
         "rank": 6,
-        "team": "Lüleburgaz Akademi Spor - C U18",
-        "played": 1,
+        "team": "Lüleburgaz Akademi Spor - B U18",
+        "played": 3,
         "won": 0,
-        "lost": 1,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -451,11 +451,15 @@
       "match_no": "6",
       "home_team": "Lüleburgaz Akım Koleji SK U18",
       "away_team": "Lüleburgaz Akademi Spor - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-3",
+        "25-20",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415800",
@@ -492,11 +496,15 @@
       "match_no": "7",
       "home_team": "Lüleburgaz Akademi Spor - C U18",
       "away_team": "Lüleburgaz Akademi Spor - D U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "10-25",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415801",
@@ -2549,9 +2557,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T16:57:54.325541+00:00",
-  "last_success_at": "2026-11-13T16:57:54.325541+00:00",
-  "content_changed_at": "2026-11-13T16:57:54.325541+00:00",
+  "last_attempt_at": "2026-11-15T06:50:20.328040+00:00",
+  "last_success_at": "2026-11-15T06:50:20.328040+00:00",
+  "content_changed_at": "2026-11-15T06:50:20.328040+00:00",
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-11-13T20:05:15.358455"
+  "volleybox_sync_updated_at": "2026-11-15T09:57:52.171675"
 }

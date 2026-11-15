@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:57:57.856734",
+  "updated_at": "2026-11-15T09:50:24.841505",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -70,23 +70,23 @@
       {
         "rank": 4,
         "team": "Değerli Zamanlar Spor Kulübü U18",
-        "played": 4,
-        "won": 1,
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 10,
         "form": []
       },
       {
         "rank": 5,
         "team": "1922 Salihli Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       },
       {
@@ -723,11 +723,15 @@
       "match_no": "14",
       "home_team": "Değerli Zamanlar Spor Kulübü U18",
       "away_team": "1922 Salihli Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "27-25",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1731,9 +1735,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T16:57:57.858415+00:00",
-  "last_success_at": "2026-11-13T16:57:57.858415+00:00",
-  "content_changed_at": "2026-11-13T16:57:57.858415+00:00",
+  "last_attempt_at": "2026-11-15T06:50:24.853059+00:00",
+  "last_success_at": "2026-11-15T06:50:24.853059+00:00",
+  "content_changed_at": "2026-11-15T06:50:24.853059+00:00",
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-11-13T20:05:22.696680"
+  "volleybox_sync_updated_at": "2026-11-15T09:57:59.664420"
 }

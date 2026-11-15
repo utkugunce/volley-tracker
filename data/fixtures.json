@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:57:51.983915+03:00",
+  "updated_at": "2026-11-15T09:50:18.869147+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1051,6 +1051,23 @@
       },
       {
         "rank": 3,
+        "team": "Dev Anadolu Yıldızları U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 98,
+        "points_lost": 76,
+        "point_ratio": "1.289",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Ataşehir Yıldızları U18",
         "played": 1,
         "won": 1,
@@ -1067,7 +1084,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Alfa Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -1084,7 +1101,24 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "team": "İstanbul Vadi Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 76,
+        "points_lost": 98,
+        "point_ratio": "0.776",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 7,
         "team": "Anadolu Smaç Spor U18",
         "played": 1,
         "won": 0,
@@ -1101,7 +1135,7 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Ekol Spor Kulubü U18",
         "played": 1,
         "won": 0,
@@ -1116,36 +1150,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 7,
-        "team": "Dev Anadolu Yıldızları U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "İstanbul Vadi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Genç Kızlar 1. Lig 3. Bölge - B Grubu": [
@@ -9462,11 +9466,16 @@
       "match_no": "4",
       "home_team": "İstanbul Vadi Spor Kulübü U18",
       "away_team": "Dev Anadolu Yıldızları U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "22-25",
+        "17-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -10368,9 +10377,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T16:57:52.014132+00:00",
-  "last_success_at": "2026-11-13T16:57:52.014132+00:00",
-  "content_changed_at": "2026-11-13T16:57:52.014132+00:00",
+  "last_attempt_at": "2026-11-15T06:50:18.972050+00:00",
+  "last_success_at": "2026-11-15T06:50:18.972050+00:00",
+  "content_changed_at": "2026-11-15T06:50:18.972050+00:00",
   "volleybox_synced_matches": 145,
-  "volleybox_sync_updated_at": "2026-11-13T20:04:57.559301"
+  "volleybox_sync_updated_at": "2026-11-15T09:57:34.103743"
 }

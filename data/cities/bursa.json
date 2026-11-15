@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:57:37.543694",
+  "updated_at": "2026-11-15T09:50:07.661706",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -252,6 +252,28 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Bursa Koç Spor Kulübü",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 10,
+        "sets_won": 11,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Güner Karakaya Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 8,
+        "sets_won": 11,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Eker Spor Kulübü - A U16",
         "played": 4,
         "won": 3,
@@ -259,28 +281,6 @@
         "points": 8,
         "sets_won": 9,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Bursa Koç Spor Kulübü",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 7,
-        "sets_won": 8,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Güner Karakaya Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 5,
-        "sets_won": 8,
-        "sets_lost": 7,
         "form": []
       },
       {
@@ -297,23 +297,23 @@
       {
         "rank": 5,
         "team": "MG Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 5,
-        "sets_won": 7,
-        "sets_lost": 6,
+        "sets_won": 8,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 6,
         "team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -331,6 +331,17 @@
       },
       {
         "rank": 2,
+        "team": "Doruk Voleybol Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 10,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "23 Nisan Spor Kulübü U16",
         "played": 4,
         "won": 3,
@@ -341,7 +352,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "played": 4,
         "won": 2,
@@ -352,25 +363,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Doruk Voleybol Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 7,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
         "team": "Öncü Yıldız Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "sets_won": 2,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -844,15 +844,15 @@
       "id": "bursa-20261116-007",
       "city": "Bursa",
       "date": "2026-11-16",
-      "time": "17:00",
+      "time": "11:00",
       "hall": "Çekirge",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "7",
-      "home_team": "Oksijen Spor Kulübü U18",
-      "away_team": "Bursa Ayyıldız Spor Kulübü U18",
+      "home_team": "Bursa Fethiye 1973 Spor Kulübü",
+      "away_team": "Bursa Koç Spor Kulübü - B U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -875,18 +875,18 @@
       }
     },
     {
-      "id": "bursa-20261117-008",
+      "id": "bursa-20261116-008",
       "city": "Bursa",
-      "date": "2026-11-17",
-      "time": "11:00",
+      "date": "2026-11-16",
+      "time": "17:00",
       "hall": "Çekirge",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "8",
-      "home_team": "Bursa Fethiye 1973 Spor Kulübü",
-      "away_team": "Bursa Koç Spor Kulübü - B U18",
+      "home_team": "Oksijen Spor Kulübü U18",
+      "away_team": "Bursa Ayyıldız Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2229,11 +2229,15 @@
       "match_no": "11",
       "home_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
       "away_team": "Güner Karakaya Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "16-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415712",
@@ -2270,11 +2274,16 @@
       "match_no": "12",
       "home_team": "MG Spor Kulübü",
       "away_team": "Bursa Koç Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "20-25",
+        "17-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415713",
@@ -2844,11 +2853,16 @@
       "match_no": "12",
       "home_team": "Öncü Yıldız Spor Kulübü U16",
       "away_team": "Doruk Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "27-29",
+        "12-25",
+        "25-19",
+        "27-29"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415228",
@@ -4354,9 +4368,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-13T16:57:37.547174+00:00",
-  "last_success_at": "2026-11-13T16:57:37.547174+00:00",
-  "content_changed_at": "2026-11-13T16:57:37.547174+00:00",
+  "last_attempt_at": "2026-11-15T06:50:07.688783+00:00",
+  "last_success_at": "2026-11-15T06:50:07.688783+00:00",
+  "content_changed_at": "2026-11-15T06:50:07.688783+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-13T20:05:04.687426"
+  "volleybox_sync_updated_at": "2026-11-15T09:57:41.348521"
 }
