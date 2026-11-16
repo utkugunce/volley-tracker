@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:06.043834",
+  "updated_at": "2026-11-16T09:46:35.299735",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -39,11 +39,11 @@
       {
         "rank": 1,
         "team": "Alanya MASK Spor Kulübü U18",
-        "played": 5,
-        "won": 5,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 15,
-        "sets_won": 15,
+        "points": 18,
+        "sets_won": 18,
         "sets_lost": 3,
         "form": []
       },
@@ -72,12 +72,12 @@
       {
         "rank": 4,
         "team": "Antalya 1907 Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 5,
         "sets_won": 6,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -229,6 +229,17 @@
       },
       {
         "rank": 5,
+        "team": "Nova Spor Kulübü U16",
+        "played": 6,
+        "won": 1,
+        "lost": 5,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 15,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Sistem Eğitim Spor Kulübü U16",
         "played": 4,
         "won": 1,
@@ -239,18 +250,18 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Nova Spor Kulübü U16",
-        "played": 5,
+        "rank": 7,
+        "team": "Kemer Sarp Spor Kulübü U16",
+        "played": 4,
         "won": 1,
-        "lost": 4,
-        "points": 3,
+        "lost": 3,
+        "points": 2,
         "sets_won": 3,
-        "sets_lost": 12,
+        "sets_lost": 11,
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 8,
         "team": "Antalya Şimşek GSK U16",
         "played": 4,
         "won": 0,
@@ -258,17 +269,6 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 12,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Kemer Sarp Spor Kulübü U16",
-        "played": 3,
-        "won": 0,
-        "lost": 3,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 9,
         "form": []
       }
     ],
@@ -366,11 +366,11 @@
       {
         "rank": 1,
         "team": "Alanya MASK Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -398,17 +398,6 @@
       },
       {
         "rank": 4,
-        "team": "ON Hotels Erse Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 5,
         "team": "Alanya Belediyespor U16",
         "played": 3,
         "won": 1,
@@ -416,6 +405,17 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "ON Hotels Erse Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -1036,11 +1036,15 @@
       "match_no": "14",
       "home_team": "Alanya MASK Spor Kulübü U18",
       "away_team": "Antalya 1907 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-13",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411619",
@@ -2585,11 +2589,17 @@
       "match_no": "18",
       "home_team": "Kemer Sarp Spor Kulübü U16",
       "away_team": "Nova Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "19-25",
+        "25-27",
+        "25-21",
+        "26-24",
+        "15-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407987",
@@ -4309,11 +4319,15 @@
       "match_no": "9",
       "home_team": "ON Hotels Erse Spor Kulübü U16",
       "away_team": "Alanya MASK Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "17-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -4535,9 +4549,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:06.058410+00:00",
-  "last_success_at": "2026-11-15T06:50:06.058410+00:00",
-  "content_changed_at": "2026-11-15T06:50:06.058410+00:00",
+  "last_attempt_at": "2026-11-16T06:46:35.362436+00:00",
+  "last_success_at": "2026-11-16T06:46:35.362436+00:00",
+  "content_changed_at": "2026-11-16T06:46:35.362436+00:00",
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:38.934967"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:17.566300"
 }

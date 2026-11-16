@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:23.872442",
+  "updated_at": "2026-11-16T09:47:01.970284",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -40,16 +40,38 @@
       {
         "rank": 1,
         "team": "İzmit Spor U18",
-        "played": 8,
+        "played": 9,
         "won": 7,
-        "lost": 1,
+        "lost": 2,
         "points": 20,
-        "sets_won": 23,
-        "sets_lost": 7,
+        "sets_won": 24,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "played": 9,
+        "won": 6,
+        "lost": 3,
+        "points": 18,
+        "sets_won": 19,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Nicomedia Akademi Spor Kulübü U18",
+        "played": 6,
+        "won": 6,
+        "lost": 0,
+        "points": 17,
+        "sets_won": 18,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "played": 6,
         "won": 5,
@@ -60,7 +82,18 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
+        "team": "Körfez Akademi SK U18",
+        "played": 8,
+        "won": 5,
+        "lost": 3,
+        "points": 16,
+        "sets_won": 17,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Kocaeli Anka Spor Kulübü U18",
         "played": 6,
         "won": 5,
@@ -71,47 +104,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "played": 8,
-        "won": 5,
-        "lost": 3,
-        "points": 15,
-        "sets_won": 16,
-        "sets_lost": 11,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Nicomedia Akademi Spor Kulübü U18",
-        "played": 5,
-        "won": 5,
-        "lost": 0,
-        "points": 14,
-        "sets_won": 15,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Körfez Akademi SK U18",
-        "played": 7,
-        "won": 4,
-        "lost": 3,
-        "points": 13,
-        "sets_won": 14,
-        "sets_lost": 11,
-        "form": []
-      },
-      {
         "rank": 7,
         "team": "Siyah Kuğular Spor Kulübü U18",
-        "played": 6,
-        "won": 4,
+        "played": 7,
+        "won": 5,
         "lost": 2,
-        "points": 12,
-        "sets_won": 13,
-        "sets_lost": 7,
+        "points": 15,
+        "sets_won": 16,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -128,23 +128,23 @@
       {
         "rank": 9,
         "team": "Gölcük Belediye Spor Kulübü U18",
-        "played": 6,
+        "played": 7,
         "won": 2,
-        "lost": 4,
+        "lost": 5,
         "points": 6,
         "sets_won": 7,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       },
       {
         "rank": 10,
         "team": "Kocaeli Elite Spor U18",
-        "played": 9,
+        "played": 10,
         "won": 2,
-        "lost": 7,
+        "lost": 8,
         "points": 6,
         "sets_won": 9,
-        "sets_lost": 23,
+        "sets_lost": 26,
         "form": []
       },
       {
@@ -172,12 +172,12 @@
       {
         "rank": 13,
         "team": "Kandıra Voleybol Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ],
@@ -185,122 +185,122 @@
       {
         "rank": 1,
         "team": "Çayırova Belediyesi Eğitim SK U18",
-        "played": 8,
-        "won": 8,
+        "played": 9,
+        "won": 9,
         "lost": 0,
-        "points": 24,
-        "sets_won": 24,
+        "points": 27,
+        "sets_won": 27,
         "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Darıca Yıldız Spor Kulübü U18",
+        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
+        "played": 8,
+        "won": 7,
+        "lost": 1,
+        "points": 21,
+        "sets_won": 21,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Gebze Gençlik Voleybol Kulübü U18",
         "played": 7,
         "won": 6,
         "lost": 1,
         "points": 18,
         "sets_won": 19,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-        "played": 7,
-        "won": 6,
-        "lost": 1,
-        "points": 18,
-        "sets_won": 18,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Gebze Gençlik Voleybol Kulübü U18",
-        "played": 5,
-        "won": 4,
-        "lost": 1,
-        "points": 12,
-        "sets_won": 13,
         "sets_lost": 4,
         "form": []
       },
       {
+        "rank": 4,
+        "team": "Darıca Yıldız Spor Kulübü U18",
+        "played": 8,
+        "won": 6,
+        "lost": 2,
+        "points": 18,
+        "sets_won": 19,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
         "rank": 5,
-        "team": "Yelkenkaya Spor Kulübü U18",
-        "played": 7,
-        "won": 4,
-        "lost": 3,
-        "points": 10,
-        "sets_won": 13,
-        "sets_lost": 14,
+        "team": "Dev Ay Spor Kulübü U18",
+        "played": 9,
+        "won": 5,
+        "lost": 4,
+        "points": 15,
+        "sets_won": 18,
+        "sets_lost": 15,
         "form": []
       },
       {
         "rank": 6,
         "team": "Dilovası Belediye Spor Kulübü U18",
-        "played": 7,
-        "won": 3,
-        "lost": 4,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 15,
+        "played": 9,
+        "won": 4,
+        "lost": 5,
+        "points": 11,
+        "sets_won": 13,
+        "sets_lost": 18,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Dev Ay Spor Kulübü U18",
-        "played": 6,
-        "won": 2,
-        "lost": 4,
-        "points": 7,
-        "sets_won": 9,
-        "sets_lost": 13,
+        "team": "Yelkenkaya Spor Kulübü U18",
+        "played": 9,
+        "won": 4,
+        "lost": 5,
+        "points": 10,
+        "sets_won": 13,
+        "sets_lost": 20,
         "form": []
       },
       {
         "rank": 8,
         "team": "Gebze Olimpik Spor Kulübü U18",
-        "played": 7,
-        "won": 2,
-        "lost": 5,
-        "points": 7,
-        "sets_won": 10,
-        "sets_lost": 16,
+        "played": 9,
+        "won": 3,
+        "lost": 6,
+        "points": 10,
+        "sets_won": 13,
+        "sets_lost": 19,
         "form": []
       },
       {
         "rank": 9,
         "team": "Darıca Kuzey Yıldızı SK U18",
-        "played": 6,
-        "won": 1,
-        "lost": 5,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 15,
+        "played": 8,
+        "won": 2,
+        "lost": 6,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 19,
         "form": []
       },
       {
         "rank": 10,
         "team": "Umut Can Spor Kulübü U18",
-        "played": 7,
+        "played": 9,
         "won": 1,
-        "lost": 6,
+        "lost": 8,
         "points": 3,
         "sets_won": 5,
-        "sets_lost": 19,
+        "sets_lost": 25,
         "form": []
       },
       {
         "rank": 11,
         "team": "Darıca Anadolu Spor Kulübü U18",
-        "played": 7,
+        "played": 9,
         "won": 0,
-        "lost": 7,
+        "lost": 9,
         "points": 0,
         "sets_won": 2,
-        "sets_lost": 21,
+        "sets_lost": 27,
         "form": []
       }
     ]
@@ -2319,11 +2319,16 @@
       "match_no": "45",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "İzmit Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-19",
+        "25-17",
+        "23-25",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415773",
@@ -2360,11 +2365,15 @@
       "match_no": "46",
       "home_team": "Kandıra Voleybol Kulübü U18",
       "away_team": "Körfez Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "6-25",
+        "5-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415097",
@@ -2401,11 +2410,15 @@
       "match_no": "47",
       "home_team": "Nicomedia Akademi Spor Kulübü U18",
       "away_team": "Gölcük Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-16",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415099",
@@ -2442,11 +2455,15 @@
       "match_no": "48",
       "home_team": "Kocaeli 19 Mayıs Spor Kulübü U18",
       "away_team": "Kocaeli Elite Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "27-25",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415100",
@@ -2720,7 +2737,7 @@
       "id": "kocaeli-20261117-055",
       "city": "Kocaeli",
       "date": "2026-11-17",
-      "time": "16:30",
+      "time": "16:00",
       "hall": "Başiskele Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2746,14 +2763,14 @@
         "vb_time": "16:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": "16:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 16:30)"
         }
       }
     },
@@ -5394,11 +5411,15 @@
       "match_no": "38",
       "home_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-4",
+        "25-15",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415160",
@@ -5435,11 +5456,15 @@
       "match_no": "39",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Çayırova Belediyesi Eğitim SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "5-25",
+        "12-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415161",
@@ -5476,11 +5501,15 @@
       "match_no": "40",
       "home_team": "Dev Ay Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-14",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415162",
@@ -5493,14 +5522,14 @@
         "vb_time": "18:30",
         "vb_hall": "Gebze Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-12",
           "vb_time": "18:30",
           "vb_hall": "Gebze Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -5517,11 +5546,15 @@
       "match_no": "41",
       "home_team": "Gebze Gençlik Voleybol Kulübü U18",
       "away_team": "Darıca Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-13",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415163",
@@ -5534,14 +5567,14 @@
         "vb_time": "20:00",
         "vb_hall": "Gebze Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-12",
           "vb_time": "20:00",
           "vb_hall": "Gebze Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -5558,11 +5591,15 @@
       "match_no": "42",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "6-25",
+        "7-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415165",
@@ -5599,11 +5636,17 @@
       "match_no": "43",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Dev Ay Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "27-25",
+        "25-18",
+        "24-26",
+        "11-25",
+        "13-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415166",
@@ -5640,11 +5683,15 @@
       "match_no": "44",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Gebze Olimpik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-19",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415167",
@@ -5681,11 +5728,15 @@
       "match_no": "45",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Dev Ay Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "12-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415168",
@@ -5722,11 +5773,15 @@
       "match_no": "46",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Gebze Olimpik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "22-25",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415170",
@@ -5763,11 +5818,16 @@
       "match_no": "47",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Dilovası Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "24-26",
+        "25-23",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415171",
@@ -6120,9 +6180,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:23.889018+00:00",
-  "last_success_at": "2026-11-15T06:50:23.889018+00:00",
-  "content_changed_at": "2026-11-15T06:50:23.889018+00:00",
+  "last_attempt_at": "2026-11-16T06:47:01.994331+00:00",
+  "last_success_at": "2026-11-16T06:47:01.994331+00:00",
+  "content_changed_at": "2026-11-16T06:47:01.994331+00:00",
   "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:58.930524"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:36.934045"
 }

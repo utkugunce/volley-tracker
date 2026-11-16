@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:58:05.329703",
+  "updated_at": "2026-11-16T09:47:19.603058",
   "city": "Tokat",
   "slug": "tokat",
   "title": "TVF Tokat Genç & Yıldız Kızlar Süper Lig",
@@ -30,46 +30,46 @@
     "Genç Kızlar 1. Ligi - Gurup Birinciliği": [
       {
         "rank": 1,
-        "team": "Tokat Spor Lisesi U18",
+        "team": "Tokat Özel Şehir Koleji Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Tokat Voleybol Akademisi SK U18",
-        "played": 1,
-        "won": 0,
+        "team": "Tokat Spor Lisesi U18",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
         "team": "Tokat Mektebim Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "played": 0,
+        "team": "Tokat Voleybol Akademisi SK U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -134,11 +134,15 @@
       "match_no": "2",
       "home_team": "Tokat Spor Lisesi U18",
       "away_team": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "21-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415781",
@@ -175,11 +179,17 @@
       "match_no": "3",
       "home_team": "Tokat Voleybol Akademisi SK U18",
       "away_team": "Tokat Mektebim Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-20",
+        "8-25",
+        "25-13",
+        "21-25",
+        "8-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415782",
@@ -573,9 +583,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T09:50:42.197869+03:00",
-  "last_success_at": "2026-11-13T16:58:05.334339+00:00",
-  "content_changed_at": "2026-11-13T16:58:05.334339+00:00",
+  "last_attempt_at": "2026-11-16T06:47:19.618469+00:00",
+  "last_success_at": "2026-11-16T06:47:19.618469+00:00",
+  "content_changed_at": "2026-11-16T06:47:19.618469+00:00",
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-11-15T09:58:02.810516"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:40.632068"
 }

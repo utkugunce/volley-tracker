@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:11.507658",
+  "updated_at": "2026-11-16T09:46:47.851911",
   "city": "Elazığ",
   "slug": "elazig",
   "title": "TVF Elazığ Genç & Yıldız Kızlar Süper Lig",
@@ -30,33 +30,33 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 3,
+        "points": 5,
+        "sets_won": 6,
         "sets_lost": 2,
         "form": []
       },
@@ -74,34 +74,34 @@
       {
         "rank": 5,
         "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 6,
         "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Atlas 23 SK",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Atlas 23 SK",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -120,33 +120,33 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 3,
+        "points": 5,
+        "sets_won": 6,
         "sets_lost": 2,
         "form": []
       },
@@ -164,34 +164,34 @@
       {
         "rank": 5,
         "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 6,
         "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Atlas 23 SK",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Atlas 23 SK",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -210,33 +210,33 @@
       {
         "rank": 1,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 3,
+        "points": 5,
+        "sets_won": 6,
         "sets_lost": 2,
         "form": []
       },
@@ -254,34 +254,34 @@
       {
         "rank": 5,
         "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 6,
         "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Atlas 23 SK",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Atlas 23 SK",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -461,11 +461,15 @@
       "match_no": "5",
       "home_team": "Atlas 23 SK",
       "away_team": "Elazığ Belediyesi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "10-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -495,11 +499,15 @@
       "match_no": "6",
       "home_team": "MSE Filo Elazığ Ekol Spor-B",
       "away_team": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "17-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -529,11 +537,15 @@
       "match_no": "7",
       "home_team": "Elazığ Voleybol Spor Kulübü-A",
       "away_team": "Elazığ Voleybol Akademi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "19-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -721,9 +733,9 @@
       }
     },
     {
-      "id": "elazig-20261118-013",
+      "id": "elazig-20261117-013",
       "city": "Elazığ",
-      "date": "2026-11-18",
+      "date": "2026-11-17",
       "time": "10:00",
       "hall": "Ahmetaytar",
       "category": "Genç Kızlar Süper Lig",
@@ -755,9 +767,9 @@
       }
     },
     {
-      "id": "elazig-20261118-014",
+      "id": "elazig-20261117-014",
       "city": "Elazığ",
-      "date": "2026-11-18",
+      "date": "2026-11-17",
       "time": "12:00",
       "hall": "Ahmetaytar",
       "category": "Genç Kızlar Süper Lig",
@@ -789,9 +801,9 @@
       }
     },
     {
-      "id": "elazig-20261118-015",
+      "id": "elazig-20261117-015",
       "city": "Elazığ",
-      "date": "2026-11-18",
+      "date": "2026-11-17",
       "time": "14:00",
       "hall": "Ahmetaytar",
       "category": "Genç Kızlar Süper Lig",
@@ -823,9 +835,9 @@
       }
     },
     {
-      "id": "elazig-20261118-016",
+      "id": "elazig-20261117-016",
       "city": "Elazığ",
-      "date": "2026-11-18",
+      "date": "2026-11-17",
       "time": "16:00",
       "hall": "Ahmetaytar",
       "category": "Genç Kızlar Süper Lig",
@@ -1265,9 +1277,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:11.528130+00:00",
-  "last_success_at": "2026-11-15T06:50:11.528130+00:00",
-  "content_changed_at": "2026-11-15T06:50:11.528130+00:00",
+  "last_attempt_at": "2026-11-16T06:46:47.869476+00:00",
+  "last_success_at": "2026-11-16T06:46:47.869476+00:00",
+  "content_changed_at": "2026-11-16T06:46:47.869476+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:42.774162"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:21.373426"
 }

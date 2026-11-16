@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-15T09:50:04.449980",
+  "updated_at": "2026-11-16T09:46:32.886256",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 69,
+  "total_matches": 71,
   "source": "https://balikesir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -378,12 +378,12 @@
       {
         "rank": 2,
         "team": "Ayvalık Gelişim Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 4,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -400,12 +400,12 @@
       {
         "rank": 4,
         "team": "Kuzey Ege Gelişim Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 2,
-        "sets_won": 3,
-        "sets_lost": 8,
+        "sets_won": 4,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -525,6 +525,52 @@
       {
         "rank": 4,
         "team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - G Grubu Çapraz Eşleşme": [
+      {
+        "rank": 1,
+        "team": "Ayvalık Gelişim Spor Kulübü U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Ayvalıkgücü Belediye SK - B U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Burhaniye Belediye Spor Kulübü U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Burhaniye Ören Pegasus Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2780,11 +2826,16 @@
       "match_no": "10",
       "home_team": "Ayvalık Gelişim Spor Kulübü U16",
       "away_team": "Kuzey Ege Gelişim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-21",
+        "25-18",
+        "19-25",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3552,6 +3603,74 @@
       "id": "balikesir-20261116-068",
       "city": "Balıkesir",
       "date": "2026-11-16",
+      "time": "16:00",
+      "hall": "Ayvalık Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "G Grubu Çapraz Eşleşme",
+      "match_no": "1",
+      "home_team": "Ayvalık Gelişim Spor Kulübü U16",
+      "away_team": "Ayvalıkgücü Belediye SK - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261116-069",
+      "city": "Balıkesir",
+      "date": "2026-11-16",
+      "time": "20:00",
+      "hall": "Burhaniye Atatürk Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "G Grubu Çapraz Eşleşme",
+      "match_no": "2",
+      "home_team": "Burhaniye Ören Pegasus Spor Kulübü U16",
+      "away_team": "Burhaniye Belediye Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261116-070",
+      "city": "Balıkesir",
+      "date": "2026-11-16",
       "time": "19:00",
       "hall": "Gönen Fahri Dilmaç Ss.",
       "category": "Yıldız Kızlar Süper Lig",
@@ -3583,7 +3702,7 @@
       }
     },
     {
-      "id": "balikesir-20261117-069",
+      "id": "balikesir-20261117-071",
       "city": "Balıkesir",
       "date": "2026-11-17",
       "time": "20:30",
@@ -3617,9 +3736,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:04.465053+00:00",
-  "last_success_at": "2026-11-15T06:50:04.465053+00:00",
-  "content_changed_at": "2026-11-15T06:50:04.465053+00:00",
+  "last_attempt_at": "2026-11-16T06:46:32.900903+00:00",
+  "last_success_at": "2026-11-16T06:46:32.900903+00:00",
+  "content_changed_at": "2026-11-16T06:46:32.900903+00:00",
   "volleybox_synced_matches": 58,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:40.294196"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:18.948683"
 }

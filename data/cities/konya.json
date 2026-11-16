@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:23.498427",
+  "updated_at": "2026-11-16T09:47:01.703038",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -116,11 +116,11 @@
       {
         "rank": 1,
         "team": "Vakıf Akademi Spor Kulübü U18",
-        "played": 5,
-        "won": 5,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 15,
-        "sets_won": 15,
+        "points": 18,
+        "sets_won": 18,
         "sets_lost": 0,
         "form": []
       },
@@ -138,12 +138,12 @@
       {
         "rank": 3,
         "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 2,
-        "lost": 3,
+        "lost": 4,
         "points": 5,
         "sets_won": 8,
-        "sets_lost": 11,
+        "sets_lost": 14,
         "form": []
       },
       {
@@ -1831,11 +1831,15 @@
       "match_no": "12",
       "home_team": "Vakıf Akademi Spor Kulübü U18",
       "away_team": "Konya Anadolu Yıldızları Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-15",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2345,9 +2349,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:23.515009+00:00",
-  "last_success_at": "2026-11-15T06:50:23.515009+00:00",
-  "content_changed_at": "2026-11-15T06:50:23.515009+00:00",
+  "last_attempt_at": "2026-11-16T06:47:01.805149+00:00",
+  "last_success_at": "2026-11-16T06:47:01.805149+00:00",
+  "content_changed_at": "2026-11-16T06:47:01.805149+00:00",
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:59.319023"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:37.311195"
 }

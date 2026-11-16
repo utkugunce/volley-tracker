@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:58:11.678801",
+  "updated_at": "2026-11-16T09:47:27.026908",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -32,17 +32,17 @@
       {
         "rank": 1,
         "team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "KYAL Spor Kulübü U18",
+        "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -53,13 +53,13 @@
       },
       {
         "rank": 3,
-        "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
-        "played": 0,
+        "team": "KYAL Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -67,23 +67,23 @@
       {
         "rank": 1,
         "team": "Çaycuma Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Devrek MSA Voleybol Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -250,11 +250,15 @@
       "match_no": "2",
       "home_team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
       "away_team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "22-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -284,11 +288,16 @@
       "match_no": "1",
       "home_team": "Devrek MSA Voleybol Spor Kulübü U18",
       "away_team": "Çaycuma Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "25-18",
+        "18-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -352,9 +361,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T09:50:53.663470+03:00",
-  "last_success_at": "2026-11-13T16:58:11.679506+00:00",
-  "content_changed_at": "2026-11-13T16:58:11.679506+00:00",
+  "last_attempt_at": "2026-11-16T06:47:27.034633+00:00",
+  "last_success_at": "2026-11-16T06:47:27.034633+00:00",
+  "content_changed_at": "2026-11-16T06:47:27.034633+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-15T09:58:03.249378"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:41.049500"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:18.869147+03:00",
+  "updated_at": "2026-11-16T09:46:56.481784+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -2198,17 +2198,18 @@
       {
         "rank": 1,
         "team": "ES Voleybol U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
-        "set_ratio": "9.000",
-        "points_won": 246,
-        "points_lost": 188,
-        "point_ratio": "1.309",
+        "set_ratio": "12.000",
+        "points_won": 321,
+        "points_lost": 239,
+        "point_ratio": "1.343",
         "form": [
+          "W",
           "W",
           "W",
           "W"
@@ -2276,20 +2277,21 @@
       {
         "rank": 5,
         "team": "Eczacıbaşı - B U16",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 8,
         "sets_won": 9,
-        "sets_lost": 2,
-        "set_ratio": "4.500",
-        "points_won": 250,
-        "points_lost": 186,
-        "point_ratio": "1.344",
+        "sets_lost": 5,
+        "set_ratio": "1.800",
+        "points_won": 301,
+        "points_lost": 261,
+        "point_ratio": "1.153",
         "form": [
           "W",
           "W",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -9505,11 +9507,15 @@
       "match_no": "18",
       "home_team": "ES Voleybol U16",
       "away_team": "Eczacıbaşı - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-20",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -10377,9 +10383,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:18.930815+00:00",
-  "last_success_at": "2026-11-15T06:50:18.930815+00:00",
-  "content_changed_at": "2026-11-15T06:50:18.930815+00:00",
+  "last_attempt_at": "2026-11-16T06:46:56.526191+00:00",
+  "last_success_at": "2026-11-16T06:46:56.526191+00:00",
+  "content_changed_at": "2026-11-16T06:46:56.526191+00:00",
   "volleybox_synced_matches": 145,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:46.224186"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:24.816698"
 }

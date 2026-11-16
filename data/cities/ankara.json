@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:04.101564",
+  "updated_at": "2026-11-16T09:46:31.500442",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -4421,8 +4421,8 @@
       "id": "ankara-20261116-060",
       "city": "Ankara",
       "date": "2026-11-16",
-      "time": "12:00",
-      "hall": "Batıkent S.S.",
+      "time": "14:00",
+      "hall": "Refika Aksoy İlkokulu",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -4447,14 +4447,14 @@
         "vb_time": "12:00",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-16",
           "vb_time": "12:00",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:00 / VB: 12:00) | Salon Değişti (TVF: Refika Aksoy İlkokulu / VB: Batıkent Spor Salonu)"
         }
       }
     },
@@ -10164,9 +10164,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:04.164731+00:00",
-  "last_success_at": "2026-11-15T06:50:04.164731+00:00",
-  "content_changed_at": "2026-11-15T06:50:04.164731+00:00",
+  "last_attempt_at": "2026-11-16T06:46:31.525881+00:00",
+  "last_success_at": "2026-11-16T06:46:31.525881+00:00",
+  "content_changed_at": "2026-11-16T06:46:31.525881+00:00",
   "volleybox_synced_matches": 148,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:37.845080"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:16.506746"
 }

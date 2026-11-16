@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:50:22.206900",
+  "updated_at": "2026-11-16T09:46:58.045205",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -124,24 +124,24 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "team": "Develi GSB Spor Kulübü U16",
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Develi GSB Spor Kulübü U16",
-        "played": 3,
+        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
+        "played": 4,
         "won": 3,
-        "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 10,
+        "sets_won": 11,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -239,11 +239,11 @@
       {
         "rank": 1,
         "team": "Evola Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 2,
         "form": []
       },
@@ -283,12 +283,12 @@
       {
         "rank": 5,
         "team": "Erciyes Aslan Spor Kulübü - A",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -1301,11 +1301,17 @@
       "match_no": "10",
       "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
       "away_team": "Develi GSB Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "25-23",
+        "17-25",
+        "25-13",
+        "9-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411794",
@@ -2162,11 +2168,16 @@
       "match_no": "9",
       "home_team": "Evola Spor Kulübü U16",
       "away_team": "Erciyes Aslan Spor Kulübü - A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411802",
@@ -2505,9 +2516,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-15T06:50:22.220700+00:00",
-  "last_success_at": "2026-11-15T06:50:22.220700+00:00",
-  "content_changed_at": "2026-11-15T06:50:22.220700+00:00",
+  "last_attempt_at": "2026-11-16T06:46:58.060388+00:00",
+  "last_success_at": "2026-11-16T06:46:58.060388+00:00",
+  "content_changed_at": "2026-11-16T06:46:58.060388+00:00",
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-11-15T09:57:51.629000"
+  "volleybox_sync_updated_at": "2026-11-16T09:54:30.023072"
 }
