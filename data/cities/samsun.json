@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:47:18.260859",
+  "updated_at": "2026-11-16T15:36:13.309211",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -202,24 +202,24 @@
       },
       {
         "rank": 7,
-        "team": "Sam55 Spor Kulübü U18",
-        "played": 5,
-        "won": 0,
+        "team": "Anadolu Voleybol Akademi SK U18",
+        "played": 6,
+        "won": 1,
         "lost": 5,
         "points": 0,
-        "sets_won": 0,
+        "sets_won": 3,
         "sets_lost": 15,
         "form": []
       },
       {
         "rank": 8,
-        "team": "Anadolu Voleybol Akademi SK U18",
-        "played": 5,
+        "team": "Sam55 Spor Kulübü U18",
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ]
@@ -2673,11 +2673,15 @@
       "match_no": "21",
       "home_team": "Anadolu Voleybol Akademi SK U18",
       "away_team": "Sam55 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "29-27",
+        "25-13",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403014",
@@ -2994,9 +2998,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T06:47:18.278743+00:00",
-  "last_success_at": "2026-11-16T06:47:18.278743+00:00",
-  "content_changed_at": "2026-11-16T06:47:18.278743+00:00",
+  "last_attempt_at": "2026-11-16T12:36:13.330198+00:00",
+  "last_success_at": "2026-11-16T12:36:13.330198+00:00",
+  "content_changed_at": "2026-11-16T12:36:13.330198+00:00",
   "volleybox_synced_matches": 62,
-  "volleybox_sync_updated_at": "2026-11-16T09:54:39.318739"
+  "volleybox_sync_updated_at": "2026-11-16T15:43:48.832896"
 }

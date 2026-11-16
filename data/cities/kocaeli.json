@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:47:01.970284",
+  "updated_at": "2026-11-16T15:35:56.819276",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -2860,7 +2860,7 @@
       "id": "kocaeli-20261119-058",
       "city": "Kocaeli",
       "date": "2026-11-19",
-      "time": "15:00",
+      "time": "16:00",
       "hall": "Başiskele Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2886,14 +2886,14 @@
         "vb_time": "15:00",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "15:00",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 15:00)"
         }
       }
     },
@@ -2901,7 +2901,7 @@
       "id": "kocaeli-20261119-059",
       "city": "Kocaeli",
       "date": "2026-11-19",
-      "time": "16:30",
+      "time": "17:30",
       "hall": "Başiskele Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2927,14 +2927,14 @@
         "vb_time": "16:30",
         "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "16:30",
           "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 17:30 / VB: 16:30)"
         }
       }
     },
@@ -6180,9 +6180,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T06:47:01.994331+00:00",
-  "last_success_at": "2026-11-16T06:47:01.994331+00:00",
-  "content_changed_at": "2026-11-16T06:47:01.994331+00:00",
+  "last_attempt_at": "2026-11-16T12:35:56.841068+00:00",
+  "last_success_at": "2026-11-16T12:35:56.841068+00:00",
+  "content_changed_at": "2026-11-16T12:35:56.841068+00:00",
   "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-16T09:54:36.934045"
+  "volleybox_sync_updated_at": "2026-11-16T15:43:46.186496"
 }

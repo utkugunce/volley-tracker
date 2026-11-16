@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:46:35.299735",
+  "updated_at": "2026-11-16T15:35:39.204394",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -186,12 +186,12 @@
       {
         "rank": 1,
         "team": "Vera Spor Kulübü U16",
-        "played": 5,
+        "played": 6,
         "won": 5,
-        "lost": 0,
+        "lost": 1,
         "points": 14,
         "sets_won": 15,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -207,6 +207,17 @@
       },
       {
         "rank": 3,
+        "team": "Antalya Açı Koleji Spor Kulübü U16",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Elit Akdeniz Spor Kulübü U16",
         "played": 5,
         "won": 3,
@@ -214,17 +225,6 @@
         "points": 10,
         "sets_won": 12,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Antalya Açı Koleji Spor Kulübü U16",
-        "played": 4,
-        "won": 3,
-        "lost": 1,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -376,6 +376,17 @@
       },
       {
         "rank": 2,
+        "team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Net Voleybol Akademi Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -383,17 +394,6 @@
         "points": 6,
         "sets_won": 6,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -421,12 +421,12 @@
       {
         "rank": 6,
         "team": "Manavgat Belediyespor U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -2636,11 +2636,15 @@
       "match_no": "19",
       "home_team": "Antalya Açı Koleji Spor Kulübü U16",
       "away_team": "Vera Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-20",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -4357,11 +4361,16 @@
       "match_no": "10",
       "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
       "away_team": "Manavgat Belediyespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -4549,9 +4558,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T06:46:35.362436+00:00",
-  "last_success_at": "2026-11-16T06:46:35.362436+00:00",
-  "content_changed_at": "2026-11-16T06:46:35.362436+00:00",
+  "last_attempt_at": "2026-11-16T12:35:39.222528+00:00",
+  "last_success_at": "2026-11-16T12:35:39.222528+00:00",
+  "content_changed_at": "2026-11-16T12:35:39.222528+00:00",
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-16T09:54:17.566300"
+  "volleybox_sync_updated_at": "2026-11-16T15:43:22.993380"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:46:47.851911",
+  "updated_at": "2026-11-16T15:35:43.424769",
   "city": "Elazığ",
   "slug": "elazig",
   "title": "TVF Elazığ Genç & Yıldız Kızlar Süper Lig",
@@ -62,6 +62,17 @@
       },
       {
         "rank": 4,
+        "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "MSE Filo Elazığ Ekol Spor-A",
         "played": 1,
         "won": 0,
@@ -72,25 +83,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "MSE Filo Elazığ Ekol Spor-B",
-        "played": 2,
+        "team": "Elazığ Voleybol Spor Kulübü-A",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -152,6 +152,17 @@
       },
       {
         "rank": 4,
+        "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "MSE Filo Elazığ Ekol Spor-A",
         "played": 1,
         "won": 0,
@@ -162,25 +173,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "MSE Filo Elazığ Ekol Spor-B",
-        "played": 2,
+        "team": "Elazığ Voleybol Spor Kulübü-A",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -242,6 +242,17 @@
       },
       {
         "rank": 4,
+        "team": "MSE Filo Elazığ Ekol Spor-B",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "MSE Filo Elazığ Ekol Spor-A",
         "played": 1,
         "won": 0,
@@ -252,25 +263,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Elazığ Voleybol Spor Kulübü-A",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "MSE Filo Elazığ Ekol Spor-B",
-        "played": 2,
+        "team": "Elazığ Voleybol Spor Kulübü-A",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -609,11 +609,16 @@
       "match_no": "9",
       "home_team": "Elazığ Voleybol Spor Kulübü-A",
       "away_team": "MSE Filo Elazığ Ekol Spor-B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "25-23",
+        "14-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1277,9 +1282,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T06:46:47.869476+00:00",
-  "last_success_at": "2026-11-16T06:46:47.869476+00:00",
-  "content_changed_at": "2026-11-16T06:46:47.869476+00:00",
+  "last_attempt_at": "2026-11-16T12:35:43.479626+00:00",
+  "last_success_at": "2026-11-16T12:35:43.479626+00:00",
+  "content_changed_at": "2026-11-16T12:35:43.479626+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-16T09:54:21.373426"
+  "volleybox_sync_updated_at": "2026-11-16T15:43:27.470876"
 }

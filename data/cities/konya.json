@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:47:01.703038",
+  "updated_at": "2026-11-16T15:35:57.573450",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -173,11 +173,11 @@
       {
         "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
-        "played": 5,
-        "won": 3,
+        "played": 6,
+        "won": 4,
         "lost": 2,
-        "points": 9,
-        "sets_won": 12,
+        "points": 12,
+        "sets_won": 15,
         "sets_lost": 9,
         "form": []
       },
@@ -195,12 +195,12 @@
       {
         "rank": 4,
         "team": "Seydişehir Cimnastik Spor U18",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ],
@@ -2327,11 +2327,16 @@
       "match_no": "11",
       "home_team": "Falcon Atletik Spor Kulübü U18",
       "away_team": "Seydişehir Cimnastik Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2349,9 +2354,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T06:47:01.805149+00:00",
-  "last_success_at": "2026-11-16T06:47:01.805149+00:00",
-  "content_changed_at": "2026-11-16T06:47:01.805149+00:00",
+  "last_attempt_at": "2026-11-16T12:35:57.669305+00:00",
+  "last_success_at": "2026-11-16T12:35:57.669305+00:00",
+  "content_changed_at": "2026-11-16T12:35:57.669305+00:00",
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-16T09:54:37.311195"
+  "volleybox_sync_updated_at": "2026-11-16T15:43:46.597378"
 }
