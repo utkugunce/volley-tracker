@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:57:55.520932",
+  "updated_at": "2026-11-16T19:01:30.850053",
   "city": "Kırşehir",
   "slug": "kirsehir",
   "title": "TVF Kırşehir Genç & Yıldız Kızlar Süper Lig",
@@ -97,17 +97,28 @@
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Kırşehir Akademi Spor Kulübü - B U16",
-        "played": 4,
-        "won": 4,
+        "team": "Kızıközü Spor Kulübü U16",
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
-        "sets_lost": 3,
+        "points": 16,
+        "sets_won": 18,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Kırşehir Akademi Spor Kulübü - B U16",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Kırşehir Gençlik Spor Kulübü U16",
         "played": 6,
         "won": 4,
@@ -118,22 +129,11 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Kızıközü Spor Kulübü U16",
-        "played": 4,
-        "won": 4,
-        "lost": 0,
-        "points": 10,
-        "sets_won": 12,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Kırşehir Akademi Spor Kulübü U16",
+        "team": "İlgim Spor Kulübü U16",
         "played": 5,
-        "won": 2,
-        "lost": 3,
+        "won": 3,
+        "lost": 2,
         "points": 8,
         "sets_won": 11,
         "sets_lost": 9,
@@ -141,24 +141,24 @@
       },
       {
         "rank": 5,
-        "team": "İlgim Spor Kulübü U16",
-        "played": 4,
+        "team": "Kırşehir Akademi Spor Kulübü U16",
+        "played": 6,
         "won": 2,
-        "lost": 2,
-        "points": 5,
-        "sets_won": 8,
-        "sets_lost": 8,
+        "lost": 4,
+        "points": 8,
+        "sets_won": 11,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 6,
         "team": "Kırşehir Şehit Ömer Halisdemir Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 1,
-        "sets_won": 3,
-        "sets_lost": 12,
+        "sets_won": 4,
+        "sets_lost": 15,
         "form": []
       },
       {
@@ -1537,11 +1537,15 @@
       "match_no": "17",
       "home_team": "Kızıközü Spor Kulübü U16",
       "away_team": "Kırşehir Akademi Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-20",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401488",
@@ -1578,11 +1582,16 @@
       "match_no": "18",
       "home_team": "İlgim Spor Kulübü U16",
       "away_team": "Kırşehir Şehit Ömer Halisdemir Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "27-25",
+        "19-25",
+        "25-18",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401489",
@@ -1619,11 +1628,15 @@
       "match_no": "19",
       "home_team": "Kırşehir Akademi Spor Kulübü U16",
       "away_team": "Kızıközü Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "23-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401490",
@@ -1730,9 +1743,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T15:36:00.592039+03:00",
-  "last_success_at": "2026-11-13T16:57:55.542734+00:00",
-  "content_changed_at": "2026-11-13T16:57:55.542734+00:00",
+  "last_attempt_at": "2026-11-16T19:01:30.851130+00:00",
+  "last_success_at": "2026-11-16T19:01:30.851130+00:00",
+  "content_changed_at": "2026-11-16T19:01:30.851130+00:00",
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:39.153334"
+  "volleybox_sync_updated_at": "2026-11-16T19:04:14.671499"
 }

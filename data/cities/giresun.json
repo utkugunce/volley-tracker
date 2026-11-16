@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:35:45.170198",
+  "updated_at": "2026-11-16T19:01:11.762474",
   "city": "Giresun",
   "slug": "giresun",
   "title": "TVF Giresun Genç & Yıldız Kızlar Süper Lig",
@@ -30,24 +30,24 @@
     "Genç Kızlar Süper Lig - Gelişim Süper Ligi": [
       {
         "rank": 1,
-        "team": "Espiye Voleybol Kulübü U18",
-        "played": 3,
-        "won": 3,
+        "team": "Giresunspor - B U18",
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Giresunspor - B U18",
-        "played": 3,
+        "team": "Espiye Voleybol Kulübü U18",
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "sets_won": 10,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -64,23 +64,23 @@
       {
         "rank": 4,
         "team": "Giresunspor U18",
-        "played": 3,
-        "won": 1,
+        "played": 4,
+        "won": 2,
         "lost": 2,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 6,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 5,
         "team": "Giresun Gençlik Ve Spor Kulübü - B U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 9,
+        "sets_won": 1,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -534,11 +534,16 @@
       "match_no": "11",
       "home_team": "Espiye Voleybol Kulübü U18",
       "away_team": "Giresunspor - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "16-25",
+        "25-19",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415043",
@@ -575,11 +580,16 @@
       "match_no": "12",
       "home_team": "Giresun Gençlik Ve Spor Kulübü - B U18",
       "away_team": "Giresunspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-15",
+        "12-25",
+        "11-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415044",
@@ -1258,9 +1268,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:45.189714+00:00",
-  "last_success_at": "2026-11-16T12:35:45.189714+00:00",
-  "content_changed_at": "2026-11-16T12:35:45.189714+00:00",
+  "last_attempt_at": "2026-11-16T19:01:11.763099+00:00",
+  "last_success_at": "2026-11-16T19:01:11.763099+00:00",
+  "content_changed_at": "2026-11-16T19:01:11.763099+00:00",
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:28.942756"
+  "volleybox_sync_updated_at": "2026-11-16T19:04:14.545442"
 }

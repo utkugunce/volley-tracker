@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:35:56.819276",
+  "updated_at": "2026-11-16T19:01:34.086236",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -39,6 +39,17 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "played": 10,
+        "won": 7,
+        "lost": 3,
+        "points": 21,
+        "sets_won": 22,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "İzmit Spor U18",
         "played": 9,
         "won": 7,
@@ -46,17 +57,6 @@
         "points": 20,
         "sets_won": 24,
         "sets_lost": 10,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "played": 9,
-        "won": 6,
-        "lost": 3,
-        "points": 18,
-        "sets_won": 19,
-        "sets_lost": 11,
         "form": []
       },
       {
@@ -150,12 +150,12 @@
       {
         "rank": 11,
         "team": "İzmit Yahya Kaptan SK U18",
-        "played": 8,
+        "played": 9,
         "won": 2,
-        "lost": 6,
+        "lost": 7,
         "points": 5,
         "sets_won": 8,
-        "sets_lost": 21,
+        "sets_lost": 24,
         "form": []
       },
       {
@@ -2500,11 +2500,15 @@
       "match_no": "49",
       "home_team": "Kocaeli 19 Mayıs Spor Kulübü U18",
       "away_team": "İzmit Yahya Kaptan SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-15",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415101",
@@ -6180,9 +6184,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:56.841068+00:00",
-  "last_success_at": "2026-11-16T12:35:56.841068+00:00",
-  "content_changed_at": "2026-11-16T12:35:56.841068+00:00",
+  "last_attempt_at": "2026-11-16T19:01:34.089296+00:00",
+  "last_success_at": "2026-11-16T19:01:34.089296+00:00",
+  "content_changed_at": "2026-11-16T19:01:34.089296+00:00",
   "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:46.186496"
+  "volleybox_sync_updated_at": "2026-11-16T19:04:14.711182"
 }
