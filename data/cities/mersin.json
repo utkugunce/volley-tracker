@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:33.224961",
+  "updated_at": "2026-11-17T17:59:21.621378",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 27,
+  "total_matches": 28,
   "source": "https://mersin.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -1337,11 +1337,45 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "mersin-20261124-028",
+      "city": "Mersin",
+      "date": "2026-11-24",
+      "time": "17:15",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "28",
+      "home_team": "Tarsus Amerikan Koleji U18",
+      "away_team": "Alsancak Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:33.234183+00:00",
-  "last_success_at": "2026-11-17T12:30:33.234183+00:00",
-  "content_changed_at": "2026-11-17T12:30:33.234183+00:00",
+  "last_attempt_at": "2026-11-17T17:59:21.622240+00:00",
+  "last_success_at": "2026-11-17T17:59:21.622240+00:00",
+  "content_changed_at": "2026-11-17T17:59:21.622240+00:00",
   "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:30.322082"
+  "volleybox_sync_updated_at": "2026-11-17T18:01:42.261402"
 }

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-16T15:35:42.309540",
+  "updated_at": "2026-11-17T17:59:14.400956",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 10,
+  "total_matches": 11,
   "source": "https://diyarbakir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -82,6 +82,30 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 12,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Yarı Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Dicle Üniversitesi Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Megaron İnşaat Diyarbakır Spor",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -540,11 +564,45 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "diyarbakir-20261121-011",
+      "city": "Diyarbakır",
+      "date": "2026-11-21",
+      "time": "13:00",
+      "hall": "Şehitlik",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final Grubu",
+      "match_no": "1",
+      "home_team": "Megaron İnşaat Diyarbakır Spor",
+      "away_team": "Dicle Üniversitesi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-17T15:30:29.956592+03:00",
-  "last_success_at": "2026-11-16T12:35:42.322566+00:00",
-  "content_changed_at": "2026-11-16T12:35:42.322566+00:00",
+  "last_attempt_at": "2026-11-17T17:59:14.401430+00:00",
+  "last_success_at": "2026-11-17T17:59:14.401430+00:00",
+  "content_changed_at": "2026-11-17T17:59:14.401430+00:00",
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:13.033629"
+  "volleybox_sync_updated_at": "2026-11-17T18:01:42.127174"
 }
