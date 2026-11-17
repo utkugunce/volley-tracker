@@ -471,8 +471,8 @@
         "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-bilecik-voley-11-spor-kulubu-u18-c406657",
         "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "guest_name": "Bilecik Voley 11 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-14",
         "vb_time": "13:00",
         "vb_hall": "Bozüyük Merkez Spor Salonu",
@@ -517,8 +517,8 @@
         "url": "https://women.volleybox.net/tr/lefke-akademi-spor-kulubu-u18-bayrkoy-spor-kulubu-u18-c406658",
         "host_name": "Lefke Akademi Spor Kulübü U18",
         "guest_name": "Bayırköy Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-14",
         "vb_time": "16:00",
         "vb_hall": "Osmaneli Spor Salonu",
@@ -945,9 +945,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:32.973306+00:00",
+  "last_attempt_at": "2026-11-17T15:30:17.809174+03:00",
   "last_success_at": "2026-11-16T12:35:32.973306+00:00",
   "content_changed_at": "2026-11-16T12:35:32.973306+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:24.728607"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:10.493786"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:36:09.522940",
+  "updated_at": "2026-11-17T15:30:51.372812",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -79,6 +79,17 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Asaş Spor Kulübü U18",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 14,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Sakarya Voleybol SK U18",
         "played": 4,
         "won": 4,
@@ -89,25 +100,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Asaş Spor Kulübü U18",
-        "played": 4,
-        "won": 3,
-        "lost": 1,
-        "points": 9,
-        "sets_won": 11,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Sakarya Gelişim Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 7,
-        "sets_won": 8,
-        "sets_lost": 6,
+        "sets_won": 9,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -1186,11 +1186,16 @@
       "match_no": "11",
       "home_team": "Asaş Spor Kulübü U18",
       "away_team": "Sakarya Gelişim Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "26-24",
+        "21-25",
+        "25-20",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1514,9 +1519,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:36:09.543525+00:00",
-  "last_success_at": "2026-11-16T12:36:09.543525+00:00",
-  "content_changed_at": "2026-11-16T12:36:09.543525+00:00",
+  "last_attempt_at": "2026-11-17T12:30:51.381223+00:00",
+  "last_success_at": "2026-11-17T12:30:51.381223+00:00",
+  "content_changed_at": "2026-11-17T12:30:51.381223+00:00",
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:47.702801"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:30.724091"
 }

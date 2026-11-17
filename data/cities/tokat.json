@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:36:12.893745",
+  "updated_at": "2026-11-17T15:30:53.515750",
   "city": "Tokat",
   "slug": "tokat",
   "title": "TVF Tokat Genç & Yıldız Kızlar Süper Lig",
@@ -149,8 +149,8 @@
         "url": "https://women.volleybox.net/tr/tokat-spor-lisesi-u18-tokat-ozel-sehir-koleji-spor-kulubu-u18-c415781",
         "host_name": "Tokat Spor Lisesi U18",
         "guest_name": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-15",
         "vb_time": "18:00",
         "vb_hall": "Malatya Merkez Spor Salonu",
@@ -196,8 +196,8 @@
         "url": "https://women.volleybox.net/tr/tokat-voleybol-akademisi-sk-u18-tokat-mektebim-spor-kulubu-u18-c415782",
         "host_name": "Tokat Voleybol Akademisi SK U18",
         "guest_name": "Tokat Mektebim Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-11-15",
         "vb_time": "19:30",
         "vb_hall": "Malatya Merkez Spor Salonu",
@@ -583,9 +583,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:36:12.912225+00:00",
-  "last_success_at": "2026-11-16T12:36:12.912225+00:00",
-  "content_changed_at": "2026-11-16T12:36:12.912225+00:00",
+  "last_attempt_at": "2026-11-17T12:30:53.525296+00:00",
+  "last_success_at": "2026-11-17T12:30:53.525296+00:00",
+  "content_changed_at": "2026-11-17T12:30:53.525296+00:00",
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:50.281775"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:33.153601"
 }

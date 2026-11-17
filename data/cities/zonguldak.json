@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-16T09:47:27.026908",
+  "updated_at": "2026-11-17T15:31:01.154837",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 4,
+  "total_matches": 7,
   "source": "https://zonguldak.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,6 +22,7 @@
     ],
     "halls": [
       "Tümü",
+      "F.Sporcu Fab.",
       "Kdz.Ereğli",
       "Kozlu Ss",
       "Çaycuma"
@@ -276,7 +277,41 @@
       }
     },
     {
-      "id": "zonguldak-20261115-003",
+      "id": "zonguldak-20261121-003",
+      "city": "Zonguldak",
+      "date": "2026-11-21",
+      "time": "13:30",
+      "hall": "Kdz.Ereğli",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "KYAL Spor Kulübü U18",
+      "away_team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "zonguldak-20261115-004",
       "city": "Zonguldak",
       "date": "2026-11-15",
       "time": "13:00",
@@ -315,7 +350,41 @@
       }
     },
     {
-      "id": "zonguldak-20261107-004",
+      "id": "zonguldak-20261122-005",
+      "city": "Zonguldak",
+      "date": "2026-11-22",
+      "time": "12:00",
+      "hall": "Çaycuma",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "TOGA Spor Kulübü U18",
+      "away_team": "Devrek MSA Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "zonguldak-20261107-006",
       "city": "Zonguldak",
       "date": "2026-11-07",
       "time": "14:00",
@@ -359,11 +428,45 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "zonguldak-20261122-007",
+      "city": "Zonguldak",
+      "date": "2026-11-22",
+      "time": "13:00",
+      "hall": "F.Sporcu Fab.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "2",
+      "home_team": "Zonguldak GSİM Spor Kulübü U18",
+      "away_team": "MEC Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-16T15:36:29.691095+03:00",
-  "last_success_at": "2026-11-16T06:47:27.034633+00:00",
-  "content_changed_at": "2026-11-16T06:47:27.034633+00:00",
+  "last_attempt_at": "2026-11-17T12:31:01.172585+00:00",
+  "last_success_at": "2026-11-17T12:31:01.172585+00:00",
+  "content_changed_at": "2026-11-17T12:31:01.172585+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:50.754612"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:33.601109"
 }

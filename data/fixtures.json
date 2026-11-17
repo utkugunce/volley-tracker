@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:35:52.226785+03:00",
+  "updated_at": "2026-11-17T15:30:39.046457+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1515,36 +1515,38 @@
       {
         "rank": 2,
         "team": "Ernilvolley Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
-        "set_ratio": "6.000",
-        "points_won": 168,
-        "points_lost": 128,
-        "point_ratio": "1.313",
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 4,
+        "set_ratio": "2.000",
+        "points_won": 275,
+        "points_lost": 242,
+        "point_ratio": "1.136",
         "form": [
           "W",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
         "rank": 3,
         "team": "Bahçelievler Voleybol Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 4,
-        "set_ratio": "1.250",
-        "points_won": 197,
-        "points_lost": 203,
-        "point_ratio": "0.970",
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 6,
+        "set_ratio": "1.333",
+        "points_won": 311,
+        "points_lost": 310,
+        "point_ratio": "1.003",
         "form": [
           "L",
+          "W",
           "W"
         ]
       },
@@ -2040,6 +2042,26 @@
       },
       {
         "rank": 3,
+        "team": "Eyüpsultan Belediyesi SK - A U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 3,
+        "set_ratio": "3.000",
+        "points_won": 276,
+        "points_lost": 195,
+        "point_ratio": "1.415",
+        "form": [
+          "L",
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Bizimkent Spor Kulübü U16",
         "played": 4,
         "won": 2,
@@ -2059,7 +2081,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Ümraniye Belediyesi Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -2074,25 +2096,6 @@
         "form": [
           "W",
           "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 5,
-        "team": "Eyüpsultan Belediyesi SK - A U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
-        "set_ratio": "2.000",
-        "points_won": 201,
-        "points_lost": 171,
-        "point_ratio": "1.175",
-        "form": [
-          "L",
-          "W",
           "W"
         ]
       },
@@ -2157,17 +2160,18 @@
       {
         "rank": 9,
         "team": "Olimpia 2017 Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
-        "set_ratio": "0.111",
-        "points_won": 164,
-        "points_lost": 247,
-        "point_ratio": "0.664",
+        "sets_lost": 12,
+        "set_ratio": "0.083",
+        "points_won": 188,
+        "points_lost": 322,
+        "point_ratio": "0.584",
         "form": [
+          "L",
           "L",
           "L",
           "L"
@@ -9545,11 +9549,17 @@
       "match_no": "8",
       "home_team": "Ernilvolley Spor Kulübü U18",
       "away_team": "Bahçelievler Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "24-26",
+        "25-23",
+        "27-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -9579,11 +9589,15 @@
       "match_no": "18",
       "home_team": "Eyüpsultan Belediyesi SK - A U16",
       "away_team": "Olimpia 2017 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-8",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -10383,9 +10397,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:52.341019+00:00",
-  "last_success_at": "2026-11-16T12:35:52.341019+00:00",
-  "content_changed_at": "2026-11-16T12:35:52.341019+00:00",
+  "last_attempt_at": "2026-11-17T12:30:39.103602+00:00",
+  "last_success_at": "2026-11-17T12:30:39.103602+00:00",
+  "content_changed_at": "2026-11-17T12:30:39.103602+00:00",
   "volleybox_synced_matches": 145,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:17.552203"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:04.285180"
 }

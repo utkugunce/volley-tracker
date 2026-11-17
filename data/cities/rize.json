@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:36:07.830519",
+  "updated_at": "2026-11-17T15:30:47.770490",
   "city": "Rize",
   "slug": "rize",
   "title": "TVF Rize Genç & Yıldız Kızlar Süper Lig",
@@ -29,51 +29,51 @@
     "Genç Kızlar Süper Lig - Gelişim Süper Ligi": [
       {
         "rank": 1,
-        "team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "team": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "team": "Rize DNZ Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Superpool Fındıklı 1974 Spor Kulübü",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Kurtözü Spor Kulübü",
-        "played": 0,
+        "team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Rize DNZ Spor Kulübü",
+        "team": "Kurtözü Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -188,11 +188,15 @@
       "match_no": "1",
       "home_team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
       "away_team": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "7-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -222,11 +226,17 @@
       "match_no": "2",
       "home_team": "Superpool Fındıklı 1974 Spor Kulübü",
       "away_team": "Rize DNZ Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "23-25",
+        "25-17",
+        "25-16",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1468,9 +1478,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:36:07.843379+00:00",
-  "last_success_at": "2026-11-16T12:36:07.843379+00:00",
-  "content_changed_at": "2026-11-16T12:36:07.843379+00:00",
+  "last_attempt_at": "2026-11-17T12:30:47.798360+00:00",
+  "last_success_at": "2026-11-17T12:30:47.798360+00:00",
+  "content_changed_at": "2026-11-17T12:30:47.798360+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:47.558986"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:30.594176"
 }

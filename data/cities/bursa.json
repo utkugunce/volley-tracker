@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-16T15:35:39.786182",
+  "updated_at": "2026-11-17T15:30:22.386561",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 87,
+  "total_matches": 100,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -69,23 +69,23 @@
       {
         "rank": 4,
         "team": "Oksijen Spor Kulübü U18",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "Bursa Ayyıldız Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -332,23 +332,23 @@
       {
         "rank": 2,
         "team": "Doruk Voleybol Spor Kulübü U16",
-        "played": 4,
-        "won": 3,
+        "played": 5,
+        "won": 4,
         "lost": 1,
-        "points": 9,
-        "sets_won": 10,
-        "sets_lost": 4,
+        "points": 12,
+        "sets_won": 13,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
         "team": "23 Nisan Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 3,
-        "lost": 1,
+        "lost": 2,
         "points": 8,
-        "sets_won": 9,
-        "sets_lost": 5,
+        "sets_won": 10,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -893,6 +893,44 @@
       "match_no": "8",
       "home_team": "Oksijen Spor Kulübü U18",
       "away_team": "Bursa Ayyıldız Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-17",
+        "25-10"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261121-009",
+      "city": "Bursa",
+      "date": "2026-11-21",
+      "time": "15:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "9",
+      "home_team": "23 Nisan Spor Kulübü U18",
+      "away_team": "Oksijen Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -915,7 +953,41 @@
       }
     },
     {
-      "id": "bursa-20261007-009",
+      "id": "bursa-20261124-010",
+      "city": "Bursa",
+      "date": "2026-11-24",
+      "time": "20:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "10",
+      "home_team": "Bursa Ayyıldız Spor Kulübü U18",
+      "away_team": "Bursa Fethiye 1973 Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261007-011",
       "city": "Bursa",
       "date": "2026-10-07",
       "time": "18:00",
@@ -960,7 +1032,7 @@
       }
     },
     {
-      "id": "bursa-20261008-010",
+      "id": "bursa-20261008-012",
       "city": "Bursa",
       "date": "2026-10-08",
       "time": "19:00",
@@ -1005,7 +1077,7 @@
       }
     },
     {
-      "id": "bursa-20261021-011",
+      "id": "bursa-20261021-013",
       "city": "Bursa",
       "date": "2026-10-21",
       "time": "20:00",
@@ -1051,7 +1123,7 @@
       }
     },
     {
-      "id": "bursa-20261022-012",
+      "id": "bursa-20261022-014",
       "city": "Bursa",
       "date": "2026-10-22",
       "time": "19:00",
@@ -1096,7 +1168,7 @@
       }
     },
     {
-      "id": "bursa-20261103-013",
+      "id": "bursa-20261103-015",
       "city": "Bursa",
       "date": "2026-11-03",
       "time": "18:00",
@@ -1143,7 +1215,7 @@
       }
     },
     {
-      "id": "bursa-20261105-014",
+      "id": "bursa-20261105-016",
       "city": "Bursa",
       "date": "2026-11-05",
       "time": "19:00",
@@ -1189,7 +1261,143 @@
       }
     },
     {
-      "id": "bursa-20261007-015",
+      "id": "bursa-20261123-017",
+      "city": "Bursa",
+      "date": "2026-11-23",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "Güner Karakaya Spor Kulübü U18",
+      "away_team": "Eker Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261124-018",
+      "city": "Bursa",
+      "date": "2026-11-24",
+      "time": "19:00",
+      "hall": "Kestel",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "8",
+      "home_team": "Kestel Belediye 1952 Spor Kulübü U18",
+      "away_team": "DSİ Nilüfer Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261126-019",
+      "city": "Bursa",
+      "date": "2026-11-26",
+      "time": "20:00",
+      "hall": "Nilüfer 100.Yıl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "9",
+      "home_team": "Eker Spor Kulübü U16",
+      "away_team": "MG Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261127-020",
+      "city": "Bursa",
+      "date": "2026-11-27",
+      "time": "20:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "10",
+      "home_team": "DSİ Nilüfer Spor Kulübü U18",
+      "away_team": "Güner Karakaya Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261007-021",
       "city": "Bursa",
       "date": "2026-10-07",
       "time": "19:00",
@@ -1234,7 +1442,7 @@
       }
     },
     {
-      "id": "bursa-20261009-016",
+      "id": "bursa-20261009-022",
       "city": "Bursa",
       "date": "2026-10-09",
       "time": "18:00",
@@ -1279,7 +1487,7 @@
       }
     },
     {
-      "id": "bursa-20261018-017",
+      "id": "bursa-20261018-023",
       "city": "Bursa",
       "date": "2026-10-18",
       "time": "16:30",
@@ -1324,7 +1532,7 @@
       }
     },
     {
-      "id": "bursa-20261021-018",
+      "id": "bursa-20261021-024",
       "city": "Bursa",
       "date": "2026-10-21",
       "time": "18:00",
@@ -1369,7 +1577,7 @@
       }
     },
     {
-      "id": "bursa-20261102-019",
+      "id": "bursa-20261102-025",
       "city": "Bursa",
       "date": "2026-11-02",
       "time": "18:00",
@@ -1414,7 +1622,7 @@
       }
     },
     {
-      "id": "bursa-20261104-020",
+      "id": "bursa-20261104-026",
       "city": "Bursa",
       "date": "2026-11-04",
       "time": "19:00",
@@ -1460,7 +1668,7 @@
       }
     },
     {
-      "id": "bursa-20261118-021",
+      "id": "bursa-20261118-027",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "17:00",
@@ -1494,7 +1702,75 @@
       }
     },
     {
-      "id": "bursa-20261007-022",
+      "id": "bursa-20261126-028",
+      "city": "Bursa",
+      "date": "2026-11-26",
+      "time": "19:00",
+      "hall": "İnegöl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "8",
+      "home_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+      "away_team": "Bursa Genç Saray Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261127-029",
+      "city": "Bursa",
+      "date": "2026-11-27",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "9",
+      "home_team": "Nilüfer Olimpik Spor Kulübü U18",
+      "away_team": "Bursa Koç Spor Kulübü - A U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261007-030",
       "city": "Bursa",
       "date": "2026-10-07",
       "time": "20:00",
@@ -1539,7 +1815,7 @@
       }
     },
     {
-      "id": "bursa-20261009-023",
+      "id": "bursa-20261009-031",
       "city": "Bursa",
       "date": "2026-10-09",
       "time": "20:00",
@@ -1584,7 +1860,7 @@
       }
     },
     {
-      "id": "bursa-20261020-024",
+      "id": "bursa-20261020-032",
       "city": "Bursa",
       "date": "2026-10-20",
       "time": "20:00",
@@ -1629,7 +1905,7 @@
       }
     },
     {
-      "id": "bursa-20261022-025",
+      "id": "bursa-20261022-033",
       "city": "Bursa",
       "date": "2026-10-22",
       "time": "20:00",
@@ -1674,7 +1950,7 @@
       }
     },
     {
-      "id": "bursa-20261103-026",
+      "id": "bursa-20261103-034",
       "city": "Bursa",
       "date": "2026-11-03",
       "time": "20:00",
@@ -1719,7 +1995,7 @@
       }
     },
     {
-      "id": "bursa-20261105-027",
+      "id": "bursa-20261105-035",
       "city": "Bursa",
       "date": "2026-11-05",
       "time": "20:00",
@@ -1764,7 +2040,7 @@
       }
     },
     {
-      "id": "bursa-20260928-028",
+      "id": "bursa-20260928-036",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "18:00",
@@ -1809,7 +2085,7 @@
       }
     },
     {
-      "id": "bursa-20260929-029",
+      "id": "bursa-20260929-037",
       "city": "Bursa",
       "date": "2026-09-29",
       "time": "18:30",
@@ -1854,7 +2130,7 @@
       }
     },
     {
-      "id": "bursa-20261002-030",
+      "id": "bursa-20261002-038",
       "city": "Bursa",
       "date": "2026-10-02",
       "time": "18:00",
@@ -1901,7 +2177,7 @@
       }
     },
     {
-      "id": "bursa-20261012-031",
+      "id": "bursa-20261012-039",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "20:00",
@@ -1948,7 +2224,7 @@
       }
     },
     {
-      "id": "bursa-20261013-032",
+      "id": "bursa-20261013-040",
       "city": "Bursa",
       "date": "2026-10-13",
       "time": "19:00",
@@ -1993,7 +2269,7 @@
       }
     },
     {
-      "id": "bursa-20261014-033",
+      "id": "bursa-20261014-041",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "18:00",
@@ -2038,7 +2314,7 @@
       }
     },
     {
-      "id": "bursa-20261026-034",
+      "id": "bursa-20261026-042",
       "city": "Bursa",
       "date": "2026-10-26",
       "time": "20:00",
@@ -2085,7 +2361,7 @@
       }
     },
     {
-      "id": "bursa-20261027-035",
+      "id": "bursa-20261027-043",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "18:00",
@@ -2132,7 +2408,7 @@
       }
     },
     {
-      "id": "bursa-20261027-036",
+      "id": "bursa-20261027-044",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "19:00",
@@ -2177,7 +2453,7 @@
       }
     },
     {
-      "id": "bursa-20261107-037",
+      "id": "bursa-20261107-045",
       "city": "Bursa",
       "date": "2026-11-07",
       "time": "17:30",
@@ -2223,7 +2499,7 @@
       }
     },
     {
-      "id": "bursa-20261113-038",
+      "id": "bursa-20261113-046",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "19:00",
@@ -2250,8 +2526,8 @@
         "url": "https://women.volleybox.net/tr/orhangazi-voleybol-ve-dagclk-spor-kulubu-u16-guner-karakaya-spor-kulubu-u16-c415712",
         "host_name": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
         "guest_name": "Güner Karakaya Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-13",
         "vb_time": "19:00",
         "vb_hall": "Orhangazi Spor Salonu",
@@ -2268,7 +2544,7 @@
       }
     },
     {
-      "id": "bursa-20261113-039",
+      "id": "bursa-20261113-047",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "20:00",
@@ -2296,8 +2572,8 @@
         "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u16-bursa-koc-spor-kulubu-u16-c415713",
         "host_name": "MG Spor Kulübü U16",
         "guest_name": "Bursa Koç Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-13",
         "vb_time": "20:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -2314,7 +2590,7 @@
       }
     },
     {
-      "id": "bursa-20261119-040",
+      "id": "bursa-20261119-048",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "15:00",
@@ -2348,7 +2624,75 @@
       }
     },
     {
-      "id": "bursa-20260926-041",
+      "id": "bursa-20261121-049",
+      "city": "Bursa",
+      "date": "2026-11-21",
+      "time": "19:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "14",
+      "home_team": "Güner Karakaya Spor Kulübü U16",
+      "away_team": "Aktif Nesil Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261123-050",
+      "city": "Bursa",
+      "date": "2026-11-23",
+      "time": "19:00",
+      "hall": "Orhangazi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "15",
+      "home_team": "Bursa Koç Spor Kulübü",
+      "away_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260926-051",
       "city": "Bursa",
       "date": "2026-09-26",
       "time": "18:00",
@@ -2393,7 +2737,7 @@
       }
     },
     {
-      "id": "bursa-20260930-042",
+      "id": "bursa-20260930-052",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "18:00",
@@ -2438,7 +2782,7 @@
       }
     },
     {
-      "id": "bursa-20261001-043",
+      "id": "bursa-20261001-053",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:00",
@@ -2483,7 +2827,7 @@
       }
     },
     {
-      "id": "bursa-20261015-044",
+      "id": "bursa-20261015-054",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -2529,7 +2873,7 @@
       }
     },
     {
-      "id": "bursa-20261015-045",
+      "id": "bursa-20261015-055",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -2574,7 +2918,7 @@
       }
     },
     {
-      "id": "bursa-20261016-046",
+      "id": "bursa-20261016-056",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "20:00",
@@ -2619,7 +2963,7 @@
       }
     },
     {
-      "id": "bursa-20261027-047",
+      "id": "bursa-20261027-057",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "20:00",
@@ -2664,7 +3008,7 @@
       }
     },
     {
-      "id": "bursa-20261028-048",
+      "id": "bursa-20261028-058",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "14:00",
@@ -2709,7 +3053,7 @@
       }
     },
     {
-      "id": "bursa-20261028-049",
+      "id": "bursa-20261028-059",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "16:00",
@@ -2755,7 +3099,7 @@
       }
     },
     {
-      "id": "bursa-20261112-050",
+      "id": "bursa-20261112-060",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -2802,7 +3146,7 @@
       }
     },
     {
-      "id": "bursa-20261112-051",
+      "id": "bursa-20261112-061",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -2847,7 +3191,7 @@
       }
     },
     {
-      "id": "bursa-20261113-052",
+      "id": "bursa-20261113-062",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "18:00",
@@ -2875,8 +3219,8 @@
         "url": "https://women.volleybox.net/tr/oncu-yldz-spor-kulubu-u16-doruk-voleybol-spor-kulubu-u16-c415228",
         "host_name": "Öncü Yıldız Spor Kulübü U16",
         "guest_name": "Doruk Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-13",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -2893,7 +3237,7 @@
       }
     },
     {
-      "id": "bursa-20261117-053",
+      "id": "bursa-20261117-063",
       "city": "Bursa",
       "date": "2026-11-17",
       "time": "13:00",
@@ -2905,11 +3249,16 @@
       "match_no": "13",
       "home_team": "23 Nisan Spor Kulübü U16",
       "away_team": "Doruk Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "16-25",
+        "16-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2927,7 +3276,7 @@
       }
     },
     {
-      "id": "bursa-20261119-054",
+      "id": "bursa-20261119-064",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "13:00",
@@ -2961,7 +3310,41 @@
       }
     },
     {
-      "id": "bursa-20260928-055",
+      "id": "bursa-20261122-065",
+      "city": "Bursa",
+      "date": "2026-11-22",
+      "time": "12:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "15",
+      "home_team": "Bursa Genç Saray Spor Kulübü U16",
+      "away_team": "Öncü Yıldız Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260928-066",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "20:00",
@@ -3006,7 +3389,7 @@
       }
     },
     {
-      "id": "bursa-20261001-056",
+      "id": "bursa-20261001-067",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -3051,7 +3434,7 @@
       }
     },
     {
-      "id": "bursa-20261004-057",
+      "id": "bursa-20261004-068",
       "city": "Bursa",
       "date": "2026-10-04",
       "time": "19:30",
@@ -3097,7 +3480,7 @@
       }
     },
     {
-      "id": "bursa-20261011-058",
+      "id": "bursa-20261011-069",
       "city": "Bursa",
       "date": "2026-10-11",
       "time": "19:30",
@@ -3143,7 +3526,7 @@
       }
     },
     {
-      "id": "bursa-20261014-059",
+      "id": "bursa-20261014-070",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "20:00",
@@ -3189,7 +3572,7 @@
       }
     },
     {
-      "id": "bursa-20261015-060",
+      "id": "bursa-20261015-071",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -3234,7 +3617,7 @@
       }
     },
     {
-      "id": "bursa-20261024-061",
+      "id": "bursa-20261024-072",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "19:00",
@@ -3279,7 +3662,7 @@
       }
     },
     {
-      "id": "bursa-20261029-062",
+      "id": "bursa-20261029-073",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "14:00",
@@ -3324,7 +3707,7 @@
       }
     },
     {
-      "id": "bursa-20261029-063",
+      "id": "bursa-20261029-074",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "16:00",
@@ -3369,7 +3752,7 @@
       }
     },
     {
-      "id": "bursa-20261107-064",
+      "id": "bursa-20261107-075",
       "city": "Bursa",
       "date": "2026-11-07",
       "time": "19:30",
@@ -3414,7 +3797,7 @@
       }
     },
     {
-      "id": "bursa-20261110-065",
+      "id": "bursa-20261110-076",
       "city": "Bursa",
       "date": "2026-11-10",
       "time": "18:00",
@@ -3452,7 +3835,7 @@
       }
     },
     {
-      "id": "bursa-20261112-066",
+      "id": "bursa-20261112-077",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -3497,7 +3880,7 @@
       }
     },
     {
-      "id": "bursa-20261118-067",
+      "id": "bursa-20261118-078",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "15:00",
@@ -3531,7 +3914,7 @@
       }
     },
     {
-      "id": "bursa-20261119-068",
+      "id": "bursa-20261119-079",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "20:00",
@@ -3565,7 +3948,41 @@
       }
     },
     {
-      "id": "bursa-20260930-069",
+      "id": "bursa-20261122-080",
+      "city": "Bursa",
+      "date": "2026-11-22",
+      "time": "14:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "15",
+      "home_team": "Bursa Osmangazi Belediye Spor",
+      "away_team": "Mesut Kökel Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260930-081",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "20:00",
@@ -3610,7 +4027,7 @@
       }
     },
     {
-      "id": "bursa-20261001-070",
+      "id": "bursa-20261001-082",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -3655,7 +4072,7 @@
       }
     },
     {
-      "id": "bursa-20261012-071",
+      "id": "bursa-20261012-083",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "18:00",
@@ -3702,7 +4119,7 @@
       }
     },
     {
-      "id": "bursa-20261016-072",
+      "id": "bursa-20261016-084",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "18:00",
@@ -3747,7 +4164,7 @@
       }
     },
     {
-      "id": "bursa-20261025-073",
+      "id": "bursa-20261025-085",
       "city": "Bursa",
       "date": "2026-10-25",
       "time": "16:00",
@@ -3792,7 +4209,7 @@
       }
     },
     {
-      "id": "bursa-20261026-074",
+      "id": "bursa-20261026-086",
       "city": "Bursa",
       "date": "2026-10-26",
       "time": "18:00",
@@ -3837,7 +4254,7 @@
       }
     },
     {
-      "id": "bursa-20261109-075",
+      "id": "bursa-20261109-087",
       "city": "Bursa",
       "date": "2026-11-09",
       "time": "18:00",
@@ -3875,7 +4292,7 @@
       }
     },
     {
-      "id": "bursa-20261109-076",
+      "id": "bursa-20261109-088",
       "city": "Bursa",
       "date": "2026-11-09",
       "time": "20:00",
@@ -3914,7 +4331,7 @@
       }
     },
     {
-      "id": "bursa-20261118-077",
+      "id": "bursa-20261118-089",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "13:00",
@@ -3948,7 +4365,7 @@
       }
     },
     {
-      "id": "bursa-20261119-078",
+      "id": "bursa-20261119-090",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "11:00",
@@ -3982,7 +4399,7 @@
       }
     },
     {
-      "id": "bursa-20261001-079",
+      "id": "bursa-20261001-091",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -4027,7 +4444,7 @@
       }
     },
     {
-      "id": "bursa-20261001-080",
+      "id": "bursa-20261001-092",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -4074,7 +4491,7 @@
       }
     },
     {
-      "id": "bursa-20261012-081",
+      "id": "bursa-20261012-093",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "19:00",
@@ -4121,7 +4538,7 @@
       }
     },
     {
-      "id": "bursa-20261015-082",
+      "id": "bursa-20261015-094",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -4166,7 +4583,7 @@
       }
     },
     {
-      "id": "bursa-20261024-083",
+      "id": "bursa-20261024-095",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "13:00",
@@ -4212,7 +4629,7 @@
       }
     },
     {
-      "id": "bursa-20261029-084",
+      "id": "bursa-20261029-096",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "18:00",
@@ -4257,7 +4674,7 @@
       }
     },
     {
-      "id": "bursa-20261110-085",
+      "id": "bursa-20261110-097",
       "city": "Bursa",
       "date": "2026-11-10",
       "time": "20:00",
@@ -4295,7 +4712,7 @@
       }
     },
     {
-      "id": "bursa-20261112-086",
+      "id": "bursa-20261112-098",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -4340,7 +4757,7 @@
       }
     },
     {
-      "id": "bursa-20261118-087",
+      "id": "bursa-20261118-099",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "14:00",
@@ -4372,11 +4789,45 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "bursa-20261126-100",
+      "city": "Bursa",
+      "date": "2026-11-26",
+      "time": "18:00",
+      "hall": "Nilüfer 100.Yıl",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu",
+      "match_no": "10",
+      "home_team": "Nilüfer Belediyespor Eker (A)",
+      "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:39.815009+00:00",
-  "last_success_at": "2026-11-16T12:35:39.815009+00:00",
-  "content_changed_at": "2026-11-16T12:35:39.815009+00:00",
+  "last_attempt_at": "2026-11-17T12:30:22.412734+00:00",
+  "last_success_at": "2026-11-17T12:30:22.412734+00:00",
+  "content_changed_at": "2026-11-17T12:30:22.412734+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:25.839061"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:11.636483"
 }

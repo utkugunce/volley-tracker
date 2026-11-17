@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T15:35:50.067808",
+  "updated_at": "2026-11-17T15:30:34.964524",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -77,45 +77,45 @@
       {
         "rank": 1,
         "team": "Hatay Voleybol Spor Kulübü U18",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Yükseliş Akademi Spor Kulübü U18",
-        "played": 4,
-        "won": 2,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
         "team": "Antakya Güneş Spor Kulübü - B U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 4,
         "sets_won": 6,
-        "sets_lost": 10,
+        "sets_lost": 13,
         "form": []
       },
       {
         "rank": 4,
         "team": "Yıldızlar Samandağ Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 2,
         "sets_won": 4,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ],
@@ -1111,11 +1111,15 @@
       "match_no": "9",
       "home_team": "Antakya Güneş Spor Kulübü - B U18",
       "away_team": "Hatay Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "12-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401084",
@@ -1152,11 +1156,15 @@
       "match_no": "10",
       "home_team": "Yükseliş Akademi Spor Kulübü U18",
       "away_team": "Yıldızlar Samandağ Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-23",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401085",
@@ -2672,9 +2680,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-16T12:35:50.082661+00:00",
-  "last_success_at": "2026-11-16T12:35:50.082661+00:00",
-  "content_changed_at": "2026-11-16T12:35:50.082661+00:00",
+  "last_attempt_at": "2026-11-17T12:30:34.976142+00:00",
+  "last_success_at": "2026-11-17T12:30:34.976142+00:00",
+  "content_changed_at": "2026-11-17T12:30:34.976142+00:00",
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-16T15:43:29.972912"
+  "volleybox_sync_updated_at": "2026-11-17T15:37:15.049100"
 }
