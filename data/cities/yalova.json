@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T15:30:59.770243",
+  "updated_at": "2026-11-17T17:28:07.713057",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -1392,18 +1392,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-05",
-        "vb_time": "18:00",
+        "vb_date": "2026-12-26",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-05",
-          "vb_time": "18:00",
+          "vb_date": "2026-12-26",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-12-26 / VB: 2027-01-05) | Saat Değişti (TVF: 14:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -1467,18 +1467,18 @@
         "guest_name": "Altın Manşet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-26",
-        "vb_time": "20:00",
+        "vb_date": "2027-01-09",
+        "vb_time": "12:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-26",
-          "vb_time": "20:00",
+          "vb_date": "2027-01-09",
+          "vb_time": "12:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-01-09 / VB: 2027-01-26) | Saat Değişti (TVF: 12:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1508,18 +1508,18 @@
         "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-21",
-        "vb_time": "20:00",
+        "vb_date": "2027-01-09",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-21",
-          "vb_time": "20:00",
+          "vb_date": "2027-01-09",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-01-09 / VB: 2027-01-21) | Saat Değişti (TVF: 14:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1618,17 +1618,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2027-01-12",
-        "vb_time": "20:00",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
           "has_diff": true,
           "date_diff": true,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2027-01-12",
-          "vb_time": "20:00",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-01-16 / VB: 2027-01-12) | Saat Değişti (TVF: 14:00 / VB: 20:00)"
+          "details": "Tarih Değişti (TVF: 2027-01-16 / VB: 2027-01-12)"
         }
       }
     },
@@ -1658,18 +1658,18 @@
         "guest_name": "Yalova Atakent Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-07",
-        "vb_time": "18:00",
+        "vb_date": "2027-01-16",
+        "vb_time": "16:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-07",
-          "vb_time": "18:00",
+          "vb_date": "2027-01-16",
+          "vb_time": "16:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-01-16 / VB: 2027-01-07) | Saat Değişti (TVF: 16:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -1733,18 +1733,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-12",
-        "vb_time": "18:00",
+        "vb_date": "2027-02-06",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-12",
-          "vb_time": "18:00",
+          "vb_date": "2027-02-06",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-06 / VB: 2027-01-12) | Saat Değişti (TVF: 14:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -1774,18 +1774,18 @@
         "guest_name": "Yalova Elit Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-02-16",
-        "vb_time": "20:00",
+        "vb_date": "2027-02-06",
+        "vb_time": "16:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-02-16",
-          "vb_time": "20:00",
+          "vb_date": "2027-02-06",
+          "vb_time": "16:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-06 / VB: 2027-02-16) | Saat Değişti (TVF: 16:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1849,18 +1849,18 @@
         "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-19",
-        "vb_time": "20:00",
+        "vb_date": "2027-02-13",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-19",
-          "vb_time": "20:00",
+          "vb_date": "2027-02-13",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-13 / VB: 2027-01-19) | Saat Değişti (TVF: 14:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1890,18 +1890,18 @@
         "guest_name": "Altın Manşet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-14",
-        "vb_time": "20:00",
+        "vb_date": "2027-02-13",
+        "vb_time": "16:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-14",
-          "vb_time": "20:00",
+          "vb_date": "2027-02-13",
+          "vb_time": "16:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-13 / VB: 2027-01-14) | Saat Değişti (TVF: 16:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1965,18 +1965,18 @@
         "guest_name": "Yalova Elit Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-28",
-        "vb_time": "20:00",
+        "vb_date": "2027-02-20",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-28",
-          "vb_time": "20:00",
+          "vb_date": "2027-02-20",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-20 / VB: 2027-01-28) | Saat Değişti (TVF: 14:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2074,18 +2074,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-02-18",
-        "vb_time": "18:00",
+        "vb_date": "2027-02-27",
+        "vb_time": "14:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-02-18",
-          "vb_time": "18:00",
+          "vb_date": "2027-02-27",
+          "vb_time": "14:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-02-27 / VB: 2027-02-18) | Saat Değişti (TVF: 14:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -2124,9 +2124,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:59.779823+00:00",
-  "last_success_at": "2026-11-17T12:30:59.779823+00:00",
-  "content_changed_at": "2026-11-17T12:30:59.779823+00:00",
+  "last_attempt_at": "2026-11-18T14:54:32.356127+03:00",
+  "last_success_at": "2026-11-17T14:28:07.723201+00:00",
+  "content_changed_at": "2026-11-17T14:28:07.723201+00:00",
   "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:33.593092"
+  "volleybox_sync_updated_at": "2026-11-18T15:02:41.496089"
 }

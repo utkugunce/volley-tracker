@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T15:31:01.154837",
+  "updated_at": "2026-11-18T14:54:23.312393",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -261,18 +261,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419767",
+        "url": "https://women.volleybox.net/tr/karadeniz-eregli-voleybol-spor-kulubu-u18-karadeniz-eregli-voleybol-spor-kulubu-b-u18-c419767",
+        "host_name": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
+        "guest_name": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:30",
+        "vb_hall": "Ereğli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:30",
+          "vb_hall": "Ereğli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -295,18 +302,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419768",
+        "url": "https://women.volleybox.net/tr/kyal-spor-kulubu-u18-karadeniz-eregli-voleybol-spor-kulubu-u18-c419768",
+        "host_name": "KYAL Spor Kulübü U18",
+        "guest_name": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "13:30",
+        "vb_hall": "Ereğli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "13:30",
+          "vb_hall": "Ereğli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -334,18 +348,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419769",
+        "url": "https://women.volleybox.net/tr/devrek-msa-voleybol-spor-kulubu-u18-caycuma-spor-kulubu-u18-c419769",
+        "host_name": "Devrek MSA Voleybol Spor Kulübü U18",
+        "guest_name": "Çaycuma Spor Kulübü U18",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:00",
+        "vb_hall": "Çaycuma Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:00",
+          "vb_hall": "Çaycuma Spor Salonu",
+          "details": null
         }
       }
     },
@@ -368,18 +389,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419770",
+        "url": "https://women.volleybox.net/tr/toga-spor-kulubu-u18-devrek-msa-voleybol-spor-kulubu-u18-c419770",
+        "host_name": "TOGA Spor Kulübü U18",
+        "guest_name": "Devrek MSA Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "12:00",
+        "vb_hall": "Çaycuma Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "12:00",
+          "vb_hall": "Çaycuma Spor Salonu",
+          "details": null
         }
       }
     },
@@ -448,25 +476,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419771",
+        "url": "https://women.volleybox.net/tr/zonguldak-gsm-spor-kulubu-u18-mec-spor-kulubu-u18-c419771",
+        "host_name": "Zonguldak GSİM Spor Kulübü U18",
+        "guest_name": "MEC Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "13:00",
+        "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "13:00",
+          "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:31:01.172585+00:00",
-  "last_success_at": "2026-11-17T12:31:01.172585+00:00",
-  "content_changed_at": "2026-11-17T12:31:01.172585+00:00",
-  "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:33.601109"
+  "last_attempt_at": "2026-11-18T11:54:23.313999+00:00",
+  "last_success_at": "2026-11-18T11:54:23.313999+00:00",
+  "content_changed_at": "2026-11-18T11:54:23.313999+00:00",
+  "volleybox_synced_matches": 7,
+  "volleybox_sync_updated_at": "2026-11-18T15:02:41.541199"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T15:30:31.712000",
+  "updated_at": "2026-11-18T14:53:40.926936",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -835,18 +835,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419903",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-gaziantep-buyuksehir-belediyespor-u18-c419903",
+        "host_name": "Anadolugücü Spor Kulübü U18",
+        "guest_name": "Gaziantep Büyükşehir Belediyespor U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -873,18 +880,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419904",
+        "url": "https://women.volleybox.net/tr/av-mahmut-dusun-mtal-u18-antepia-spor-kulubu-u18-c419904",
+        "host_name": "Av. Mahmut Düşün MTAL U18",
+        "guest_name": "Antepia Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -907,18 +921,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419905",
+        "url": "https://women.volleybox.net/tr/gaziantep-buyuksehir-belediyespor-u18-av-mahmut-dusun-mtal-u18-c419905",
+        "host_name": "Gaziantep Büyükşehir Belediyespor U18",
+        "guest_name": "Av. Mahmut Düşün MTAL U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -941,18 +962,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419906",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-zeugma-spor-kulubu-u18-c419906",
+        "host_name": "Anadolugücü Spor Kulübü U18",
+        "guest_name": "Zeugma Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -975,18 +1003,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419907",
+        "url": "https://women.volleybox.net/tr/antepia-spor-kulubu-u18-anadolugucu-spor-kulubu-u18-c419907",
+        "host_name": "Antepia Spor Kulübü U18",
+        "guest_name": "Anadolugücü Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1009,18 +1044,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419908",
+        "url": "https://women.volleybox.net/tr/antepia-spor-kulubu-u18-gaziantep-buyuksehir-belediyespor-u18-c419908",
+        "host_name": "Antepia Spor Kulübü U18",
+        "guest_name": "Gaziantep Büyükşehir Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-05",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-05",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1369,18 +1411,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419909",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u16-gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-c419909",
+        "host_name": "Anadolugücü Spor Kulübü U16",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-11-14",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1407,18 +1456,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419910",
+        "url": "https://women.volleybox.net/tr/merinos-sk-b-u16-zeugma-spor-kulubu-u16-c419910",
+        "host_name": "Merinos SK - B U16",
+        "guest_name": "Zeugma Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "11:00",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "11:00",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1445,18 +1501,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419911",
+        "url": "https://women.volleybox.net/tr/gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-merinos-sk-u16-c419911",
+        "host_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "guest_name": "Merinos SK U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "12:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "12:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1483,18 +1546,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419912",
+        "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-b-u16-dogus27-spor-kulubu-u16-c419912",
+        "host_name": "Zeugma Spor Kulübü - B U16",
+        "guest_name": "Doğuş27 Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "14:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "14:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1517,18 +1587,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419913",
+        "url": "https://women.volleybox.net/tr/gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-zeugma-spor-kulubu-b-u16-c419913",
+        "host_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "guest_name": "Zeugma Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1551,18 +1628,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419914",
+        "url": "https://women.volleybox.net/tr/dogus27-spor-kulubu-u16-zeugma-spor-kulubu-u16-c419914",
+        "host_name": "Doğuş27 Spor Kulübü U16",
+        "guest_name": "Zeugma Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "12:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "12:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1585,18 +1669,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419915",
+        "url": "https://women.volleybox.net/tr/antepia-spor-kulubu-u16-gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-c419915",
+        "host_name": "Antepia Spor Kulübü U16",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "12:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "12:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1619,18 +1710,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419916",
+        "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-u16-gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-c419916",
+        "host_name": "Zeugma Spor Kulübü U16",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1653,18 +1751,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419917",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u16-dogus27-spor-kulubu-u16-c419917",
+        "host_name": "Anadolugücü Spor Kulübü U16",
+        "guest_name": "Doğuş27 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "12:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "12:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1687,18 +1792,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419918",
+        "url": "https://women.volleybox.net/tr/gaziantep-buyuksehir-belediyespor-u16-gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-c419918",
+        "host_name": "Gaziantep Büyükşehir Belediyespor U16",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-29",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1721,18 +1833,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419919",
+        "url": "https://women.volleybox.net/tr/dogus27-spor-kulubu-u16-merinos-sk-u16-c419919",
+        "host_name": "Doğuş27 Spor Kulübü U16",
+        "guest_name": "Merinos SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-05",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-05",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1755,18 +1874,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419920",
+        "url": "https://women.volleybox.net/tr/gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-merinos-sk-b-u16-c419920",
+        "host_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "guest_name": "Merinos SK - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-05",
+        "vb_time": "11:00",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-05",
+          "vb_time": "11:00",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1789,25 +1915,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419921",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u16-zeugma-spor-kulubu-b-u16-c419921",
+        "host_name": "Anadolugücü Spor Kulübü U16",
+        "guest_name": "Zeugma Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-06",
+        "vb_time": "09:30",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-06",
+          "vb_time": "09:30",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:31.722638+00:00",
-  "last_success_at": "2026-11-17T12:30:31.722638+00:00",
-  "content_changed_at": "2026-11-17T12:30:31.722638+00:00",
-  "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:14.010074"
+  "last_attempt_at": "2026-11-18T11:53:40.936910+00:00",
+  "last_success_at": "2026-11-18T11:53:40.936910+00:00",
+  "content_changed_at": "2026-11-18T11:53:40.936910+00:00",
+  "volleybox_synced_matches": 39,
+  "volleybox_sync_updated_at": "2026-11-18T15:01:27.952309"
 }

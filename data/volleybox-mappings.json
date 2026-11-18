@@ -23927,15 +23927,17 @@
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Kırklareli",
       "city_slug": "kirklareli",
-      "matched_as": "Kırklareli Fen Bilimleri Koleji SK U16",
+      "matched_as": "Kırklareli Belediyesi BİL Koleji SK U16",
       "volleybox_url": "https://women.volleybox.net/tr/krklareli-fen-bilimleri-koleji-sk-u16-t43774",
       "age_category": "U16",
       "confidence": "verified",
-      "verified_at": "2026-11-04",
+      "verified_at": "2026-11-17",
       "aliases": [
+        "Kırklareli Belediyesi BİL Koleji SK U16",
         "Fen Bilimleri Spor Kulübü",
         "Kırklareli Fen Bilimleri Koleji SK U16",
-        "Fen Bilimleri Koleji SK"
+        "Fen Bilimleri Koleji SK",
+        "Kırklareli Belediyesi Bil Koleji S.K."
       ]
     },
     {
@@ -24223,6 +24225,352 @@
       "confidence": "verified",
       "note": null,
       "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "FENERBAHÇE MEDICANA",
+      "matched_as": "Fenerbahçe Medicana II",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "FENERBAHÇE MEDICANA"
+      ]
+    },
+    {
+      "internal_name": "İBB SPOR KULÜBÜ",
+      "matched_as": "İBB Spor Kulübü",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "İBB SPOR KULÜBÜ"
+      ]
+    },
+    {
+      "internal_name": "İLBANK",
+      "matched_as": "İlbank II",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "İLBANK"
+      ]
+    },
+    {
+      "internal_name": "PTT",
+      "matched_as": "PTT Spor",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "PTT"
+      ]
+    },
+    {
+      "internal_name": "07 MEGA SPOR",
+      "matched_as": "07 Mega Spor Kulübü",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "07 MEGA SPOR"
+      ]
+    },
+    {
+      "internal_name": "BAHÇELİEVLER BELEDİYE SPOR",
+      "matched_as": "Bahçelievler Belediyespor",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "BAHÇELİEVLER BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "KARŞIYAKA",
+      "matched_as": "Endo Karşıyaka SK",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "KARŞIYAKA"
+      ]
+    },
+    {
+      "internal_name": "MERİNOS VOLEYBOL",
+      "matched_as": "Merinos SK",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "MERİNOS VOLEYBOL"
+      ]
+    },
+    {
+      "internal_name": "NİLÜFER BELEDİYESPOR",
+      "matched_as": "Nilüfer Belediyespor II",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "NİLÜFER BELEDİYESPOR"
+      ]
+    },
+    {
+      "internal_name": "VAKIFBANK",
+      "matched_as": "VakıfBank II",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "VAKIFBANK"
+      ]
+    },
+    {
+      "internal_name": "YEŞİLYURT",
+      "matched_as": "Yeşilyurt Spor Kulübü",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "YEŞİLYURT"
+      ]
+    },
+    {
+      "internal_name": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
+      "matched_as": "Aydın Büyükşehir Belediyespor",
+      "city_slug": "kadinlar-1-ligi",
+      "city": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+      "aliases": [
+        "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Belediyesi Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-belediyesi-sk-u18-t47944",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Elazığ Belediyesi Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "MSE Filo Elazığ Ekol Spor-B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "MSE Filo Elazığ Ekol Spor-B",
+      "volleybox_url": "https://women.volleybox.net/tr/ekol-spor-kulubu-u18-t56161",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "MSE Filo Elazığ Ekol Spor-B"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-genclik-spor-kulubu-u18-t48853",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Spor Kulübü-A",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Voleybol Spor Kulübü-A",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-spor-kulubu-u18-t56158",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Elazığ Voleybol Spor Kulübü-A"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Akademi Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Voleybol Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-akademi-spor-kulubu-u18-t47945",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Elazığ Voleybol Akademi Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Atlas 23 SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Atlas 23 SK",
+      "volleybox_url": "https://women.volleybox.net/tr/atlas-23-spor-kulubu-u18-t56156",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Atlas 23 SK"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Spor Kulübü-B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Elazığ",
+      "city_slug": "elazig",
+      "matched_as": "Elazığ Voleybol Spor Kulübü-B",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-spor-kulubu-b-u18-t56159",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Elazığ Voleybol Spor Kulübü-B"
+      ]
+    },
+    {
+      "internal_name": "Pars Spor",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "Pars Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/ordu-pars-spor-u18-t44216",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Pars Spor"
+      ]
+    },
+    {
+      "internal_name": "Academy Volley B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "Academy Volley B",
+      "volleybox_url": "https://women.volleybox.net/tr/ordu-academy-volley-b-u18-t44215",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Academy Volley B"
+      ]
+    },
+    {
+      "internal_name": "1921 Ordu Spor",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "1921 Ordu Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/1921-ordu-spor-u18-t44213",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "1921 Ordu Spor"
+      ]
+    },
+    {
+      "internal_name": "Academy Volley A",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "Academy Volley A",
+      "volleybox_url": "https://women.volleybox.net/tr/ordu-academy-volley-a-u18-t44214",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Academy Volley A"
+      ]
+    },
+    {
+      "internal_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u18-t56166",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/caykur-rizespor-u18-t48167",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Çaykur Rizespor Gençlik Ve Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Superpool Fındıklı 1974 Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Superpool Fındıklı 1974 Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/fndkl-1974-spor-kulubu-u18-t56167",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Superpool Fındıklı 1974 Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Rize DNZ Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Rize DNZ Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-u18-t56169",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Rize DNZ Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Kurtözü Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Kurtözü Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kurtozu-spor-kulubu-u18-t56168",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Kurtözü Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Tomarza Belediye Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Kayseri",
+      "city_slug": "kayseri",
+      "matched_as": "Tomarza Belediye Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/tomarza-belediye-spor-kulubu-u16-t42411",
+      "age_category": "U16",
+      "confidence": "verified",
+      "verified_at": "2026-11-17",
+      "aliases": [
+        "Tomarza Belediye Spor Kulübü"
+      ]
     }
   ],
   "leagues": [

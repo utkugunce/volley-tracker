@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:22.386561",
+  "updated_at": "2026-11-18T14:53:34.823753",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 100,
+  "total_matches": 101,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -865,18 +865,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419864",
+        "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u18-bursa-koc-spor-kulubu-b-u18-c419864",
+        "host_name": "Bursa Fethiye 1973 Spor Kulübü U18",
+        "guest_name": "Bursa Koç Spor Kulübü - B U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "11:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "11:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -903,18 +910,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419865",
+        "url": "https://women.volleybox.net/tr/oksijen-spor-kulubu-u18-bursa-ayyldz-spor-kulubu-u18-c419865",
+        "host_name": "Oksijen Spor Kulübü U18",
+        "guest_name": "Bursa Ayyıldız Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-16",
+        "vb_time": "17:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "17:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -937,18 +951,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419866",
+        "url": "https://women.volleybox.net/tr/23-nisan-spor-kulubu-u18-oksijen-spor-kulubu-u18-c419866",
+        "host_name": "23 Nisan Spor Kulübü U18",
+        "guest_name": "Oksijen Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "15:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "15:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -971,18 +992,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419867",
+        "url": "https://women.volleybox.net/tr/bursa-ayyldz-spor-kulubu-u18-bursa-fethiye-1973-spor-kulubu-u18-c419867",
+        "host_name": "Bursa Ayyıldız Spor Kulübü U18",
+        "guest_name": "Bursa Fethiye 1973 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-24",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-24",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1279,18 +1307,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419868",
+        "url": "https://women.volleybox.net/tr/guner-karakaya-spor-kulubu-u18-eker-spor-kulubu-u16-c419868",
+        "host_name": "Güner Karakaya Spor Kulübü U18",
+        "guest_name": "Eker Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-23",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-23",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1313,18 +1348,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419869",
+        "url": "https://women.volleybox.net/tr/kestel-belediye-1952-spor-kulubu-u18-ds-nilufer-spor-kulubu-u18-c419869",
+        "host_name": "Kestel Belediye 1952 Spor Kulübü U18",
+        "guest_name": "DSİ Nilüfer Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-24",
+        "vb_time": "19:00",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-24",
+          "vb_time": "19:00",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1347,18 +1389,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419870",
+        "url": "https://women.volleybox.net/tr/eker-spor-kulubu-u16-mg-spor-kulubu-u18-c419870",
+        "host_name": "Eker Spor Kulübü U16",
+        "guest_name": "MG Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-26",
+        "vb_time": "20:00",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-26",
+          "vb_time": "20:00",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1381,18 +1430,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419871",
+        "url": "https://women.volleybox.net/tr/ds-nilufer-spor-kulubu-u18-guner-karakaya-spor-kulubu-u18-c419871",
+        "host_name": "DSİ Nilüfer Spor Kulübü U18",
+        "guest_name": "Güner Karakaya Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1686,6 +1742,47 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
+        "synced": true,
+        "match_id": "419872",
+        "url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-u18-bursa-buyuksehir-belediyespor-u18-c419872",
+        "host_name": "Bursa Koç Spor Kulübü U18",
+        "guest_name": "Bursa Büyükşehir Belediyespor U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-18",
+        "vb_time": "17:00",
+        "vb_hall": "Çekirge Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "17:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "bursa-20261124-028",
+      "city": "Bursa",
+      "date": "2026-11-24",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "8",
+      "home_team": "Bursa Genç Saray Spor Kulübü U18",
+      "away_team": "Nilüfer Olimpik Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
         "synced": false,
         "match_id": null,
         "url": null,
@@ -1702,7 +1799,7 @@
       }
     },
     {
-      "id": "bursa-20261126-028",
+      "id": "bursa-20261126-029",
       "city": "Bursa",
       "date": "2026-11-26",
       "time": "19:00",
@@ -1711,7 +1808,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "C Grubu",
-      "match_no": "8",
+      "match_no": "9",
       "home_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
       "away_team": "Bursa Genç Saray Spor Kulübü U18",
       "score": "- : -",
@@ -1720,23 +1817,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419873",
+        "url": "https://women.volleybox.net/tr/negol-orhaniye-voleybol-sk-u18-bursa-genc-saray-spor-kulubu-u18-c419873",
+        "host_name": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+        "guest_name": "Bursa Genç Saray Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-26",
+        "vb_time": "19:00",
+        "vb_hall": "İnegöl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-26",
+          "vb_time": "19:00",
+          "vb_hall": "İnegöl Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261127-029",
+      "id": "bursa-20261127-030",
       "city": "Bursa",
       "date": "2026-11-27",
       "time": "18:00",
@@ -1745,7 +1849,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "C Grubu",
-      "match_no": "9",
+      "match_no": "10",
       "home_team": "Nilüfer Olimpik Spor Kulübü U18",
       "away_team": "Bursa Koç Spor Kulübü - A U18",
       "score": "- : -",
@@ -1754,23 +1858,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419874",
+        "url": "https://women.volleybox.net/tr/nilufer-olimpik-spor-kulubu-u18-bursa-koc-spor-kulubu-u18-c419874",
+        "host_name": "Nilüfer Olimpik Spor Kulübü U18",
+        "guest_name": "Bursa Koç Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261007-030",
+      "id": "bursa-20261007-031",
       "city": "Bursa",
       "date": "2026-10-07",
       "time": "20:00",
@@ -1815,7 +1926,7 @@
       }
     },
     {
-      "id": "bursa-20261009-031",
+      "id": "bursa-20261009-032",
       "city": "Bursa",
       "date": "2026-10-09",
       "time": "20:00",
@@ -1860,7 +1971,7 @@
       }
     },
     {
-      "id": "bursa-20261020-032",
+      "id": "bursa-20261020-033",
       "city": "Bursa",
       "date": "2026-10-20",
       "time": "20:00",
@@ -1905,7 +2016,7 @@
       }
     },
     {
-      "id": "bursa-20261022-033",
+      "id": "bursa-20261022-034",
       "city": "Bursa",
       "date": "2026-10-22",
       "time": "20:00",
@@ -1950,7 +2061,7 @@
       }
     },
     {
-      "id": "bursa-20261103-034",
+      "id": "bursa-20261103-035",
       "city": "Bursa",
       "date": "2026-11-03",
       "time": "20:00",
@@ -1995,7 +2106,7 @@
       }
     },
     {
-      "id": "bursa-20261105-035",
+      "id": "bursa-20261105-036",
       "city": "Bursa",
       "date": "2026-11-05",
       "time": "20:00",
@@ -2040,7 +2151,7 @@
       }
     },
     {
-      "id": "bursa-20260928-036",
+      "id": "bursa-20260928-037",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "18:00",
@@ -2085,7 +2196,7 @@
       }
     },
     {
-      "id": "bursa-20260929-037",
+      "id": "bursa-20260929-038",
       "city": "Bursa",
       "date": "2026-09-29",
       "time": "18:30",
@@ -2130,7 +2241,7 @@
       }
     },
     {
-      "id": "bursa-20261002-038",
+      "id": "bursa-20261002-039",
       "city": "Bursa",
       "date": "2026-10-02",
       "time": "18:00",
@@ -2177,7 +2288,7 @@
       }
     },
     {
-      "id": "bursa-20261012-039",
+      "id": "bursa-20261012-040",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "20:00",
@@ -2224,7 +2335,7 @@
       }
     },
     {
-      "id": "bursa-20261013-040",
+      "id": "bursa-20261013-041",
       "city": "Bursa",
       "date": "2026-10-13",
       "time": "19:00",
@@ -2269,7 +2380,7 @@
       }
     },
     {
-      "id": "bursa-20261014-041",
+      "id": "bursa-20261014-042",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "18:00",
@@ -2314,7 +2425,7 @@
       }
     },
     {
-      "id": "bursa-20261026-042",
+      "id": "bursa-20261026-043",
       "city": "Bursa",
       "date": "2026-10-26",
       "time": "20:00",
@@ -2361,7 +2472,7 @@
       }
     },
     {
-      "id": "bursa-20261027-043",
+      "id": "bursa-20261027-044",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "18:00",
@@ -2408,7 +2519,7 @@
       }
     },
     {
-      "id": "bursa-20261027-044",
+      "id": "bursa-20261027-045",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "19:00",
@@ -2453,7 +2564,7 @@
       }
     },
     {
-      "id": "bursa-20261107-045",
+      "id": "bursa-20261107-046",
       "city": "Bursa",
       "date": "2026-11-07",
       "time": "17:30",
@@ -2499,7 +2610,7 @@
       }
     },
     {
-      "id": "bursa-20261113-046",
+      "id": "bursa-20261113-047",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "19:00",
@@ -2544,7 +2655,7 @@
       }
     },
     {
-      "id": "bursa-20261113-047",
+      "id": "bursa-20261113-048",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "20:00",
@@ -2590,7 +2701,7 @@
       }
     },
     {
-      "id": "bursa-20261119-048",
+      "id": "bursa-20261119-049",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "15:00",
@@ -2608,23 +2719,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419875",
+        "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u16-eker-spor-kulubu-u16-c419875",
+        "host_name": "MG Spor Kulübü U16",
+        "guest_name": "Eker Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "15:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "15:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261121-049",
+      "id": "bursa-20261121-050",
       "city": "Bursa",
       "date": "2026-11-21",
       "time": "19:00",
@@ -2642,23 +2760,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419876",
+        "url": "https://women.volleybox.net/tr/guner-karakaya-spor-kulubu-u16-aktif-nesil-spor-kulubu-u16-c419876",
+        "host_name": "Güner Karakaya Spor Kulübü U16",
+        "guest_name": "Aktif Nesil Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "19:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "19:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261123-050",
+      "id": "bursa-20261123-051",
       "city": "Bursa",
       "date": "2026-11-23",
       "time": "19:00",
@@ -2676,23 +2801,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419877",
+        "url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-u16-orhangazi-voleybol-ve-dagclk-spor-kulubu-u16-c419877",
+        "host_name": "Bursa Koç Spor Kulübü U16",
+        "guest_name": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-23",
+        "vb_time": "19:00",
+        "vb_hall": "Orhangazi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-23",
+          "vb_time": "19:00",
+          "vb_hall": "Orhangazi Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20260926-051",
+      "id": "bursa-20260926-052",
       "city": "Bursa",
       "date": "2026-09-26",
       "time": "18:00",
@@ -2737,7 +2869,7 @@
       }
     },
     {
-      "id": "bursa-20260930-052",
+      "id": "bursa-20260930-053",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "18:00",
@@ -2782,7 +2914,7 @@
       }
     },
     {
-      "id": "bursa-20261001-053",
+      "id": "bursa-20261001-054",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:00",
@@ -2827,7 +2959,7 @@
       }
     },
     {
-      "id": "bursa-20261015-054",
+      "id": "bursa-20261015-055",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -2873,7 +3005,7 @@
       }
     },
     {
-      "id": "bursa-20261015-055",
+      "id": "bursa-20261015-056",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -2918,7 +3050,7 @@
       }
     },
     {
-      "id": "bursa-20261016-056",
+      "id": "bursa-20261016-057",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "20:00",
@@ -2963,7 +3095,7 @@
       }
     },
     {
-      "id": "bursa-20261027-057",
+      "id": "bursa-20261027-058",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "20:00",
@@ -3008,7 +3140,7 @@
       }
     },
     {
-      "id": "bursa-20261028-058",
+      "id": "bursa-20261028-059",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "14:00",
@@ -3053,7 +3185,7 @@
       }
     },
     {
-      "id": "bursa-20261028-059",
+      "id": "bursa-20261028-060",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "16:00",
@@ -3099,7 +3231,7 @@
       }
     },
     {
-      "id": "bursa-20261112-060",
+      "id": "bursa-20261112-061",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -3146,7 +3278,7 @@
       }
     },
     {
-      "id": "bursa-20261112-061",
+      "id": "bursa-20261112-062",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -3191,7 +3323,7 @@
       }
     },
     {
-      "id": "bursa-20261113-062",
+      "id": "bursa-20261113-063",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "18:00",
@@ -3237,7 +3369,7 @@
       }
     },
     {
-      "id": "bursa-20261117-063",
+      "id": "bursa-20261117-064",
       "city": "Bursa",
       "date": "2026-11-17",
       "time": "13:00",
@@ -3260,23 +3392,30 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419878",
+        "url": "https://women.volleybox.net/tr/23-nisan-spor-kulubu-u16-doruk-voleybol-spor-kulubu-u16-c419878",
+        "host_name": "23 Nisan Spor Kulübü U16",
+        "guest_name": "Doruk Voleybol Spor Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "13:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "13:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261119-064",
+      "id": "bursa-20261119-065",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "13:00",
@@ -3294,23 +3433,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419879",
+        "url": "https://women.volleybox.net/tr/eker-spor-kulubu-b-u16-bursa-fethiye-1973-spor-kulubu-b-u16-c419879",
+        "host_name": "Eker Spor Kulübü - B U16",
+        "guest_name": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "13:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "13:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261122-065",
+      "id": "bursa-20261122-066",
       "city": "Bursa",
       "date": "2026-11-22",
       "time": "12:00",
@@ -3328,23 +3474,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419880",
+        "url": "https://women.volleybox.net/tr/bursa-genc-saray-spor-kulubu-u16-oncu-yldz-spor-kulubu-u16-c419880",
+        "host_name": "Bursa Genç Saray Spor Kulübü U16",
+        "guest_name": "Öncü Yıldız Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "12:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "12:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20260928-066",
+      "id": "bursa-20260928-067",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "20:00",
@@ -3389,7 +3542,7 @@
       }
     },
     {
-      "id": "bursa-20261001-067",
+      "id": "bursa-20261001-068",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -3434,7 +3587,7 @@
       }
     },
     {
-      "id": "bursa-20261004-068",
+      "id": "bursa-20261004-069",
       "city": "Bursa",
       "date": "2026-10-04",
       "time": "19:30",
@@ -3480,7 +3633,7 @@
       }
     },
     {
-      "id": "bursa-20261011-069",
+      "id": "bursa-20261011-070",
       "city": "Bursa",
       "date": "2026-10-11",
       "time": "19:30",
@@ -3526,7 +3679,7 @@
       }
     },
     {
-      "id": "bursa-20261014-070",
+      "id": "bursa-20261014-071",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "20:00",
@@ -3572,7 +3725,7 @@
       }
     },
     {
-      "id": "bursa-20261015-071",
+      "id": "bursa-20261015-072",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -3617,7 +3770,7 @@
       }
     },
     {
-      "id": "bursa-20261024-072",
+      "id": "bursa-20261024-073",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "19:00",
@@ -3662,7 +3815,7 @@
       }
     },
     {
-      "id": "bursa-20261029-073",
+      "id": "bursa-20261029-074",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "14:00",
@@ -3707,7 +3860,7 @@
       }
     },
     {
-      "id": "bursa-20261029-074",
+      "id": "bursa-20261029-075",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "16:00",
@@ -3752,7 +3905,7 @@
       }
     },
     {
-      "id": "bursa-20261107-075",
+      "id": "bursa-20261107-076",
       "city": "Bursa",
       "date": "2026-11-07",
       "time": "19:30",
@@ -3797,7 +3950,7 @@
       }
     },
     {
-      "id": "bursa-20261110-076",
+      "id": "bursa-20261110-077",
       "city": "Bursa",
       "date": "2026-11-10",
       "time": "18:00",
@@ -3819,23 +3972,30 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419881",
+        "url": "https://women.volleybox.net/tr/mesut-kokel-spor-kulubu-u16-oksijen-spor-kulubu-u16-c419881",
+        "host_name": "Mesut Kökel Spor Kulübü U16",
+        "guest_name": "Oksijen Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-10",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-10",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261112-077",
+      "id": "bursa-20261112-078",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -3880,7 +4040,7 @@
       }
     },
     {
-      "id": "bursa-20261118-078",
+      "id": "bursa-20261118-079",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "15:00",
@@ -3898,23 +4058,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419882",
+        "url": "https://women.volleybox.net/tr/bursa-ayyldz-spor-kulubu-u16-oksijen-spor-kulubu-u16-c419882",
+        "host_name": "Bursa Ayyıldız Spor Kulübü U16",
+        "guest_name": "Oksijen Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "15:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "15:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261119-079",
+      "id": "bursa-20261119-080",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "20:00",
@@ -3932,23 +4099,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419883",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-b-u16-hekimoglu-gct-bursa-voleybol-kulubu-u16-c419883",
+        "host_name": "Nilüfer Belediyespor - B U16",
+        "guest_name": "Hk Volleyball Academy Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "20:00",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "20:00",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261122-080",
+      "id": "bursa-20261122-081",
       "city": "Bursa",
       "date": "2026-11-22",
       "time": "14:00",
@@ -3966,23 +4140,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419884",
+        "url": "https://women.volleybox.net/tr/osmangazi-belediyespor-u16-mesut-kokel-spor-kulubu-u16-c419884",
+        "host_name": "Osmangazi Belediyespor U16",
+        "guest_name": "Mesut Kökel Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "14:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "14:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20260930-081",
+      "id": "bursa-20260930-082",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "20:00",
@@ -4027,7 +4208,7 @@
       }
     },
     {
-      "id": "bursa-20261001-082",
+      "id": "bursa-20261001-083",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -4072,7 +4253,7 @@
       }
     },
     {
-      "id": "bursa-20261012-083",
+      "id": "bursa-20261012-084",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "18:00",
@@ -4119,7 +4300,7 @@
       }
     },
     {
-      "id": "bursa-20261016-084",
+      "id": "bursa-20261016-085",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "18:00",
@@ -4164,7 +4345,7 @@
       }
     },
     {
-      "id": "bursa-20261025-085",
+      "id": "bursa-20261025-086",
       "city": "Bursa",
       "date": "2026-10-25",
       "time": "16:00",
@@ -4209,7 +4390,7 @@
       }
     },
     {
-      "id": "bursa-20261026-086",
+      "id": "bursa-20261026-087",
       "city": "Bursa",
       "date": "2026-10-26",
       "time": "18:00",
@@ -4254,7 +4435,7 @@
       }
     },
     {
-      "id": "bursa-20261109-087",
+      "id": "bursa-20261109-088",
       "city": "Bursa",
       "date": "2026-11-09",
       "time": "18:00",
@@ -4276,23 +4457,30 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419885",
+        "url": "https://women.volleybox.net/tr/akademi16-spor-kulubu-u16-nilufer-olimpik-spor-kulubu-u16-c419885",
+        "host_name": "Akademi16 Spor Kulübü U16",
+        "guest_name": "Nilüfer Olimpik Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-09",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-09",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261109-088",
+      "id": "bursa-20261109-089",
       "city": "Bursa",
       "date": "2026-11-09",
       "time": "20:00",
@@ -4315,23 +4503,30 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419886",
+        "url": "https://women.volleybox.net/tr/nilufer-besevler-spor-kulubu-u16-ds-nilufer-spor-kulubu-u16-c419886",
+        "host_name": "Nilüfer Beşevler Spor Kulübü U16",
+        "guest_name": "DSİ Nilüfer Spor Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-09",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-09",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261118-089",
+      "id": "bursa-20261118-090",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "13:00",
@@ -4349,23 +4544,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419887",
+        "url": "https://women.volleybox.net/tr/nilufer-olimpik-spor-kulubu-u16-nilufer-besevler-spor-kulubu-u16-c419887",
+        "host_name": "Nilüfer Olimpik Spor Kulübü U16",
+        "guest_name": "Nilüfer Beşevler Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "13:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "13:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261119-090",
+      "id": "bursa-20261119-091",
       "city": "Bursa",
       "date": "2026-11-19",
       "time": "11:00",
@@ -4383,23 +4585,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419888",
+        "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u16-akademi16-spor-kulubu-u16-c419888",
+        "host_name": "Bursa Fethiye 1973 Spor Kulübü U16",
+        "guest_name": "Akademi16 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "11:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "11:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261001-091",
+      "id": "bursa-20261001-092",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -4444,7 +4653,7 @@
       }
     },
     {
-      "id": "bursa-20261001-092",
+      "id": "bursa-20261001-093",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -4491,7 +4700,7 @@
       }
     },
     {
-      "id": "bursa-20261012-093",
+      "id": "bursa-20261012-094",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "19:00",
@@ -4538,7 +4747,7 @@
       }
     },
     {
-      "id": "bursa-20261015-094",
+      "id": "bursa-20261015-095",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -4583,7 +4792,7 @@
       }
     },
     {
-      "id": "bursa-20261024-095",
+      "id": "bursa-20261024-096",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "13:00",
@@ -4629,7 +4838,7 @@
       }
     },
     {
-      "id": "bursa-20261029-096",
+      "id": "bursa-20261029-097",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "18:00",
@@ -4674,7 +4883,7 @@
       }
     },
     {
-      "id": "bursa-20261110-097",
+      "id": "bursa-20261110-098",
       "city": "Bursa",
       "date": "2026-11-10",
       "time": "20:00",
@@ -4696,23 +4905,30 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "419889",
+        "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u16-bursa-buyuksehir-belediyespor-u16-c419889",
+        "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+        "guest_name": "Bursa Büyükşehir Belediyespor U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-10",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-10",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261112-098",
+      "id": "bursa-20261112-099",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -4757,7 +4973,7 @@
       }
     },
     {
-      "id": "bursa-20261118-099",
+      "id": "bursa-20261118-100",
       "city": "Bursa",
       "date": "2026-11-18",
       "time": "14:00",
@@ -4775,23 +4991,30 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419890",
+        "url": "https://women.volleybox.net/tr/kestel-belediye-1952-spor-kulubu-u16-hurriyet-spor-kulubu-u16-c419890",
+        "host_name": "Kestel Belediye 1952 Spor Kulübü U16",
+        "guest_name": "Hürriyet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "14:00",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "14:00",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "bursa-20261126-100",
+      "id": "bursa-20261126-101",
       "city": "Bursa",
       "date": "2026-11-26",
       "time": "18:00",
@@ -4809,25 +5032,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419891",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-u16-metin-kucukkenar-frtna16-spor-kulubu-u16-c419891",
+        "host_name": "Nilüfer Belediyespor U16",
+        "guest_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-26",
+        "vb_time": "18:00",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-26",
+          "vb_time": "18:00",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:22.412734+00:00",
-  "last_success_at": "2026-11-17T12:30:22.412734+00:00",
-  "content_changed_at": "2026-11-17T12:30:22.412734+00:00",
-  "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:11.636483"
+  "last_attempt_at": "2026-11-18T11:53:34.830765+00:00",
+  "last_success_at": "2026-11-18T11:53:34.830765+00:00",
+  "content_changed_at": "2026-11-18T11:53:34.830765+00:00",
+  "volleybox_synced_matches": 100,
+  "volleybox_sync_updated_at": "2026-11-18T15:01:18.611233"
 }

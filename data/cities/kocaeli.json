@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:42.821852",
+  "updated_at": "2026-11-18T14:53:51.050205",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 133,
+  "total_matches": 132,
   "source": "https://kocaeli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -39,6 +39,28 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "İzmit Spor U18",
+        "played": 10,
+        "won": 8,
+        "lost": 2,
+        "points": 23,
+        "sets_won": 27,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "played": 8,
+        "won": 7,
+        "lost": 1,
+        "points": 22,
+        "sets_won": 23,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
         "played": 10,
         "won": 7,
@@ -49,18 +71,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "İzmit Spor U18",
-        "played": 9,
-        "won": 7,
-        "lost": 2,
-        "points": 20,
-        "sets_won": 24,
-        "sets_lost": 10,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Nicomedia Akademi Spor Kulübü U18",
         "played": 6,
         "won": 6,
@@ -71,73 +82,73 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "played": 6,
-        "won": 5,
-        "lost": 1,
-        "points": 16,
-        "sets_won": 17,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Körfez Akademi SK U18",
+        "team": "Siyah Kuğular Spor Kulübü U18",
         "played": 8,
-        "won": 5,
-        "lost": 3,
-        "points": 16,
-        "sets_won": 17,
-        "sets_lost": 11,
+        "won": 6,
+        "lost": 2,
+        "points": 17,
+        "sets_won": 19,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Kocaeli Anka Spor Kulübü U18",
-        "played": 6,
+        "team": "Körfez Akademi SK U18",
+        "played": 9,
         "won": 5,
-        "lost": 1,
-        "points": 15,
-        "sets_won": 16,
-        "sets_lost": 5,
+        "lost": 4,
+        "points": 17,
+        "sets_won": 19,
+        "sets_lost": 14,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Siyah Kuğular Spor Kulübü U18",
+        "team": "Kocaeli Anka Spor Kulübü U18",
         "played": 7,
         "won": 5,
         "lost": 2,
         "points": 15,
-        "sets_won": 16,
+        "sets_won": 17,
         "sets_lost": 8,
         "form": []
       },
       {
         "rank": 8,
         "team": "5 Renk Spor Kulübü U18",
-        "played": 7,
+        "played": 8,
         "won": 3,
-        "lost": 4,
+        "lost": 5,
         "points": 9,
-        "sets_won": 12,
-        "sets_lost": 12,
+        "sets_won": 13,
+        "sets_lost": 15,
         "form": []
       },
       {
         "rank": 9,
         "team": "Gölcük Belediye Spor Kulübü U18",
-        "played": 7,
-        "won": 2,
+        "played": 8,
+        "won": 3,
         "lost": 5,
-        "points": 6,
-        "sets_won": 7,
+        "points": 9,
+        "sets_won": 10,
         "sets_lost": 15,
         "form": []
       },
       {
         "rank": 10,
+        "team": "İzmit Yahya Kaptan SK U18",
+        "played": 10,
+        "won": 3,
+        "lost": 7,
+        "points": 8,
+        "sets_won": 11,
+        "sets_lost": 25,
+        "form": []
+      },
+      {
+        "rank": 11,
         "team": "Kocaeli Elite Spor U18",
         "played": 10,
         "won": 2,
@@ -148,36 +159,25 @@
         "form": []
       },
       {
-        "rank": 11,
-        "team": "İzmit Yahya Kaptan SK U18",
-        "played": 9,
-        "won": 2,
-        "lost": 7,
-        "points": 5,
-        "sets_won": 8,
-        "sets_lost": 24,
-        "form": []
-      },
-      {
         "rank": 12,
         "team": "Körfez Vaveyla Spor Kulübü U18",
-        "played": 7,
+        "played": 9,
         "won": 0,
-        "lost": 7,
+        "lost": 9,
         "points": 1,
-        "sets_won": 2,
-        "sets_lost": 21,
+        "sets_won": 3,
+        "sets_lost": 27,
         "form": []
       },
       {
         "rank": 13,
         "team": "Kandıra Voleybol Kulübü U18",
-        "played": 6,
+        "played": 7,
         "won": 0,
-        "lost": 6,
+        "lost": 7,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 18,
+        "sets_lost": 21,
         "form": []
       }
     ],
@@ -185,45 +185,45 @@
       {
         "rank": 1,
         "team": "Çayırova Belediyesi Eğitim SK U18",
-        "played": 9,
-        "won": 9,
+        "played": 10,
+        "won": 10,
         "lost": 0,
-        "points": 27,
-        "sets_won": 27,
-        "sets_lost": 1,
+        "points": 30,
+        "sets_won": 30,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
+        "team": "Gebze Gençlik Voleybol Kulübü U18",
         "played": 8,
         "won": 7,
         "lost": 1,
         "points": 21,
-        "sets_won": 21,
-        "sets_lost": 6,
+        "sets_won": 22,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Gebze Gençlik Voleybol Kulübü U18",
-        "played": 7,
-        "won": 6,
-        "lost": 1,
-        "points": 18,
-        "sets_won": 19,
-        "sets_lost": 4,
+        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
+        "played": 9,
+        "won": 7,
+        "lost": 2,
+        "points": 21,
+        "sets_won": 21,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 4,
         "team": "Darıca Yıldız Spor Kulübü U18",
-        "played": 8,
+        "played": 9,
         "won": 6,
-        "lost": 2,
+        "lost": 3,
         "points": 18,
-        "sets_won": 19,
-        "sets_lost": 6,
+        "sets_won": 20,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -2515,8 +2515,8 @@
         "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415101",
         "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
         "guest_name": "İzmit Yahya Kaptan SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "14:30",
         "vb_hall": "Derince Spor Salonu",
@@ -2545,11 +2545,15 @@
       "match_no": "50",
       "home_team": "Körfez Vaveyla Spor Kulübü U18",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "18-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415104",
@@ -2586,11 +2590,16 @@
       "match_no": "51",
       "home_team": "İzmit Spor U18",
       "away_team": "5 Renk Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "27-25",
+        "21-25",
+        "25-20",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415102",
@@ -2627,11 +2636,15 @@
       "match_no": "52",
       "home_team": "Kandıra Voleybol Kulübü U18",
       "away_team": "Gölcük Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "6-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415103",
@@ -2668,11 +2681,16 @@
       "match_no": "53",
       "home_team": "Körfez Vaveyla Spor Kulübü U18",
       "away_team": "İzmit Yahya Kaptan SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "20-25",
+        "25-20",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415106",
@@ -2709,11 +2727,16 @@
       "match_no": "54",
       "home_team": "Kocaeli Anka Spor Kulübü U18",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "25-20",
+        "23-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415108",
@@ -2750,11 +2773,17 @@
       "match_no": "55",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "Körfez Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-27",
+        "21-25",
+        "25-16",
+        "25-14",
+        "15-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415105",
@@ -3025,48 +3054,7 @@
       }
     },
     {
-      "id": "kocaeli-20261123-062",
-      "city": "Kocaeli",
-      "date": "2026-11-23",
-      "time": "18:30",
-      "hall": "Derince S.S",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "62",
-      "home_team": "Körfez Vaveyla Spor Kulübü U18",
-      "away_team": "Nicomedia Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415116",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415116",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-23",
-        "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-23",
-          "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kocaeli-20261124-063",
+      "id": "kocaeli-20261124-062",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "18:30",
@@ -3075,7 +3063,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "63",
+      "match_no": "62",
       "home_team": "Körfez Akademi SK U18",
       "away_team": "Kocaeli Anka Spor Kulübü U18",
       "score": "- : -",
@@ -3107,7 +3095,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-064",
+      "id": "kocaeli-20261124-063",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "18:30",
@@ -3116,7 +3104,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "64",
+      "match_no": "63",
       "home_team": "Kandıra Voleybol Kulübü U18",
       "away_team": "İzmit Yahya Kaptan SK U18",
       "score": "- : -",
@@ -3148,7 +3136,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-065",
+      "id": "kocaeli-20261124-064",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "20:00",
@@ -3157,7 +3145,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "65",
+      "match_no": "64",
       "home_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
       "away_team": "Nicomedia Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -3189,7 +3177,7 @@
       }
     },
     {
-      "id": "kocaeli-20261126-066",
+      "id": "kocaeli-20261126-065",
       "city": "Kocaeli",
       "date": "2026-11-26",
       "time": "18:30",
@@ -3198,7 +3186,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "66",
+      "match_no": "65",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "Gölcük Belediye Spor Kulübü U18",
       "score": "- : -",
@@ -3230,7 +3218,7 @@
       }
     },
     {
-      "id": "kocaeli-20261126-067",
+      "id": "kocaeli-20261126-066",
       "city": "Kocaeli",
       "date": "2026-11-26",
       "time": "18:30",
@@ -3239,7 +3227,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "67",
+      "match_no": "66",
       "home_team": "Kocaeli 19 Mayıs Spor Kulübü U18",
       "away_team": "Nicomedia Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -3271,7 +3259,7 @@
       }
     },
     {
-      "id": "kocaeli-20261126-068",
+      "id": "kocaeli-20261126-067",
       "city": "Kocaeli",
       "date": "2026-11-26",
       "time": "18:30",
@@ -3280,7 +3268,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "68",
+      "match_no": "67",
       "home_team": "5 Renk Spor Kulübü U18",
       "away_team": "Körfez Akademi SK U18",
       "score": "- : -",
@@ -3312,7 +3300,7 @@
       }
     },
     {
-      "id": "kocaeli-20261126-069",
+      "id": "kocaeli-20261126-068",
       "city": "Kocaeli",
       "date": "2026-11-26",
       "time": "20:00",
@@ -3321,7 +3309,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "69",
+      "match_no": "68",
       "home_team": "Körfez Vaveyla Spor Kulübü U18",
       "away_team": "Kandıra Voleybol Kulübü U18",
       "score": "- : -",
@@ -3353,7 +3341,7 @@
       }
     },
     {
-      "id": "kocaeli-20261127-070",
+      "id": "kocaeli-20261127-069",
       "city": "Kocaeli",
       "date": "2026-11-27",
       "time": "18:30",
@@ -3362,7 +3350,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "70",
+      "match_no": "69",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "Kocaeli Anka Spor Kulübü U18",
       "score": "- : -",
@@ -3394,7 +3382,7 @@
       }
     },
     {
-      "id": "kocaeli-20261127-071",
+      "id": "kocaeli-20261127-070",
       "city": "Kocaeli",
       "date": "2026-11-27",
       "time": "18:30",
@@ -3403,7 +3391,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "71",
+      "match_no": "70",
       "home_team": "İzmit Spor U18",
       "away_team": "Gölcük Belediye Spor Kulübü U18",
       "score": "- : -",
@@ -3435,7 +3423,7 @@
       }
     },
     {
-      "id": "kocaeli-20261128-072",
+      "id": "kocaeli-20261128-071",
       "city": "Kocaeli",
       "date": "2026-11-28",
       "time": "13:00",
@@ -3444,7 +3432,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "72",
+      "match_no": "71",
       "home_team": "5 Renk Spor Kulübü U18",
       "away_team": "Gölcük Belediye Spor Kulübü U18",
       "score": "- : -",
@@ -3476,7 +3464,7 @@
       }
     },
     {
-      "id": "kocaeli-20261128-073",
+      "id": "kocaeli-20261128-072",
       "city": "Kocaeli",
       "date": "2026-11-28",
       "time": "14:30",
@@ -3485,7 +3473,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "73",
+      "match_no": "72",
       "home_team": "İzmit Spor U18",
       "away_team": "Kocaeli Anka Spor Kulübü U18",
       "score": "- : -",
@@ -3517,7 +3505,7 @@
       }
     },
     {
-      "id": "kocaeli-20261130-074",
+      "id": "kocaeli-20261130-073",
       "city": "Kocaeli",
       "date": "2026-11-30",
       "time": "18:30",
@@ -3526,7 +3514,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "74",
+      "match_no": "73",
       "home_team": "Kocaeli 19 Mayıs Spor Kulübü U18",
       "away_team": "Kandıra Voleybol Kulübü U18",
       "score": "- : -",
@@ -3558,7 +3546,7 @@
       }
     },
     {
-      "id": "kocaeli-20261201-075",
+      "id": "kocaeli-20261201-074",
       "city": "Kocaeli",
       "date": "2026-12-01",
       "time": "18:30",
@@ -3567,7 +3555,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "75",
+      "match_no": "74",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "Körfez Vaveyla Spor Kulübü U18",
       "score": "- : -",
@@ -3599,7 +3587,7 @@
       }
     },
     {
-      "id": "kocaeli-20261201-076",
+      "id": "kocaeli-20261201-075",
       "city": "Kocaeli",
       "date": "2026-12-01",
       "time": "18:30",
@@ -3608,7 +3596,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "76",
+      "match_no": "75",
       "home_team": "Kocaeli Elite Spor U18",
       "away_team": "Nicomedia Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -3640,7 +3628,7 @@
       }
     },
     {
-      "id": "kocaeli-20261201-077",
+      "id": "kocaeli-20261201-076",
       "city": "Kocaeli",
       "date": "2026-12-01",
       "time": "20:00",
@@ -3649,7 +3637,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "77",
+      "match_no": "76",
       "home_team": "İzmit Yahya Kaptan SK U18",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -3681,7 +3669,7 @@
       }
     },
     {
-      "id": "kocaeli-20261203-078",
+      "id": "kocaeli-20261203-077",
       "city": "Kocaeli",
       "date": "2026-12-03",
       "time": "20:00",
@@ -3690,7 +3678,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "78",
+      "match_no": "77",
       "home_team": "Kocaeli Elite Spor U18",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -3722,7 +3710,7 @@
       }
     },
     {
-      "id": "kocaeli-20261005-079",
+      "id": "kocaeli-20261005-078",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "18:30",
@@ -3767,7 +3755,7 @@
       }
     },
     {
-      "id": "kocaeli-20261005-080",
+      "id": "kocaeli-20261005-079",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "20:00",
@@ -3813,7 +3801,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-081",
+      "id": "kocaeli-20261006-080",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "18:30",
@@ -3858,7 +3846,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-082",
+      "id": "kocaeli-20261006-081",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "20:00",
@@ -3903,7 +3891,7 @@
       }
     },
     {
-      "id": "kocaeli-20261009-083",
+      "id": "kocaeli-20261009-082",
       "city": "Kocaeli",
       "date": "2026-10-09",
       "time": "20:00",
@@ -3948,7 +3936,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-084",
+      "id": "kocaeli-20261012-083",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "18:30",
@@ -3993,7 +3981,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-085",
+      "id": "kocaeli-20261012-084",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "20:00",
@@ -4038,7 +4026,7 @@
       }
     },
     {
-      "id": "kocaeli-20261013-086",
+      "id": "kocaeli-20261013-085",
       "city": "Kocaeli",
       "date": "2026-10-13",
       "time": "18:30",
@@ -4084,7 +4072,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-087",
+      "id": "kocaeli-20261014-086",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "18:30",
@@ -4129,7 +4117,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-088",
+      "id": "kocaeli-20261014-087",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "20:00",
@@ -4175,7 +4163,7 @@
       }
     },
     {
-      "id": "kocaeli-20261020-089",
+      "id": "kocaeli-20261020-088",
       "city": "Kocaeli",
       "date": "2026-10-20",
       "time": "20:00",
@@ -4220,7 +4208,7 @@
       }
     },
     {
-      "id": "kocaeli-20261021-090",
+      "id": "kocaeli-20261021-089",
       "city": "Kocaeli",
       "date": "2026-10-21",
       "time": "18:30",
@@ -4265,7 +4253,7 @@
       }
     },
     {
-      "id": "kocaeli-20261021-091",
+      "id": "kocaeli-20261021-090",
       "city": "Kocaeli",
       "date": "2026-10-21",
       "time": "20:00",
@@ -4310,7 +4298,7 @@
       }
     },
     {
-      "id": "kocaeli-20261022-092",
+      "id": "kocaeli-20261022-091",
       "city": "Kocaeli",
       "date": "2026-10-22",
       "time": "18:30",
@@ -4355,7 +4343,7 @@
       }
     },
     {
-      "id": "kocaeli-20261022-093",
+      "id": "kocaeli-20261022-092",
       "city": "Kocaeli",
       "date": "2026-10-22",
       "time": "20:00",
@@ -4400,7 +4388,7 @@
       }
     },
     {
-      "id": "kocaeli-20261023-094",
+      "id": "kocaeli-20261023-093",
       "city": "Kocaeli",
       "date": "2026-10-23",
       "time": "18:30",
@@ -4445,7 +4433,7 @@
       }
     },
     {
-      "id": "kocaeli-20261023-095",
+      "id": "kocaeli-20261023-094",
       "city": "Kocaeli",
       "date": "2026-10-23",
       "time": "20:00",
@@ -4491,7 +4479,7 @@
       }
     },
     {
-      "id": "kocaeli-20261026-096",
+      "id": "kocaeli-20261026-095",
       "city": "Kocaeli",
       "date": "2026-10-26",
       "time": "19:00",
@@ -4537,7 +4525,7 @@
       }
     },
     {
-      "id": "kocaeli-20261027-097",
+      "id": "kocaeli-20261027-096",
       "city": "Kocaeli",
       "date": "2026-10-27",
       "time": "18:30",
@@ -4584,7 +4572,7 @@
       }
     },
     {
-      "id": "kocaeli-20261027-098",
+      "id": "kocaeli-20261027-097",
       "city": "Kocaeli",
       "date": "2026-10-27",
       "time": "20:00",
@@ -4630,7 +4618,7 @@
       }
     },
     {
-      "id": "kocaeli-20261028-099",
+      "id": "kocaeli-20261028-098",
       "city": "Kocaeli",
       "date": "2026-10-28",
       "time": "20:00",
@@ -4676,7 +4664,7 @@
       }
     },
     {
-      "id": "kocaeli-20261029-100",
+      "id": "kocaeli-20261029-099",
       "city": "Kocaeli",
       "date": "2026-10-29",
       "time": "14:00",
@@ -4721,7 +4709,7 @@
       }
     },
     {
-      "id": "kocaeli-20261030-101",
+      "id": "kocaeli-20261030-100",
       "city": "Kocaeli",
       "date": "2026-10-30",
       "time": "18:30",
@@ -4766,7 +4754,7 @@
       }
     },
     {
-      "id": "kocaeli-20261030-102",
+      "id": "kocaeli-20261030-101",
       "city": "Kocaeli",
       "date": "2026-10-30",
       "time": "20:00",
@@ -4812,7 +4800,7 @@
       }
     },
     {
-      "id": "kocaeli-20261102-103",
+      "id": "kocaeli-20261102-102",
       "city": "Kocaeli",
       "date": "2026-11-02",
       "time": "18:30",
@@ -4859,7 +4847,7 @@
       }
     },
     {
-      "id": "kocaeli-20261103-104",
+      "id": "kocaeli-20261103-103",
       "city": "Kocaeli",
       "date": "2026-11-03",
       "time": "19:00",
@@ -4904,7 +4892,7 @@
       }
     },
     {
-      "id": "kocaeli-20261104-105",
+      "id": "kocaeli-20261104-104",
       "city": "Kocaeli",
       "date": "2026-11-04",
       "time": "18:30",
@@ -4949,7 +4937,7 @@
       }
     },
     {
-      "id": "kocaeli-20261104-106",
+      "id": "kocaeli-20261104-105",
       "city": "Kocaeli",
       "date": "2026-11-04",
       "time": "19:00",
@@ -4994,7 +4982,7 @@
       }
     },
     {
-      "id": "kocaeli-20261104-107",
+      "id": "kocaeli-20261104-106",
       "city": "Kocaeli",
       "date": "2026-11-04",
       "time": "20:00",
@@ -5039,7 +5027,7 @@
       }
     },
     {
-      "id": "kocaeli-20261106-108",
+      "id": "kocaeli-20261106-107",
       "city": "Kocaeli",
       "date": "2026-11-06",
       "time": "18:30",
@@ -5084,7 +5072,7 @@
       }
     },
     {
-      "id": "kocaeli-20261106-109",
+      "id": "kocaeli-20261106-108",
       "city": "Kocaeli",
       "date": "2026-11-06",
       "time": "20:00",
@@ -5129,7 +5117,7 @@
       }
     },
     {
-      "id": "kocaeli-20261107-110",
+      "id": "kocaeli-20261107-109",
       "city": "Kocaeli",
       "date": "2026-11-07",
       "time": "16:00",
@@ -5176,7 +5164,7 @@
       }
     },
     {
-      "id": "kocaeli-20261108-111",
+      "id": "kocaeli-20261108-110",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "13:00",
@@ -5221,7 +5209,7 @@
       }
     },
     {
-      "id": "kocaeli-20261108-112",
+      "id": "kocaeli-20261108-111",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "14:30",
@@ -5267,7 +5255,7 @@
       }
     },
     {
-      "id": "kocaeli-20261108-113",
+      "id": "kocaeli-20261108-112",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "16:00",
@@ -5312,7 +5300,7 @@
       }
     },
     {
-      "id": "kocaeli-20261109-114",
+      "id": "kocaeli-20261109-113",
       "city": "Kocaeli",
       "date": "2026-11-09",
       "time": "19:00",
@@ -5357,7 +5345,7 @@
       }
     },
     {
-      "id": "kocaeli-20261110-115",
+      "id": "kocaeli-20261110-114",
       "city": "Kocaeli",
       "date": "2026-11-10",
       "time": "18:30",
@@ -5403,7 +5391,7 @@
       }
     },
     {
-      "id": "kocaeli-20261111-116",
+      "id": "kocaeli-20261111-115",
       "city": "Kocaeli",
       "date": "2026-11-11",
       "time": "18:30",
@@ -5448,7 +5436,7 @@
       }
     },
     {
-      "id": "kocaeli-20261111-117",
+      "id": "kocaeli-20261111-116",
       "city": "Kocaeli",
       "date": "2026-11-11",
       "time": "20:00",
@@ -5493,7 +5481,7 @@
       }
     },
     {
-      "id": "kocaeli-20261112-118",
+      "id": "kocaeli-20261112-117",
       "city": "Kocaeli",
       "date": "2026-11-12",
       "time": "18:00",
@@ -5538,7 +5526,7 @@
       }
     },
     {
-      "id": "kocaeli-20261112-119",
+      "id": "kocaeli-20261112-118",
       "city": "Kocaeli",
       "date": "2026-11-12",
       "time": "19:30",
@@ -5583,7 +5571,7 @@
       }
     },
     {
-      "id": "kocaeli-20261113-120",
+      "id": "kocaeli-20261113-119",
       "city": "Kocaeli",
       "date": "2026-11-13",
       "time": "18:30",
@@ -5628,7 +5616,7 @@
       }
     },
     {
-      "id": "kocaeli-20261113-121",
+      "id": "kocaeli-20261113-120",
       "city": "Kocaeli",
       "date": "2026-11-13",
       "time": "20:00",
@@ -5675,7 +5663,7 @@
       }
     },
     {
-      "id": "kocaeli-20261114-122",
+      "id": "kocaeli-20261114-121",
       "city": "Kocaeli",
       "date": "2026-11-14",
       "time": "14:00",
@@ -5720,7 +5708,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-123",
+      "id": "kocaeli-20261115-122",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "13:00",
@@ -5765,7 +5753,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-124",
+      "id": "kocaeli-20261115-123",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "14:30",
@@ -5810,7 +5798,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-125",
+      "id": "kocaeli-20261115-124",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "16:00",
@@ -5856,7 +5844,7 @@
       }
     },
     {
-      "id": "kocaeli-20261117-126",
+      "id": "kocaeli-20261117-125",
       "city": "Kocaeli",
       "date": "2026-11-17",
       "time": "13:00",
@@ -5868,11 +5856,15 @@
       "match_no": "48",
       "home_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "12-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415172",
@@ -5897,7 +5889,7 @@
       }
     },
     {
-      "id": "kocaeli-20261117-127",
+      "id": "kocaeli-20261117-126",
       "city": "Kocaeli",
       "date": "2026-11-17",
       "time": "14:30",
@@ -5909,11 +5901,16 @@
       "match_no": "49",
       "home_team": "Darıca Yıldız Spor Kulübü U18",
       "away_team": "Çayırova Belediyesi Eğitim SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "21-25",
+        "31-29",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415173",
@@ -5938,7 +5935,7 @@
       }
     },
     {
-      "id": "kocaeli-20261119-128",
+      "id": "kocaeli-20261119-127",
       "city": "Kocaeli",
       "date": "2026-11-19",
       "time": "18:30",
@@ -5979,7 +5976,7 @@
       }
     },
     {
-      "id": "kocaeli-20261120-129",
+      "id": "kocaeli-20261120-128",
       "city": "Kocaeli",
       "date": "2026-11-20",
       "time": "14:00",
@@ -6020,7 +6017,7 @@
       }
     },
     {
-      "id": "kocaeli-20261120-130",
+      "id": "kocaeli-20261120-129",
       "city": "Kocaeli",
       "date": "2026-11-20",
       "time": "15:30",
@@ -6061,7 +6058,7 @@
       }
     },
     {
-      "id": "kocaeli-20261120-131",
+      "id": "kocaeli-20261120-130",
       "city": "Kocaeli",
       "date": "2026-11-20",
       "time": "19:30",
@@ -6102,7 +6099,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-132",
+      "id": "kocaeli-20261124-131",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "18:30",
@@ -6143,7 +6140,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-133",
+      "id": "kocaeli-20261124-132",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "20:00",
@@ -6184,9 +6181,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:42.838362+00:00",
-  "last_success_at": "2026-11-17T12:30:42.838362+00:00",
-  "content_changed_at": "2026-11-17T12:30:42.838362+00:00",
-  "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:29.335893"
+  "last_attempt_at": "2026-11-18T11:53:51.057798+00:00",
+  "last_success_at": "2026-11-18T11:53:51.057798+00:00",
+  "content_changed_at": "2026-11-18T11:53:51.057798+00:00",
+  "volleybox_synced_matches": 132,
+  "volleybox_sync_updated_at": "2026-11-18T15:02:31.534581"
 }

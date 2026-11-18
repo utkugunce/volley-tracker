@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:42.104734",
+  "updated_at": "2026-11-18T14:53:50.373930",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 41,
+  "total_matches": 42,
   "source": "https://konya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -35,23 +35,23 @@
       {
         "rank": 1,
         "team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Ereğli Sümer SK U18",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
+        "sets_won": 7,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -764,11 +764,16 @@
       "match_no": "6",
       "home_team": "Ereğli Sümer SK U18",
       "away_team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-18",
+        "20-25",
+        "20-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1264,18 +1269,25 @@
       "status": "finished",
       "forfeit": true,
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420027",
+        "url": "https://women.volleybox.net/tr/turmak-spor-kulubu-u18-konya-anka-spor-kulubu-u18-c420027",
+        "host_name": "Türmak Spor Kulübü U18",
+        "guest_name": "Konya Anka Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-10",
+        "vb_time": "20:30",
+        "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-10",
+          "vb_time": "20:30",
+          "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
+          "details": null
         }
       }
     },
@@ -1302,18 +1314,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420028",
+        "url": "https://women.volleybox.net/tr/anadolu-zirve-spor-kulubu-u18-selcuklu-belediyespor-kulubu-u18-c420028",
+        "host_name": "Anadolu Zirve Spor Kulübü U18",
+        "guest_name": "Selçuklu Belediyespor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-14",
+        "vb_time": "17:00",
+        "vb_hall": "75. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "17:00",
+          "vb_hall": "75. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1841,18 +1860,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420029",
+        "url": "https://women.volleybox.net/tr/vakf-akademi-spor-kulubu-u18-konya-anadolu-yldzlar-spor-kulubu-u18-c420029",
+        "host_name": "Vakıf Akademi Spor Kulübü U18",
+        "guest_name": "Konya Anadolu Yıldızları Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-15",
+        "vb_time": "12:30",
+        "vb_hall": "75. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "12:30",
+          "vb_hall": "75. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2338,6 +2364,47 @@
       "status": "finished",
       "forfeit": true,
       "volleybox": {
+        "synced": true,
+        "match_id": "420030",
+        "url": "https://women.volleybox.net/tr/falcon-atletik-spor-kulubu-u18-seydisehir-cimnastik-spor-u18-c420030",
+        "host_name": "Falcon Atletik Spor Kulübü U18",
+        "guest_name": "Seydişehir Cimnastik Spor U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-15",
+        "vb_time": "17:00",
+        "vb_hall": "75. Yıl Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "17:00",
+          "vb_hall": "75. Yıl Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "konya-20261122-042",
+      "city": "Konya",
+      "date": "2026-11-22",
+      "time": "14:00",
+      "hall": "75. Yıl",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "12",
+      "home_team": "Diltaş Spor Kulübü U18",
+      "away_team": "Konya Armada Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
         "synced": false,
         "match_id": null,
         "url": null,
@@ -2354,9 +2421,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:42.115137+00:00",
-  "last_success_at": "2026-11-17T12:30:42.115137+00:00",
-  "content_changed_at": "2026-11-17T12:30:42.115137+00:00",
-  "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:29.712860"
+  "last_attempt_at": "2026-11-18T11:53:50.377799+00:00",
+  "last_success_at": "2026-11-18T11:53:50.377799+00:00",
+  "content_changed_at": "2026-11-18T11:53:50.377799+00:00",
+  "volleybox_synced_matches": 40,
+  "volleybox_sync_updated_at": "2026-11-18T15:02:32.520832"
 }

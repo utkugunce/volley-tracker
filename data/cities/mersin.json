@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:33.224961",
+  "updated_at": "2026-11-18T14:53:39.737807",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 27,
+  "total_matches": 28,
   "source": "https://mersin.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -1337,11 +1337,52 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "mersin-20261124-028",
+      "city": "Mersin",
+      "date": "2026-11-24",
+      "time": "17:15",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "28",
+      "home_team": "Tarsus Amerikan Koleji U18",
+      "away_team": "Alsancak Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "415795",
+        "url": "https://women.volleybox.net/tr/tarsus-amerikan-koleji-u18-alsancak-spor-kulubu-u18-c415795",
+        "host_name": "Tarsus Amerikan Koleji U18",
+        "guest_name": "Alsancak Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-20",
+        "vb_time": "17:15",
+        "vb_hall": "Mersinli Ahmet Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "17:15",
+          "vb_hall": "Mersinli Ahmet Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-24 / VB: 2026-11-20)"
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:33.234183+00:00",
-  "last_success_at": "2026-11-17T12:30:33.234183+00:00",
-  "content_changed_at": "2026-11-17T12:30:33.234183+00:00",
-  "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:30.322082"
+  "last_attempt_at": "2026-11-18T11:53:39.740344+00:00",
+  "last_success_at": "2026-11-18T11:53:39.740344+00:00",
+  "content_changed_at": "2026-11-18T11:53:39.740344+00:00",
+  "volleybox_synced_matches": 28,
+  "volleybox_sync_updated_at": "2026-11-18T15:02:34.131403"
 }

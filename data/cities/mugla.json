@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T15:30:49.287904",
+  "updated_at": "2026-11-17T17:27:56.394111",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -186,7 +186,7 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "Fethiye Zirve Spor Kulübü U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -738,18 +738,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420065",
+        "url": "https://women.volleybox.net/tr/milas-belediye-spor-kulubu-b-u18-bodrum-dogus-spor-u18-c420065",
+        "host_name": "Milas Belediye Spor Kulübü - B U18",
+        "guest_name": "Bodrum Doğuş Spor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-07",
+        "vb_time": "17:00",
+        "vb_hall": "Milas Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "17:00",
+          "vb_hall": "Milas Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -776,18 +783,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420066",
+        "url": "https://women.volleybox.net/tr/bodrum-htisasspor-b-u18-bodrum-htisasspor-u18-c420066",
+        "host_name": "Bodrum İhtisasspor - B U18",
+        "guest_name": "Bodrum İhtisasspor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-08",
+        "vb_time": "14:00",
+        "vb_hall": "Bodrum Bitez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "14:00",
+          "vb_hall": "Bodrum Bitez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1273,7 +1287,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1363,7 +1377,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1491,7 +1505,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "6",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Fethiye Voleybol Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -2379,9 +2393,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:49.299247+00:00",
-  "last_success_at": "2026-11-17T12:30:49.299247+00:00",
-  "content_changed_at": "2026-11-17T12:30:49.299247+00:00",
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:30.588062"
+  "last_attempt_at": "2026-11-18T14:54:09.400281+03:00",
+  "last_success_at": "2026-11-17T14:27:56.404526+00:00",
+  "content_changed_at": "2026-11-17T14:27:56.404526+00:00",
+  "volleybox_synced_matches": 34,
+  "volleybox_sync_updated_at": "2026-11-18T15:02:34.735788"
 }

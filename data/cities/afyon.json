@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-16T15:35:29.497687",
+  "updated_at": "2026-11-18T14:53:20.427405",
   "city": "Afyonkarahisar",
   "slug": "afyon",
   "title": "TVF Afyonkarahisar Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 21,
+  "total_matches": 18,
   "source": "https://afyon.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -31,11 +31,11 @@
       {
         "rank": 1,
         "team": "E.M.A Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -52,35 +52,35 @@
       },
       {
         "rank": 3,
-        "team": "Afyon Belediye Yüntaş Spor Kulübü- B",
-        "played": 3,
-        "won": 1,
+        "team": "Sandıklı Gençlik Spor Kulübü",
+        "played": 2,
+        "won": 0,
         "lost": 2,
-        "points": 3,
-        "sets_won": 3,
+        "points": 0,
+        "sets_won": 0,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Sandıklı Gençlik Spor Kulübü",
-        "played": 3,
-        "won": 1,
+        "team": "Afyon Belediye Yüntaş Spor Kulübü- B",
+        "played": 2,
+        "won": 0,
         "lost": 2,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 7,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "İstek Afyon Spor Kulubü",
-        "played": 3,
+        "played": 0,
         "won": 0,
-        "lost": 3,
+        "lost": 0,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ],
@@ -156,33 +156,33 @@
       {
         "rank": 2,
         "team": "Afyon Belediye Yüntaş Spor Kulübü",
-        "played": 5,
-        "won": 4,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 11,
-        "sets_won": 12,
+        "points": 8,
+        "sets_won": 9,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
         "team": "Afyon Gençlik Ve Spor Kulübü U16",
-        "played": 5,
-        "won": 2,
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 7,
-        "sets_won": 8,
+        "points": 4,
+        "sets_won": 5,
         "sets_lost": 10,
         "form": []
       },
       {
         "rank": 4,
         "team": "E.M.A Spor Kulübü U16",
-        "played": 5,
-        "won": 1,
+        "played": 4,
+        "won": 0,
         "lost": 4,
-        "points": 3,
-        "sets_won": 5,
+        "points": 0,
+        "sets_won": 2,
         "sets_lost": 12,
         "form": []
       }
@@ -193,58 +193,13 @@
       "id": "afyon-20261004-001",
       "city": "Afyonkarahisar",
       "date": "2026-10-04",
-      "time": "11:30",
-      "hall": "Tınaztepe S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "1",
-      "home_team": "İstek Afyon Spor Kulubü",
-      "away_team": "E.M.A Spor Kulübü",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "20-25",
-        "16-25",
-        "24-26"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "406588",
-        "url": "https://women.volleybox.net/tr/stek-afyon-spor-kulubu-u18-ema-spor-kulubu-u18-c406588",
-        "host_name": "İstek Afyon Spor Kulübü U18",
-        "guest_name": "E.M.A Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-04",
-        "vb_time": "11:30",
-        "vb_hall": "Tınaztepe Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-04",
-          "vb_time": "11:30",
-          "vb_hall": "Tınaztepe Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261004-002",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-04",
       "time": "14:30",
       "hall": "Tınaztepe S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "2",
+      "match_no": "1",
       "home_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "away_team": "Sandıklı Gençlik Spor Kulübü",
       "score": "3 - 0",
@@ -280,7 +235,7 @@
       }
     },
     {
-      "id": "afyon-20261011-003",
+      "id": "afyon-20261011-002",
       "city": "Afyonkarahisar",
       "date": "2026-10-11",
       "time": "11:30",
@@ -289,7 +244,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "3",
+      "match_no": "2",
       "home_team": "Afyon Belediye Yüntaş Spor Kulübü- B",
       "away_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "score": "0 - 3",
@@ -325,99 +280,7 @@
       }
     },
     {
-      "id": "afyon-20261011-004",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-11",
-      "time": "14:30",
-      "hall": "Mustafa Abi S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "4",
-      "home_team": "Sandıklı Gençlik Spor Kulübü",
-      "away_team": "İstek Afyon Spor Kulubü",
-      "score": "3 - 1",
-      "home_score": 3,
-      "away_score": 1,
-      "set_scores": [
-        "25-23",
-        "25-17",
-        "25-27",
-        "25-21"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411153",
-        "url": "https://women.volleybox.net/tr/sandkl-genclik-spor-u18-stek-afyon-spor-kulubu-u18-c411153",
-        "host_name": "Sandıklı Gençlik Spor U18",
-        "guest_name": "İstek Afyon Spor Kulübü U18",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-10-11",
-        "vb_time": "14:30",
-        "vb_hall": "Mustafa Abi Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-11",
-          "vb_time": "14:30",
-          "vb_hall": "Mustafa Abi Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261025-005",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-25",
-      "time": "11:30",
-      "hall": "Mustafa Abi S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "5",
-      "home_team": "İstek Afyon Spor Kulubü",
-      "away_team": "Afyon Belediye Yüntaş Spor Kulübü- B",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "0-25",
-        "0-25",
-        "0-25"
-      ],
-      "status": "finished",
-      "forfeit": true,
-      "volleybox": {
-        "synced": true,
-        "match_id": "412040",
-        "url": "https://women.volleybox.net/tr/stek-afyon-spor-kulubu-u18-afyon-belediye-yuntas-sk-b-u18-c412040",
-        "host_name": "İstek Afyon Spor Kulübü U18",
-        "guest_name": "Afyon Belediye Yüntaş SK - B U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-25",
-        "vb_time": "11:30",
-        "vb_hall": "Mustafa Abi Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "11:30",
-          "vb_hall": "Mustafa Abi Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261025-006",
+      "id": "afyon-20261025-003",
       "city": "Afyonkarahisar",
       "date": "2026-10-25",
       "time": "14:30",
@@ -426,7 +289,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "6",
+      "match_no": "3",
       "home_team": "E.M.A Spor Kulübü",
       "away_team": "Sandıklı Gençlik Spor Kulübü",
       "score": "3 - 0",
@@ -462,7 +325,7 @@
       }
     },
     {
-      "id": "afyon-20261031-007",
+      "id": "afyon-20261031-004",
       "city": "Afyonkarahisar",
       "date": "2026-10-31",
       "time": "13:00",
@@ -471,7 +334,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "7",
+      "match_no": "4",
       "home_team": "Afyon Belediye Yüntaş Spor Kulübü- B",
       "away_team": "E.M.A Spor Kulübü",
       "score": "0 - 3",
@@ -507,7 +370,7 @@
       }
     },
     {
-      "id": "afyon-20261005-008",
+      "id": "afyon-20261005-005",
       "city": "Afyonkarahisar",
       "date": "2026-10-05",
       "time": "18:30",
@@ -552,7 +415,7 @@
       }
     },
     {
-      "id": "afyon-20261005-009",
+      "id": "afyon-20261005-006",
       "city": "Afyonkarahisar",
       "date": "2026-10-05",
       "time": "20:00",
@@ -597,7 +460,7 @@
       }
     },
     {
-      "id": "afyon-20261018-010",
+      "id": "afyon-20261018-007",
       "city": "Afyonkarahisar",
       "date": "2026-10-18",
       "time": "10:00",
@@ -642,7 +505,7 @@
       }
     },
     {
-      "id": "afyon-20261018-011",
+      "id": "afyon-20261018-008",
       "city": "Afyonkarahisar",
       "date": "2026-10-18",
       "time": "14:30",
@@ -689,7 +552,7 @@
       }
     },
     {
-      "id": "afyon-20261031-012",
+      "id": "afyon-20261031-009",
       "city": "Afyonkarahisar",
       "date": "2026-10-31",
       "time": "10:00",
@@ -735,7 +598,7 @@
       }
     },
     {
-      "id": "afyon-20261031-013",
+      "id": "afyon-20261031-010",
       "city": "Afyonkarahisar",
       "date": "2026-10-31",
       "time": "11:30",
@@ -781,7 +644,7 @@
       }
     },
     {
-      "id": "afyon-20261003-014",
+      "id": "afyon-20261003-011",
       "city": "Afyonkarahisar",
       "date": "2026-10-03",
       "time": "16:00",
@@ -790,7 +653,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "2",
+      "match_no": "1",
       "home_team": "Afyon Zirve Spor Kulübü",
       "away_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "score": "3 - 0",
@@ -826,7 +689,7 @@
       }
     },
     {
-      "id": "afyon-20261007-015",
+      "id": "afyon-20261007-012",
       "city": "Afyonkarahisar",
       "date": "2026-10-07",
       "time": "20:00",
@@ -835,7 +698,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "4",
+      "match_no": "2",
       "home_team": "Afyon Belediye Yüntaş Spor Kulübü",
       "away_team": "Afyon Zirve Spor Kulübü",
       "score": "0 - 3",
@@ -871,7 +734,7 @@
       }
     },
     {
-      "id": "afyon-20261010-016",
+      "id": "afyon-20261010-013",
       "city": "Afyonkarahisar",
       "date": "2026-10-10",
       "time": "11:30",
@@ -880,7 +743,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "5",
+      "match_no": "3",
       "home_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "away_team": "Afyon Belediye Yüntaş Spor Kulübü",
       "score": "2 - 3",
@@ -918,7 +781,7 @@
       }
     },
     {
-      "id": "afyon-20261010-017",
+      "id": "afyon-20261010-014",
       "city": "Afyonkarahisar",
       "date": "2026-10-10",
       "time": "13:00",
@@ -927,7 +790,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "6",
+      "match_no": "4",
       "home_team": "Afyon Zirve Spor Kulübü",
       "away_team": "E.M.A Spor Kulübü U16",
       "score": "3 - 0",
@@ -963,7 +826,7 @@
       }
     },
     {
-      "id": "afyon-20261017-018",
+      "id": "afyon-20261017-015",
       "city": "Afyonkarahisar",
       "date": "2026-10-17",
       "time": "11:30",
@@ -972,7 +835,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "7",
+      "match_no": "5",
       "home_team": "E.M.A Spor Kulübü U16",
       "away_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "score": "1 - 3",
@@ -1009,7 +872,7 @@
       }
     },
     {
-      "id": "afyon-20261024-019",
+      "id": "afyon-20261024-016",
       "city": "Afyonkarahisar",
       "date": "2026-10-24",
       "time": "10:00",
@@ -1018,7 +881,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "9",
+      "match_no": "6",
       "home_team": "Afyon Belediye Yüntaş Spor Kulübü",
       "away_team": "E.M.A Spor Kulübü U16",
       "score": "3 - 1",
@@ -1055,7 +918,7 @@
       }
     },
     {
-      "id": "afyon-20261101-020",
+      "id": "afyon-20261101-017",
       "city": "Afyonkarahisar",
       "date": "2026-11-01",
       "time": "10:00",
@@ -1064,7 +927,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "12",
+      "match_no": "7",
       "home_team": "E.M.A Spor Kulübü U16",
       "away_team": "Afyon Belediye Yüntaş Spor Kulübü",
       "score": "0 - 3",
@@ -1100,7 +963,7 @@
       }
     },
     {
-      "id": "afyon-20261101-021",
+      "id": "afyon-20261101-018",
       "city": "Afyonkarahisar",
       "date": "2026-11-01",
       "time": "11:30",
@@ -1109,7 +972,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kız Süper Lig",
-      "match_no": "13",
+      "match_no": "8",
       "home_team": "Afyon Gençlik Ve Spor Kulübü U16",
       "away_team": "Afyon Zirve Spor Kulübü",
       "score": "0 - 3",
@@ -1145,9 +1008,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T15:30:10.697256+03:00",
-  "last_success_at": "2026-11-16T12:35:29.509309+00:00",
-  "content_changed_at": "2026-11-16T12:35:29.509309+00:00",
-  "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:04.350711"
+  "last_attempt_at": "2026-11-18T11:53:20.429947+00:00",
+  "last_success_at": "2026-11-18T11:53:20.429947+00:00",
+  "content_changed_at": "2026-11-18T11:53:20.429947+00:00",
+  "volleybox_synced_matches": 18,
+  "volleybox_sync_updated_at": "2026-11-18T15:00:46.718193"
 }

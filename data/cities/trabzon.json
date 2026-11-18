@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-17T15:30:58.237210",
+  "updated_at": "2026-11-18T14:54:15.301388",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 12,
+  "total_matches": 16,
   "source": "https://trabzon.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -71,6 +71,100 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 15,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Yarı Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Akçaabat Belediyesi SK U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "İskofya Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İskofya Spor Kulübü - B U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "REVUP Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - 3.Lük": [
+      {
+        "rank": 1,
+        "team": "İskofya Spor Kulübü - B U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "REVUP Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Akçaabat Belediyesi SK U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "İskofya Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -609,11 +703,147 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "trabzon-20261128-013",
+      "city": "Trabzon",
+      "date": "2026-11-28",
+      "time": "14:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final Grubu",
+      "match_no": "1",
+      "home_team": "İskofya Spor Kulübü U18",
+      "away_team": "İskofya Spor Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261128-014",
+      "city": "Trabzon",
+      "date": "2026-11-28",
+      "time": "16:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final Grubu",
+      "match_no": "2",
+      "home_team": "Akçaabat Belediyesi SK U18",
+      "away_team": "REVUP Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261205-015",
+      "city": "Trabzon",
+      "date": "2026-12-05",
+      "time": "14:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "3.Lük",
+      "match_no": "1",
+      "home_team": "REVUP Spor Kulübü U18",
+      "away_team": "İskofya Spor Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261205-016",
+      "city": "Trabzon",
+      "date": "2026-12-05",
+      "time": "16:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Akçaabat Belediyesi SK U18",
+      "away_team": "İskofya Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:58.245474+00:00",
-  "last_success_at": "2026-11-17T12:30:58.245474+00:00",
-  "content_changed_at": "2026-11-17T12:30:58.245474+00:00",
+  "last_attempt_at": "2026-11-18T11:54:15.302626+00:00",
+  "last_success_at": "2026-11-18T11:54:15.302626+00:00",
+  "content_changed_at": "2026-11-18T11:54:15.302626+00:00",
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:33.199163"
+  "volleybox_sync_updated_at": "2026-11-18T15:02:40.703905"
 }

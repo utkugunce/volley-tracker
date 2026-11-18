@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T15:30:21.925715",
+  "updated_at": "2026-11-18T14:53:36.586086",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -2957,18 +2957,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419892",
+        "url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-spor-kulubu-b-u16-nehir-spor-kulubu-u16-c419892",
+        "host_name": "ÇOMÜ Spor Kulübü - B U16",
+        "guest_name": "Nehir Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-26",
+        "vb_time": "20:00",
+        "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-26",
+          "vb_time": "20:00",
+          "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
+          "details": null
         }
       }
     },
@@ -2991,18 +2998,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419893",
+        "url": "https://women.volleybox.net/tr/parion-spor-kulubu-u16-canakkale-barbarosspor-u16-c419893",
+        "host_name": "Parion Spor Kulübü U16",
+        "guest_name": "Çanakkale Barbarosspor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "18:00",
+        "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "18:00",
+          "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
+          "details": null
         }
       }
     },
@@ -3025,18 +3039,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419894",
+        "url": "https://women.volleybox.net/tr/can-kale-spor-kulubu-u16-canakkalespor-u16-c419894",
+        "host_name": "Çan Kale Spor Kulübü U16",
+        "guest_name": "Çanakkalespor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "14:00",
+        "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "14:00",
+          "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
+          "details": null
         }
       }
     },
@@ -3059,25 +3080,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "419895",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-b-u16-biga-gelisim-voleybol-kulubu-u16-c419895",
+        "host_name": "Çanakkale Belediyespor - B U16",
+        "guest_name": "Biga Gelişim Voleybol Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-29",
+        "vb_time": "14:00",
+        "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "14:00",
+          "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-17T12:30:21.937692+00:00",
-  "last_success_at": "2026-11-17T12:30:21.937692+00:00",
-  "content_changed_at": "2026-11-17T12:30:21.937692+00:00",
-  "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-17T15:37:12.630605"
+  "last_attempt_at": "2026-11-18T11:53:36.591361+00:00",
+  "last_success_at": "2026-11-18T11:53:36.591361+00:00",
+  "content_changed_at": "2026-11-18T11:53:36.591361+00:00",
+  "volleybox_synced_matches": 60,
+  "volleybox_sync_updated_at": "2026-11-18T15:01:22.038284"
 }
