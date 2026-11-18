@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T18:00:14.892362+03:00",
+  "updated_at": "2026-11-18T17:42:12.337489+00:00",
   "total_cities": 81,
   "active_cities": 42,
   "total_matches": 2217,
@@ -30,7 +30,7 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (18 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (18 Maç Mevcut)",
       "matches_count": 18,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
@@ -90,7 +90,7 @@
       "name": "Aydın",
       "slug": "aydin",
       "url": "https://aydin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)",
+      "status": "Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 1,
       "data_file": "data/cities/aydin.json"
@@ -170,7 +170,7 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (60 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (60 Maç Mevcut)",
       "matches_count": 60,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
@@ -190,7 +190,7 @@
       "name": "Çorum",
       "slug": "corum",
       "url": "https://corum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)",
+      "status": "Aktif (13 Maç Mevcut)",
       "matches_count": 13,
       "standings_count": 4,
       "data_file": "data/cities/corum.json"
@@ -281,7 +281,7 @@
       "name": "Giresun",
       "slug": "giresun",
       "url": "https://giresun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (29 Maç Mevcut)",
+      "status": "Aktif (29 Maç Mevcut)",
       "matches_count": 29,
       "standings_count": 1,
       "data_file": "data/cities/giresun.json"
@@ -392,7 +392,7 @@
       "name": "Kırklareli",
       "slug": "kirklareli",
       "url": "https://kirklareli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (58 Maç Mevcut)",
+      "status": "Aktif (58 Maç Mevcut)",
       "matches_count": 58,
       "standings_count": 2,
       "data_file": "data/cities/kirklareli.json"
@@ -402,7 +402,7 @@
       "name": "Kırşehir",
       "slug": "kirsehir",
       "url": "https://kirsehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (36 Maç Mevcut)",
+      "status": "Aktif (36 Maç Mevcut)",
       "matches_count": 36,
       "standings_count": 2,
       "data_file": "data/cities/kirsehir.json"
@@ -432,7 +432,7 @@
       "name": "Kütahya",
       "slug": "kutahya",
       "url": "https://kutahya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (41 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (41 Maç Mevcut)",
       "matches_count": 41,
       "standings_count": 12,
       "data_file": "data/cities/kutahya.json"
@@ -482,7 +482,7 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (44 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (44 Maç Mevcut)",
       "matches_count": 44,
       "standings_count": 11,
       "data_file": "data/cities/mugla.json"
@@ -523,7 +523,7 @@
       "name": "Ordu",
       "slug": "ordu",
       "url": "https://ordu.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 1,
       "data_file": "data/cities/ordu.json"
@@ -583,7 +583,7 @@
       "name": "Sivas",
       "slug": "sivas",
       "url": "https://sivas.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (1 Tablo)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Puan Durumu Var (1 Tablo)",
       "matches_count": 0,
       "standings_count": 1,
       "data_file": "data/cities/sivas.json"
@@ -603,7 +603,7 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (12 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (12 Maç Mevcut)",
       "matches_count": 12,
       "standings_count": 1,
       "data_file": "data/cities/tokat.json"
@@ -613,7 +613,7 @@
       "name": "Trabzon",
       "slug": "trabzon",
       "url": "https://trabzon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (16 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (16 Maç Mevcut)",
       "matches_count": 16,
       "standings_count": 4,
       "data_file": "data/cities/trabzon.json"
@@ -674,7 +674,7 @@
       "name": "Zonguldak",
       "slug": "zonguldak",
       "url": "https://zonguldak.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (7 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (7 Maç Mevcut)",
       "matches_count": 7,
       "standings_count": 4,
       "data_file": "data/cities/zonguldak.json"
@@ -684,7 +684,7 @@
       "name": "Aksaray",
       "slug": "aksaray",
       "url": "https://aksaray.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (26 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (26 Maç Mevcut)",
       "matches_count": 26,
       "standings_count": 1,
       "data_file": "data/cities/aksaray.json"
@@ -777,7 +777,7 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (50 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (50 Maç Mevcut)",
       "matches_count": 50,
       "standings_count": 2,
       "data_file": "data/cities/yalova.json"
@@ -817,7 +817,7 @@
       "name": "Düzce",
       "slug": "duzce",
       "url": "https://duzce.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (6 Maç Mevcut)",
       "matches_count": 6,
       "standings_count": 3,
       "data_file": "data/cities/duzce.json"

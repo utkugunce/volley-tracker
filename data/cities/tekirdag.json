@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T18:00:07.684303",
+  "updated_at": "2026-11-18T17:41:25.767046",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -38,11 +38,11 @@
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -60,12 +60,12 @@
       {
         "rank": 3,
         "team": "Çerkezköy Voleybol Akademi Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 7,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -625,25 +625,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "401146",
-        "url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-spor-kulubu-u18-corlu-gsb-spor-kulubu-u18-c401146",
-        "host_name": "Çerkezköy Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-27",
-        "vb_time": "12:15",
-        "vb_hall": "Çerkezköy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "12:15",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -670,25 +663,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "401147",
-        "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u18-tekirdag-basket-spor-kulubu-u18-c401147",
-        "host_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "guest_name": "Tekirdağ Basket Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-27",
-        "vb_time": "15:15",
-        "vb_hall": "Çorlu Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "15:15",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -760,25 +746,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "408249",
-        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u18-corlu-belediyesi-spor-kulubu-u18-c408249",
-        "host_name": "Çorlu GSB Spor Kulübü U18",
-        "guest_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-13",
-        "vb_time": "19:00",
-        "vb_hall": "Çorlu Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-13",
-          "vb_time": "19:00",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -851,25 +830,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411500",
-        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u18-tekirdag-basket-spor-kulubu-u18-c411500",
-        "host_name": "Çorlu GSB Spor Kulübü U18",
-        "guest_name": "Tekirdağ Basket Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-18",
-        "vb_time": "11:45",
-        "vb_hall": "Çorlu Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "11:45",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -896,25 +868,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411501",
-        "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u18-kapakl-site-spor-u18-c411501",
-        "host_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "guest_name": "Kapaklı Site Spor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-18",
-        "vb_time": "15:15",
-        "vb_hall": "Çorlu Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "15:15",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -986,25 +951,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "414779",
-        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u18-corlu-gsb-spor-kulubu-u18-c414779",
-        "host_name": "Kapaklı Site Spor U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "19:00",
-        "vb_hall": "Çerkezköy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "19:00",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1021,31 +979,28 @@
       "match_no": "10",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "away_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "18-25",
+        "24-26"
+      ],
+      "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "419772",
-        "url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-spor-kulubu-u16-corlu-belediyesi-spor-kulubu-u16-c419772",
-        "host_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-        "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-18",
-        "vb_time": "18:00",
-        "vb_hall": "Çerkezköy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-18",
-          "vb_time": "18:00",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -4523,9 +4478,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T15:00:07.689853+00:00",
-  "last_success_at": "2026-11-18T15:00:07.689853+00:00",
-  "content_changed_at": "2026-11-18T15:00:07.689853+00:00",
-  "volleybox_synced_matches": 87,
-  "volleybox_sync_updated_at": "2026-11-18T18:08:02.572130"
+  "last_attempt_at": "2026-11-18T17:41:25.771464+00:00",
+  "last_success_at": "2026-11-18T17:41:25.771464+00:00",
+  "content_changed_at": "2026-11-18T17:41:25.771464+00:00",
+  "volleybox_synced_matches": 80,
+  "volleybox_sync_updated_at": "2026-11-18T17:43:38.511060"
 }

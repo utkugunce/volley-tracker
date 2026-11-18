@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:53:39.540047",
+  "updated_at": "2026-11-18T17:40:52.623752",
   "city": "Giresun",
   "slug": "giresun",
   "title": "TVF Giresun Genç & Yıldız Kızlar Süper Lig",
@@ -31,11 +31,11 @@
       {
         "rank": 1,
         "team": "Giresunspor - B U18",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 1,
         "form": []
       },
@@ -64,12 +64,12 @@
       {
         "rank": 4,
         "team": "Giresunspor U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 6,
         "sets_won": 7,
-        "sets_lost": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
@@ -700,11 +700,15 @@
       "match_no": "14",
       "home_team": "Giresunspor - B U18",
       "away_team": "Giresunspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-10",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415046",
@@ -1344,9 +1348,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T17:59:43.201775+03:00",
-  "last_success_at": "2026-11-18T11:53:39.542613+00:00",
-  "content_changed_at": "2026-11-18T11:53:39.542613+00:00",
+  "last_attempt_at": "2026-11-18T17:40:52.624498+00:00",
+  "last_success_at": "2026-11-18T17:40:52.624498+00:00",
+  "content_changed_at": "2026-11-18T17:40:52.624498+00:00",
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:17.219311"
+  "volleybox_sync_updated_at": "2026-11-18T17:43:38.260121"
 }

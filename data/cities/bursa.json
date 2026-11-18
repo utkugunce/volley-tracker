@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:31.245123",
+  "updated_at": "2026-11-18T17:40:47.608412",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -150,23 +150,23 @@
       {
         "rank": 1,
         "team": "Bursa Büyükşehir Belediyespor U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
         "team": "Bursa Koç Spor Kulübü - A U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1736,11 +1736,17 @@
       "match_no": "7",
       "home_team": "Bursa Koç Spor Kulübü - A U18",
       "away_team": "Bursa Büyükşehir Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "25-13",
+        "25-18",
+        "21-25",
+        "9-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419872",
@@ -5075,9 +5081,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:31.256658+00:00",
-  "last_success_at": "2026-11-18T14:59:31.256658+00:00",
-  "content_changed_at": "2026-11-18T14:59:31.256658+00:00",
+  "last_attempt_at": "2026-11-18T17:40:47.611082+00:00",
+  "last_success_at": "2026-11-18T17:40:47.611082+00:00",
+  "content_changed_at": "2026-11-18T17:40:47.611082+00:00",
   "volleybox_synced_matches": 101,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:10.363311"
+  "volleybox_sync_updated_at": "2026-11-18T17:43:38.473857"
 }
