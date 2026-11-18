@@ -238,10 +238,11 @@ def build_volleybox_name_resolver():
             nn = norm(n)
             if city and cat: lookup_exact[(nn, cat, city)] = matched_as
             if city and age: lookup_age_city[(nn, age, city)] = matched_as
-            if cat: lookup_cat[(nn, cat)] = matched_as
-            if age: lookup_age[(nn, age)] = matched_as
             if city: lookup_city[(nn, city)] = matched_as
-            if nn not in lookup_general: lookup_general[nn] = matched_as
+            if not city:
+                if cat: lookup_cat[(nn, cat)] = matched_as
+                if age: lookup_age[(nn, age)] = matched_as
+                if nn not in lookup_general: lookup_general[nn] = matched_as
 
     def resolve(team_name, category="", city=""):
         if not team_name: return team_name
@@ -317,6 +318,13 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
 
     # Afyon U16 (Yıldız): İstek Afyon Spor Kulubü
     if ("afyon" in c_clean or "afyonkarahisar" in c_clean) and "istek" in t_clean and ("yildiz" in g_clean or "u16" in g_clean or "yk" in g_clean):
+        return True
+
+    # Malatya U18: Gençlik Spor Kulübü (A ve B dışındaki tekil takım)
+    if "malatya" in c_clean and (
+        re.fullmatch(r"genclik\s*spor\s*kulubu", t_clean)
+        or "kirsehir genclik" in t_clean
+    ):
         return True
 
     return False
@@ -972,6 +980,8 @@ def scrape_single_city(city_info):
                 continue
 
             group_name = extract_group_name(c_text)
+            if subdomain == "malatya" and group_name in ("Eleme", "Final Grubu", "Yarı Final Grubu", "3-4 Lük Maçı"):
+                continue
             if subdomain == "kocaeli":
                 tr_comp = c_text.replace("İ", "i").replace("I", "ı").lower()
                 if "gebze" in tr_comp:

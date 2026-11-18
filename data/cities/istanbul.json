@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:53:45.269677+03:00",
+  "updated_at": "2026-11-18T17:59:49.544493+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -74,17 +74,18 @@
       {
         "rank": 2,
         "team": "Beşiktaş",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 1,
-        "set_ratio": "12.000",
-        "points_won": 327,
-        "points_lost": 200,
-        "point_ratio": "1.635",
+        "set_ratio": "15.000",
+        "points_won": 402,
+        "points_lost": 231,
+        "point_ratio": "1.740",
         "form": [
+          "W",
           "W",
           "W",
           "W",
@@ -174,26 +175,6 @@
       },
       {
         "rank": 7,
-        "team": "Beylikdüzü Voleybol 2021 U18",
-        "played": 4,
-        "won": 1,
-        "lost": 3,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 9,
-        "set_ratio": "0.444",
-        "points_won": 256,
-        "points_lost": 297,
-        "point_ratio": "0.862",
-        "form": [
-          "L",
-          "L",
-          "W",
-          "L"
-        ]
-      },
-      {
-        "rank": 8,
         "team": "Bizimkent Voleybol Spor Kulübü U18",
         "played": 4,
         "won": 1,
@@ -210,6 +191,27 @@
           "L",
           "L",
           "W"
+        ]
+      },
+      {
+        "rank": 8,
+        "team": "Beylikdüzü Voleybol 2021 U18",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 12,
+        "set_ratio": "0.333",
+        "points_won": 287,
+        "points_lost": 372,
+        "point_ratio": "0.772",
+        "form": [
+          "L",
+          "L",
+          "W",
+          "L",
+          "L"
         ]
       },
       {
@@ -1674,6 +1676,26 @@
       },
       {
         "rank": 4,
+        "team": "İTÜ Geliştirme Vakfı Okulları SK U18",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 6,
+        "set_ratio": "1.167",
+        "points_won": 287,
+        "points_lost": 274,
+        "point_ratio": "1.047",
+        "form": [
+          "L",
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "Sarıyer Konak Spor Kulübü U18",
         "played": 4,
         "won": 2,
@@ -1693,45 +1715,7 @@
         ]
       },
       {
-        "rank": 5,
-        "team": "İTÜ Geliştirme Vakfı Okulları SK U18",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 6,
-        "set_ratio": "0.667",
-        "points_won": 212,
-        "points_lost": 227,
-        "point_ratio": "0.934",
-        "form": [
-          "L",
-          "W",
-          "L"
-        ]
-      },
-      {
         "rank": 6,
-        "team": "Atayıldız Spor U18",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 6,
-        "set_ratio": "0.667",
-        "points_won": 211,
-        "points_lost": 234,
-        "point_ratio": "0.902",
-        "form": [
-          "L",
-          "W",
-          "L"
-        ]
-      },
-      {
-        "rank": 7,
         "team": "FMV Işık Spor Kulübü U18",
         "played": 3,
         "won": 1,
@@ -1750,7 +1734,7 @@
         ]
       },
       {
-        "rank": 8,
+        "rank": 7,
         "team": "Avcılar Yankı Spor Kulübü U18",
         "played": 4,
         "won": 1,
@@ -1767,6 +1751,26 @@
           "L",
           "L",
           "W"
+        ]
+      },
+      {
+        "rank": 8,
+        "team": "Atayıldız Spor U18",
+        "played": 4,
+        "won": 1,
+        "lost": 3,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 9,
+        "set_ratio": "0.444",
+        "points_won": 258,
+        "points_lost": 309,
+        "point_ratio": "0.835",
+        "form": [
+          "L",
+          "W",
+          "L",
+          "L"
         ]
       },
       {
@@ -9902,18 +9906,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420183",
+        "url": "https://women.volleybox.net/tr/saryer-konak-spor-kulubu-u18-kuzey-isklar-sk-u18-c420183",
+        "host_name": "Sarıyer Konak Spor Kulübü U18",
+        "guest_name": "Kuzey Işıkları SK U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "17:00",
+        "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "17:00",
+          "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
+          "details": null
         }
       }
     },
@@ -9941,18 +9952,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420184",
+        "url": "https://women.volleybox.net/tr/saryer-belediyesi-spor-kulubu-u16-yesilyurt-spor-kulubu-u16-c420184",
+        "host_name": "Sarıyer Belediyesi Spor Kulübü U16",
+        "guest_name": "Yeşilyurt Spor Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "17:00",
+        "vb_hall": "Tozkoparan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "17:00",
+          "vb_hall": "Tozkoparan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -10107,11 +10125,15 @@
       "match_no": "22",
       "home_team": "Beşiktaş",
       "away_team": "Beylikdüzü Voleybol 2021 U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-9",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419967",
@@ -10148,11 +10170,15 @@
       "match_no": "19",
       "home_team": "İTÜ Geliştirme Vakfı Okulları SK U18",
       "away_team": "Atayıldız Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-11",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419965",
@@ -10710,9 +10736,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:45.292073+00:00",
-  "last_success_at": "2026-11-18T11:53:45.292073+00:00",
-  "content_changed_at": "2026-11-18T11:53:45.292073+00:00",
-  "volleybox_synced_matches": 182,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:37.789864"
+  "last_attempt_at": "2026-11-18T14:59:49.579073+00:00",
+  "last_success_at": "2026-11-18T14:59:49.579073+00:00",
+  "content_changed_at": "2026-11-18T14:59:49.579073+00:00",
+  "volleybox_synced_matches": 184,
+  "volleybox_sync_updated_at": "2026-11-18T18:07:22.894268"
 }

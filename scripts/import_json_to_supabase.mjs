@@ -30,7 +30,21 @@ const supabase = createClient(url, serviceRoleKey, {
 });
 const root = process.cwd();
 const citiesDir = path.join(root, "data", "cities");
-const files = fs.readdirSync(citiesDir).filter((file) => file.endsWith(".json"));
+const hiddenCitiesFile = path.join(root, "src", "utils", "hiddenCities.ts");
+const hiddenSlugs = new Set();
+if (fs.existsSync(hiddenCitiesFile)) {
+  const hiddenSrc = fs.readFileSync(hiddenCitiesFile, "utf8");
+  const setMatch = hiddenSrc.match(/HIDDEN_CITY_SLUGS\s*=\s*new\s+Set[^[]*\[([\s\S]*?)\]/);
+  if (setMatch) {
+    for (const m of setMatch[1].matchAll(/"([a-z0-9_-]+)"/g)) {
+      hiddenSlugs.add(m[1]);
+    }
+  }
+}
+const files = fs
+  .readdirSync(citiesDir)
+  .filter((file) => file.endsWith(".json") && !hiddenSlugs.has(file.replace(/\.json$/, "")));
+const activeCitySlugs = new Set(files.map((file) => file.replace(/\.json$/, "")));
 let importedMatches = 0;
 let importedStandings = 0;
 const startedAt = new Date().toISOString();
@@ -122,6 +136,38 @@ try {
         .in("category", staleCategories);
       if (error) throw new Error(`${citySlug} stale standings: ${error.message}`);
     }
+  }
+
+  // Gizli veya artık data/cities içinde bulunmayan illerin eski Supabase kayıtlarını temizle
+  const collectRemoteSlugs = async (tableName) => {
+    const slugs = new Set();
+    let from = 0;
+    const pageSize = 1000;
+    while (true) {
+      const { data: rows, error } = await supabase
+        .from(tableName)
+        .select("city_slug")
+        .range(from, from + pageSize - 1);
+      if (error) throw new Error(`${tableName} city_slug scan: ${error.message}`);
+      if (!rows || rows.length === 0) break;
+      for (const r of rows) {
+        if (r.city_slug) slugs.add(r.city_slug);
+      }
+      if (rows.length < pageSize) break;
+      from += pageSize;
+    }
+    return Array.from(slugs).filter((slug) => !activeCitySlugs.has(slug));
+  };
+
+  const staleMatchCities = await collectRemoteSlugs("matches");
+  if (staleMatchCities.length) {
+    const { error } = await supabase.from("matches").delete().in("city_slug", staleMatchCities);
+    if (error) throw new Error(`stale city matches delete: ${error.message}`);
+  }
+  const staleStandingCities = await collectRemoteSlugs("standings");
+  if (staleStandingCities.length) {
+    const { error } = await supabase.from("standings").delete().in("city_slug", staleStandingCities);
+    if (error) throw new Error(`stale city standings delete: ${error.message}`);
   }
 
   const { error: runError } = await supabase.from("sync_runs").update({

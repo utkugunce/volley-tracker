@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:53:30.408342",
+  "updated_at": "2026-11-18T17:59:23.833390",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -342,23 +342,23 @@
       {
         "rank": 7,
         "team": "Luna Spor Kulübü U16",
-        "played": 5,
-        "won": 0,
+        "played": 6,
+        "won": 1,
         "lost": 5,
-        "points": 1,
-        "sets_won": 5,
+        "points": 4,
+        "sets_won": 8,
         "sets_lost": 15,
         "form": []
       },
       {
         "rank": 8,
         "team": "07 Alya Spor U16",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 1,
         "sets_won": 4,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ],
@@ -3914,11 +3914,15 @@
       "match_no": "22",
       "home_team": "07 Alya Spor U16",
       "away_team": "Luna Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "19-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419853",
@@ -4768,9 +4772,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:30.428091+00:00",
-  "last_success_at": "2026-11-18T11:53:30.428091+00:00",
-  "content_changed_at": "2026-11-18T11:53:30.428091+00:00",
+  "last_attempt_at": "2026-11-18T14:59:23.861522+00:00",
+  "last_success_at": "2026-11-18T14:59:23.861522+00:00",
+  "content_changed_at": "2026-11-18T14:59:23.861522+00:00",
   "volleybox_synced_matches": 97,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:07.603009"
+  "volleybox_sync_updated_at": "2026-11-18T18:07:03.597414"
 }

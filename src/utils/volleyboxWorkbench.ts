@@ -1,4 +1,5 @@
 import type { Match, StandingItem } from "@/types/fixture";
+import { isUnannouncedHall } from "@/utils/dashboardFilters";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { isMatchScored } from "@/utils/matchScoring";
 import { sameGroup } from "@/utils/standingsForm";
@@ -487,8 +488,8 @@ export function buildVolleyboxWorkbenchData(
       discrepancies.push(m);
     }
 
-    // Queue 3: Dated TVF matches not yet entered on Volleybox
-    if (hasValidDate && !m.volleybox?.synced) {
+    // Queue 3: Dated TVF matches not yet entered on Volleybox (excluding unannounced halls)
+    if (hasValidDate && !m.volleybox?.synced && !isUnannouncedHall(m.hall)) {
       unsynced.push(m);
     }
 

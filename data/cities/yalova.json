@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T17:28:07.713057",
+  "updated_at": "2026-11-18T18:00:14.754445",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -31,34 +31,34 @@
       {
         "rank": 1,
         "team": "Yalova Voleybol Spor Kulübü - A U18",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Koru Akademi Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
+        "played": 6,
+        "won": 5,
         "lost": 1,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
         "team": "Yalova Atakent Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 3,
-        "lost": 2,
+        "lost": 3,
         "points": 8,
         "sets_won": 9,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -75,12 +75,12 @@
       {
         "rank": 5,
         "team": "Koru Akademi Spor Kulübü - B U18",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ],
@@ -711,11 +711,15 @@
       "match_no": "13",
       "home_team": "Koru Akademi Spor Kulübü - B U18",
       "away_team": "Yalova Voleybol Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "3-25",
+        "6-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398319",
@@ -752,11 +756,15 @@
       "match_no": "14",
       "home_team": "Koru Akademi Spor Kulübü U18",
       "away_team": "Yalova Atakent Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-19",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398320",
@@ -1045,19 +1053,16 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "",
+        "url": "https://women.volleybox.net/women-yalova-super-ligi-u16-2026-27-o51072",
+        "host_name": "Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+        "guest_name": "Altın Manşet Spor Kulübü U16",
+        "score": "- : -",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
+        "vb_date": "2026-12-05",
+        "vb_time": "12:00",
+        "vb_hall": "Ş.O.A.Spor Salonu"
       }
     },
     {
@@ -2124,9 +2129,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:54:32.356127+03:00",
-  "last_success_at": "2026-11-17T14:28:07.723201+00:00",
-  "content_changed_at": "2026-11-17T14:28:07.723201+00:00",
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:41.496089"
+  "last_attempt_at": "2026-11-18T15:00:14.758160+00:00",
+  "last_success_at": "2026-11-18T15:00:14.758160+00:00",
+  "content_changed_at": "2026-11-18T15:00:14.758160+00:00",
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-11-18T18:08:03.529614"
 }

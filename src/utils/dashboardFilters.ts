@@ -47,6 +47,13 @@ export function computeLocalDateString(offsetDays = 0): string {
   return getIstanbulDateString(offsetDays);
 }
 
+/** Saha alanı henüz belli olmayan ("Açıklanacak") maçları tespit eder. */
+export function isUnannouncedHall(hall?: string | null): boolean {
+  if (!hall) return false;
+  const normalized = trLower(hall.trim());
+  return normalized.includes("açıklanacak") || normalized.includes("aciklanacak");
+}
+
 /** Volleybox senkronizasyon ve skor istatistikleri. */
 export function computeVolleyboxStats(matches: Match[], todayStr: string): VolleyboxStats {
   const validMatches = matches.filter((m) => m.date && m.date !== "TBD");
@@ -63,7 +70,7 @@ export function computeVolleyboxStats(matches: Match[], todayStr: string): Volle
   const discrepancy = syncedMatches.filter(
     (m) => m.volleybox?.discrepancy?.has_diff && !isMatchScored(m) && m.status !== "finished"
   ).length;
-  const unsynced = total - synced;
+  const unsynced = validMatches.filter((m) => !m.volleybox?.synced && !isUnannouncedHall(m.hall)).length;
   const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
   return { total, synced, scored, unscored, unsynced, discrepancy, percent };
 }
@@ -147,7 +154,7 @@ export function filterFixtureMatches(matches: Match[], opts: FixtureFilterOption
     ) {
       return false;
     }
-    if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {
+    if (volleyboxFilter === "unsynced" && (m.volleybox?.synced || isUnannouncedHall(m.hall))) {
       return false;
     }
 
@@ -219,7 +226,7 @@ export function filterResultMatches(matches: Match[], opts: ResultFilterOptions)
     if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
       return false;
     }
-    if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {
+    if (volleyboxFilter === "unsynced" && (m.volleybox?.synced || isUnannouncedHall(m.hall))) {
       return false;
     }
     if (volleyboxFilter === "discrepancy") {

@@ -578,8 +578,8 @@
         "url": "https://women.volleybox.net/tr/giresunspor-b-u18-espiye-voleybol-kulubu-u18-c415043",
         "host_name": "Espiye Voleybol Kulübü U18",
         "guest_name": "Giresunspor - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "14:30",
         "vb_hall": "Batlama Spor Salonu",
@@ -624,8 +624,8 @@
         "url": "https://women.volleybox.net/tr/giresunspor-u18-giresun-genclik-ve-spor-kulubu-b-u18-c415044",
         "host_name": "Giresun Gençlik Ve Spor Kulübü - B U18",
         "guest_name": "Giresunspor U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "16:00",
         "vb_hall": "Batlama Spor Salonu",
@@ -1344,9 +1344,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:39.542613+00:00",
+  "last_attempt_at": "2026-11-18T17:59:43.201775+03:00",
   "last_success_at": "2026-11-18T11:53:39.542613+00:00",
   "content_changed_at": "2026-11-18T11:53:39.542613+00:00",
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:28.744101"
+  "volleybox_sync_updated_at": "2026-11-18T18:07:17.219311"
 }

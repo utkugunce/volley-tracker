@@ -8,8 +8,8 @@ import {
 /**
  * Normalizes a string for dictionary indexing (lowercased and trimmed).
  */
-export function normalizeKey(text: string): string {
-  return text.trim().toLocaleLowerCase("tr-TR");
+export function normalizeKey(text?: string | null): string {
+  return (text ?? "").trim().toLocaleLowerCase("tr-TR");
 }
 
 /**

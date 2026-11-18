@@ -250,3 +250,61 @@ describe("filterFixtureMatches & computeVolleyboxStats discrepancy filtering", (
     expect(filtered[0].id).toBe("m-disc-upcoming");
   });
 });
+
+describe("Açıklanacak salonlu maçların Girilmedi filtresinden hariç tutulması", () => {
+  const unannouncedHallMatch: Match = {
+    id: "m-unannounced",
+    match_no: "301",
+    category: "Yıldız Kızlar Süper Lig",
+    age_group: "Yıldız",
+    gender: "Kız",
+    group: "Yarı Final D Grubu",
+    date: "2026-11-21",
+    time: "--:--",
+    hall: "Açıklanacak",
+    home_team: "Çorlu Belediyesi Spor Kulübü U16",
+    away_team: "Süleymanpaşa Spor Kulübü - B U16",
+    home_score: null,
+    away_score: null,
+    status: "upcoming",
+    volleybox: { synced: false },
+  };
+
+  const announcedHallUnsyncedMatch: Match = {
+    ...unannouncedHallMatch,
+    id: "m-announced",
+    hall: "Atatürk Spor Salonu",
+  };
+
+  it("computeVolleyboxStats ve filterFixtureMatches saha 'Açıklanacak' olan maçı unsynced/Girilmedi saymaz", () => {
+    const matches = [unannouncedHallMatch, announcedHallUnsyncedMatch];
+    const stats = computeVolleyboxStats(matches, "2026-11-18");
+    expect(stats.unsynced).toBe(1);
+
+    const filteredUnsynced = filterFixtureMatches(matches, {
+      showOnlyFavorites: false,
+      favorites: [],
+      selectedCategory: "Tümü",
+      selectedDate: "all",
+      statusFilter: "all",
+      selectedHall: "Tümü",
+      searchQuery: "",
+      volleyboxFilter: "unsynced",
+      todayStr: "2026-11-18",
+    });
+    expect(filteredUnsynced.map((m) => m.id)).toEqual(["m-announced"]);
+
+    const filteredAll = filterFixtureMatches(matches, {
+      showOnlyFavorites: false,
+      favorites: [],
+      selectedCategory: "Tümü",
+      selectedDate: "all",
+      statusFilter: "all",
+      selectedHall: "Tümü",
+      searchQuery: "",
+      volleyboxFilter: "all",
+      todayStr: "2026-11-18",
+    });
+    expect(filteredAll).toHaveLength(2);
+  });
+});

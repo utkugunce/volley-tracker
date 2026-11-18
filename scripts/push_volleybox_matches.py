@@ -471,6 +471,10 @@ def collect_unsynced_matches(
             if not m_date or m_date.upper() == "TBD" or not re.match(r"^\d{4}-\d{2}-\d{2}$", m_date):
                 continue
 
+            m_hall_lower = str(m.get("hall") or "").strip().replace("İ", "i").replace("I", "ı").lower()
+            if "açıklanacak" in m_hall_lower or "aciklanacak" in m_hall_lower:
+                continue
+
             t_url = resolve_match_tournament_url(m, city_name, tourn_lookup)
             if not t_url:
                 continue

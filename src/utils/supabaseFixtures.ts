@@ -1,5 +1,5 @@
 import { reportDataEvent } from "./dataEvents";
-import { getCityNameFromSlug } from "@/utils/cityHelper";
+import { getCityNameFromSlug, isCityHidden } from "@/utils/cityHelper";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import type { FixturesData, Match, StandingItem } from "@/types/fixture";
 
@@ -118,7 +118,12 @@ export async function getSupabaseFixtures(
     return null;
   }
 
-  const matches = rows.map((row) => toMatch(row as Record<string, unknown>));
+  const visibleRows = rows.filter((row) => {
+    const slug = String((row as { city_slug?: unknown; city_name?: unknown }).city_slug || (row as { city_name?: unknown }).city_name || "");
+    return !isCityHidden(slug);
+  });
+
+  const matches = visibleRows.map((row) => toMatch(row as Record<string, unknown>));
   const cityNames = new Map<string, string>();
   for (const match of matches) {
     const slug = String((match as Match & { city?: string }).city || "");
@@ -128,6 +133,7 @@ export async function getSupabaseFixtures(
 
   const standings: Record<string, StandingItem[]> = {};
   for (const row of standingRows || []) {
+    if (isCityHidden(row.city_slug)) continue;
     const cityName = getCityNameFromSlug(row.city_slug);
     const key = isAllCities
       ? `${cityName} - ${row.category}`
@@ -138,7 +144,7 @@ export async function getSupabaseFixtures(
   const categories = Array.from(new Set(matches.map((match) => match.category).filter(Boolean)));
   const halls = Array.from(new Set(matches.map((match) => match.hall).filter(Boolean)));
   const updatedAt =
-    (rows || [])
+    visibleRows
       .map(
         (r) =>
           (r as { source_updated_at?: string; updated_at?: string; raw?: { source_updated_at?: string } })

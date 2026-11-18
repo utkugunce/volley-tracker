@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:53:47.538661",
+  "updated_at": "2026-11-18T17:59:46.197628",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -4013,18 +4013,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420305",
+        "url": "https://women.volleybox.net/tr/anadolu-universitesi-spor-kulubu-u16-eskisehir-ata-spor-kulubu-b-u16-c420305",
+        "host_name": "Anadolu Üniversitesi Spor Kulübü U16",
+        "guest_name": "Eskişehir Ata Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-29",
+        "vb_time": "15:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "15:00",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4047,25 +4054,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420306",
+        "url": "https://women.volleybox.net/tr/eskisehir-turk-telekom-spor-kulubu-u16-meryem-boz-spor-kulubu-u16-c420306",
+        "host_name": "Eskişehir Türk Telekom Spor Kulübü U16",
+        "guest_name": "Meryem Boz Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-29",
+        "vb_time": "19:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "19:00",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:47.596079+00:00",
-  "last_success_at": "2026-11-18T11:53:47.596079+00:00",
-  "content_changed_at": "2026-11-18T11:53:47.596079+00:00",
-  "volleybox_synced_matches": 73,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:27.049395"
+  "last_attempt_at": "2026-11-18T14:59:46.203956+00:00",
+  "last_success_at": "2026-11-18T14:59:46.203956+00:00",
+  "content_changed_at": "2026-11-18T14:59:46.203956+00:00",
+  "volleybox_synced_matches": 75,
+  "volleybox_sync_updated_at": "2026-11-18T18:07:16.130436"
 }

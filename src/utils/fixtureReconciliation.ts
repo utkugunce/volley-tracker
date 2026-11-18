@@ -1,5 +1,6 @@
 import type { FixturesData, Match } from "@/types/fixture";
 import { getInitialFixtures } from "./getInitialFixtures";
+import { isCityHidden } from "./cityHelper";
 
 function matchIdentityKey(m: Match): string {
   return `${m.date || ""}|${(m.home_team || "").trim()}|${(m.away_team || "").trim()}`;
@@ -29,7 +30,8 @@ export function reconcileWithLocalFixtures(supabaseData: FixturesData, citySlug:
     }
 
     const seenKeys = new Set<string>();
-    const mergedMatches = supabaseData.matches.map((sm) => {
+    const visibleSupabaseMatches = supabaseData.matches.filter((sm) => !isCityHidden(sm.city));
+    const mergedMatches = visibleSupabaseMatches.map((sm) => {
       const sKey = matchIdentityKey(sm);
       seenKeys.add(sKey);
 

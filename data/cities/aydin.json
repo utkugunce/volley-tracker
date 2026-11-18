@@ -751,8 +751,8 @@
         "url": "https://women.volleybox.net/tr/aydn-genclik-ve-spor-l-mudurlugu-spor-kulubu-u18-soke-voleybol-spor-kulubu-u18-c406619",
         "host_name": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
         "guest_name": "Söke Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "19:00",
         "vb_hall": "Mimar Sinan Spor Salonu",
@@ -796,8 +796,8 @@
         "url": "https://women.volleybox.net/tr/efeler-altn-smac-spor-kulubu-u18-aydn-buyuksehir-belediyespor-u18-c406620",
         "host_name": "Efeler Altın Smaç Spor Kulübü U18",
         "guest_name": "Aydın Büyükşehir Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "20:30",
         "vb_hall": "Mimar Sinan Spor Salonu",
@@ -978,9 +978,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:26.137041+00:00",
+  "last_attempt_at": "2026-11-18T17:59:24.869902+03:00",
   "last_success_at": "2026-11-18T11:53:26.137041+00:00",
   "content_changed_at": "2026-11-18T11:53:26.137041+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:07.981500"
+  "volleybox_sync_updated_at": "2026-11-18T18:07:03.870535"
 }

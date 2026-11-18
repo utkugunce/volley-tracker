@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T17:27:53.231634",
+  "updated_at": "2026-11-18T17:59:58.781721",
   "city": "Ordu",
   "slug": "ordu",
   "title": "TVF Ordu Genç & Yıldız Kızlar Süper Lig",
@@ -30,11 +30,11 @@
       {
         "rank": 1,
         "team": "52 Çamlık Spor",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -51,35 +51,35 @@
       },
       {
         "rank": 3,
-        "team": "Academy Volley A",
-        "played": 1,
+        "team": "Pars Spor",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
+        "lost": 1,
+        "points": 3,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Pars Spor",
-        "played": 1,
-        "won": 0,
+        "team": "Academy Volley A",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 5,
         "team": "1921 Ordu Spor",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -280,11 +280,15 @@
       "match_no": "5",
       "home_team": "Pars Spor",
       "away_team": "1921 Ordu Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-5",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -314,11 +318,15 @@
       "match_no": "6",
       "home_team": "52 Çamlık Spor",
       "away_team": "Academy Volley A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-3",
+        "25-9",
+        "25-4"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -910,9 +918,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:54:06.737512+03:00",
-  "last_success_at": "2026-11-17T14:27:53.233865+00:00",
-  "content_changed_at": "2026-11-17T14:27:53.233865+00:00",
+  "last_attempt_at": "2026-11-18T14:59:58.783549+00:00",
+  "last_success_at": "2026-11-18T14:59:58.783549+00:00",
+  "content_changed_at": "2026-11-18T14:59:58.783549+00:00",
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:34.892030"
+  "volleybox_sync_updated_at": "2026-11-18T18:07:56.430293"
 }

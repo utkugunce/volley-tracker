@@ -584,25 +584,32 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420182",
+        "url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-u18-dicle-universitesi-spor-kulubu-u18-c420182",
+        "host_name": "Megaron İnşaat Diyarbakır Spor Kulübü U18",
+        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "13:00",
+        "vb_hall": "Şehitlik Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "13:00",
+          "vb_hall": "Şehitlik Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:36.648297+00:00",
+  "last_attempt_at": "2026-11-18T17:59:38.421827+03:00",
   "last_success_at": "2026-11-18T11:53:36.648297+00:00",
   "content_changed_at": "2026-11-18T11:53:36.648297+00:00",
-  "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-11-18T15:01:23.540625"
+  "volleybox_synced_matches": 11,
+  "volleybox_sync_updated_at": "2026-11-18T18:07:13.471258"
 }

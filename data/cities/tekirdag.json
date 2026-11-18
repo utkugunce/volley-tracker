@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:54:11.362509",
+  "updated_at": "2026-11-18T18:00:07.684303",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -1068,18 +1068,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420206",
+        "url": "https://women.volleybox.net/tr/liva-volley-spor-kulubu-u16-corlu-yldrm-spor-kulubu-u16-c420206",
+        "host_name": "Liva Volley Spor Kulübü U16",
+        "guest_name": "Çorlu Yıldırım Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "15:00",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "15:00",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4288,18 +4295,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420258",
+        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u16-yldzkent-fatih-korganc-spor-kulubu-u16-c420258",
+        "host_name": "Kapaklı Site Spor U16",
+        "guest_name": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "13:00",
+        "vb_hall": "Çerkezköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "13:00",
+          "vb_hall": "Çerkezköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4509,9 +4523,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:54:11.367039+00:00",
-  "last_success_at": "2026-11-18T11:54:11.367039+00:00",
-  "content_changed_at": "2026-11-18T11:54:11.367039+00:00",
-  "volleybox_synced_matches": 85,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:40.502830"
+  "last_attempt_at": "2026-11-18T15:00:07.689853+00:00",
+  "last_success_at": "2026-11-18T15:00:07.689853+00:00",
+  "content_changed_at": "2026-11-18T15:00:07.689853+00:00",
+  "volleybox_synced_matches": 87,
+  "volleybox_sync_updated_at": "2026-11-18T18:08:02.572130"
 }

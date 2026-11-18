@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:53:46.298735",
+  "updated_at": "2026-11-18T17:59:49.226577",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3428,7 +3428,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-18",
-        "vb_time": null,
+        "vb_time": "19:30",
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -3436,7 +3436,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-18",
-          "vb_time": null,
+          "vb_time": "19:30",
           "vb_hall": "Gaziemir Spor Salonu",
           "details": null
         }
@@ -5701,7 +5701,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-18",
-        "vb_time": null,
+        "vb_time": "18:00",
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -5709,7 +5709,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-18",
-          "vb_time": null,
+          "vb_time": "18:00",
           "vb_hall": "Gaziemir Spor Salonu",
           "details": null
         }
@@ -6594,8 +6594,8 @@
         "url": "https://women.volleybox.net/tr/efor-genclik-spor-kulubu-u18-35-yldz-spor-kulubu-u18-c415067",
         "host_name": "Efor Gençlik Spor Kulübü U18",
         "guest_name": "35 Yıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-17",
         "vb_time": "19:30",
         "vb_hall": "Balçova Spor Salonu",
@@ -10305,18 +10305,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "414654",
+        "url": "https://women.volleybox.net/tr/monza-spor-kulubu-u16-alfa-karsyaka-voleybol-spor-kulubu-u16-c414654",
+        "host_name": "Monza Spor Kulübü U16",
+        "guest_name": "Karşıyaka SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "18:30",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "18:30",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:00 / VB: 18:30)"
         }
       }
     },
@@ -11046,18 +11053,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420283",
+        "url": "https://women.volleybox.net/tr/dokuz-eylul-voleybol-u16-alfa-karsyaka-voleybol-spor-kulubu-u16-c420283",
+        "host_name": "Dokuz Eylül Voleybol U16",
+        "guest_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "18:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "18:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -11497,9 +11511,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:46.313006+00:00",
-  "last_success_at": "2026-11-18T11:53:46.313006+00:00",
-  "content_changed_at": "2026-11-18T11:53:46.313006+00:00",
-  "volleybox_synced_matches": 227,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:04.603953"
+  "last_attempt_at": "2026-11-18T14:59:49.248785+00:00",
+  "last_success_at": "2026-11-18T14:59:49.248785+00:00",
+  "content_changed_at": "2026-11-18T14:59:49.248785+00:00",
+  "volleybox_synced_matches": 229,
+  "volleybox_sync_updated_at": "2026-11-18T18:07:34.368872"
 }

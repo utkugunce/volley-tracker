@@ -1552,8 +1552,8 @@
         "url": "https://women.volleybox.net/tr/kzkozu-spor-kulubu-u16-krsehir-akademi-spor-kulubu-b-u16-c401488",
         "host_name": "Kızıközü Spor Kulübü U16",
         "guest_name": "Kırşehir Akademi Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-14",
         "vb_time": "10:00",
         "vb_hall": "Kırşehir Spor Salonu",
@@ -1598,8 +1598,8 @@
         "url": "https://women.volleybox.net/tr/lgim-spor-kulubu-u16-krsehir-sehit-omer-halisdemir-spor-kulubu-u16-c401489",
         "host_name": "İlgim Spor Kulübü U16",
         "guest_name": "Kırşehir Şehit Ömer Halisdemir Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-14",
         "vb_time": "11:30",
         "vb_hall": "Kırşehir Spor Salonu",
@@ -1643,8 +1643,8 @@
         "url": "https://women.volleybox.net/tr/krsehir-akademi-spor-kulubu-u16-kzkozu-spor-kulubu-u16-c401490",
         "host_name": "Kırşehir Akademi Spor Kulübü U16",
         "guest_name": "Kızıközü Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-15",
         "vb_time": "10:00",
         "vb_hall": "Kırşehir Spor Salonu",
@@ -1743,9 +1743,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:53:49.173603+00:00",
+  "last_attempt_at": "2026-11-18T17:59:56.581200+03:00",
   "last_success_at": "2026-11-18T11:53:49.173603+00:00",
   "content_changed_at": "2026-11-18T11:53:49.173603+00:00",
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:17.874848"
+  "volleybox_sync_updated_at": "2026-11-18T18:07:38.570876"
 }

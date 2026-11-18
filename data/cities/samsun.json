@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-18T14:54:06.473696",
+  "updated_at": "2026-11-18T18:00:05.764007",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 63,
+  "total_matches": 56,
   "source": "https://samsun.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -47,38 +47,27 @@
       {
         "rank": 2,
         "team": "Anadolu Voleybol Akademi SK - B U18",
-        "played": 7,
-        "won": 6,
+        "played": 6,
+        "won": 5,
         "lost": 1,
-        "points": 18,
-        "sets_won": 19,
+        "points": 15,
+        "sets_won": 16,
         "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
         "team": "55 Matasyon Spor Kulübü U18",
-        "played": 6,
-        "won": 4,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 13,
-        "sets_won": 14,
+        "points": 10,
+        "sets_won": 11,
         "sets_lost": 8,
         "form": []
       },
       {
         "rank": 4,
-        "team": "19 Mayıs Gençlik Ve Spor U18",
-        "played": 5,
-        "won": 3,
-        "lost": 2,
-        "points": 8,
-        "sets_won": 10,
-        "sets_lost": 8,
-        "form": []
-      },
-      {
-        "rank": 5,
         "team": "Samsun Volley Team U18",
         "played": 4,
         "won": 2,
@@ -86,6 +75,17 @@
         "points": 6,
         "sets_won": 8,
         "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "19 Mayıs Gençlik Ve Spor U18",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -112,23 +112,12 @@
       },
       {
         "rank": 8,
-        "team": "Bafra Akademi Gençlik SK U18",
-        "played": 5,
-        "won": 1,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 3,
-        "sets_lost": 14,
-        "form": []
-      },
-      {
-        "rank": 9,
         "team": "Bafra Vera Spor Kulübü U18",
         "played": 5,
         "won": 0,
         "lost": 5,
-        "points": 1,
-        "sets_won": 3,
+        "points": 0,
+        "sets_won": 1,
         "sets_lost": 15,
         "form": []
       }
@@ -192,16 +181,27 @@
       {
         "rank": 6,
         "team": "İlkkıvılcım Havza SK U18",
-        "played": 6,
+        "played": 7,
         "won": 2,
-        "lost": 4,
-        "points": 6,
+        "lost": 5,
+        "points": 3,
         "sets_won": 7,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       },
       {
         "rank": 7,
+        "team": "Sam55 Spor Kulübü U18",
+        "played": 7,
+        "won": 1,
+        "lost": 6,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 18,
+        "form": []
+      },
+      {
+        "rank": 8,
         "team": "Anadolu Voleybol Akademi SK U18",
         "played": 6,
         "won": 1,
@@ -209,17 +209,6 @@
         "points": 0,
         "sets_won": 3,
         "sets_lost": 15,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Sam55 Spor Kulübü U18",
-        "played": 6,
-        "won": 0,
-        "lost": 6,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 18,
         "form": []
       }
     ]
@@ -274,58 +263,13 @@
       "id": "samsun-20261003-002",
       "city": "Samsun",
       "date": "2026-10-03",
-      "time": "12:30",
-      "hall": "Mustafa Dağıstanlı Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "2",
-      "home_team": "19 Mayıs Gençlik Ve Spor U18",
-      "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-10",
-        "25-17",
-        "25-14"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402766",
-        "url": "https://women.volleybox.net/tr/19-mays-genclik-ve-spor-u18-bafra-akademi-genclik-sk-u18-c402766",
-        "host_name": "19 Mayıs Gençlik Ve Spor U18",
-        "guest_name": "Bafra Akademi Gençlik SK U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-03",
-        "vb_time": "12:30",
-        "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "12:30",
-          "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261003-003",
-      "city": "Samsun",
-      "date": "2026-10-03",
       "time": "15:00",
       "hall": "Bahattin Ekinci Ss",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "3",
+      "match_no": "2",
       "home_team": "Anadolu Voleybol Akademi SK - B U18",
       "away_team": "Bafra Vera Spor Kulübü U18",
       "score": "3 - 0",
@@ -361,7 +305,7 @@
       }
     },
     {
-      "id": "samsun-20261008-004",
+      "id": "samsun-20261008-003",
       "city": "Samsun",
       "date": "2026-10-08",
       "time": "20:00",
@@ -370,7 +314,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "55 Matasyon Spor Kulübü U18",
       "away_team": "Samsun Volley Team U18",
       "score": "3 - 1",
@@ -407,7 +351,7 @@
       }
     },
     {
-      "id": "samsun-20261012-005",
+      "id": "samsun-20261012-004",
       "city": "Samsun",
       "date": "2026-10-12",
       "time": "19:30",
@@ -416,7 +360,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "19 Mayıs Gençlik Ve Spor U18",
       "score": "0 - 3",
@@ -452,7 +396,7 @@
       }
     },
     {
-      "id": "samsun-20261017-006",
+      "id": "samsun-20261017-005",
       "city": "Samsun",
       "date": "2026-10-17",
       "time": "12:30",
@@ -461,7 +405,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Samsun Volley Team U18",
       "away_team": "Anadolu Voleybol Akademi SK - B U18",
       "score": "1 - 3",
@@ -498,52 +442,7 @@
       }
     },
     {
-      "id": "samsun-20261017-007",
-      "city": "Samsun",
-      "date": "2026-10-17",
-      "time": "13:00",
-      "hall": "Bafra Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "7",
-      "home_team": "Bafra Akademi Gençlik SK U18",
-      "away_team": "Atakum Atılım Spor Kulübü U18",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "8-25",
-        "17-25",
-        "10-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402771",
-        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-atakum-atlm-spor-kulubu-u18-c402771",
-        "host_name": "Bafra Akademi Gençlik SK U18",
-        "guest_name": "Atakum Atılım Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-17",
-        "vb_time": "13:00",
-        "vb_hall": "Bafra Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-17",
-          "vb_time": "13:00",
-          "vb_hall": "Bafra Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261018-008",
+      "id": "samsun-20261018-006",
       "city": "Samsun",
       "date": "2026-10-18",
       "time": "11:00",
@@ -552,7 +451,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "8",
+      "match_no": "6",
       "home_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "55 Matasyon Spor Kulübü U18",
       "score": "0 - 3",
@@ -588,7 +487,7 @@
       }
     },
     {
-      "id": "samsun-20261024-009",
+      "id": "samsun-20261024-007",
       "city": "Samsun",
       "date": "2026-10-24",
       "time": "17:00",
@@ -597,7 +496,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "9",
+      "match_no": "7",
       "home_team": "Atakum Atılım Spor Kulübü U18",
       "away_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "score": "3 - 0",
@@ -633,7 +532,7 @@
       }
     },
     {
-      "id": "samsun-20261025-010",
+      "id": "samsun-20261025-008",
       "city": "Samsun",
       "date": "2026-10-25",
       "time": "11:00",
@@ -642,7 +541,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "10",
+      "match_no": "8",
       "home_team": "Anadolu Voleybol Akademi SK - B U18",
       "away_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "score": "3 - 0",
@@ -678,7 +577,7 @@
       }
     },
     {
-      "id": "samsun-20261025-011",
+      "id": "samsun-20261025-009",
       "city": "Samsun",
       "date": "2026-10-25",
       "time": "13:00",
@@ -687,7 +586,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "11",
+      "match_no": "9",
       "home_team": "Bafra Vera Spor Kulübü U18",
       "away_team": "Samsun Volley Team U18",
       "score": "0 - 3",
@@ -723,7 +622,7 @@
       }
     },
     {
-      "id": "samsun-20261029-012",
+      "id": "samsun-20261029-010",
       "city": "Samsun",
       "date": "2026-10-29",
       "time": "19:30",
@@ -732,7 +631,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "12",
+      "match_no": "10",
       "home_team": "19 Mayıs Gençlik Ve Spor U18",
       "away_team": "Atakum Atılım Spor Kulübü U18",
       "score": "0 - 3",
@@ -768,46 +667,7 @@
       }
     },
     {
-      "id": "samsun-20261101-013",
-      "city": "Samsun",
-      "date": "2026-11-01",
-      "time": "12:00",
-      "hall": "Bahattin Ekinci Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "13",
-      "home_team": "55 Matasyon Spor Kulübü U18",
-      "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-0",
-        "25-0",
-        "25-0"
-      ],
-      "status": "finished",
-      "forfeit": true,
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261101-014",
+      "id": "samsun-20261101-011",
       "city": "Samsun",
       "date": "2026-11-01",
       "time": "14:00",
@@ -816,7 +676,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "14",
+      "match_no": "11",
       "home_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "Bafra Vera Spor Kulübü U18",
       "score": "3 - 0",
@@ -852,7 +712,7 @@
       }
     },
     {
-      "id": "samsun-20261105-015",
+      "id": "samsun-20261105-012",
       "city": "Samsun",
       "date": "2026-11-05",
       "time": "19:30",
@@ -861,7 +721,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "15",
+      "match_no": "12",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "55 Matasyon Spor Kulübü U18",
       "score": "1 - 3",
@@ -898,7 +758,7 @@
       }
     },
     {
-      "id": "samsun-20261107-016",
+      "id": "samsun-20261107-013",
       "city": "Samsun",
       "date": "2026-11-07",
       "time": "13:00",
@@ -907,7 +767,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "16",
+      "match_no": "13",
       "home_team": "Samsun Volley Team U18",
       "away_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "score": "3 - 1",
@@ -944,52 +804,7 @@
       }
     },
     {
-      "id": "samsun-20261108-017",
-      "city": "Samsun",
-      "date": "2026-11-08",
-      "time": "15:00",
-      "hall": "Bafra Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "17",
-      "home_team": "Bafra Akademi Gençlik SK U18",
-      "away_team": "Anadolu Voleybol Akademi SK - B U18",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "13-25",
-        "12-25",
-        "8-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402999",
-        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-anadolu-voleybol-akademi-sk-b-u18-c402999",
-        "host_name": "Bafra Akademi Gençlik SK U18",
-        "guest_name": "Anadolu Voleybol Akademi SK - B U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-08",
-        "vb_time": "13:00",
-        "vb_hall": "Bafra Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-08",
-          "vb_time": "13:00",
-          "vb_hall": "Bafra Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261108-018",
+      "id": "samsun-20261108-014",
       "city": "Samsun",
       "date": "2026-11-08",
       "time": "15:00",
@@ -998,7 +813,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "18",
+      "match_no": "14",
       "home_team": "55 Matasyon Spor Kulübü U18",
       "away_team": "19 Mayıs Gençlik Ve Spor U18",
       "score": "2 - 3",
@@ -1036,7 +851,7 @@
       }
     },
     {
-      "id": "samsun-20261110-019",
+      "id": "samsun-20261110-015",
       "city": "Samsun",
       "date": "2026-11-10",
       "time": "19:30",
@@ -1045,7 +860,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "19",
+      "match_no": "15",
       "home_team": "Anadolu Voleybol Akademi SK - B U18",
       "away_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "score": "3 - 0",
@@ -1081,54 +896,7 @@
       }
     },
     {
-      "id": "samsun-20261111-020",
-      "city": "Samsun",
-      "date": "2026-11-11",
-      "time": "19:00",
-      "hall": "Bafra Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "20",
-      "home_team": "Bafra Vera Spor Kulübü U18",
-      "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "2 - 3",
-      "home_score": 2,
-      "away_score": 3,
-      "set_scores": [
-        "19-25",
-        "23-25",
-        "25-13",
-        "25-22",
-        "15-17"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402794",
-        "url": "https://women.volleybox.net/tr/bafra-vera-spor-kulubu-u18-bafra-akademi-genclik-sk-u18-c402794",
-        "host_name": "Bafra Vera Spor Kulübü U18",
-        "guest_name": "Bafra Akademi Gençlik SK U18",
-        "score": "2 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-11",
-        "vb_time": "19:00",
-        "vb_hall": "Bafra Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-11",
-          "vb_time": "19:00",
-          "vb_hall": "Bafra Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261114-021",
+      "id": "samsun-20261114-016",
       "city": "Samsun",
       "date": "2026-11-14",
       "time": "11:00",
@@ -1137,7 +905,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "21",
+      "match_no": "16",
       "home_team": "19 Mayıs Gençlik Ve Spor U18",
       "away_team": "Anadolu Voleybol Akademi SK - B U18",
       "score": "1 - 3",
@@ -1174,7 +942,7 @@
       }
     },
     {
-      "id": "samsun-20261115-022",
+      "id": "samsun-20261115-017",
       "city": "Samsun",
       "date": "2026-11-15",
       "time": "14:00",
@@ -1183,7 +951,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "22",
+      "match_no": "17",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "Bafra Vera Spor Kulübü U18",
       "score": "3 - 1",
@@ -1220,7 +988,7 @@
       }
     },
     {
-      "id": "samsun-20261115-023",
+      "id": "samsun-20261115-018",
       "city": "Samsun",
       "date": "2026-11-15",
       "time": "16:00",
@@ -1229,7 +997,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "23",
+      "match_no": "18",
       "home_team": "Atakum Atılım Spor Kulübü U18",
       "away_team": "55 Matasyon Spor Kulübü U18",
       "score": "3 - 0",
@@ -1265,7 +1033,7 @@
       }
     },
     {
-      "id": "samsun-20261118-024",
+      "id": "samsun-20261118-019",
       "city": "Samsun",
       "date": "2026-11-18",
       "time": "11:00",
@@ -1274,7 +1042,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "24",
+      "match_no": "19",
       "home_team": "Anadolu Voleybol Akademi SK - B U18",
       "away_team": "Atakum Atılım Spor Kulübü U18",
       "score": "1 - 3",
@@ -1311,48 +1079,7 @@
       }
     },
     {
-      "id": "samsun-20261118-025",
-      "city": "Samsun",
-      "date": "2026-11-18",
-      "time": "13:00",
-      "hall": "Bahattin Ekinci Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "25",
-      "home_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-      "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402801",
-        "url": "https://women.volleybox.net/tr/samsun-buyuksehir-belediyesi-spor-kulubu-u18-bafra-akademi-genclik-sk-u18-c402801",
-        "host_name": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-        "guest_name": "Bafra Akademi Gençlik SK U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-18",
-        "vb_time": "13:00",
-        "vb_hall": "Bahattin Ekinci Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-18",
-          "vb_time": "13:00",
-          "vb_hall": "Bahattin Ekinci Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261119-026",
+      "id": "samsun-20261119-020",
       "city": "Samsun",
       "date": "2026-11-19",
       "time": "11:00",
@@ -1361,7 +1088,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "26",
+      "match_no": "20",
       "home_team": "Samsun Volley Team U18",
       "away_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "score": "- : -",
@@ -1393,7 +1120,7 @@
       }
     },
     {
-      "id": "samsun-20261119-027",
+      "id": "samsun-20261119-021",
       "city": "Samsun",
       "date": "2026-11-19",
       "time": "13:00",
@@ -1402,7 +1129,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "27",
+      "match_no": "21",
       "home_team": "Bafra Vera Spor Kulübü U18",
       "away_team": "19 Mayıs Gençlik Ve Spor U18",
       "score": "- : -",
@@ -1434,7 +1161,7 @@
       }
     },
     {
-      "id": "samsun-20261121-028",
+      "id": "samsun-20261121-022",
       "city": "Samsun",
       "date": "2026-11-21",
       "time": "14:00",
@@ -1443,14 +1170,19 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "28",
+      "match_no": "22",
       "home_team": "Atakum Atılım Spor Kulübü U18",
       "away_team": "Bafra Vera Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "402803",
@@ -1475,7 +1207,7 @@
       }
     },
     {
-      "id": "samsun-20261122-029",
+      "id": "samsun-20261122-023",
       "city": "Samsun",
       "date": "2026-11-22",
       "time": "11:00",
@@ -1484,7 +1216,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "29",
+      "match_no": "23",
       "home_team": "19 Mayıs Gençlik Ve Spor U18",
       "away_team": "Samsun Volley Team U18",
       "score": "- : -",
@@ -1516,7 +1248,7 @@
       }
     },
     {
-      "id": "samsun-20261122-030",
+      "id": "samsun-20261122-024",
       "city": "Samsun",
       "date": "2026-11-22",
       "time": "14:00",
@@ -1525,7 +1257,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "30",
+      "match_no": "24",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "score": "- : -",
@@ -1557,7 +1289,7 @@
       }
     },
     {
-      "id": "samsun-20261123-031",
+      "id": "samsun-20261123-025",
       "city": "Samsun",
       "date": "2026-11-23",
       "time": "19:30",
@@ -1566,7 +1298,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "31",
+      "match_no": "25",
       "home_team": "55 Matasyon Spor Kulübü U18",
       "away_team": "Anadolu Voleybol Akademi SK - B U18",
       "score": "- : -",
@@ -1598,7 +1330,7 @@
       }
     },
     {
-      "id": "samsun-20261127-032",
+      "id": "samsun-20261127-026",
       "city": "Samsun",
       "date": "2026-11-27",
       "time": "19:30",
@@ -1607,7 +1339,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "32",
+      "match_no": "26",
       "home_team": "Bafra Vera Spor Kulübü U18",
       "away_team": "55 Matasyon Spor Kulübü U18",
       "score": "- : -",
@@ -1639,48 +1371,7 @@
       }
     },
     {
-      "id": "samsun-20261128-033",
-      "city": "Samsun",
-      "date": "2026-11-28",
-      "time": "12:00",
-      "hall": "Bafra Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "33",
-      "home_team": "Bafra Akademi Gençlik SK U18",
-      "away_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402808",
-        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-c402808",
-        "host_name": "Bafra Akademi Gençlik SK U18",
-        "guest_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-28",
-        "vb_time": "12:00",
-        "vb_hall": "Bafra Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-28",
-          "vb_time": "12:00",
-          "vb_hall": "Bafra Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "samsun-20261128-034",
+      "id": "samsun-20261128-027",
       "city": "Samsun",
       "date": "2026-11-28",
       "time": "15:00",
@@ -1689,7 +1380,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "34",
+      "match_no": "27",
       "home_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "19 Mayıs Gençlik Ve Spor U18",
       "score": "- : -",
@@ -1721,7 +1412,7 @@
       }
     },
     {
-      "id": "samsun-20261128-035",
+      "id": "samsun-20261128-028",
       "city": "Samsun",
       "date": "2026-11-28",
       "time": "17:00",
@@ -1730,7 +1421,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "35",
+      "match_no": "28",
       "home_team": "Samsun Volley Team U18",
       "away_team": "Atakum Atılım Spor Kulübü U18",
       "score": "- : -",
@@ -1762,7 +1453,7 @@
       }
     },
     {
-      "id": "samsun-20261003-036",
+      "id": "samsun-20261003-029",
       "city": "Samsun",
       "date": "2026-10-03",
       "time": "13:00",
@@ -1807,7 +1498,7 @@
       }
     },
     {
-      "id": "samsun-20261004-037",
+      "id": "samsun-20261004-030",
       "city": "Samsun",
       "date": "2026-10-04",
       "time": "11:00",
@@ -1852,7 +1543,7 @@
       }
     },
     {
-      "id": "samsun-20261004-038",
+      "id": "samsun-20261004-031",
       "city": "Samsun",
       "date": "2026-10-04",
       "time": "14:00",
@@ -1897,7 +1588,7 @@
       }
     },
     {
-      "id": "samsun-20261006-039",
+      "id": "samsun-20261006-032",
       "city": "Samsun",
       "date": "2026-10-06",
       "time": "19:15",
@@ -1942,7 +1633,7 @@
       }
     },
     {
-      "id": "samsun-20261010-040",
+      "id": "samsun-20261010-033",
       "city": "Samsun",
       "date": "2026-10-10",
       "time": "13:00",
@@ -1987,7 +1678,7 @@
       }
     },
     {
-      "id": "samsun-20261010-041",
+      "id": "samsun-20261010-034",
       "city": "Samsun",
       "date": "2026-10-10",
       "time": "14:00",
@@ -2032,7 +1723,7 @@
       }
     },
     {
-      "id": "samsun-20261011-042",
+      "id": "samsun-20261011-035",
       "city": "Samsun",
       "date": "2026-10-11",
       "time": "13:00",
@@ -2077,7 +1768,7 @@
       }
     },
     {
-      "id": "samsun-20261011-043",
+      "id": "samsun-20261011-036",
       "city": "Samsun",
       "date": "2026-10-11",
       "time": "14:00",
@@ -2123,7 +1814,7 @@
       }
     },
     {
-      "id": "samsun-20261013-044",
+      "id": "samsun-20261013-037",
       "city": "Samsun",
       "date": "2026-10-13",
       "time": "19:15",
@@ -2168,7 +1859,7 @@
       }
     },
     {
-      "id": "samsun-20261018-045",
+      "id": "samsun-20261018-038",
       "city": "Samsun",
       "date": "2026-10-18",
       "time": "14:00",
@@ -2213,7 +1904,7 @@
       }
     },
     {
-      "id": "samsun-20261022-046",
+      "id": "samsun-20261022-039",
       "city": "Samsun",
       "date": "2026-10-22",
       "time": "19:30",
@@ -2258,7 +1949,7 @@
       }
     },
     {
-      "id": "samsun-20261024-047",
+      "id": "samsun-20261024-040",
       "city": "Samsun",
       "date": "2026-10-24",
       "time": "13:00",
@@ -2303,7 +1994,7 @@
       }
     },
     {
-      "id": "samsun-20261024-048",
+      "id": "samsun-20261024-041",
       "city": "Samsun",
       "date": "2026-10-24",
       "time": "13:00",
@@ -2349,7 +2040,7 @@
       }
     },
     {
-      "id": "samsun-20261025-049",
+      "id": "samsun-20261025-042",
       "city": "Samsun",
       "date": "2026-10-25",
       "time": "13:00",
@@ -2394,7 +2085,7 @@
       }
     },
     {
-      "id": "samsun-20261029-050",
+      "id": "samsun-20261029-043",
       "city": "Samsun",
       "date": "2026-10-29",
       "time": "13:00",
@@ -2441,7 +2132,7 @@
       }
     },
     {
-      "id": "samsun-20261031-051",
+      "id": "samsun-20261031-044",
       "city": "Samsun",
       "date": "2026-10-31",
       "time": "11:00",
@@ -2486,7 +2177,7 @@
       }
     },
     {
-      "id": "samsun-20261031-052",
+      "id": "samsun-20261031-045",
       "city": "Samsun",
       "date": "2026-10-31",
       "time": "13:00",
@@ -2531,7 +2222,7 @@
       }
     },
     {
-      "id": "samsun-20261107-053",
+      "id": "samsun-20261107-046",
       "city": "Samsun",
       "date": "2026-11-07",
       "time": "13:00",
@@ -2576,7 +2267,7 @@
       }
     },
     {
-      "id": "samsun-20261108-054",
+      "id": "samsun-20261108-047",
       "city": "Samsun",
       "date": "2026-11-08",
       "time": "11:00",
@@ -2621,7 +2312,7 @@
       }
     },
     {
-      "id": "samsun-20261115-055",
+      "id": "samsun-20261115-048",
       "city": "Samsun",
       "date": "2026-11-15",
       "time": "13:00",
@@ -2666,7 +2357,7 @@
       }
     },
     {
-      "id": "samsun-20261116-056",
+      "id": "samsun-20261116-049",
       "city": "Samsun",
       "date": "2026-11-16",
       "time": "11:00",
@@ -2711,7 +2402,7 @@
       }
     },
     {
-      "id": "samsun-20261116-057",
+      "id": "samsun-20261116-050",
       "city": "Samsun",
       "date": "2026-11-16",
       "time": "13:00",
@@ -2757,7 +2448,7 @@
       }
     },
     {
-      "id": "samsun-20261116-058",
+      "id": "samsun-20261116-051",
       "city": "Samsun",
       "date": "2026-11-16",
       "time": "19:30",
@@ -2802,7 +2493,7 @@
       }
     },
     {
-      "id": "samsun-20261118-059",
+      "id": "samsun-20261118-052",
       "city": "Samsun",
       "date": "2026-11-18",
       "time": "13:00",
@@ -2848,7 +2539,7 @@
       }
     },
     {
-      "id": "samsun-20261119-060",
+      "id": "samsun-20261119-053",
       "city": "Samsun",
       "date": "2026-11-19",
       "time": "13:00",
@@ -2889,7 +2580,7 @@
       }
     },
     {
-      "id": "samsun-20261120-061",
+      "id": "samsun-20261120-054",
       "city": "Samsun",
       "date": "2026-11-20",
       "time": "11:00",
@@ -2930,7 +2621,7 @@
       }
     },
     {
-      "id": "samsun-20261122-062",
+      "id": "samsun-20261122-055",
       "city": "Samsun",
       "date": "2026-11-22",
       "time": "13:00",
@@ -2942,11 +2633,16 @@
       "match_no": "27",
       "home_team": "Sam55 Spor Kulübü U18",
       "away_team": "İlkkıvılcım Havza SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "403022",
@@ -2971,7 +2667,7 @@
       }
     },
     {
-      "id": "samsun-20261128-063",
+      "id": "samsun-20261128-056",
       "city": "Samsun",
       "date": "2026-11-28",
       "time": "12:00",
@@ -3012,9 +2708,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T11:54:06.478534+00:00",
-  "last_success_at": "2026-11-18T11:54:06.478534+00:00",
-  "content_changed_at": "2026-11-18T11:54:06.478534+00:00",
-  "volleybox_synced_matches": 62,
-  "volleybox_sync_updated_at": "2026-11-18T15:02:37.352616"
+  "last_attempt_at": "2026-11-18T15:00:05.776019+00:00",
+  "last_success_at": "2026-11-18T15:00:05.776019+00:00",
+  "content_changed_at": "2026-11-18T15:00:05.776019+00:00",
+  "volleybox_synced_matches": 56,
+  "volleybox_sync_updated_at": "2026-11-18T18:07:59.428722"
 }

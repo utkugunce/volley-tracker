@@ -24571,6 +24571,483 @@
       "aliases": [
         "Tomarza Belediye Spor Kulübü"
       ]
+    },
+    {
+      "internal_name": "Karşıyaka U16",
+      "matched_as": "Karşıyaka SK U16",
+      "team_id": "41412",
+      "volleybox_url": "https://women.volleybox.net/tr/karsyaka-sk-u16-t41412",
+      "city_slug": "izmir",
+      "city": "İzmir",
+      "aliases": [
+        "Karşıyaka U16",
+        "Karşıyaka SK U16",
+        "Karşıyaka"
+      ]
+    },
+    {
+      "internal_name": "Alfa Karşıyaka U16",
+      "matched_as": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+      "team_id": "42704",
+      "volleybox_url": "https://women.volleybox.net/tr/alfa-karsyaka-spor-kulubu-u16-t42704",
+      "city_slug": "izmir",
+      "city": "İzmir",
+      "aliases": [
+        "Alfa Karşıyaka U16",
+        "Alfa Karşıyaka Voleybol Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Pazar Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+      "matched_as": "Pazar Gençlik Spor U16",
+      "team_id": "56274",
+      "volleybox_url": "https://women.volleybox.net/tr/pazar-genclik-spor-u16-t56274",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Pazar Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+        "Pazar Gençlik Spor U16"
+      ]
+    },
+    {
+      "internal_name": "Çaykur Rizespor (B)",
+      "matched_as": "Çaykur Rizespor B U16",
+      "team_id": "56270",
+      "volleybox_url": "https://women.volleybox.net/tr/caykur-rizespor-u16-t56270",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Çaykur Rizespor (B)",
+        "Çaykur Rizespor B U16"
+      ]
+    },
+    {
+      "internal_name": "Çaykur Rizespor (A)",
+      "matched_as": "Çaykur Rizespor U16",
+      "team_id": "41442",
+      "volleybox_url": "https://women.volleybox.net/tr/caykur-rizespor-u16-t41442",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Çaykur Rizespor (A)",
+        "Çaykur Rizespor U16"
+      ]
+    },
+    {
+      "internal_name": "Ardeşen Belediyesi Spor Kulübü",
+      "matched_as": "Ardeşen Belediyesi Spor Kulübü U16",
+      "team_id": "56268",
+      "volleybox_url": "https://women.volleybox.net/tr/ardesen-belediyesi-spor-kulubu-u16-t56268",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Ardeşen Belediyesi Spor Kulübü",
+        "Ardeşen Belediyesi Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Kuzey Gücü Spor Kulübü",
+      "matched_as": "Kuzey Gücü Spor Kulübü U16",
+      "team_id": "56273",
+      "volleybox_url": "https://women.volleybox.net/tr/kuzey-gucu-spor-kulubu-u16-t56273",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Kuzey Gücü Spor Kulübü",
+        "Kuzey Gücü Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+      "matched_as": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
+      "team_id": "56269",
+      "volleybox_url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u16-t56269",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+        "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16"
+      ]
+    },
+    {
+      "internal_name": "Kurtözü Spor Kulübü",
+      "matched_as": "Kurtözü Spor Kulübü U16",
+      "team_id": "56272",
+      "volleybox_url": "https://women.volleybox.net/tr/kurtozu-spor-kulubu-u16-t56272",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Kurtözü Spor Kulübü",
+        "Kurtözü Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Superpool Fındıklı 1974 Spor Kulübü",
+      "matched_as": "Fındıklı 1974 Spor Kulübü U16",
+      "team_id": "56271",
+      "volleybox_url": "https://women.volleybox.net/tr/fndkl-1974-spor-kulubu-u16-t56271",
+      "city_slug": "rize",
+      "city": "Rize",
+      "aliases": [
+        "Superpool Fındıklı 1974 Spor Kulübü",
+        "Fındıklı 1974 Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Kırdar Akademi Spor Kulübü",
+      "matched_as": "Kırdar Akademi Spor Kulübü U16",
+      "team_id": "56281",
+      "volleybox_url": "https://women.volleybox.net/tr/krdar-akademi-spor-kulubu-u16-t56281",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kırdar Akademi Spor Kulübü U16",
+        "Kırdar Akademi Spor Kulübü",
+        "Kırdar Akademi",
+        "KIRDAR AKEDEMİ SANAT VE SPOR KULÜBÜ"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Belediyespor (A)",
+      "matched_as": "Kütahya Belediyespor A U16",
+      "team_id": "56277",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-belediyespor-u16-t56277",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Belediyespor A U16",
+        "Kütahya Belediyespor (A)",
+        "Kütahya Belediyespor A",
+        "KÜTAHYA BELEDİYE SPOR KULÜBÜ A",
+        "KÜTAHYA BELEDİYE SPOR A",
+        "Kütahya Belediyespor U16",
+        "Kütahya Belediye Spor Kulübü A U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Belediyespor (B)",
+      "matched_as": "Kütahya Belediyespor B U16",
+      "team_id": "56276",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-belediyespor-u16-t56276",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Belediyespor B U16",
+        "Kütahya Belediyespor (B)",
+        "Kütahya Belediyespor B",
+        "KÜTAHYA BELEDİYE SPOR B",
+        "KÜTAHYA BELEDİYE SPOR KULÜBÜ B",
+        "Kütahya Belediyespor - B U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Demirspor",
+      "matched_as": "Kütahya Demirspor U16",
+      "team_id": "56282",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-demirspor-u16-t56282",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Demirspor U16",
+        "Kütahya Demirspor",
+        "KÜTAHYA DEMİR SPOR"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Gelişim Akademi 43 Spor Kulübü (A)",
+      "matched_as": "Kütahya Gelişim Akademi 43 Spor Kulübü A U16",
+      "team_id": "56283",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-gelisim-akademi-43-spor-kulubu-u16-t56283",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Gelişim Akademi 43 Spor Kulübü A U16",
+        "Kütahya Gelişim Akademi 43 Spor Kulübü (A)",
+        "Gelişim Akademi 43 (A)",
+        "KÜTAHYA GELİŞİM AKEDEMİ 43 SPOR KULÜBÜ A"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Gelişim Akademi 43 Spor Kulübü (B)",
+      "matched_as": "Kütahya Gelişim Akademi 43 Spor Kulübü B U16",
+      "team_id": "56278",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-gelisim-akademi-43-spor-kulubu-u16-t56278",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Gelişim Akademi 43 Spor Kulübü B U16",
+        "Kütahya Gelişim Akademi 43 Spor Kulübü (B)",
+        "Gelişim Akademi 43 (B)",
+        "KÜTAHYA GELİŞİM AKEDEMİ 43 SPOR KULÜBÜ B",
+        "Kütahya Gelişim Akademi 43 Spor Kulübü - B U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+      "matched_as": "Kütahya Gençlik Ve Spor İl Müdürlüğü SK U16",
+      "team_id": "56275",
+      "volleybox_url": "https://women.volleybox.net/tr/kutahya-genclik-ve-spor-l-mudurlugu-sk-u16-t56275",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Kütahya Gençlik Ve Spor İl Müdürlüğü SK U16",
+        "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+        "Kütahya Gençlik Ve Spor İl Müdürlüğü SK",
+        "KÜTAHYA GENÇLİK VE SPOR İL MÜDÜRLÜĞÜ SK",
+        "GENÇLİK VE SPOR İL MÜDÜRLÜĞÜ",
+        "Gençlik Spor Kulübü",
+        "Kütahya Gençlik ve Spor İl Müdürlüğü SK U16",
+        "Kütahya Gençlik Spor Kulübü U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Simav Şeref Koleji Spor Kulübü",
+      "matched_as": "Simav Şeref Koleji Spor Kulübü U16",
+      "team_id": "50324",
+      "volleybox_url": "https://women.volleybox.net/tr/simav-seref-koleji-spor-kulubu-u16-t50324",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Simav Şeref Koleji Spor Kulübü U16",
+        "Simav Şeref Koleji Spor Kulübü",
+        "Simav Şeref Koleji",
+        "SİMAV ŞEREF KOLEJİ SPOR KULÜBÜ"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Tavşanlı Belediyesi Spor Kulübü (A)",
+      "matched_as": "Tavşanlı Belediyesi Spor Kulübü A U16",
+      "team_id": "56280",
+      "volleybox_url": "https://women.volleybox.net/tr/tavsanl-belediyesi-spor-kulubu-u16-t56280",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Tavşanlı Belediyesi Spor Kulübü A U16",
+        "Tavşanlı Belediyesi Spor Kulübü (A)",
+        "Tavşanlı Belediyesi (A)",
+        "Tavşanlı Belediye Spor Kulübü A",
+        "TAVŞANLI BELEDİYE SPOR KULÜBÜ A",
+        "Tavşanlı Belediyesi Spor Kulübü U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Tavşanlı Belediyesi Spor Kulübü (B)",
+      "matched_as": "Tavşanlı Belediyesi Spor Kulübü B U16",
+      "team_id": "56279",
+      "volleybox_url": "https://women.volleybox.net/tr/tavsanl-belediyesi-spor-kulubu-u16-t56279",
+      "city_slug": "kutahya",
+      "city": "Kütahya",
+      "aliases": [
+        "Tavşanlı Belediyesi Spor Kulübü B U16",
+        "Tavşanlı Belediyesi Spor Kulübü (B)",
+        "Tavşanlı Belediyesi (B)",
+        "TAVŞANLI BELEDİYE SPOR KULÜBÜ B",
+        "Tavşanlı Belediye Spor Kulübü B",
+        "Tavşanlı Belediyesi Spor Kulübü - B U16"
+      ],
+      "age_category": "U16"
+    },
+    {
+      "internal_name": "Atlas 23 SK",
+      "matched_as": "Atlas 23 Spor Kulübü U18",
+      "team_id": "56156",
+      "volleybox_url": "https://women.volleybox.net/tr/atlas-23-spor-kulubu-u18-t56156",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Atlas 23 SK",
+        "Atlas 23 Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Belediyesi Spor Kulübü",
+      "matched_as": "Elazığ Belediyesi SK U18",
+      "team_id": "47944",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-belediyesi-sk-u18-t47944",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Elazığ Belediyesi Spor Kulübü",
+        "Elazığ Belediyesi SK U18"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
+      "matched_as": "Elazığ Gençlik Spor Kulübü U18",
+      "team_id": "48853",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-genclik-spor-kulubu-u18-t48853",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Elazığ Gençlik Ve Spor İl Müdürlüğü Sk",
+        "Elazığ Gençlik Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Akademi Spor Kulübü",
+      "matched_as": "Elazığ Voleybol Akademi Spor Kulübü U18",
+      "team_id": "47945",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-akademi-spor-kulubu-u18-t47945",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Elazığ Voleybol Akademi Spor Kulübü",
+        "Elazığ Voleybol Akademi Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Spor Kulübü-A",
+      "matched_as": "Elazığ Voleybol Spor Kulübü U18",
+      "team_id": "56158",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-spor-kulubu-u18-t56158",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Elazığ Voleybol Spor Kulübü-A",
+        "Elazığ Voleybol Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Elazığ Voleybol Spor Kulübü-B",
+      "matched_as": "Elazığ Voleybol Spor Kulübü B U18",
+      "team_id": "56159",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-voleybol-spor-kulubu-b-u18-t56159",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "Elazığ Voleybol Spor Kulübü-B",
+        "Elazığ Voleybol Spor Kulübü B U18"
+      ]
+    },
+    {
+      "internal_name": "MSE Filo Elazığ Ekol Spor-A",
+      "matched_as": "MSE Filo Elazığ Ekol Spor Kulübü U18",
+      "team_id": "47943",
+      "volleybox_url": "https://women.volleybox.net/tr/ekol-spor-kulubu-u18-t47943",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "MSE Filo Elazığ Ekol Spor-A",
+        "MSE Filo Elazığ Ekol Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "MSE Filo Elazığ Ekol Spor-B",
+      "matched_as": "MSE Filo Elazığ Ekol Spor Kulübü B U18",
+      "team_id": "56161",
+      "volleybox_url": "https://women.volleybox.net/tr/ekol-spor-kulubu-u18-t56161",
+      "city_slug": "elazig",
+      "city": "Elazığ",
+      "aliases": [
+        "MSE Filo Elazığ Ekol Spor-B",
+        "MSE Filo Elazığ Ekol Spor Kulübü B U18"
+      ]
+    },
+    {
+      "internal_name": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
+      "matched_as": "Malatya Voleybol Kulübü A U18",
+      "team_id": "55247",
+      "volleybox_url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-u18-t55247",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "MALATYA VOLEYBOL SPOR KULÜBÜ A",
+        "Malatya Voleybol Kulübü A U18"
+      ]
+    },
+    {
+      "internal_name": "MALATYA VOLEYBOL SPOR KULÜBÜ",
+      "matched_as": "Malatya Voleybol Kulübü B U18",
+      "team_id": "56285",
+      "volleybox_url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-u18-t56285",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "MALATYA VOLEYBOL SPOR KULÜBÜ",
+        "Malatya Voleybol Kulübü B U18"
+      ]
+    },
+    {
+      "internal_name": "NİCER HOTEL VOLEYBOL",
+      "matched_as": "Nicer Hotel Voleybol Kulübü U18",
+      "team_id": "56286",
+      "volleybox_url": "https://women.volleybox.net/tr/nicer-hotel-voleybol-kulubu-u18-t56286",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "NİCER HOTEL VOLEYBOL",
+        "Nicer Hotel Voleybol Kulübü U18",
+        "Nicer Hotel Voleybol Kulübü"
+      ]
+    },
+    {
+      "internal_name": "91000 DEV SPOR KULÜBÜ",
+      "matched_as": "91000 Dev Spor U18",
+      "team_id": "48860",
+      "volleybox_url": "https://women.volleybox.net/tr/91000-dev-spor-u18-t48860",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "91000 DEV SPOR KULÜBÜ",
+        "91000 Dev Spor U18"
+      ]
+    },
+    {
+      "internal_name": "GENÇLİK SPOR KULÜBÜ A",
+      "matched_as": "Malatya Gençlik Ve Spor Kulübü A U18",
+      "team_id": "48246",
+      "volleybox_url": "https://women.volleybox.net/tr/malatya-genclik-ve-spor-kulubu-u18-t48246",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "GENÇLİK SPOR KULÜBÜ A",
+        "Malatya Gençlik Ve Spor Kulübü A U18"
+      ]
+    },
+    {
+      "internal_name": "MALDİA SPOR KULÜBÜ",
+      "matched_as": "Maldia Spor Kulübü B U18",
+      "team_id": "56288",
+      "volleybox_url": "https://women.volleybox.net/tr/maldia-spor-kulubu-u18-t56288",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "MALDİA SPOR KULÜBÜ",
+        "Maldia Spor Kulübü B U18"
+      ]
+    },
+    {
+      "internal_name": "Gençlik Spor Kulübü B",
+      "matched_as": "Malatya Gençlik Ve Spor Kulübü B U18",
+      "team_id": "56289",
+      "volleybox_url": "https://women.volleybox.net/tr/malatya-genclik-ve-spor-kulubu-u18-t56289",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "Gençlik Spor Kulübü B",
+        "Malatya Gençlik Ve Spor Kulübü B U18"
+      ]
+    },
+    {
+      "internal_name": "Maldia Spor Kulübü A",
+      "matched_as": "Maldia Spor Kulübü A U18",
+      "team_id": "56287",
+      "volleybox_url": "https://women.volleybox.net/tr/maldia-spor-kulubu-u18-t56287",
+      "city_slug": "malatya",
+      "city": "Malatya",
+      "aliases": [
+        "Maldia Spor Kulübü A",
+        "Maldia Spor Kulübü A U18"
+      ]
     }
   ],
   "leagues": [
@@ -25345,6 +25822,17 @@
       "verified_at": "2026-10-08"
     },
     {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Kütahya",
+      "city_slug": "kutahya",
+      "matched_as": "Kütahya Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-kutahya-super-ligi-u16-2026-27-o52124",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-18"
+    },
+    {
       "internal_name": "Genç Kızlar Süper Lig",
       "city": "Muğla",
       "city_slug": "mugla",
@@ -25565,6 +26053,62 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-11-13"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Rize",
+      "city_slug": "rize",
+      "matched_as": "Rize Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-rize-super-ligi-u16-2026-27-o52123",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-18"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "Malatya",
+      "city_slug": "malatya",
+      "matched_as": "Malatya Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-malatya-super-ligi-u18-2026-27-o51802",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-18"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Malatya",
+      "city_slug": "malatya",
+      "matched_as": "Malatya Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-malatya-super-ligi-u18-2026-27-o51802",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-11-18"
+    }
+  ],
+  "tournaments": [
+    {
+      "city": "Rize",
+      "city_slug": "rize",
+      "category": "Yıldız Kızlar Süper Lig",
+      "volleybox_url": "https://women.volleybox.net/tr/women-rize-super-ligi-u16-2026-27-o52123",
+      "season": "2026/27"
+    },
+    {
+      "city": "Kütahya",
+      "city_slug": "kutahya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "volleybox_url": "https://women.volleybox.net/tr/women-kutahya-super-ligi-u16-2026-27-o52124",
+      "season": "2026/27"
+    },
+    {
+      "city": "Malatya",
+      "city_slug": "malatya",
+      "category": "Genç Kızlar Süper Lig",
+      "volleybox_url": "https://women.volleybox.net/tr/women-malatya-super-ligi-u18-2026-27-o51802",
+      "season": "2026/27"
     }
   ]
 }
