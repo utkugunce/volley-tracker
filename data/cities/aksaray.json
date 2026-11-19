@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-18T18:00:11.189277",
+  "updated_at": "2026-11-19T17:50:36.623614",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 26,
+  "total_matches": 29,
   "source": "https://aksaray.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -1293,11 +1293,113 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "aksaray-20261119-027",
+      "city": "Aksaray",
+      "date": "2026-11-19",
+      "time": "18:30",
+      "hall": "Merkez Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "27",
+      "home_team": "Aksaray Yıldız Spor Kulübü U18",
+      "away_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aksaray-20261119-028",
+      "city": "Aksaray",
+      "date": "2026-11-19",
+      "time": "20:00",
+      "hall": "Merkez Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "28",
+      "home_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
+      "away_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aksaray-20261122-029",
+      "city": "Aksaray",
+      "date": "2026-11-22",
+      "time": "11:30",
+      "hall": "Merkez Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "29",
+      "home_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
+      "away_team": "Eskil Tuzgölü Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-18T15:00:11.191826+00:00",
-  "last_success_at": "2026-11-18T15:00:11.191826+00:00",
-  "content_changed_at": "2026-11-18T15:00:11.191826+00:00",
+  "last_attempt_at": "2026-11-19T17:50:36.624705+00:00",
+  "last_success_at": "2026-11-19T17:50:36.624705+00:00",
+  "content_changed_at": "2026-11-19T17:50:36.624705+00:00",
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-11-18T18:06:51.467503"
+  "volleybox_sync_updated_at": "2026-11-19T17:51:58.412403"
 }

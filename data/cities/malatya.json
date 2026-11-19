@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:58.292916",
+  "updated_at": "2026-11-19T17:50:19.466529",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -1052,54 +1052,13 @@
       "id": "malatya-20261121-022",
       "city": "Malatya",
       "date": "2026-11-21",
-      "time": "10:00",
-      "hall": "Merkez",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "24",
-      "home_team": "Malatya Gençlik Ve Spor Kulübü A U18",
-      "away_team": "Nicer Hotel Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "420390",
-        "url": "https://women.volleybox.net/tr/malatya-genclik-ve-spor-kulubu-u18-nicer-hotel-voleybol-kulubu-u18-c420390",
-        "host_name": "Malatya Gençlik Ve Spor Kulübü U18",
-        "guest_name": "Nicer Hotel Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-21",
-        "vb_time": "10:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-21",
-          "vb_time": "10:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "malatya-20261121-023",
-      "city": "Malatya",
-      "date": "2026-11-21",
       "time": "12:00",
       "hall": "Merkez",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "25",
+      "match_no": "24",
       "home_team": "Maldia Spor Kulübü B U18",
       "away_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "score": "- : -",
@@ -1131,7 +1090,7 @@
       }
     },
     {
-      "id": "malatya-20261121-024",
+      "id": "malatya-20261121-023",
       "city": "Malatya",
       "date": "2026-11-21",
       "time": "14:00",
@@ -1140,7 +1099,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "26",
+      "match_no": "25",
       "home_team": "Malatya Voleybol Kulübü A U18",
       "away_team": "Malatya Voleybol Kulübü B U18",
       "score": "- : -",
@@ -1172,7 +1131,7 @@
       }
     },
     {
-      "id": "malatya-20261124-025",
+      "id": "malatya-20261124-024",
       "city": "Malatya",
       "date": "2026-11-24",
       "time": "18:00",
@@ -1181,7 +1140,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "27",
+      "match_no": "26",
       "home_team": "Nicer Hotel Voleybol Kulübü U18",
       "away_team": "Maldia Spor Kulübü A U18",
       "score": "- : -",
@@ -1213,7 +1172,7 @@
       }
     },
     {
-      "id": "malatya-20261126-026",
+      "id": "malatya-20261126-025",
       "city": "Malatya",
       "date": "2026-11-26",
       "time": "18:00",
@@ -1222,7 +1181,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "28",
+      "match_no": "27",
       "home_team": "Malatya Voleybol Kulübü B U18",
       "away_team": "Malatya Gençlik Ve Spor Kulübü A U18",
       "score": "- : -",
@@ -1254,7 +1213,7 @@
       }
     },
     {
-      "id": "malatya-20261126-027",
+      "id": "malatya-20261126-026",
       "city": "Malatya",
       "date": "2026-11-26",
       "time": "20:00",
@@ -1263,7 +1222,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "29",
+      "match_no": "28",
       "home_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "away_team": "Malatya Voleybol Kulübü A U18",
       "score": "- : -",
@@ -1295,7 +1254,7 @@
       }
     },
     {
-      "id": "malatya-20261128-028",
+      "id": "malatya-20261128-027",
       "city": "Malatya",
       "date": "2026-11-28",
       "time": "10:00",
@@ -1304,7 +1263,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "30",
+      "match_no": "29",
       "home_team": "Maldia Spor Kulübü B U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1336,7 +1295,7 @@
       }
     },
     {
-      "id": "malatya-20261128-029",
+      "id": "malatya-20261128-028",
       "city": "Malatya",
       "date": "2026-11-28",
       "time": "12:00",
@@ -1345,7 +1304,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "31",
+      "match_no": "30",
       "home_team": "Maldia Spor Kulübü A U18",
       "away_team": "Malatya Voleybol Kulübü B U18",
       "score": "- : -",
@@ -1377,7 +1336,7 @@
       }
     },
     {
-      "id": "malatya-20261128-030",
+      "id": "malatya-20261128-029",
       "city": "Malatya",
       "date": "2026-11-28",
       "time": "14:00",
@@ -1386,7 +1345,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "32",
+      "match_no": "31",
       "home_team": "Malatya Gençlik Ve Spor Kulübü A U18",
       "away_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "score": "- : -",
@@ -1418,7 +1377,7 @@
       }
     },
     {
-      "id": "malatya-20261201-031",
+      "id": "malatya-20261201-030",
       "city": "Malatya",
       "date": "2026-12-01",
       "time": "18:00",
@@ -1427,7 +1386,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "33",
+      "match_no": "32",
       "home_team": "Malatya Voleybol Kulübü B U18",
       "away_team": "Nicer Hotel Voleybol Kulübü U18",
       "score": "- : -",
@@ -1459,7 +1418,7 @@
       }
     },
     {
-      "id": "malatya-20261201-032",
+      "id": "malatya-20261201-031",
       "city": "Malatya",
       "date": "2026-12-01",
       "time": "20:00",
@@ -1468,7 +1427,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "34",
+      "match_no": "33",
       "home_team": "91000 Dev Spor U18",
       "away_team": "Malatya Voleybol Kulübü A U18",
       "score": "- : -",
@@ -1500,7 +1459,7 @@
       }
     },
     {
-      "id": "malatya-20261203-033",
+      "id": "malatya-20261203-032",
       "city": "Malatya",
       "date": "2026-12-03",
       "time": "18:00",
@@ -1509,7 +1468,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "35",
+      "match_no": "34",
       "home_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "away_team": "Maldia Spor Kulübü A U18",
       "score": "- : -",
@@ -1541,7 +1500,7 @@
       }
     },
     {
-      "id": "malatya-20261205-034",
+      "id": "malatya-20261205-033",
       "city": "Malatya",
       "date": "2026-12-05",
       "time": "10:00",
@@ -1550,7 +1509,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "36",
+      "match_no": "35",
       "home_team": "Malatya Voleybol Kulübü A U18",
       "away_team": "Maldia Spor Kulübü B U18",
       "score": "- : -",
@@ -1582,7 +1541,7 @@
       }
     },
     {
-      "id": "malatya-20261205-035",
+      "id": "malatya-20261205-034",
       "city": "Malatya",
       "date": "2026-12-05",
       "time": "12:00",
@@ -1591,7 +1550,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "37",
+      "match_no": "36",
       "home_team": "Nicer Hotel Voleybol Kulübü U18",
       "away_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "score": "- : -",
@@ -1623,7 +1582,7 @@
       }
     },
     {
-      "id": "malatya-20261205-036",
+      "id": "malatya-20261205-035",
       "city": "Malatya",
       "date": "2026-12-05",
       "time": "14:00",
@@ -1632,7 +1591,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "38",
+      "match_no": "37",
       "home_team": "Malatya Gençlik Ve Spor Kulübü A U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1664,7 +1623,7 @@
       }
     },
     {
-      "id": "malatya-20261208-037",
+      "id": "malatya-20261208-036",
       "city": "Malatya",
       "date": "2026-12-08",
       "time": "18:00",
@@ -1673,7 +1632,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "39",
+      "match_no": "38",
       "home_team": "Malatya Voleybol Kulübü B U18",
       "away_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "score": "- : -",
@@ -1705,7 +1664,7 @@
       }
     },
     {
-      "id": "malatya-20261208-038",
+      "id": "malatya-20261208-037",
       "city": "Malatya",
       "date": "2026-12-08",
       "time": "20:00",
@@ -1714,7 +1673,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "40",
+      "match_no": "39",
       "home_team": "Malatya Gençlik Ve Spor Kulübü A U18",
       "away_team": "Maldia Spor Kulübü B U18",
       "score": "- : -",
@@ -1746,7 +1705,7 @@
       }
     },
     {
-      "id": "malatya-20261210-039",
+      "id": "malatya-20261210-038",
       "city": "Malatya",
       "date": "2026-12-10",
       "time": "18:00",
@@ -1755,7 +1714,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "41",
+      "match_no": "40",
       "home_team": "Maldia Spor Kulübü A U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1787,7 +1746,7 @@
       }
     },
     {
-      "id": "malatya-20261212-040",
+      "id": "malatya-20261212-039",
       "city": "Malatya",
       "date": "2026-12-12",
       "time": "10:00",
@@ -1796,7 +1755,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "42",
+      "match_no": "41",
       "home_team": "Maldia Spor Kulübü A U18",
       "away_team": "Malatya Voleybol Kulübü A U18",
       "score": "- : -",
@@ -1828,7 +1787,7 @@
       }
     },
     {
-      "id": "malatya-20261212-041",
+      "id": "malatya-20261212-040",
       "city": "Malatya",
       "date": "2026-12-12",
       "time": "12:00",
@@ -1837,7 +1796,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "43",
+      "match_no": "42",
       "home_team": "Malatya Voleybol Kulübü B U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1869,7 +1828,7 @@
       }
     },
     {
-      "id": "malatya-20261214-042",
+      "id": "malatya-20261214-041",
       "city": "Malatya",
       "date": "2026-12-14",
       "time": "10:00",
@@ -1878,7 +1837,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "44",
+      "match_no": "43",
       "home_team": "Nicer Hotel Voleybol Kulübü U18",
       "away_team": "Malatya Voleybol Kulübü B U18",
       "score": "- : -",
@@ -1910,7 +1869,7 @@
       }
     },
     {
-      "id": "malatya-20261214-043",
+      "id": "malatya-20261214-042",
       "city": "Malatya",
       "date": "2026-12-14",
       "time": "12:00",
@@ -1919,7 +1878,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "45",
+      "match_no": "44",
       "home_team": "Malatya Voleybol Kulübü A U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1951,7 +1910,7 @@
       }
     },
     {
-      "id": "malatya-20261217-044",
+      "id": "malatya-20261217-043",
       "city": "Malatya",
       "date": "2026-12-17",
       "time": "20:00",
@@ -1960,7 +1919,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "46",
+      "match_no": "45",
       "home_team": "Malatya Gençlik Ve Spor Kulübü B U18",
       "away_team": "91000 Dev Spor U18",
       "score": "- : -",
@@ -1988,6 +1947,40 @@
           "vb_time": "20:00",
           "vb_hall": "Malatya Merkez Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "malatya-20261221-044",
+      "city": "Malatya",
+      "date": "2026-12-21",
+      "time": "10:00",
+      "hall": "Merkez",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "46",
+      "home_team": "Malatya Gençlik Ve Spor Kulübü A U18",
+      "away_team": "Nicer Hotel Voleybol Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
         }
       }
     },
@@ -2484,9 +2477,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:58.303901+00:00",
-  "last_success_at": "2026-11-18T14:59:58.303901+00:00",
-  "content_changed_at": "2026-11-18T14:59:58.303901+00:00",
-  "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:54.318831"
+  "last_attempt_at": "2026-11-19T17:50:19.469866+00:00",
+  "last_success_at": "2026-11-19T17:50:19.469866+00:00",
+  "content_changed_at": "2026-11-19T17:50:19.469866+00:00",
+  "volleybox_synced_matches": 54,
+  "volleybox_sync_updated_at": "2026-11-19T17:51:58.459894"
 }

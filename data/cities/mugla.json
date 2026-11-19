@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T18:00:03.635988",
+  "updated_at": "2026-11-19T17:50:28.413071",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -186,7 +186,7 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "FETHİYE ZİRVE SPOR KULÜBÜ",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -1308,7 +1308,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "FETHİYE ZİRVE SPOR KULÜBÜ",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1320,25 +1320,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "408229",
-        "url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-u18-fethiye-anka-spor-u18-c408229",
-        "host_name": "Muğlatürk Fethiye Zirve Spor Kulübü U18",
-        "guest_name": "Fethiye Anka Spor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-09",
-        "vb_time": "19:00",
-        "vb_hall": "Fethiye Beşkaza Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-09",
-          "vb_time": "19:00",
-          "vb_hall": "Fethiye Beşkaza Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1398,7 +1391,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "FETHİYE ZİRVE SPOR KULÜBÜ",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1410,25 +1403,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411834",
-        "url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-u18-dalaman-master-akademi-spor-kulubu-u18-c411834",
-        "host_name": "Muğlatürk Fethiye Zirve Spor Kulübü U18",
-        "guest_name": "Dalaman Master Akademi Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
-        "vb_hall": "Fethiye Eski Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
-          "vb_hall": "Fethiye Eski Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1533,7 +1519,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "6",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "FETHİYE ZİRVE SPOR KULÜBÜ",
       "away_team": "Fethiye Voleybol Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1545,25 +1531,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "420192",
-        "url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-u18-fethiye-voleybol-spor-kulubu-u18-c420192",
-        "host_name": "Muğlatürk Fethiye Zirve Spor Kulübü U18",
-        "guest_name": "Fethiye Voleybol Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-11-09",
-        "vb_time": "19:00",
-        "vb_hall": "Fethiye Beşkaza Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-09",
-          "vb_time": "19:00",
-          "vb_hall": "Fethiye Beşkaza Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2208,25 +2187,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415198",
-        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
-        "host_name": "Yeşil Marmaris Spor Kulübü U18",
-        "guest_name": "Marmaris Belediyesi GSK U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "17:30",
-        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "17:30",
-          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2456,9 +2428,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T15:00:03.642588+00:00",
-  "last_success_at": "2026-11-18T15:00:03.642588+00:00",
-  "content_changed_at": "2026-11-18T15:00:03.642588+00:00",
-  "volleybox_synced_matches": 43,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:56.281604"
+  "last_attempt_at": "2026-11-19T17:50:28.414862+00:00",
+  "last_success_at": "2026-11-19T17:50:28.414862+00:00",
+  "content_changed_at": "2026-11-19T17:50:28.414862+00:00",
+  "volleybox_synced_matches": 39,
+  "volleybox_sync_updated_at": "2026-11-19T17:51:58.265470"
 }
