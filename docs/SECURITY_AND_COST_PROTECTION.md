@@ -1,48 +1,33 @@
 # Güvenlik, DDoS ve Maliyet Koruması Kılavuzu
 
-Bu belge; kontrolsüz bot trafiği, Layer 7 DoS saldırıları, kötü niyetli veri kazıyıcılar (scrapers) ve "Vibe-Coding" süreçlerinde ortaya çıkabilecek sürpriz sunucu/bant genişliği faturalarını (**Render / Vercel \$1K fatura riski**) kalıcı olarak önlemek için oluşturulmuştur.
+Bu belge; kontrolsüz bot trafiği, Layer 7 DoS saldırıları, kötü niyetli veri kazıyıcılar (scrapers) ve "Vibe-Coding" süreçlerinde ortaya çıkabilecek sürpriz sunucu/bant genişliği faturalarını (**Vercel \$1K fatura riski**) kalıcı olarak önlemek için oluşturulmuştur.
 
 ---
 
 ## 1. Tehdit Modeli ve Maliyet Riskleri
 
-Modern bulut platformlarında (Render, Vercel, AWS) faturaların aniden patlamasının 3 temel sebebi vardır:
+Modern bulut platformlarında (Vercel, AWS) faturaların aniden patlamasının 3 temel sebebi vardır:
 
 1. **Bant Genişliği Aşımı (Egress Bandwidth):**
-   Render veya Vercel'de sunucu planınız sabit ücretli (ör. \$7/ay) olsa dahi, kotayı aşan veri transferi **GB başına ek ücrete** tabidir. Bir bot sürüsü 56 milyon istek attığında, yanıtlar küçük olsa bile terabaytlarca veri çıkar ve binlerce dolarlık fatura oluşturur.
+   Vercel'de planınız sabit ücretli olsa dahi, kotayı aşan veri transferi **GB başına ek ücrete** tabidir. Bir bot sürüsü 56 milyon istek attığında, yanıtlar küçük olsa bile terabaytlarca veri çıkar ve binlerce dolarlık fatura oluşturur.
 2. **Kontrolsüz Otomatik Ölçekleme (Unbounded Autoscaling):**
-   Trafik arttığında sistemin otomatik olarak 1 sunucudan 10-20 sunucuya fırlaması saatlik maliyetleri katlar.
+   Trafik arttığında serverless fonksiyon çağrılarının veya sunucu örneklerinin kontrolsüz artması maliyetleri katlar.
 3. **Cache-Buster Saldırıları:**
    Saldırganlar URL sonuna rastgele parametreler (`?rnd=198273`) ekleyerek CDN önbelleğini deler ve her isteğin doğrudan ana sunucuya vurmasını sağlar.
 
 ---
 
-## 2. Render Dashboard Güvenlik Ayarları (Hemen Yapılacaklar)
+## 2. Cloudflare Entegrasyonu (Ücretsiz Küresel Kalkan)
 
-Render kullanıyorsanız aşağıdaki adımları kontrol panelinden tamamlayın:
-
-### A. Autoscaling Tavan Sınırı
-1. **Render Dashboard** → İlgili Web Servisinize tıklayın.
-2. **Settings** → **Scaling** bölümüne gelin.
-3. Eğer Autoscaling açıksa, **Max Instances** değerini maksimum **2** veya **3** olarak sınırlayın. Asla sınırsız veya yüksek değerlerde bırakmayın. (Repo kökündeki `render.yaml` bunu kod seviyesinde `maxInstances: 2` olarak sabitler).
-
-### B. Fatura ve Kota Bildirimleri
-1. **Account / Team Settings** → **Billing** sekmesine gidin.
-2. E-posta bildirimlerinin açık olduğunu doğrulayın. Ay ortasında kota aşımı riski doğarsa Render'ın gönderdiği uyarıları kaçırmayın.
-
----
-
-## 3. Cloudflare Entegrasyonu (Ücretsiz Küresel Kalkan)
-
-Render sunucunuzu doğrudan internete açık bırakmak yerine önüne **ücretsiz Cloudflare Proxy** koymak, saldırıların %99'unu sunucunuza dahi ulaşmadan durdurur ve **bant genişliği faturasını sıfırlar**.
+Sunucunuzu doğrudan internete açık bırakmak yerine önüne **ücretsiz Cloudflare Proxy** koymak, saldırıların %99'unu sunucunuza dahi ulaşmadan durdurur ve **bant genişliği faturasını sıfırlar**.
 
 ### A. DNS Proxy (Turuncu Bulut)
 * Alan adınızın DNS kayıtlarını Cloudflare'e yönlendirin.
-* Render'a giden `A` veya `CNAME` kaydının yanında **Proxied (Turuncu Bulut)** simgesinin aktif olduğundan emin olun.
+* Vercel'e giden `CNAME` kaydının yanında SSL doğrulaması tamamlandıktan sonra **Proxied (Turuncu Bulut)** ve **Full (Strict)** SSL ayarını kullanabilirsiniz.
 
 ### B. Bot Fight Mode Aktivasyonu
 * Cloudflare Dashboard → **Security** → **Bots** menüsüne gidin.
-* **Bot Fight Mode** anahtarını açın. Bilinen saldırı araçları ve veri kazıyıcılar Render'a ulaşamadan Cloudflare sınırında engellenir.
+* **Bot Fight Mode** anahtarını açın. Bilinen saldırı araçları ve veri kazıyıcılar sunucunuza ulaşamadan Cloudflare sınırında engellenir.
 
 ### C. WAF Rate Limiting Kuralı (Ücretsiz Katman)
 * Cloudflare Dashboard → **Security** → **WAF** → **Rate limiting rules** → **Create rule**:
@@ -54,11 +39,11 @@ Render sunucunuzu doğrudan internete açık bırakmak yerine önüne **ücretsi
 
 ### D. Önbellek Kuralı (Cache Rules)
 * Cloudflare Dashboard → **Caching** → **Cache Rules**:
-  * Statik varlıklar ve şehir fikstür sayfaları Cloudflare Edge'de önbelleklenir. Gelen 56 milyon istek Render'a hiç uğramadan Cloudflare CDN üzerinden döner.
+  * Statik varlıklar ve şehir fikstür sayfaları Cloudflare Edge'de önbelleklenir. Gelen istekler sunucuya uğramadan Cloudflare CDN üzerinden döner.
 
 ---
 
-## 4. Kod Seviyesindeki Korumalar (`src/proxy.ts` & `src/utils/securityGuard.ts`)
+## 3. Kod Seviyesindeki Korumalar (`src/proxy.ts` & `src/utils/securityGuard.ts`)
 
 Uygulamamız Edge Proxy / Middleware seviyesinde şu korumaları otomatik uygular:
 
