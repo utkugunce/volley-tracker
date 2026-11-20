@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T11:57:37.338655",
+  "updated_at": "2026-11-20T17:26:18.423581",
   "city": "Rize",
   "slug": "rize",
   "title": "TVF Rize Genç & Yıldız Kızlar Süper Lig",
@@ -622,25 +622,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420217",
-        "url": "https://women.volleybox.net/tr/caykur-rizespor-u18-cayeli-genclik-ve-spor-lce-mudurlugu-sk-u18-c420217",
-        "host_name": "Çaykur Rizespor U16",
-        "guest_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-23",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-23",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -663,25 +656,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420230",
-        "url": "https://women.volleybox.net/tr/pazar-genclik-spor-u16-kurtozu-spor-kulubu-u16-c420230",
-        "host_name": "Pazar Gençlik Spor U16",
-        "guest_name": "Kurtözü Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-23",
-        "vb_time": "12:00",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-23",
-          "vb_time": "12:00",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -786,25 +772,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420233",
-        "url": "https://women.volleybox.net/tr/kuzey-gucu-spor-kulubu-u16-pazar-genclik-spor-u16-c420233",
-        "host_name": "Kuzey Gücü Spor Kulübü U16",
-        "guest_name": "Pazar Gençlik Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-25",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-25",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -868,25 +847,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420219",
-        "url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u18-fndkl-1974-spor-kulubu-u18-c420219",
-        "host_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
-        "guest_name": "Superpool Fındıklı 1974 Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-25",
-        "vb_time": "13:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-25",
-          "vb_time": "13:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -950,25 +922,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420236",
-        "url": "https://women.volleybox.net/tr/pazar-genclik-spor-u16-caykur-rizespor-u16-c420236",
-        "host_name": "Pazar Gençlik Spor U16",
-        "guest_name": "Çaykur Rizespor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-26",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-26",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1073,25 +1038,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420238",
-        "url": "https://women.volleybox.net/tr/ardesen-belediyesi-spor-kulubu-u16-cayeli-genclik-ve-spor-lce-mudurlugu-sk-u16-c420238",
-        "host_name": "Ardeşen Belediyesi Spor Kulübü U16",
-        "guest_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-26",
-        "vb_time": "15:00",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-26",
-          "vb_time": "15:00",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1114,25 +1072,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420239",
-        "url": "https://women.volleybox.net/tr/caykur-rizespor-b-u16-pazar-genclik-spor-u16-c420239",
-        "host_name": "Çaykur Rizespor - B U16",
-        "guest_name": "Pazar Gençlik Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-28",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-28",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1237,25 +1188,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420241",
-        "url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u16-kuzey-gucu-spor-kulubu-u16-c420241",
-        "host_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
-        "guest_name": "Kuzey Gücü Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-28",
-        "vb_time": "15:00",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-28",
-          "vb_time": "15:00",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1278,25 +1222,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420243",
-        "url": "https://women.volleybox.net/tr/caykur-rizespor-b-u16-cayeli-genclik-ve-spor-lce-mudurlugu-sk-u16-c420243",
-        "host_name": "Çaykur Rizespor - B U16",
-        "guest_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-29",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-29",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1319,25 +1256,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420244",
-        "url": "https://women.volleybox.net/tr/pazar-genclik-spor-u16-fndkl-1974-spor-kulubu-u16-c420244",
-        "host_name": "Pazar Gençlik Spor U16",
-        "guest_name": "Superpool Fındıklı 1974 Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-29",
-        "vb_time": "12:00",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-01-29",
-          "vb_time": "12:00",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1442,25 +1372,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420248",
-        "url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u16-pazar-genclik-spor-u16-c420248",
-        "host_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
-        "guest_name": "Pazar Gençlik Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-02-01",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-02-01",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1606,25 +1529,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420253",
-        "url": "https://women.volleybox.net/tr/ardesen-belediyesi-spor-kulubu-u16-pazar-genclik-spor-u16-c420253",
-        "host_name": "Ardeşen Belediyesi Spor Kulübü U16",
-        "guest_name": "Pazar Gençlik Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-02-02",
-        "vb_time": "10:30",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-02-02",
-          "vb_time": "10:30",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1647,25 +1563,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420222",
-        "url": "https://women.volleybox.net/tr/cayeli-genclik-ve-spor-lce-mudurlugu-sk-u18-kurtozu-spor-kulubu-u18-c420222",
-        "host_name": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü SK U16",
-        "guest_name": "Kurtözü Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2027-02-02",
-        "vb_time": "12:00",
-        "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2027-02-02",
-          "vb_time": "12:00",
-          "vb_hall": "Çayeli Yaşar Yılmaz Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1752,9 +1661,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T08:57:37.354030+00:00",
-  "last_success_at": "2026-11-20T08:57:37.354030+00:00",
-  "content_changed_at": "2026-11-20T08:57:37.354030+00:00",
-  "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-11-20T13:10:54.774439"
+  "last_attempt_at": "2026-11-20T17:26:18.424752+00:00",
+  "last_success_at": "2026-11-20T17:26:18.424752+00:00",
+  "content_changed_at": "2026-11-20T17:26:18.424752+00:00",
+  "volleybox_synced_matches": 25,
+  "volleybox_sync_updated_at": "2026-11-20T17:27:54.050359"
 }

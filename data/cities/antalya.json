@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T11:56:37.303461",
+  "updated_at": "2026-11-20T17:25:34.104718",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -61,12 +61,12 @@
       {
         "rank": 3,
         "team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
-        "played": 4,
-        "won": 2,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 6,
-        "sets_won": 8,
-        "sets_lost": 6,
+        "points": 9,
+        "sets_won": 11,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -94,12 +94,12 @@
       {
         "rank": 6,
         "team": "Luna Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 1,
-        "lost": 3,
+        "lost": 4,
         "points": 4,
-        "sets_won": 7,
-        "sets_lost": 9,
+        "sets_won": 8,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -240,6 +240,17 @@
       },
       {
         "rank": 6,
+        "team": "Kemer Sarp Spor Kulübü U16",
+        "played": 6,
+        "won": 2,
+        "lost": 4,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 14,
+        "form": []
+      },
+      {
+        "rank": 7,
         "team": "Sistem Eğitim Spor Kulübü U16",
         "played": 5,
         "won": 1,
@@ -250,25 +261,14 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Kemer Sarp Spor Kulübü U16",
-        "played": 5,
-        "won": 1,
-        "lost": 4,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 14,
-        "form": []
-      },
-      {
         "rank": 8,
         "team": "Antalya Şimşek GSK U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ],
@@ -1173,11 +1173,16 @@
       "match_no": "17",
       "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
       "away_team": "Luna Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "21-25",
+        "25-19",
+        "25-12",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419841",
@@ -2880,11 +2885,15 @@
       "match_no": "23",
       "home_team": "Antalya Şimşek GSK U16",
       "away_team": "Kemer Sarp Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "23-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419850",
@@ -4789,9 +4798,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T08:56:37.419382+00:00",
-  "last_success_at": "2026-11-20T08:56:37.419382+00:00",
-  "content_changed_at": "2026-11-20T08:56:37.419382+00:00",
+  "last_attempt_at": "2026-11-20T17:25:34.107144+00:00",
+  "last_success_at": "2026-11-20T17:25:34.107144+00:00",
+  "content_changed_at": "2026-11-20T17:25:34.107144+00:00",
   "volleybox_synced_matches": 97,
-  "volleybox_sync_updated_at": "2026-11-20T12:53:09.733406"
+  "volleybox_sync_updated_at": "2026-11-20T17:27:54.454876"
 }
