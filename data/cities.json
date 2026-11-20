@@ -2,7 +2,7 @@
   "updated_at": "2026-11-20T11:57:57.032005+03:00",
   "total_cities": 81,
   "active_cities": 42,
-  "total_matches": 2230,
+  "total_matches": 2225,
   "cities": [
     {
       "ilid": "1",
@@ -594,8 +594,8 @@
       "slug": "tekirdag",
       "url": "https://tekirdag.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (93 Maç Mevcut)",
-      "matches_count": 93,
-      "standings_count": 8,
+      "matches_count": 88,
+      "standings_count": 6,
       "data_file": "data/cities/tekirdag.json"
     },
     {

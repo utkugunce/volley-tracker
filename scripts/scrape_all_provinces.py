@@ -977,7 +977,7 @@ def scrape_single_city(city_info):
             ]):
                 continue
 
-            if subdomain == "manisa" and ("1. lig" in cat_name.lower() or "gk1l" in kume_code.lower()):
+            if subdomain in ("manisa", "tekirdag") and ("1. lig" in cat_name.lower() or "gk1l" in kume_code.lower()):
                 continue
 
             group_name = extract_group_name(c_text)
@@ -1153,7 +1153,7 @@ def scrape_single_city(city_info):
             "source": f"https://{subdomain}.voleyboliltemsilciligi.com",
             "filters": {
                 "categories": ["Tümü", "Genç Kızlar Süper Lig"] if subdomain == "mersin" else (
-                    ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"] if subdomain == "manisa" else (
+                    ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"] if subdomain in ("manisa", "tekirdag") else (
                         ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Lig 1. Bölge", "Genç Kızlar 1. Lig 2. Bölge", "Genç Kızlar 1. Lig 3. Bölge", "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar 1. Lig 5. Bölge", "Yıldız Kızlar Süper Lig"]
                         if subdomain == "istanbul" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"]
                     )
