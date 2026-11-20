@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T12:28:35.433803",
+  "updated_at": "2026-11-20T17:25:32.401090",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -1106,25 +1106,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415218",
-        "url": "https://women.volleybox.net/tr/balkesir-voleybol-akademi-spor-kulubu-u16-balkesir-buyuksehir-belediyespor-u16-c415218",
-        "host_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "guest_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
-        "score": "3 - 2",
-        "has_score": true,
-        "vb_date": "2026-10-04",
-        "vb_time": "17:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-04",
-          "vb_time": "17:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1243,25 +1236,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415219",
-        "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415219",
-        "host_name": "TED Balıkesir Koleji SK U16",
-        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-15",
-        "vb_time": "18:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-15",
-          "vb_time": "18:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1333,25 +1319,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415220",
-        "url": "https://women.volleybox.net/tr/balkesir-voleybol-akademi-spor-kulubu-u16-gunyaka-spor-u16-c415220",
-        "host_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "guest_name": "Günyaka Spor U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-22",
-        "vb_time": "18:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-22",
-          "vb_time": "18:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1559,25 +1538,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415221",
-        "url": "https://women.volleybox.net/tr/eba-spor-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415221",
-        "host_name": "EBA Spor U16",
-        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-03",
-        "vb_time": "19:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-03",
-          "vb_time": "19:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1650,25 +1622,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415222",
-        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-b-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415222",
-        "host_name": "Balıkesir EKA Spor Kulubü - B U16",
-        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-05",
-        "vb_time": "18:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-05",
-          "vb_time": "18:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3988,9 +3953,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T09:28:35.446611+00:00",
-  "last_success_at": "2026-11-20T09:28:35.446611+00:00",
-  "content_changed_at": "2026-11-20T09:28:35.446611+00:00",
-  "volleybox_synced_matches": 74,
-  "volleybox_sync_updated_at": "2026-11-20T12:29:34.951220"
+  "last_attempt_at": "2026-11-20T17:25:32.403324+00:00",
+  "last_success_at": "2026-11-20T17:25:32.403324+00:00",
+  "content_changed_at": "2026-11-20T17:25:32.403324+00:00",
+  "volleybox_synced_matches": 69,
+  "volleybox_sync_updated_at": "2026-11-20T17:27:54.355742"
 }
