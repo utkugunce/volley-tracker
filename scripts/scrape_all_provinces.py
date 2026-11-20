@@ -215,6 +215,7 @@ def build_volleybox_name_resolver():
         c = norm(cat)
         if "genc" in c or "u18" in c: return "u18"
         if "yildiz" in c or "u16" in c or "yk" in c: return "u16"
+        if "kadinlar" in c or "sultanlar" in c or "a takim" in c: return "senior"
         return ""
 
     lookup_exact = {}
@@ -238,7 +239,7 @@ def build_volleybox_name_resolver():
             nn = norm(n)
             if city and cat: lookup_exact[(nn, cat, city)] = matched_as
             if city and age: lookup_age_city[(nn, age, city)] = matched_as
-            if city: lookup_city[(nn, city)] = matched_as
+            if city: lookup_city[(nn, city)] = (matched_as, age)
             if not city:
                 if cat: lookup_cat[(nn, cat)] = matched_as
                 if age: lookup_age[(nn, age)] = matched_as
@@ -253,13 +254,13 @@ def build_volleybox_name_resolver():
 
         if ct and c and (nn, c, ct) in lookup_exact: return lookup_exact[(nn, c, ct)]
         if ct and age and (nn, age, ct) in lookup_age_city: return lookup_age_city[(nn, age, ct)]
-        if ct and (nn, ct) in lookup_city:
-            cand = lookup_city[(nn, ct)]
-            cand_age = extract_age(cand)
-            if not age or not cand_age or age == cand_age:
-                return cand
         if c and (nn, c) in lookup_cat: return lookup_cat[(nn, c)]
         if age and (nn, age) in lookup_age: return lookup_age[(nn, age)]
+        if ct and (nn, ct) in lookup_city:
+            cand, cand_meta_age = lookup_city[(nn, ct)]
+            cand_age = cand_meta_age or extract_age(cand)
+            if not age or not cand_age or age == cand_age:
+                return cand
 
         if nn in lookup_general:
             cand = lookup_general[nn]

@@ -42,7 +42,6 @@ HIDDEN_CITY_SLUGS = {
     "isparta",
     "bayburt",
     "ardahan",
-    "malatya",
 }
 
 HEADER = '''/**

@@ -32,7 +32,9 @@ export function getLeagueRoute(leagueName?: string, city?: string): string {
     ? slugify(effectiveCity)
     : "";
 
-  let leagueSlug = slugify(effectiveLeague);
+  // Başlıkta görüntülenen yaş etiketi ekini ((U18), (U16) vb.) URL slug'ından temizle
+  const normalizedLeague = effectiveLeague.replace(/\s*\(u(?:18|16|14|13|12)\)/gi, "").trim();
+  let leagueSlug = slugify(normalizedLeague);
 
   // Eğer leagueSlug zaten citySlug ile başlıyorsa temizle (örn. "istanbul-genc-kizlar" -> "genc-kizlar")
   if (citySlug && leagueSlug.startsWith(`${citySlug}-`)) {

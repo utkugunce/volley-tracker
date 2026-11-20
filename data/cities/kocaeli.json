@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:39:17.274086",
+  "updated_at": "2026-11-20T11:57:26.260960",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -1425,7 +1425,7 @@
         "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Halil İbrahim Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1433,7 +1433,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-26",
           "vb_time": "20:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+          "vb_hall": "Halil İbrahim Spor Salonu",
           "details": null
         }
       }
@@ -2835,8 +2835,8 @@
         "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-korfez-akademi-sk-u18-c415110",
         "host_name": "Nicomedia Akademi Spor Kulübü U18",
         "guest_name": "Körfez Akademi SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "13:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
@@ -2880,8 +2880,8 @@
         "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-5-renk-spor-kulubu-u18-c415109",
         "host_name": "Kandıra Voleybol Kulübü U18",
         "guest_name": "5 Renk Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "19:00",
         "vb_hall": "Kandıra Spor Salonu",
@@ -2927,8 +2927,8 @@
         "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415112",
         "host_name": "Siyah Kuğular Spor Kulübü U18",
         "guest_name": "5 Renk Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "16:00",
         "vb_hall": "Başiskele Spor Salonu",
@@ -2972,8 +2972,8 @@
         "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415114",
         "host_name": "Gölcük Belediye Spor Kulübü U18",
         "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "17:30",
         "vb_hall": "Başiskele Spor Salonu",
@@ -3017,8 +3017,8 @@
         "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415113",
         "host_name": "Kocaeli Anka Spor Kulübü U18",
         "guest_name": "Nicomedia Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
@@ -4533,7 +4533,7 @@
         "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Halil İbrahim Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -4541,7 +4541,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-26",
           "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+          "vb_hall": "Halil İbrahim Spor Salonu",
           "details": null
         }
       }
@@ -5984,8 +5984,8 @@
         "url": "https://women.volleybox.net/tr/umut-can-spor-kulubu-u18-gebze-genclik-voleybol-kulubu-u18-c415174",
         "host_name": "Umut Can Spor Kulübü U18",
         "guest_name": "Gebze Gençlik Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "18:30",
         "vb_hall": "Çayırova Spor Salonu",
@@ -6207,9 +6207,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T06:39:17.295478+00:00",
-  "last_success_at": "2026-11-20T06:39:17.295478+00:00",
-  "content_changed_at": "2026-11-20T06:39:17.295478+00:00",
+  "last_attempt_at": "2026-11-20T08:57:26.279982+00:00",
+  "last_success_at": "2026-11-20T08:57:26.279982+00:00",
+  "content_changed_at": "2026-11-20T08:57:26.279982+00:00",
   "volleybox_synced_matches": 132,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:41.917756"
+  "volleybox_sync_updated_at": "2026-11-20T12:06:38.923254"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T19:02:31.018300",
+  "updated_at": "2026-11-20T11:57:37.338655",
   "city": "Rize",
   "slug": "rize",
   "title": "TVF Rize Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,17 @@
       {
         "rank": 1,
         "team": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kurtözü Spor Kulübü",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -39,18 +50,18 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Rize DNZ Spor Kulübü",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Fındıklı 1974 Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -61,25 +72,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Kurtözü Spor Kulübü",
-        "played": 0,
+        "team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -280,11 +280,15 @@
       "match_no": "3",
       "home_team": "Çaykur Rizespor Gençlik Ve Spor Kulübü",
       "away_team": "Rize DNZ Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "25-15",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "420209",
@@ -321,11 +325,15 @@
       "match_no": "4",
       "home_team": "Çayeli Gençlik Ve Spor İlçe Müdürlüğü Spor Kulübü",
       "away_team": "Kurtözü Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "14-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "420210",
@@ -1744,9 +1752,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T09:39:30.858415+03:00",
-  "last_success_at": "2026-11-18T16:02:31.021046+00:00",
-  "content_changed_at": "2026-11-18T16:02:31.021046+00:00",
+  "last_attempt_at": "2026-11-20T08:57:37.354030+00:00",
+  "last_success_at": "2026-11-20T08:57:37.354030+00:00",
+  "content_changed_at": "2026-11-20T08:57:37.354030+00:00",
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:44.996667"
+  "volleybox_sync_updated_at": "2026-11-20T12:06:49.111961"
 }

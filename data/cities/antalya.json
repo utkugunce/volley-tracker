@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:38:54.303556",
+  "updated_at": "2026-11-20T11:56:37.303461",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -150,7 +150,7 @@
       },
       {
         "rank": 4,
-        "team": "Güral Premier Antalyaspor",
+        "team": "Antalyaspor U18",
         "played": 4,
         "won": 1,
         "lost": 3,
@@ -186,11 +186,11 @@
       {
         "rank": 1,
         "team": "07 Mega Spor Kulübü U16",
-        "played": 5,
-        "won": 5,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 15,
-        "sets_won": 15,
+        "points": 18,
+        "sets_won": 18,
         "sets_lost": 1,
         "form": []
       },
@@ -219,12 +219,12 @@
       {
         "rank": 4,
         "team": "Elit Akdeniz Spor Kulübü U16",
-        "played": 5,
+        "played": 6,
         "won": 3,
-        "lost": 2,
+        "lost": 3,
         "points": 10,
         "sets_won": 12,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -319,7 +319,7 @@
       },
       {
         "rank": 5,
-        "team": "Güral Premier Antalyaspor",
+        "team": "Antalyaspor U16",
         "played": 5,
         "won": 2,
         "lost": 3,
@@ -464,7 +464,7 @@
         "has_score": true,
         "vb_date": "2026-09-19",
         "vb_time": "14:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -472,7 +472,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-19",
           "vb_time": "14:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -509,7 +509,7 @@
         "has_score": true,
         "vb_date": "2026-09-20",
         "vb_time": "13:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -517,7 +517,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-20",
           "vb_time": "13:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -554,7 +554,7 @@
         "has_score": true,
         "vb_date": "2026-09-20",
         "vb_time": "15:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -562,7 +562,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-20",
           "vb_time": "15:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -646,7 +646,7 @@
         "has_score": true,
         "vb_date": "2026-09-27",
         "vb_time": "12:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -654,7 +654,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-27",
           "vb_time": "12:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -782,7 +782,7 @@
         "has_score": true,
         "vb_date": "2026-10-11",
         "vb_time": "13:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -790,7 +790,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-11",
           "vb_time": "13:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -873,7 +873,7 @@
         "has_score": true,
         "vb_date": "2026-11-01",
         "vb_time": "12:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -881,7 +881,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-01",
           "vb_time": "12:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -963,7 +963,7 @@
         "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -971,7 +971,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-03",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1143,11 +1143,11 @@
         "url": "https://women.volleybox.net/tr/antalya-simsek-gsk-u18-akdeniz-bilgi-spor-kulubu-u18-c419840",
         "host_name": "Antalya Şimşek GSK U18",
         "guest_name": "Akdeniz Bilgi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "12:00",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1155,7 +1155,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "12:00",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1270,7 +1270,7 @@
         "has_score": false,
         "vb_date": "2026-11-26",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1278,7 +1278,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-26",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1295,7 +1295,7 @@
       "group": "B Grubu",
       "match_no": "1",
       "home_team": "Erse Spor Kulübü U18",
-      "away_team": "Güral Premier Antalyaspor",
+      "away_team": "Antalyaspor U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -1384,7 +1384,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "3",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U18",
       "away_team": "Elit Akdeniz Spor Kulübü U18",
       "score": "2 - 3",
       "home_score": 2,
@@ -1543,7 +1543,7 @@
         "has_score": true,
         "vb_date": "2026-10-01",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1551,7 +1551,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-01",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1615,7 +1615,7 @@
       "group": "B Grubu",
       "match_no": "8",
       "home_team": "Antalya Açı Koleji Spor Kulübü U18",
-      "away_team": "Güral Premier Antalyaspor",
+      "away_team": "Antalyaspor U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1635,7 +1635,7 @@
         "has_score": true,
         "vb_date": "2026-10-27",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1643,7 +1643,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-27",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1749,7 +1749,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "11",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U18",
       "away_team": "07 Mega Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -1770,7 +1770,7 @@
         "has_score": true,
         "vb_date": "2026-11-10",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1778,7 +1778,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-10",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1811,11 +1811,11 @@
         "url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-u18-antalya-ac-koleji-spor-kulubu-u18-c419844",
         "host_name": "07 Mega Spor Kulübü U18",
         "guest_name": "Antalya Açı Koleji Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "11:00",
-        "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+        "vb_hall": "Fatih Ortaokulu Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1823,7 +1823,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "11:00",
-          "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+          "vb_hall": "Fatih Ortaokulu Spor Salonu",
           "details": null
         }
       }
@@ -1839,7 +1839,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "13",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U18",
       "away_team": "Nova Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -1856,7 +1856,7 @@
         "has_score": false,
         "vb_date": "2026-11-24",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1864,7 +1864,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-24",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1901,7 +1901,7 @@
         "has_score": true,
         "vb_date": "2026-09-22",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1909,7 +1909,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-22",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -1991,7 +1991,7 @@
         "has_score": true,
         "vb_date": "2026-09-22",
         "vb_time": "20:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1999,7 +1999,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-22",
           "vb_time": "20:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2081,7 +2081,7 @@
         "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "13:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2089,7 +2089,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-26",
           "vb_time": "13:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2127,7 +2127,7 @@
         "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "14:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2135,7 +2135,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-26",
           "vb_time": "14:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2172,7 +2172,7 @@
         "has_score": true,
         "vb_date": "2026-09-29",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2180,7 +2180,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-29",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2262,7 +2262,7 @@
         "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2270,7 +2270,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-08",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2352,7 +2352,7 @@
         "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "20:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2360,7 +2360,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-08",
           "vb_time": "20:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2534,7 +2534,7 @@
         "has_score": true,
         "vb_date": "2026-11-05",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2542,7 +2542,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-05",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2626,7 +2626,7 @@
         "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "11:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2634,7 +2634,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-07",
           "vb_time": "11:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2718,7 +2718,7 @@
         "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "11:00",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2726,7 +2726,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-16",
           "vb_time": "11:00",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2805,11 +2805,11 @@
         "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u16-sistem-egitim-spor-kulubu-u16-c419848",
         "host_name": "Nova Spor Kulübü U16",
         "guest_name": "Sistem Eğitim Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "11:00",
-        "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+        "vb_hall": "Fatih Ortaokulu Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2817,7 +2817,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-18",
           "vb_time": "11:00",
-          "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+          "vb_hall": "Fatih Ortaokulu Spor Salonu",
           "details": null
         }
       }
@@ -2835,11 +2835,15 @@
       "match_no": "22",
       "home_team": "Elit Akdeniz Spor Kulübü U16",
       "away_team": "07 Mega Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "12-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "419849",
@@ -2850,7 +2854,7 @@
         "has_score": false,
         "vb_date": "2026-11-20",
         "vb_time": "10:00",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2858,7 +2862,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-20",
           "vb_time": "10:00",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -2891,7 +2895,7 @@
         "has_score": false,
         "vb_date": "2026-11-20",
         "vb_time": "11:30",
-        "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+        "vb_hall": "Fatih Ortaokulu Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2899,7 +2903,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-20",
           "vb_time": "11:30",
-          "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+          "vb_hall": "Fatih Ortaokulu Spor Salonu",
           "details": null
         }
       }
@@ -2978,7 +2982,7 @@
         "has_score": true,
         "vb_date": "2026-09-19",
         "vb_time": "13:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -2986,7 +2990,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-19",
           "vb_time": "13:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3003,7 +3007,7 @@
       "group": "B Grubu",
       "match_no": "2",
       "home_team": "Luna Spor Kulübü U16",
-      "away_team": "Güral Premier Antalyaspor",
+      "away_team": "Antalyaspor U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3023,7 +3027,7 @@
         "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3031,7 +3035,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-25",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3114,7 +3118,7 @@
         "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "20:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3122,7 +3126,7 @@
           "hall_diff": false,
           "vb_date": "2026-09-25",
           "vb_time": "20:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3185,7 +3189,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "6",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U16",
       "away_team": "Antalya 1907 Spor Kulübü U16",
       "score": "2 - 3",
       "home_score": 2,
@@ -3208,7 +3212,7 @@
         "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3216,7 +3220,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-02",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3299,7 +3303,7 @@
         "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3307,7 +3311,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-13",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3393,7 +3397,7 @@
         "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3401,7 +3405,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3438,7 +3442,7 @@
         "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3446,7 +3450,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-22",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3530,7 +3534,7 @@
         "has_score": true,
         "vb_date": "2026-10-28",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3538,7 +3542,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-28",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3555,7 +3559,7 @@
       "group": "B Grubu",
       "match_no": "14",
       "home_team": "07 Anka Spor Kulübü U16",
-      "away_team": "Güral Premier Antalyaspor",
+      "away_team": "Antalyaspor U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -3623,7 +3627,7 @@
         "has_score": true,
         "vb_date": "2026-11-01",
         "vb_time": "11:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3631,7 +3635,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-01",
           "vb_time": "11:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3669,7 +3673,7 @@
         "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "19:00",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3677,7 +3681,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-02",
           "vb_time": "19:00",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3715,7 +3719,7 @@
         "has_score": true,
         "vb_date": "2026-11-07",
         "vb_time": "12:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3723,7 +3727,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-07",
           "vb_time": "12:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3739,7 +3743,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "18",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U16",
       "away_team": "Akdeniz Bilgi Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -3760,7 +3764,7 @@
         "has_score": true,
         "vb_date": "2026-11-12",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3768,7 +3772,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-12",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3851,7 +3855,7 @@
         "has_score": true,
         "vb_date": "2026-11-16",
         "vb_time": "12:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3859,7 +3863,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-16",
           "vb_time": "12:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3876,7 +3880,7 @@
       "group": "B Grubu",
       "match_no": "21",
       "home_team": "Antalya DSİ Spor Kulübü U16",
-      "away_team": "Güral Premier Antalyaspor",
+      "away_team": "Antalyaspor U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -3893,11 +3897,11 @@
         "url": "https://women.volleybox.net/tr/antalya-ds-spor-kulubu-u16-antalyaspor-u16-c419852",
         "host_name": "Antalya DSİ Spor Kulübü U16",
         "guest_name": "Antalyaspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "11:00",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3905,7 +3909,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-18",
           "vb_time": "11:00",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -3938,11 +3942,11 @@
         "url": "https://women.volleybox.net/tr/07-alya-spor-u16-luna-spor-kulubu-u16-c419853",
         "host_name": "07 Alya Spor U16",
         "guest_name": "Luna Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "12:30",
-        "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+        "vb_hall": "Fatih Ortaokulu Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3950,7 +3954,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-18",
           "vb_time": "12:30",
-          "vb_hall": "Fatih Sultan Mehmet Spor ve Kültür Merkezi",
+          "vb_hall": "Fatih Ortaokulu Spor Salonu",
           "details": null
         }
       }
@@ -3983,7 +3987,7 @@
         "has_score": false,
         "vb_date": "2026-11-21",
         "vb_time": "11:00",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -3991,7 +3995,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-21",
           "vb_time": "11:00",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -4024,7 +4028,7 @@
         "has_score": false,
         "vb_date": "2026-11-21",
         "vb_time": "12:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -4032,7 +4036,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-21",
           "vb_time": "12:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -4048,7 +4052,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "25",
-      "home_team": "Güral Premier Antalyaspor",
+      "home_team": "Antalyaspor U16",
       "away_team": "07 Zenit Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -4065,7 +4069,7 @@
         "has_score": false,
         "vb_date": "2026-11-25",
         "vb_time": "18:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -4073,7 +4077,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-25",
           "vb_time": "18:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salonu",
           "details": null
         }
       }
@@ -4599,8 +4603,8 @@
         "url": "https://women.volleybox.net/tr/alanya-belediyespor-u16-gazipasa-genclerbirligi-spor-kulubu-u16-c419859",
         "host_name": "Alanya Belediyespor U16",
         "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-18",
         "vb_time": "11:00",
         "vb_hall": "Alanya Atatürk Spor Salonu",
@@ -4644,8 +4648,8 @@
         "url": "https://women.volleybox.net/tr/erse-spor-kulubu-u16-net-voleybol-akademi-spor-kulubu-u16-c419860",
         "host_name": "ON Hotels Erse Spor Kulübü U16",
         "guest_name": "Net Voleybol Akademi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "13:30",
         "vb_hall": "Alanya Atatürk Spor Salonu",
@@ -4785,9 +4789,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T06:38:54.342528+00:00",
-  "last_success_at": "2026-11-20T06:38:54.342528+00:00",
-  "content_changed_at": "2026-11-20T06:38:54.342528+00:00",
+  "last_attempt_at": "2026-11-20T08:56:37.419382+00:00",
+  "last_success_at": "2026-11-20T08:56:37.419382+00:00",
+  "content_changed_at": "2026-11-20T08:56:37.419382+00:00",
   "volleybox_synced_matches": 97,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:14.399875"
+  "volleybox_sync_updated_at": "2026-11-20T12:05:20.030926"
 }

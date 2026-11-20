@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:39:01.806827",
+  "updated_at": "2026-11-20T11:57:00.967842",
   "city": "Elazığ",
   "slug": "elazig",
   "title": "TVF Elazığ Genç & Yıldız Kızlar Süper Lig",
@@ -1009,8 +1009,8 @@
         "url": "https://women.volleybox.net/tr/elazg-voleybol-akademi-spor-kulubu-u18-elazg-belediyesi-sk-u18-c420319",
         "host_name": "Elazığ Voleybol Akademi Spor Kulübü U18",
         "guest_name": "Elazığ Belediyesi SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "11:00",
         "vb_hall": "Ahmet Aytar Spor Salonu",
@@ -1478,9 +1478,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T06:39:01.817294+00:00",
-  "last_success_at": "2026-11-20T06:39:01.817294+00:00",
-  "content_changed_at": "2026-11-20T06:39:01.817294+00:00",
+  "last_attempt_at": "2026-11-20T08:57:01.136028+00:00",
+  "last_success_at": "2026-11-20T08:57:01.136028+00:00",
+  "content_changed_at": "2026-11-20T08:57:01.136028+00:00",
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:19.944944"
+  "volleybox_sync_updated_at": "2026-11-20T12:05:35.383492"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T19:02:00.152070",
+  "updated_at": "2026-11-20T11:56:53.963315",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -88,7 +88,7 @@
     "Genç Kızlar 1. Ligi - Yarı Final Grubu": [
       {
         "rank": 1,
-        "team": "Dicle Üniversitesi Spor Kulübü U18",
+        "team": "Diyarbakır Büyükşehir Belediyespor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -99,7 +99,7 @@
       },
       {
         "rank": 2,
-        "team": "Megaron İnşaat Diyarbakır Spor",
+        "team": "Diyarbakır Voleybolcular Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -569,47 +569,40 @@
       "id": "diyarbakir-20261121-011",
       "city": "Diyarbakır",
       "date": "2026-11-21",
-      "time": "13:00",
+      "time": "11:00",
       "hall": "Şehitlik",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final Grubu",
       "match_no": "1",
-      "home_team": "Megaron İnşaat Diyarbakır Spor",
-      "away_team": "Dicle Üniversitesi Spor Kulübü U18",
+      "home_team": "Diyarbakır Büyükşehir Belediyespor U18",
+      "away_team": "Diyarbakır Voleybolcular Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "420182",
-        "url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-u18-dicle-universitesi-spor-kulubu-u18-c420182",
-        "host_name": "Megaron İnşaat Diyarbakır Spor Kulübü U18",
-        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-21",
-        "vb_time": "13:00",
-        "vb_hall": "Şehitlik Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-21",
-          "vb_time": "13:00",
-          "vb_hall": "Şehitlik Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T09:39:05.670034+03:00",
-  "last_success_at": "2026-11-18T16:02:00.153348+00:00",
-  "content_changed_at": "2026-11-18T16:02:00.153348+00:00",
-  "volleybox_synced_matches": 11,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:19.754576"
+  "last_attempt_at": "2026-11-20T08:56:54.175277+00:00",
+  "last_success_at": "2026-11-20T08:56:54.175277+00:00",
+  "content_changed_at": "2026-11-20T08:56:54.175277+00:00",
+  "volleybox_synced_matches": 10,
+  "volleybox_sync_updated_at": "2026-11-20T12:05:35.154830"
 }

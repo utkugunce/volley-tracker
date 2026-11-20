@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:38:52.842680",
+  "updated_at": "2026-11-20T11:56:38.406533",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -3829,8 +3829,8 @@
         "url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-u16-burhaniye-oren-pegasus-spor-kulubu-u16-c420351",
         "host_name": "Ayvalık Gelişim Spor Kulübü U16",
         "guest_name": "Burhaniye Ören Pegasus Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "20:30",
         "vb_hall": "Burhaniye Atatürk Spor Salonu",
@@ -3966,8 +3966,8 @@
         "url": "https://women.volleybox.net/tr/gonen-karsyakaspor-u16-bandrma-voleybol-spor-kulubu-u16-c420429",
         "host_name": "Gönen Karşıyakaspor U16",
         "guest_name": "Bandırma Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "19:00",
         "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
@@ -3984,9 +3984,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T06:38:52.846787+00:00",
-  "last_success_at": "2026-11-20T06:38:52.846787+00:00",
-  "content_changed_at": "2026-11-20T06:38:52.846787+00:00",
+  "last_attempt_at": "2026-11-20T08:56:38.416527+00:00",
+  "last_success_at": "2026-11-20T08:56:38.416527+00:00",
+  "content_changed_at": "2026-11-20T08:56:38.416527+00:00",
   "volleybox_synced_matches": 74,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:16.326688"
+  "volleybox_sync_updated_at": "2026-11-20T12:05:26.603866"
 }

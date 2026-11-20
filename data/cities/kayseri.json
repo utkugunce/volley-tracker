@@ -1008,8 +1008,8 @@
         "url": "https://women.volleybox.net/tr/kvk-voleybol-kulubu-u18-cnar-akademi-spor-kulubu-u18-c411790",
         "host_name": "KVK Voleybol Kulübü U18",
         "guest_name": "Çınar Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-19",
         "vb_time": "19:30",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -3651,9 +3651,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-20T06:39:17.259405+00:00",
+  "last_attempt_at": "2026-11-20T11:57:34.788703+03:00",
   "last_success_at": "2026-11-20T06:39:17.259405+00:00",
   "content_changed_at": "2026-11-20T06:39:17.259405+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-20T09:46:33.797192"
+  "volleybox_sync_updated_at": "2026-11-20T12:06:21.090384"
 }

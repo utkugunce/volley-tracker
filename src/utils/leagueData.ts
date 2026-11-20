@@ -125,23 +125,38 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
   const allMatches: Match[] = parsedCity.matches || [];
   const allStandings: Record<string, StandingItem[]> = parsedCity.standings || {};
 
+  const normalizedLeagueSlug = leagueSlug.replace(/-u(?:18|16|14|13|12)$/i, "");
+  const isSpecialCity = new Set(["istanbul", "ankara", "izmir"]).has(slugify(citySlug));
+  const requestedAge =
+    extractAgeGroup(leagueSlug) ||
+    (normalizedLeagueSlug.includes("genc") ? "u18" : normalizedLeagueSlug.includes("yildiz") ? "u16" : undefined);
+
   // Bu lig ile eşleşen maçları filtrele
-  const matchingMatches = allMatches.filter((m) => {
+  let matchingMatches = allMatches.filter((m) => {
     const catSlug = slugify(m.category || "");
     const matchLeagueSlug = slugify(`${m.category || ""} ${m.group || ""}`);
     return (
-      catSlug === leagueSlug ||
-      leagueSlug === catSlug ||
-      catSlug.includes(leagueSlug) ||
-      leagueSlug.includes(catSlug) ||
-      matchLeagueSlug.includes(leagueSlug)
+      catSlug === normalizedLeagueSlug ||
+      normalizedLeagueSlug === catSlug ||
+      catSlug.includes(normalizedLeagueSlug) ||
+      normalizedLeagueSlug.includes(catSlug) ||
+      matchLeagueSlug.includes(normalizedLeagueSlug)
     );
   });
+
+  // Özel iller (İstanbul, Ankara, İzmir) dışındaki illerde Genç Kızlar 1. Ligi <-> Süper Lig
+  // ve yaş grubu slug'ları tek il ligine eşlenir
+  if (matchingMatches.length === 0 && !isSpecialCity && requestedAge) {
+    matchingMatches = allMatches.filter((m) => extractAgeGroup(m.category) === requestedAge);
+  }
 
   // Eğer kategori eşleşen maç yoksa en yakın kategoriyi bul
   const selectedCategory = matchingMatches.length > 0
     ? matchingMatches[0].category
-    : Object.keys(allStandings).find((k) => slugify(k).includes(leagueSlug))?.split(" - ")[0] || leagueSlug;
+    : Object.keys(allStandings).find((k) => {
+        const ks = slugify(k);
+        return ks.includes(normalizedLeagueSlug) || (!isSpecialCity && requestedAge && extractAgeGroup(k) === requestedAge);
+      })?.split(" - ")[0] || leagueSlug;
 
   const relevantMatches = matchingMatches.length > 0
     ? matchingMatches
@@ -155,7 +170,7 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
     const groupSlug = slugify(groupName);
     if (
       groupSlug.includes(cleanCatSlug) ||
-      groupSlug.includes(leagueSlug) ||
+      groupSlug.includes(normalizedLeagueSlug) ||
       groupName.toLowerCase().includes(selectedCategory.toLowerCase())
     ) {
       const parts = groupName.split(" - ");
@@ -166,6 +181,10 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
         table: Array.isArray(table) ? table : [],
       });
     }
+  }
+
+  if (relevantMatches.length === 0 && groups.length === 0) {
+    return null;
   }
 
   // Takımları puan durumu ve maçlardan topla
