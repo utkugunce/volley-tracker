@@ -25048,6 +25048,40 @@
         "Maldia Spor Kulübü A",
         "Maldia Spor Kulübü A U18"
       ]
+    },
+    {
+      "internal_name": "Rota Koleji",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Rota Koleji SK U18",
+      "volleybox_url": "https://women.volleybox.net/rota-koleji-sk-u18-t41251",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-20",
+      "aliases": [
+        "Rota Koleji",
+        "Rota Koleji SK",
+        "Rota Koleji SK U18",
+        "Rota Koleji U18"
+      ]
+    },
+    {
+      "internal_name": "Rota Koleji",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Rota Koleji SK U16",
+      "volleybox_url": "https://women.volleybox.net/rota-koleji-sk-u16-t41403",
+      "age_category": "U16",
+      "confidence": "verified",
+      "verified_at": "2026-11-20",
+      "aliases": [
+        "Rota Koleji",
+        "Rota Koleji SK",
+        "Rota Koleji SK U16",
+        "Rota Koleji U16"
+      ]
     }
   ],
   "leagues": [
