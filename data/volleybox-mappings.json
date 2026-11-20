@@ -24840,8 +24840,8 @@
       ]
     },
     {
-      "internal_name": "Anadolu Birlik Spor Kulübü (B)",
-      "internal_category": "Genç Kızlar Süper Lig",
+      "internal_name": "Anadolu Birlik Spor Kulübü",
+      "internal_category": "Genç Kızlar 1. Ligi",
       "city": "Ankara",
       "city_slug": "ankara",
       "matched_as": "Anadolu Birlik Spor Kulübü - B U18",
@@ -24850,8 +24850,10 @@
       "confidence": "verified",
       "verified_at": "2026-11-20",
       "aliases": [
+        "Anadolu Birlik Spor Kulübü",
         "Anadolu Birlik Spor Kulübü - B U18",
-        "Anadolu Birlik Spor Kulübü B"
+        "Anadolu Birlik Spor Kulübü B",
+        "Anadolu Birlik Spor Kulübü (B)"
       ]
     },
     {
