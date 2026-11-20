@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:54.727699",
+  "updated_at": "2026-11-20T09:39:17.274086",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -39,6 +39,28 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "played": 9,
+        "won": 8,
+        "lost": 1,
+        "points": 25,
+        "sets_won": 26,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Nicomedia Akademi Spor Kulübü U18",
+        "played": 8,
+        "won": 8,
+        "lost": 0,
+        "points": 23,
+        "sets_won": 24,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzmit Spor U18",
         "played": 10,
         "won": 8,
@@ -49,18 +71,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "played": 8,
-        "won": 7,
-        "lost": 1,
-        "points": 22,
-        "sets_won": 23,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
         "played": 10,
         "won": 7,
@@ -71,69 +82,58 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Nicomedia Akademi Spor Kulübü U18",
-        "played": 6,
-        "won": 6,
-        "lost": 0,
-        "points": 17,
-        "sets_won": 18,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
         "rank": 5,
         "team": "Siyah Kuğular Spor Kulübü U18",
-        "played": 8,
-        "won": 6,
+        "played": 9,
+        "won": 7,
         "lost": 2,
-        "points": 17,
-        "sets_won": 19,
-        "sets_lost": 10,
+        "points": 19,
+        "sets_won": 22,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 6,
         "team": "Körfez Akademi SK U18",
-        "played": 9,
+        "played": 10,
         "won": 5,
-        "lost": 4,
+        "lost": 5,
         "points": 17,
         "sets_won": 19,
-        "sets_lost": 14,
+        "sets_lost": 17,
         "form": []
       },
       {
         "rank": 7,
         "team": "Kocaeli Anka Spor Kulübü U18",
-        "played": 7,
+        "played": 8,
         "won": 5,
-        "lost": 2,
+        "lost": 3,
         "points": 15,
         "sets_won": 17,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
         "rank": 8,
         "team": "5 Renk Spor Kulübü U18",
-        "played": 8,
-        "won": 3,
-        "lost": 5,
-        "points": 9,
-        "sets_won": 13,
-        "sets_lost": 15,
+        "played": 10,
+        "won": 4,
+        "lost": 6,
+        "points": 13,
+        "sets_won": 18,
+        "sets_lost": 18,
         "form": []
       },
       {
         "rank": 9,
         "team": "Gölcük Belediye Spor Kulübü U18",
-        "played": 8,
+        "played": 9,
         "won": 3,
-        "lost": 5,
+        "lost": 6,
         "points": 9,
         "sets_won": 10,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       },
       {
@@ -172,12 +172,12 @@
       {
         "rank": 13,
         "team": "Kandıra Voleybol Kulübü U18",
-        "played": 7,
+        "played": 8,
         "won": 0,
-        "lost": 7,
+        "lost": 8,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 21,
+        "sets_lost": 24,
         "form": []
       }
     ],
@@ -196,11 +196,11 @@
       {
         "rank": 2,
         "team": "Gebze Gençlik Voleybol Kulübü U18",
-        "played": 8,
-        "won": 7,
+        "played": 9,
+        "won": 8,
         "lost": 1,
-        "points": 21,
-        "sets_won": 22,
+        "points": 24,
+        "sets_won": 25,
         "sets_lost": 4,
         "form": []
       },
@@ -284,12 +284,12 @@
       {
         "rank": 10,
         "team": "Umut Can Spor Kulübü U18",
-        "played": 9,
+        "played": 10,
         "won": 1,
-        "lost": 8,
+        "lost": 9,
         "points": 3,
         "sets_won": 5,
-        "sets_lost": 25,
+        "sets_lost": 28,
         "form": []
       },
       {
@@ -2820,11 +2820,15 @@
       "match_no": "56",
       "home_team": "Nicomedia Akademi Spor Kulübü U18",
       "away_team": "Körfez Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-21",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415110",
@@ -2861,11 +2865,15 @@
       "match_no": "57",
       "home_team": "Kandıra Voleybol Kulübü U18",
       "away_team": "5 Renk Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "13-25",
+        "3-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415109",
@@ -2902,11 +2910,17 @@
       "match_no": "58",
       "home_team": "Siyah Kuğular Spor Kulübü U18",
       "away_team": "5 Renk Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-9",
+        "17-25",
+        "18-25",
+        "25-17",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415112",
@@ -2943,11 +2957,15 @@
       "match_no": "59",
       "home_team": "Gölcük Belediye Spor Kulübü U18",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "12-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415114",
@@ -2984,11 +3002,15 @@
       "match_no": "60",
       "home_team": "Kocaeli Anka Spor Kulübü U18",
       "away_team": "Nicomedia Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "17-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415113",
@@ -5947,11 +5969,15 @@
       "match_no": "50",
       "home_team": "Umut Can Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "15-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415174",
@@ -6181,9 +6207,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:54.741953+00:00",
-  "last_success_at": "2026-11-18T14:59:54.741953+00:00",
-  "content_changed_at": "2026-11-18T14:59:54.741953+00:00",
+  "last_attempt_at": "2026-11-20T06:39:17.295478+00:00",
+  "last_success_at": "2026-11-20T06:39:17.295478+00:00",
+  "content_changed_at": "2026-11-20T06:39:17.295478+00:00",
   "volleybox_synced_matches": 132,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:51.411374"
+  "volleybox_sync_updated_at": "2026-11-20T09:46:41.917756"
 }

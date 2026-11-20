@@ -186,7 +186,7 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "Fethiye Zirve Spor Kulübü U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -1308,7 +1308,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1398,7 +1398,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1533,7 +1533,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "6",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Fethiye Voleybol Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -2456,9 +2456,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T15:00:03.642588+00:00",
+  "last_attempt_at": "2026-11-20T09:39:32.874930+03:00",
   "last_success_at": "2026-11-18T15:00:03.642588+00:00",
   "content_changed_at": "2026-11-18T15:00:03.642588+00:00",
   "volleybox_synced_matches": 43,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:56.281604"
+  "volleybox_sync_updated_at": "2026-11-20T09:46:44.658948"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:30.635248",
+  "updated_at": "2026-11-20T09:38:58.650337",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -42,7 +42,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Zonguldak As Spor Kulübü U18",
+        "team": "AS SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2983,7 +2983,7 @@
       "id": "canakkale-20261127-058",
       "city": "Çanakkale",
       "date": "2026-11-27",
-      "time": "18:00",
+      "time": "18:30",
       "hall": "Sporcu Gelişim Merkezi",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3009,14 +3009,14 @@
         "vb_time": "18:00",
         "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-27",
           "vb_time": "18:00",
           "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:30 / VB: 18:00)"
         }
       }
     },
@@ -3103,9 +3103,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:30.641304+00:00",
-  "last_success_at": "2026-11-18T14:59:30.641304+00:00",
-  "content_changed_at": "2026-11-18T14:59:30.641304+00:00",
+  "last_attempt_at": "2026-11-20T06:38:58.654186+00:00",
+  "last_success_at": "2026-11-20T06:38:58.654186+00:00",
+  "content_changed_at": "2026-11-20T06:38:58.654186+00:00",
   "volleybox_synced_matches": 60,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:12.558338"
+  "volleybox_sync_updated_at": "2026-11-20T09:46:19.269886"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:58.781721",
+  "updated_at": "2026-11-18T19:02:29.327444",
   "city": "Ordu",
   "slug": "ordu",
   "title": "TVF Ordu Genç & Yıldız Kızlar Süper Lig",
@@ -290,18 +290,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420430",
+        "url": "https://women.volleybox.net/tr/ordu-pars-spor-u18-1921-ordu-spor-u18-c420430",
+        "host_name": "Ordu Pars Spor U18",
+        "guest_name": "1921 Ordu Spor U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "11:00",
+        "vb_hall": "Ordu Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "11:00",
+          "vb_hall": "Ordu Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -328,18 +335,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "420431",
+        "url": "https://women.volleybox.net/tr/52-camlk-spor-u18-ordu-academy-volley-u18-c420431",
+        "host_name": "52 Çamlık Spor U18",
+        "guest_name": "Ordu Academy Volley U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-17",
+        "vb_time": "13:00",
+        "vb_hall": "Ordu Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "13:00",
+          "vb_hall": "Ordu Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -918,9 +932,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:58.783549+00:00",
-  "last_success_at": "2026-11-18T14:59:58.783549+00:00",
-  "content_changed_at": "2026-11-18T14:59:58.783549+00:00",
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:56.430293"
+  "last_attempt_at": "2026-11-20T09:39:30.297996+03:00",
+  "last_success_at": "2026-11-18T16:02:29.329527+00:00",
+  "content_changed_at": "2026-11-18T16:02:29.329527+00:00",
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-20T09:46:44.754087"
 }

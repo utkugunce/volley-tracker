@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:38.263989",
+  "updated_at": "2026-11-20T09:39:01.806827",
   "city": "Elazığ",
   "slug": "elazig",
   "title": "TVF Elazığ Genç & Yıldız Kızlar Süper Lig",
@@ -41,23 +41,23 @@
       {
         "rank": 2,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 11,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -131,23 +131,23 @@
       {
         "rank": 2,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 11,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -221,23 +221,23 @@
       {
         "rank": 2,
         "team": "Elazığ Belediyesi Spor Kulübü",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Elazığ Voleybol Akademi Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 11,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -992,11 +992,17 @@
       "match_no": "17",
       "home_team": "Elazığ Voleybol Akademi Spor Kulübü",
       "away_team": "Elazığ Belediyesi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "25-17",
+        "25-23",
+        "18-25",
+        "5-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "420319",
@@ -1472,9 +1478,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:38.287781+00:00",
-  "last_success_at": "2026-11-18T14:59:38.287781+00:00",
-  "content_changed_at": "2026-11-18T14:59:38.287781+00:00",
+  "last_attempt_at": "2026-11-20T06:39:01.817294+00:00",
+  "last_success_at": "2026-11-20T06:39:01.817294+00:00",
+  "content_changed_at": "2026-11-20T06:39:01.817294+00:00",
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:13.836501"
+  "volleybox_sync_updated_at": "2026-11-20T09:46:19.944944"
 }

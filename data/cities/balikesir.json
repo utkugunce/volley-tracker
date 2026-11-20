@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:31.199412",
+  "updated_at": "2026-11-20T09:38:52.842680",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -537,24 +537,24 @@
     "Yıldız Kızlar Süper Lig - G Grubu Çapraz Eşleşme": [
       {
         "rank": 1,
-        "team": "Ayvalık Gelişim Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Burhaniye Ören Pegasus Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Burhaniye Ören Pegasus Spor Kulübü U16",
-        "played": 1,
+        "team": "Ayvalık Gelişim Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -584,23 +584,23 @@
       {
         "rank": 1,
         "team": "Gönen Karşıyakaspor U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Bandırma Voleybol Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "sets_won": 4,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -3674,7 +3674,7 @@
       "id": "balikesir-20261119-068",
       "city": "Balıkesir",
       "date": "2026-11-19",
-      "time": "20:30",
+      "time": "19:30",
       "hall": "Kurtdereli Ss.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3700,14 +3700,14 @@
         "vb_time": "20:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-19",
           "vb_time": "20:30",
           "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 20:30)"
         }
       }
     },
@@ -3814,11 +3814,15 @@
       "match_no": "3",
       "home_team": "Ayvalık Gelişim Spor Kulübü U16",
       "away_team": "Burhaniye Ören Pegasus Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "20-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "420351",
@@ -3946,31 +3950,43 @@
       "match_no": "3",
       "home_team": "Gönen Karşıyakaspor U16",
       "away_team": "Bandırma Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "17-25",
+        "25-15",
+        "25-18",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "420429",
+        "url": "https://women.volleybox.net/tr/gonen-karsyakaspor-u16-bandrma-voleybol-spor-kulubu-u16-c420429",
+        "host_name": "Gönen Karşıyakaspor U16",
+        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "19:00",
+        "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "19:00",
+          "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:31.250193+00:00",
-  "last_success_at": "2026-11-18T14:59:31.250193+00:00",
-  "content_changed_at": "2026-11-18T14:59:31.250193+00:00",
-  "volleybox_synced_matches": 73,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:07.114329"
+  "last_attempt_at": "2026-11-20T06:38:52.846787+00:00",
+  "last_success_at": "2026-11-20T06:38:52.846787+00:00",
+  "content_changed_at": "2026-11-20T06:38:52.846787+00:00",
+  "volleybox_synced_matches": 74,
+  "volleybox_sync_updated_at": "2026-11-20T09:46:16.326688"
 }

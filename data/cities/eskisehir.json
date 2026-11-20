@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:59:46.197628",
+  "updated_at": "2026-11-20T09:39:10.716796",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -266,6 +266,30 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Klasman A Grubu": [
+      {
+        "rank": 1,
+        "team": "Es Voleybol Akademi Spor Kulübü - B U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Eskişehir Türk Telekom Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ],
@@ -671,17 +695,6 @@
       },
       {
         "rank": 5,
-        "team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
         "team": "Eskişehir Voleybol Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -692,7 +705,7 @@
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 6,
         "team": "Meryem Boz Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -1962,7 +1975,41 @@
       }
     },
     {
-      "id": "eskisehir-20260921-029",
+      "id": "eskisehir-20261127-029",
+      "city": "Eskişehir",
+      "date": "2026-11-27",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Klasman A Grubu",
+      "match_no": "1",
+      "home_team": "Es Voleybol Akademi Spor Kulübü - B U18",
+      "away_team": "Eskişehir Türk Telekom Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-030",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "18:30",
@@ -2007,7 +2054,7 @@
       }
     },
     {
-      "id": "eskisehir-20260926-030",
+      "id": "eskisehir-20260926-031",
       "city": "Eskişehir",
       "date": "2026-09-26",
       "time": "16:00",
@@ -2052,7 +2099,7 @@
       }
     },
     {
-      "id": "eskisehir-20260928-031",
+      "id": "eskisehir-20260928-032",
       "city": "Eskişehir",
       "date": "2026-09-28",
       "time": "18:30",
@@ -2097,7 +2144,7 @@
       }
     },
     {
-      "id": "eskisehir-20261007-032",
+      "id": "eskisehir-20261007-033",
       "city": "Eskişehir",
       "date": "2026-10-07",
       "time": "20:00",
@@ -2142,7 +2189,7 @@
       }
     },
     {
-      "id": "eskisehir-20261018-033",
+      "id": "eskisehir-20261018-034",
       "city": "Eskişehir",
       "date": "2026-10-18",
       "time": "18:30",
@@ -2187,7 +2234,7 @@
       }
     },
     {
-      "id": "eskisehir-20261018-034",
+      "id": "eskisehir-20261018-035",
       "city": "Eskişehir",
       "date": "2026-10-18",
       "time": "20:00",
@@ -2233,7 +2280,7 @@
       }
     },
     {
-      "id": "eskisehir-20260921-035",
+      "id": "eskisehir-20260921-036",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -2278,7 +2325,7 @@
       }
     },
     {
-      "id": "eskisehir-20260925-036",
+      "id": "eskisehir-20260925-037",
       "city": "Eskişehir",
       "date": "2026-09-25",
       "time": "18:30",
@@ -2323,7 +2370,7 @@
       }
     },
     {
-      "id": "eskisehir-20260926-037",
+      "id": "eskisehir-20260926-038",
       "city": "Eskişehir",
       "date": "2026-09-26",
       "time": "18:00",
@@ -2368,7 +2415,7 @@
       }
     },
     {
-      "id": "eskisehir-20260930-038",
+      "id": "eskisehir-20260930-039",
       "city": "Eskişehir",
       "date": "2026-09-30",
       "time": "20:00",
@@ -2413,7 +2460,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-039",
+      "id": "eskisehir-20261002-040",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "18:30",
@@ -2458,7 +2505,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-040",
+      "id": "eskisehir-20261002-041",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "18:30",
@@ -2505,7 +2552,7 @@
       }
     },
     {
-      "id": "eskisehir-20261013-041",
+      "id": "eskisehir-20261013-042",
       "city": "Eskişehir",
       "date": "2026-10-13",
       "time": "18:30",
@@ -2550,7 +2597,7 @@
       }
     },
     {
-      "id": "eskisehir-20261017-042",
+      "id": "eskisehir-20261017-043",
       "city": "Eskişehir",
       "date": "2026-10-17",
       "time": "18:30",
@@ -2596,7 +2643,7 @@
       }
     },
     {
-      "id": "eskisehir-20261017-043",
+      "id": "eskisehir-20261017-044",
       "city": "Eskişehir",
       "date": "2026-10-17",
       "time": "20:00",
@@ -2642,7 +2689,7 @@
       }
     },
     {
-      "id": "eskisehir-20261029-044",
+      "id": "eskisehir-20261029-045",
       "city": "Eskişehir",
       "date": "2026-10-29",
       "time": "16:00",
@@ -2687,7 +2734,7 @@
       }
     },
     {
-      "id": "eskisehir-20260921-045",
+      "id": "eskisehir-20260921-046",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "18:30",
@@ -2734,7 +2781,7 @@
       }
     },
     {
-      "id": "eskisehir-20260927-046",
+      "id": "eskisehir-20260927-047",
       "city": "Eskişehir",
       "date": "2026-09-27",
       "time": "18:00",
@@ -2779,7 +2826,7 @@
       }
     },
     {
-      "id": "eskisehir-20260928-047",
+      "id": "eskisehir-20260928-048",
       "city": "Eskişehir",
       "date": "2026-09-28",
       "time": "18:30",
@@ -2826,7 +2873,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-048",
+      "id": "eskisehir-20261002-049",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "20:00",
@@ -2871,7 +2918,7 @@
       }
     },
     {
-      "id": "eskisehir-20261005-049",
+      "id": "eskisehir-20261005-050",
       "city": "Eskişehir",
       "date": "2026-10-05",
       "time": "18:30",
@@ -2916,7 +2963,7 @@
       }
     },
     {
-      "id": "eskisehir-20261007-050",
+      "id": "eskisehir-20261007-051",
       "city": "Eskişehir",
       "date": "2026-10-07",
       "time": "18:30",
@@ -2961,7 +3008,7 @@
       }
     },
     {
-      "id": "eskisehir-20261013-051",
+      "id": "eskisehir-20261013-052",
       "city": "Eskişehir",
       "date": "2026-10-13",
       "time": "20:00",
@@ -3007,7 +3054,7 @@
       }
     },
     {
-      "id": "eskisehir-20261029-052",
+      "id": "eskisehir-20261029-053",
       "city": "Eskişehir",
       "date": "2026-10-29",
       "time": "18:00",
@@ -3052,7 +3099,7 @@
       }
     },
     {
-      "id": "eskisehir-20261031-053",
+      "id": "eskisehir-20261031-054",
       "city": "Eskişehir",
       "date": "2026-10-31",
       "time": "16:00",
@@ -3099,7 +3146,7 @@
       }
     },
     {
-      "id": "eskisehir-20261031-054",
+      "id": "eskisehir-20261031-055",
       "city": "Eskişehir",
       "date": "2026-10-31",
       "time": "18:00",
@@ -3145,7 +3192,7 @@
       }
     },
     {
-      "id": "eskisehir-20260921-055",
+      "id": "eskisehir-20260921-056",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -3190,7 +3237,7 @@
       }
     },
     {
-      "id": "eskisehir-20260922-056",
+      "id": "eskisehir-20260922-057",
       "city": "Eskişehir",
       "date": "2026-09-22",
       "time": "20:00",
@@ -3235,7 +3282,7 @@
       }
     },
     {
-      "id": "eskisehir-20260925-057",
+      "id": "eskisehir-20260925-058",
       "city": "Eskişehir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -3281,7 +3328,7 @@
       }
     },
     {
-      "id": "eskisehir-20260927-058",
+      "id": "eskisehir-20260927-059",
       "city": "Eskişehir",
       "date": "2026-09-27",
       "time": "14:00",
@@ -3326,7 +3373,7 @@
       }
     },
     {
-      "id": "eskisehir-20261001-059",
+      "id": "eskisehir-20261001-060",
       "city": "Eskişehir",
       "date": "2026-10-01",
       "time": "20:00",
@@ -3371,7 +3418,7 @@
       }
     },
     {
-      "id": "eskisehir-20261008-060",
+      "id": "eskisehir-20261008-061",
       "city": "Eskişehir",
       "date": "2026-10-08",
       "time": "18:30",
@@ -3417,7 +3464,7 @@
       }
     },
     {
-      "id": "eskisehir-20261008-061",
+      "id": "eskisehir-20261008-062",
       "city": "Eskişehir",
       "date": "2026-10-08",
       "time": "20:00",
@@ -3462,7 +3509,7 @@
       }
     },
     {
-      "id": "eskisehir-20261026-062",
+      "id": "eskisehir-20261026-063",
       "city": "Eskişehir",
       "date": "2026-10-26",
       "time": "18:30",
@@ -3507,7 +3554,7 @@
       }
     },
     {
-      "id": "eskisehir-20261029-063",
+      "id": "eskisehir-20261029-064",
       "city": "Eskişehir",
       "date": "2026-10-29",
       "time": "14:00",
@@ -3552,7 +3599,7 @@
       }
     },
     {
-      "id": "eskisehir-20261101-064",
+      "id": "eskisehir-20261101-065",
       "city": "Eskişehir",
       "date": "2026-11-01",
       "time": "16:00",
@@ -3598,7 +3645,7 @@
       }
     },
     {
-      "id": "eskisehir-20261112-065",
+      "id": "eskisehir-20261112-066",
       "city": "Eskişehir",
       "date": "2026-11-12",
       "time": "18:30",
@@ -3643,7 +3690,7 @@
       }
     },
     {
-      "id": "eskisehir-20261112-066",
+      "id": "eskisehir-20261112-067",
       "city": "Eskişehir",
       "date": "2026-11-12",
       "time": "20:00",
@@ -3690,7 +3737,7 @@
       }
     },
     {
-      "id": "eskisehir-20261109-067",
+      "id": "eskisehir-20261109-068",
       "city": "Eskişehir",
       "date": "2026-11-09",
       "time": "18:30",
@@ -3735,7 +3782,7 @@
       }
     },
     {
-      "id": "eskisehir-20261109-068",
+      "id": "eskisehir-20261109-069",
       "city": "Eskişehir",
       "date": "2026-11-09",
       "time": "20:00",
@@ -3780,7 +3827,7 @@
       }
     },
     {
-      "id": "eskisehir-20261105-069",
+      "id": "eskisehir-20261105-070",
       "city": "Eskişehir",
       "date": "2026-11-05",
       "time": "18:30",
@@ -3826,7 +3873,7 @@
       }
     },
     {
-      "id": "eskisehir-20261105-070",
+      "id": "eskisehir-20261105-071",
       "city": "Eskişehir",
       "date": "2026-11-05",
       "time": "20:00",
@@ -3872,7 +3919,7 @@
       }
     },
     {
-      "id": "eskisehir-20261121-071",
+      "id": "eskisehir-20261121-072",
       "city": "Eskişehir",
       "date": "2026-11-21",
       "time": "15:00",
@@ -3913,7 +3960,7 @@
       }
     },
     {
-      "id": "eskisehir-20261127-072",
+      "id": "eskisehir-20261127-073",
       "city": "Eskişehir",
       "date": "2026-11-27",
       "time": "18:30",
@@ -3954,47 +4001,6 @@
       }
     },
     {
-      "id": "eskisehir-20261127-073",
-      "city": "Eskişehir",
-      "date": "2026-11-27",
-      "time": "20:00",
-      "hall": "Şehit Anıl Gül",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Klasman A Grubu",
-      "match_no": "3",
-      "home_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-      "away_team": "Eskişehir Türk Telekom Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "419838",
-        "url": "https://women.volleybox.net/tr/eskisehir-turk-telekom-spor-kulubu-b-u16-eskisehir-turk-telekom-spor-kulubu-u16-c419838",
-        "host_name": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-        "guest_name": "Eskişehir Türk Telekom Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-27",
-        "vb_time": "20:00",
-        "vb_hall": "Şehit Anıl Gül Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-27",
-          "vb_time": "20:00",
-          "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
       "id": "eskisehir-20261129-074",
       "city": "Eskişehir",
       "date": "2026-11-29",
@@ -4004,7 +4010,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Klasman A Grubu",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "Anadolu Üniversitesi Spor Kulübü U16",
       "away_team": "Eskişehir Ata Spor Kulübü - B U16",
       "score": "- : -",
@@ -4045,7 +4051,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Klasman A Grubu",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Eskişehir Türk Telekom Spor Kulübü U16",
       "away_team": "Meryem Boz Spor Kulübü U16",
       "score": "- : -",
@@ -4077,9 +4083,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-18T14:59:46.203956+00:00",
-  "last_success_at": "2026-11-18T14:59:46.203956+00:00",
-  "content_changed_at": "2026-11-18T14:59:46.203956+00:00",
-  "volleybox_synced_matches": 75,
-  "volleybox_sync_updated_at": "2026-11-18T18:07:16.130436"
+  "last_attempt_at": "2026-11-20T06:39:10.729275+00:00",
+  "last_success_at": "2026-11-20T06:39:10.729275+00:00",
+  "content_changed_at": "2026-11-20T06:39:10.729275+00:00",
+  "volleybox_synced_matches": 74,
+  "volleybox_sync_updated_at": "2026-11-20T09:46:21.133516"
 }

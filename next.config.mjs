@@ -81,6 +81,7 @@ const nextConfig = {
   experimental: {
     // Lucide ikonlarının tüm paketi yerine yalnızca kullanılan ikonların import edilmesini sağlayarak derleme süresini ve bundle boyutunu düşürür
     optimizePackageImports: ["lucide-react", "motion"],
+    agentUpgrade: "security",
   },
   images: {
     remotePatterns: [
